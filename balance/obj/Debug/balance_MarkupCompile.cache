@@ -4,16 +4,16 @@
 winexe
 C#
 .cs
-C:\Users\smkwlab02\Desktop\バランス君\balanceNewGamefinal\balance\obj\Debug\
+C:\Users\smkwlab02\Documents\GitHub\blanceNewGame\balance\obj\Debug\
 balance
 none
 false
 DEBUG;TRACE
-C:\Users\smkwlab02\Desktop\バランス君\balanceNewGamefinal\balance\App.xaml
+C:\Users\smkwlab02\Documents\GitHub\blanceNewGame\balance\App.xaml
 25-605742272
 
 30-111239528
-19-1909215342
+1990984542
 Views\Calibration.xaml;Views\MainTitle.xaml;Views\FallGame.xaml;Views\FTGameResult.xaml;Views\GameMode.xaml;Views\GameResult.xaml;Views\GameSelect.xaml;Views\GameSetting.xaml;Views\k_RecordConfirmation.xaml;Views\k_Top.xaml;Views\LoadTraining.xaml;Views\LoginForm.xaml;Views\MainWindow.xaml;Views\Certification.xaml;Views\MazeGame.xaml;Views\newUser.xaml;Views\New_k_record.xaml;Views\PasswordEdit.xaml;Views\TargetGame.xaml;Views\t_top.xaml;Views\UserEdit.xaml;Views\UserManagiment.xaml;Views\UserRecordCheck.xaml;Views\User_Delete.xaml;Views\Window1.xaml;
 
 False
