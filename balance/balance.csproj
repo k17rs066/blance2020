@@ -72,6 +72,18 @@
     <Compile Include="Views\Calibration.xaml.cs">
       <DependentUpon>Calibration.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\FTGameModeSelect.xaml.cs">
+      <DependentUpon>FTGameModeSelect.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\FTGame_Easy.xaml.cs">
+      <DependentUpon>FTGame_Easy.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\FTGame_Hard.xaml.cs">
+      <DependentUpon>FTGame_Hard.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\FTGame_Normal.xaml.cs">
+      <DependentUpon>FTGame_Normal.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\MainTitle.xaml.cs">
       <DependentUpon>MainTitle.xaml</DependentUpon>
     </Compile>
@@ -142,6 +154,22 @@
       <DependentUpon>Window1.xaml</DependentUpon>
     </Compile>
     <Page Include="Views\Calibration.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\FTGameModeSelect.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\FTGame_Easy.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\FTGame_Hard.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\FTGame_Normal.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
