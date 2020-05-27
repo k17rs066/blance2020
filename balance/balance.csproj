@@ -129,6 +129,18 @@
     <Compile Include="Views\New_k_record.xaml.cs">
       <DependentUpon>New_k_record.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\TargetGame_Normal.xaml.cs">
+      <DependentUpon>TargetGame_Normal.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\TargetGame_Hard.xaml.cs">
+      <DependentUpon>TargetGame_Hard.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\TargetGame _Easy.xaml.cs">
+      <DependentUpon>TargetGame _Easy.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\TargetModeSelect.xaml.cs">
+      <DependentUpon>TargetModeSelect.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\PasswordEdit.xaml.cs">
       <DependentUpon>PasswordEdit.xaml</DependentUpon>
     </Compile>
@@ -243,6 +255,22 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\New_k_record.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\TargetGame_Normal.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\TargetGame_Hard.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\TargetGame _Easy.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\TargetModeSelect.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
