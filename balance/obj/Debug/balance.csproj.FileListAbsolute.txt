@@ -2154,3 +2154,4 @@ C:\Users\smkwlab02\Documents\GitHub\blanceNewGame\balance\obj\Debug\Views\FTGame
 C:\Users\smkwlab02\Documents\GitHub\blanceNewGame\balance\obj\Debug\Views\FTGame_Easy.baml
 C:\Users\smkwlab02\Documents\GitHub\blanceNewGame\balance\obj\Debug\Views\FTGame_Hard.baml
 C:\Users\smkwlab02\Documents\GitHub\blanceNewGame\balance\obj\Debug\Views\FTGame_Normal.baml
+C:\Users\smkwlab02\Documents\GitHub\blanceNewGame\balance\obj\Debug\balance.csprojAssemblyReference.cache
