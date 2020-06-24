@@ -85,6 +85,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="imageBrush1\ImageSource.cs" />
     <Compile Include="Views\Calibration.xaml.cs">
       <DependentUpon>Calibration.xaml</DependentUpon>
     </Compile>
@@ -388,6 +389,9 @@
   </ItemGroup>
   <ItemGroup>
     <Analyzer Include="..\..\..\..\Desktop\Fit Try%28弄り用%29\FitTri\bin\Debug\WiimoteLib.dll" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image\kago.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

@@ -2165,3 +2165,12 @@ C:\Users\smkwlab02\Documents\GitHub\blanceNewGame\balance\obj\Debug\Views\Target
 C:\Users\smkwlab02\Documents\GitHub\blanceNewGame\balance\obj\Debug\balance.csprojAssemblyReference.cache
 C:\Users\smkwlab02\Documents\GitHub\blanceNewGame\balance\obj\Debug\Views\FTGameRule.g.cs
 C:\Users\smkwlab02\Documents\GitHub\blanceNewGame\balance\obj\Debug\Views\FTGameRule.baml
+C:\Users\smkwlab02\Documents\GitHub\blanceNewGame\balance\bin\Debug\EntityFramework.dll
+C:\Users\smkwlab02\Documents\GitHub\blanceNewGame\balance\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\smkwlab02\Documents\GitHub\blanceNewGame\balance\bin\Debug\System.Data.SQLite.dll
+C:\Users\smkwlab02\Documents\GitHub\blanceNewGame\balance\bin\Debug\System.Data.SQLite.EF6.dll
+C:\Users\smkwlab02\Documents\GitHub\blanceNewGame\balance\bin\Debug\System.Data.SQLite.Linq.dll
+C:\Users\smkwlab02\Documents\GitHub\blanceNewGame\balance\bin\Debug\EntityFramework.xml
+C:\Users\smkwlab02\Documents\GitHub\blanceNewGame\balance\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\smkwlab02\Documents\GitHub\blanceNewGame\balance\bin\Debug\System.Data.SQLite.xml
+C:\Users\smkwlab02\Documents\GitHub\blanceNewGame\balance\bin\Debug\System.Data.SQLite.dll.config
