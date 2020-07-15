@@ -89,6 +89,7 @@
     <Compile Include="Views\Calibration.xaml.cs">
       <DependentUpon>Calibration.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\Class1.cs" />
     <Compile Include="Views\FTGameModeSelect.xaml.cs">
       <DependentUpon>FTGameModeSelect.xaml</DependentUpon>
     </Compile>
