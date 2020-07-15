@@ -1,0 +1,16 @@
+﻿<Window x:Class="balance.Views.LoginForm"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="LoginForm" Height="480" Width="720" WindowStartupLocation="CenterScreen">
+    <Grid>
+        <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" FontSize ="30" Text="ユーザID" VerticalAlignment="Top" RenderTransformOrigin="-0.092,-0.759" Height="43" Width="128" Margin="29,103,0,0"/>
+        <TextBox x:Name="login_id" HorizontalAlignment="Left" Height="73"  TextWrapping="Wrap" FontSize="30" VerticalContentAlignment="Center" VerticalAlignment="Top" Width="380" Margin="169,87,0,0"/>
+        <PasswordBox x:Name="password" HorizontalAlignment="Left" FontSize="30" VerticalContentAlignment="Center" VerticalAlignment="Top" Height="73" Width="380" Margin="169,233,0,0"/>
+        <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" FontSize="30" Text="パスワード" VerticalAlignment="Top" RenderTransformOrigin="-0.092,-0.759" Height="41" Width="128" Margin="29,249,0,0"/>
+        <Button Name="LoginButton" Content="ログイン"  FontSize="25" HorizontalAlignment="Left" VerticalAlignment="Top" Width="153" Height="62" Margin="396,363,0,0" Click="Button_Click" FontWeight="Bold"/>
+        <Button x:Name="LoginButton_Copy" Content="キャンセル"  FontSize="25" HorizontalAlignment="Left" VerticalAlignment="Top" Width="153" Height="62" Margin="169,363,0,0" Click="cancel_Click" FontWeight="Bold"/>
+        <Label x:Name="Nologin" Content="" HorizontalAlignment="Left" Margin="101,17,0,0" VerticalAlignment="Top" Height="56" Width="546" FontSize="30" FontWeight="Bold" Foreground="#FFF11111"/>
+
+
+    </Grid>
+</Window>

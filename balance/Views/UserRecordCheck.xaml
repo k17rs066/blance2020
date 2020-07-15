@@ -1,0 +1,20 @@
+﻿<Page x:Class="balance.Views.UserRecordCheck"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      mc:Ignorable="d" 
+      Height="1020" Width="1920"
+	Title="UserRecordCheck">
+    <ScrollViewer PanningMode="Both">
+        <Grid Name="grid5">
+            <Label Content="ユーザ記録閲覧" FontSize="100" HorizontalAlignment="Left" HorizontalContentAlignment="Center" Height="146.4" Margin="440.4,207,0,0" VerticalAlignment="Top" Width="1039.2"/>
+            <Label Content="ユーザ名" FontSize ="60" HorizontalAlignment="Left" HorizontalContentAlignment="Center" Height="88" Margin="238,446.253,0,0" VerticalAlignment="Top" VerticalContentAlignment="Center" Width="487" BorderBrush="Black" BorderThickness="3"/>
+            <Label Content="最終ログイン" FontSize ="60" HorizontalAlignment="Left" HorizontalContentAlignment="Center" Height="88" Margin="725,446.253,0,0" VerticalAlignment="Top" VerticalContentAlignment="Center" Width="487" BorderBrush="Black" BorderThickness="3"/>
+            <Label Content="記録閲覧" FontSize ="60" HorizontalAlignment="Left" HorizontalContentAlignment="Center" Height="88" Margin="1212,446.253,0,0" VerticalAlignment="Top" VerticalContentAlignment="Center" Width="487" BorderBrush="Black" BorderThickness="3"/>
+            <Button Name ="yuzaname" FontSize ="40" Content="▲" HorizontalContentAlignment="Center" VerticalContentAlignment="Top" HorizontalAlignment="Left" Height="50" Margin="641,474,0,0" VerticalAlignment="Top" Width="50" RenderTransformOrigin="0.591,0.662" Click="sortt"/>
+            <Button Name ="finlog" FontSize ="40" Content="▲" HorizontalContentAlignment="Center" VerticalContentAlignment="Top" HorizontalAlignment="Left" Height="50" Margin="1144,474,0,0" VerticalAlignment="Top" Width="50" RenderTransformOrigin="0.591,0.662" Click="sortt"/>
+
+        </Grid>
+    </ScrollViewer>
+</Page>

@@ -1,0 +1,6 @@
+﻿<NavigationWindow x:Class="balance.Views.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="MainWindow" Height="1080" Width="1920" WindowState="Maximized" Source="MainTitle.xaml" ShowsNavigationUI="False">
+
+</NavigationWindow>
