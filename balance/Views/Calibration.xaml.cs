@@ -36,7 +36,7 @@ namespace balance.Views
 
             chan.TextChanged += ch;
 
-            DBConnect.Connect("kasiihara.db");
+            DBConnect.Connect("test.db");
             SQL = "SELECT * FROM t_Calibration ORDER BY calibration_id DESC";
             DBConnect.ExecuteReader(SQL);
             if (DBConnect.Reader.Read() == true)
@@ -100,7 +100,7 @@ namespace balance.Views
         {
             if (!chan.Text.ToString().Equals(""))
             {
-                DBConnect.Connect("kasiihara.db");
+                DBConnect.Connect("test.db");
                 SQL = "INSERT INTO t_Calibration (change_kg,change_date)VALUES('" + change.ToString() + "','" + DateTime.Now.ToString() + "')";
                 DBConnect.ExecuteReader(SQL);
                 DBConnect.Dispose();
