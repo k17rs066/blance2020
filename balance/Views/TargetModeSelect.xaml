@@ -8,17 +8,17 @@
        Height="1000" Width="1630"
       Title="TargetModeSelect">
     <Grid>
-        <Button Margin="1120,665,0,120" Width="295" Height="215" Click="TargetGame_Hard" FontSize="70" HorizontalAlignment="Left" VerticalAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Top"  Background="Red" >
+        <Button Margin="1120,666,0,119" Width="345" Height="215" Click="TargetGame_Hard" FontSize="70" HorizontalAlignment="Left" VerticalAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Top"  Background="Red" >
             <Button.Content>
                 <Grid Height= "211" Width="228">
-                    <TextBlock  Text="難しい2"  VerticalAlignment="Center" HorizontalAlignment="Center" Margin="10,56,10,63" Width="208" RenderTransformOrigin="0.761,0.591" />
+                    <TextBlock  Text="難しい(ランダム)"  FontSize="45" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="-17,73,-46,78" Width="291" RenderTransformOrigin="0.761,0.591" />
                 </Grid>
             </Button.Content>
         </Button>
         <Button Margin="635,0,705,120" Width="290" Height="215" Click="TargetGame_Normal" FontSize="70" HorizontalAlignment="Center" VerticalAlignment="Bottom" HorizontalContentAlignment="Center" VerticalContentAlignment="Top"  Background="Orange">
             <Button.Content>
                 <Grid Height= "211" Width="228">
-                    <TextBlock Text="普通2" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="10,65,39,53" Width="179" RenderTransformOrigin="0.761,0.591" />
+                    <TextBlock Text="普通(ランダム)" FontSize="45" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0,78,-26,73" Width="254" RenderTransformOrigin="0.761,0.591" />
                 </Grid>
             </Button.Content>
         </Button>
@@ -30,13 +30,10 @@
                         <RowDefinition Height="103*"/>
                         <RowDefinition Height="108*"/>
                     </Grid.RowDefinitions>
-                    <TextBlock Text="普通" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="10,60,10,58" Width="208" RenderTransformOrigin="0.761,0.591" Grid.RowSpan="2" />
+                    <TextBlock Text="普通(固定)" FontSize="45" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="10,60,10,58" Width="208" RenderTransformOrigin="0.761,0.591" Grid.RowSpan="2" />
                 </Grid>
             </Button.Content>
         </Button>
-
-
-        <Ellipse/>
 
 
 
@@ -44,28 +41,28 @@
         <TextBlock x:Name ="datetimeb" FontSize="80" HorizontalAlignment="Left" Margin="805,46,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="114" Width="750"/>
         <Label x:Name="select" Content="難易度を選択してください。" FontSize="110" Margin="245,168,185,0" VerticalAlignment="Top" Height="163"/>
         <Button Content="戻る" HorizontalAlignment="Left" Margin="62,46,0,0" VerticalAlignment="Top" Width="332" Height="117" Click="back" FontSize="60"/>
-        <Button Margin="1120,0,215,405" Width="295" Height="205" Click="TargetGame_Normal" FontSize="70" HorizontalAlignment="Center" VerticalAlignment="Bottom" HorizontalContentAlignment="Center" VerticalContentAlignment="Top"  Background="#FF58FF50">
+        <Button Margin="1120,0,165,405" Width="345" Height="205" Click="TargetGame_Normal" FontSize="70" HorizontalAlignment="Center" VerticalAlignment="Bottom" HorizontalContentAlignment="Center" VerticalContentAlignment="Top"  Background="#FF58FF50">
             <Grid Height= "178">
-                <TextBlock Text="難しい" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="53,48,63,45" Width="175" RenderTransformOrigin="0.761,0.591" Height="85" />
+                <TextBlock Text="難しい(固定)" FontSize="45" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="38,53,25,40" Width="228" RenderTransformOrigin="0.761,0.591" Height="85" />
             </Grid>
         </Button>
-        <Button Margin="193,0,1147,120" Width="290" Height="205" Click="TargetGame_Normal" FontSize="70" HorizontalAlignment="Center" VerticalAlignment="Bottom" HorizontalContentAlignment="Center" VerticalContentAlignment="Top"  Background="#FF5090FF">
+        <Button Margin="150,0,1146,120" Width="334" Height="205" Click="TargetGame_Normal" FontSize="70" HorizontalAlignment="Center" VerticalAlignment="Bottom" HorizontalContentAlignment="Center" VerticalContentAlignment="Top"  Background="#FF5090FF">
             <Grid Height= "178">
-                <TextBlock VerticalAlignment="Center" HorizontalAlignment="Center" Margin="35,50,41,35" Width="210" RenderTransformOrigin="0.5,0.5" ><Run Text="易しい"/><Run Text="2"/></TextBlock>
+                <TextBlock VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0,64,-24,54" Width="310" RenderTransformOrigin="0.5,0.5" Text="易しい（ランダム）" FontSize="45"></TextBlock>
             </Grid>
         </Button>
-        <Button Margin="184,0,1147,400" Width="299" Height="205" Click="TargetGame_Normal" FontSize="70" HorizontalAlignment="Center" VerticalAlignment="Bottom" HorizontalContentAlignment="Center" VerticalContentAlignment="Top"  Background="AliceBlue" RenderTransformOrigin="0.552,0.488">
+        <Button Margin="150,0,1147,400" Width="333" Height="205" Click="TargetGame_Normal" FontSize="70" HorizontalAlignment="Center" VerticalAlignment="Bottom" HorizontalContentAlignment="Center" VerticalContentAlignment="Top"  Background="AliceBlue" RenderTransformOrigin="0.552,0.488">
             <Grid Height= "178">
-                <TextBlock Text="易しい" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="59,48,61,40" Width="175" RenderTransformOrigin="0.761,0.591" Height="90" />
+                <TextBlock Text="易しい(固定)" FontSize="45"  VerticalAlignment="Center" HorizontalAlignment="Center" Margin="10,63,34,25" Width="251" RenderTransformOrigin="0.761,0.591" Height="90" />
             </Grid>
         </Button>
-        <TextBlock HorizontalAlignment="Left" Height="65" Margin="150,925,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="1295" TextAlignment="Center" FontSize="40"><Run Text="※難易度"/><Run Text="易"/><Run Text="し"/><Run Text="い2以降"/><Run Text="はターゲットの初期配置がランダムで変化します。"/></TextBlock>
-        <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="515" Margin="150,385,0,0" VerticalAlignment="Top" Width="380"/>
+        <TextBlock HorizontalAlignment="Left" Height="65" Margin="150,925,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="1295" TextAlignment="Right" FontSize="40"><Run Text="※"/><Run Text="(ランダム)では"/><Run Text="ターゲットの初期配置がランダムで変化します。"/></TextBlock>
+        <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="515" Margin="120,390,0,0" VerticalAlignment="Top" Width="380"/>
         <Label Content="ターゲット個数：3" HorizontalAlignment="Left" Height="54" Margin="193,331,0,0" VerticalAlignment="Top" Width="232" FontSize="30" />
         <Label Content="ターゲット個数：6" HorizontalAlignment="Left" Height="54" Margin="670,331,0,0" VerticalAlignment="Top" Width="230" FontSize="30" />
         <Label Content="ターゲット個数：10" HorizontalAlignment="Left" Height="54" Margin="1145,331,0,0" VerticalAlignment="Top" Width="250" FontSize="30" />
-        <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="510" Margin="1065,385,0,0" VerticalAlignment="Top" Width="380"/>
-        <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="515" Margin="600,380,0,0" VerticalAlignment="Top" Width="380"/>
+        <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="510" Margin="1105,380,0,0" VerticalAlignment="Top" Width="380"/>
+        <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="515" Margin="595,385,0,0" VerticalAlignment="Top" Width="380"/>
 
     </Grid>
 </Page>
