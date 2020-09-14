@@ -6,17 +6,18 @@
       xmlns:local="clr-namespace:balance.Views"
       mc:Ignorable="d"
       Title="FTGameModeSelect"       Height="1000" Width="1630">
-
+    
     <Grid>
-        <Button Margin="1095,470,0,180" Width="482" Height="350" Click="FTGame_Hard" FontSize="70" HorizontalAlignment="Left" VerticalAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Top"  Background="#FFDF50FF" >
-            <Button.Content>
+        <Button Margin="1095,470,0,180" Width="482" Height="350" Click="FTGame_Hard" FontSize="70" HorizontalAlignment="Left" VerticalAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Top"  Background="#FFA6658D" >
+           
+     <Button.Content>
                 <Grid>
                     <TextBlock Text="難しい" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="88,130,95,-130" />
                 </Grid>
             </Button.Content>
         </Button>
 
-        <Button Margin="575,0,573,180" Width="482" Height="350" Click="FTGame_Normal" FontSize="70" HorizontalAlignment="Center" VerticalAlignment="Bottom" HorizontalContentAlignment="Center" VerticalContentAlignment="Top"  Background="#FF5090FF">
+        <Button Margin="575,0,573,180" Width="482" Height="350" Click="FTGame_Normal" FontSize="70" HorizontalAlignment="Center" VerticalAlignment="Bottom" HorizontalContentAlignment="Center" VerticalContentAlignment="Top"  Background="#FFD8836E">
             <Button.Content>
                 <Grid Height= "350">
                     <TextBlock Text="普通" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="155,138,145,119" Width="178" RenderTransformOrigin="0.761,0.591" />
@@ -24,7 +25,7 @@
             </Button.Content>
         </Button>
 
-        <Button Margin="62,0,1086,180" Width="482" Height="350" Click="FTGame_Easy" FontSize="70" HorizontalAlignment="Center" VerticalAlignment="Bottom" HorizontalContentAlignment="Center" VerticalContentAlignment="Top"  Background="#FF58FF50">
+        <Button Margin="62,0,1086,180" Width="482" Height="350" Click="FTGame_Easy" FontSize="70" HorizontalAlignment="Center" VerticalAlignment="Bottom" HorizontalContentAlignment="Center" VerticalContentAlignment="Top"  Background="#FFDD9B9D">
             <Button.Content>
                 <Grid Height= "350">
                     <TextBlock Text="簡単" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="155,138,145,119" Width="178" RenderTransformOrigin="0.761,0.591" />
@@ -38,8 +39,8 @@
 
         <TextBlock x:Name ="datetimeb" FontSize="80" HorizontalAlignment="Left" Margin="805,46,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="114" Width="750"/>
         <Label x:Name="select" Content="難易度を選択してください。" FontSize="110" Margin="245,212,185,0" VerticalAlignment="Top" Height="163"/>
-        <Button Content="戻る" HorizontalAlignment="Left" Margin="62,46,0,0" VerticalAlignment="Top" Width="332" Height="117" Click="back" FontSize="60"/>
-
+        <Button x:Name="returned" Content="戻る" HorizontalAlignment="Left" Margin="62,46,0,0" VerticalAlignment="Top" Width="332" Height="117" Click="back" FontSize="60"/>
+        <Button Template="{StaticResource buttonTemplate}" Content="Button" Width="80" Height="25" Foreground="White" FontWeight="Bold" FontSize="12" Margin="735,395,815,580" />
 
     </Grid>
 </Page>

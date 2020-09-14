@@ -2174,3 +2174,5 @@ C:\Users\smkwlab02\Documents\GitHub\blanceNewGame\balance\bin\Debug\EntityFramew
 C:\Users\smkwlab02\Documents\GitHub\blanceNewGame\balance\bin\Debug\System.Data.SQLite.xml
 C:\Users\smkwlab02\Documents\GitHub\blanceNewGame\balance\bin\Debug\System.Data.SQLite.dll.config
 C:\Users\smkwlab02\Documents\GitHub\blanceNewGame\balance\obj\Debug\balance.csprojAssemblyReference.cache
+C:\Users\smkwlab02\Documents\GitHub\blanceNewGame\balance\obj\Debug\Views\Window2.g.cs
+C:\Users\smkwlab02\Documents\GitHub\blanceNewGame\balance\obj\Debug\Views\Window2.baml

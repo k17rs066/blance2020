@@ -186,6 +186,9 @@
     <Compile Include="Views\FTGameRule.xaml.cs">
       <DependentUpon>FTGameRule.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\Window2.xaml.cs">
+      <DependentUpon>Window2.xaml</DependentUpon>
+    </Compile>
     <Page Include="Views\Calibration.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -331,6 +334,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Views\Window2.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs">
@@ -393,6 +400,9 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Image\kago.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image\target image.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
