@@ -6,41 +6,96 @@
       xmlns:local="clr-namespace:balance.Views"
       mc:Ignorable="d"
       Title="FTGameModeSelect"       Height="1000" Width="1630">
-    
+    <Page.Resources>
+        <ControlTemplate x:Key="buttonTemp1" TargetType="Button">
+            <Border x:Name="Border" Background="#FFA6658D" CornerRadius="30" BorderThickness="0">
+                <VisualStateManager.VisualStateGroups>
+                    <VisualStateGroup x:Name="CommonStates">
+                        <VisualState x:Name="Normal"/>
+                        <VisualState x:Name="MouseOver">
+                            <Storyboard>
+                                <ColorAnimation Storyboard.TargetName="Border" Storyboard.TargetProperty="(Border.Background).(SolidColorBrush.Color)" To="DeepSkyBlue" Duration="0:0:0.1"/>
+                            </Storyboard>
+                        </VisualState>
+                        <VisualState x:Name="Pressed">
+                            <Storyboard>
+                                <ColorAnimation Storyboard.TargetName="Border" Storyboard.TargetProperty="(Border.Background).(SolidColorBrush.Color)" To="Orange" Duration="0"/>
+                            </Storyboard>
+                        </VisualState>
+                        <VisualStateGroup.Transitions>
+                            <VisualTransition From="Pressed" GeneratedDuration="0:0:0.3"/>
+                            <VisualTransition From="MouseOver" To="Normal" GeneratedDuration="0:0:0.2"/>
+                        </VisualStateGroup.Transitions>
+                    </VisualStateGroup>
+                </VisualStateManager.VisualStateGroups>
+                <ContentPresenter Content="{TemplateBinding Content}" VerticalAlignment="Center" HorizontalAlignment="Center" />
+            </Border>
+        </ControlTemplate>
+
+        <ControlTemplate x:Key="buttonTemp2" TargetType="Button">
+            <Border x:Name="Border" Background="#FFdd9dbf" CornerRadius="30" BorderThickness="0">
+                <VisualStateManager.VisualStateGroups>
+                    <VisualStateGroup x:Name="CommonStates">
+                        <VisualState x:Name="Normal"/>
+                        <VisualState x:Name="MouseOver">
+                            <Storyboard>
+                                <ColorAnimation Storyboard.TargetName="Border" Storyboard.TargetProperty="(Border.Background).(SolidColorBrush.Color)" To="DeepSkyBlue" Duration="0:0:0.1"/>
+                            </Storyboard>
+                        </VisualState>
+                        <VisualState x:Name="Pressed">
+                            <Storyboard>
+                                <ColorAnimation Storyboard.TargetName="Border" Storyboard.TargetProperty="(Border.Background).(SolidColorBrush.Color)" To="Orange" Duration="0"/>
+                            </Storyboard>
+                        </VisualState>
+                        <VisualStateGroup.Transitions>
+                            <VisualTransition From="Pressed" GeneratedDuration="0:0:0.3"/>
+                            <VisualTransition From="MouseOver" To="Normal" GeneratedDuration="0:0:0.2"/>
+                        </VisualStateGroup.Transitions>
+                    </VisualStateGroup>
+                </VisualStateManager.VisualStateGroups>
+                <ContentPresenter Content="{TemplateBinding Content}" VerticalAlignment="Center" HorizontalAlignment="Center" />
+            </Border>
+        </ControlTemplate>
+
+
+        <ControlTemplate x:Key="buttonTemp3" TargetType="Button">
+            <Border x:Name="Border" Background="#FFdd9b9d" CornerRadius="30" BorderThickness="0">
+                <VisualStateManager.VisualStateGroups>
+                    <VisualStateGroup x:Name="CommonStates">
+                        <VisualState x:Name="Normal"/>
+                        <VisualState x:Name="MouseOver">
+                            <Storyboard>
+                                <ColorAnimation Storyboard.TargetName="Border" Storyboard.TargetProperty="(Border.Background).(SolidColorBrush.Color)" To="DeepSkyBlue" Duration="0:0:0.1"/>
+                            </Storyboard>
+                        </VisualState>
+                        <VisualState x:Name="Pressed">
+                            <Storyboard>
+                                <ColorAnimation Storyboard.TargetName="Border" Storyboard.TargetProperty="(Border.Background).(SolidColorBrush.Color)" To="Orange" Duration="0"/>
+                            </Storyboard>
+                        </VisualState>
+                        <VisualStateGroup.Transitions>
+                            <VisualTransition From="Pressed" GeneratedDuration="0:0:0.3"/>
+                            <VisualTransition From="MouseOver" To="Normal" GeneratedDuration="0:0:0.2"/>
+                        </VisualStateGroup.Transitions>
+                    </VisualStateGroup>
+                </VisualStateManager.VisualStateGroups>
+                <ContentPresenter Content="{TemplateBinding Content}" VerticalAlignment="Center" HorizontalAlignment="Center" />
+            </Border>
+        </ControlTemplate>
+    </Page.Resources>
+
     <Grid>
-        <Button Margin="1095,470,0,180" Width="482" Height="350" Click="FTGame_Hard" FontSize="70" HorizontalAlignment="Left" VerticalAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Top"  Background="#FFA6658D" >
-           
-     <Button.Content>
-                <Grid>
-                    <TextBlock Text="難しい" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="88,130,95,-130" />
-                </Grid>
-            </Button.Content>
-        </Button>
+        <Button Template="{StaticResource buttonTemp1}" Content="難しい" Margin="1095,470,0,180" Width="482" Height="350" Click="FTGame_Hard" FontSize="70" HorizontalAlignment="Left" VerticalAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Top"/>
+        <Button Template="{StaticResource buttonTemp2}" Content="普通" Margin="575,470,0,180" Width="482" Height="350" Click="FTGame_Normal" FontSize="70" HorizontalAlignment="Left" VerticalAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Top"/>
+        <Button Template="{StaticResource buttonTemp3}" Content="簡単" Margin="43,470,0,180" Width="482" Height="350" Click="FTGame_Easy" FontSize="70" HorizontalAlignment="Left" VerticalAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Top"/>
 
-        <Button Margin="575,0,573,180" Width="482" Height="350" Click="FTGame_Normal" FontSize="70" HorizontalAlignment="Center" VerticalAlignment="Bottom" HorizontalContentAlignment="Center" VerticalContentAlignment="Top"  Background="#FFD8836E">
-            <Button.Content>
-                <Grid Height= "350">
-                    <TextBlock Text="普通" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="155,138,145,119" Width="178" RenderTransformOrigin="0.761,0.591" />
-                </Grid>
-            </Button.Content>
-        </Button>
-
-        <Button Margin="62,0,1086,180" Width="482" Height="350" Click="FTGame_Easy" FontSize="70" HorizontalAlignment="Center" VerticalAlignment="Bottom" HorizontalContentAlignment="Center" VerticalContentAlignment="Top"  Background="#FFDD9B9D">
-            <Button.Content>
-                <Grid Height= "350">
-                    <TextBlock Text="簡単" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="155,138,145,119" Width="178" RenderTransformOrigin="0.761,0.591" />
-                </Grid>
-            </Button.Content>
-        </Button>
-
-        
-
-
-
-        <TextBlock x:Name ="datetimeb" FontSize="80" HorizontalAlignment="Left" Margin="805,46,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="114" Width="750"/>
         <Label x:Name="select" Content="難易度を選択してください。" FontSize="110" Margin="245,212,185,0" VerticalAlignment="Top" Height="163"/>
-        <Button x:Name="returned" Content="戻る" HorizontalAlignment="Left" Margin="62,46,0,0" VerticalAlignment="Top" Width="332" Height="117" Click="back" FontSize="60"/>
-        <Button Template="{StaticResource buttonTemplate}" Content="Button" Width="80" Height="25" Foreground="White" FontWeight="Bold" FontSize="12" Margin="735,395,815,580" />
+        <Button Content="戻る" HorizontalAlignment="Left" Margin="62,46,0,0" VerticalAlignment="Top" Width="332" Height="117" Click="back" FontSize="60"/>
+        <Button Content="ルール説明" HorizontalAlignment="Left" Margin="1245,46,0,0" VerticalAlignment="Top" Width="332" Height="117" Click="FTGame_Prac" FontSize="60"/>
 
     </Grid>
 </Page>
+
+
+
+

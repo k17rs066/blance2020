@@ -9,32 +9,36 @@
       d:DesignHeight="450" d:DesignWidth="800"
       Title="buttonresources">
 
+    <Page.Resources>
+        <ControlTemplate x:Key="buttonTemplate" TargetType="Button">
+            <Border x:Name="Border" Background="BurlyWood" CornerRadius="5" BorderThickness="0">
+                <VisualStateManager.VisualStateGroups>
+                    <VisualStateGroup x:Name="CommonStates">
+                        <VisualState x:Name="Normal"/>
+                        <VisualState x:Name="MouseOver">
+                            <Storyboard>
+                                <ColorAnimation Storyboard.TargetName="Border" Storyboard.TargetProperty="(Border.Background).(SolidColorBrush.Color)" To="DeepSkyBlue" Duration="0:0:0.1"/>
+                            </Storyboard>
+                        </VisualState>
+                        <VisualState x:Name="Pressed">
+                            <Storyboard>
+                                <ColorAnimation Storyboard.TargetName="Border" Storyboard.TargetProperty="(Border.Background).(SolidColorBrush.Color)" To="Orange" Duration="0"/>
+                            </Storyboard>
+                        </VisualState>
+                        <VisualStateGroup.Transitions>
+                            <VisualTransition From="Pressed" GeneratedDuration="0:0:0.3"/>
+                            <VisualTransition From="MouseOver" To="Normal" GeneratedDuration="0:0:0.2"/>
+                        </VisualStateGroup.Transitions>
+                    </VisualStateGroup>
+                </VisualStateManager.VisualStateGroups>
+                <ContentPresenter Content="{TemplateBinding Content}" VerticalAlignment="Center" HorizontalAlignment="Center" />
+            </Border>
+        </ControlTemplate>
+    </Page.Resources>
     <Grid>
-        <Page.Resources>
-            <ControlTemplate x:Key="buttonTemplate" TargetType="Button">
-                <Border x:Name="Border" Background="DarkGray" CornerRadius="5" BorderThickness="0">
-                    <VisualStateManager.VisualStateGroups>
-                        <VisualStateGroup x:Name="CommonStates">
-                            <VisualState x:Name="Normal"/>
-                            <VisualState x:Name="MouseOver">
-                                <Storyboard>
-                                    <ColorAnimation Storyboard.TargetName="Border" Storyboard.TargetProperty="(Border.Background).(SolidColorBrush.Color)" To="DeepSkyBlue" Duration="0:0:0.1"/>
-                                </Storyboard>
-                            </VisualState>
-                            <VisualState x:Name="Pressed">
-                                <Storyboard>
-                                    <ColorAnimation Storyboard.TargetName="Border" Storyboard.TargetProperty="(Border.Background).(SolidColorBrush.Color)" To="Orange" Duration="0"/>
-                                </Storyboard>
-                            </VisualState>
-                            <VisualStateGroup.Transitions>
-                                <VisualTransition From="Pressed" GeneratedDuration="0:0:0.3"/>
-                                <VisualTransition From="MouseOver" To="Normal" GeneratedDuration="0:0:0.2"/>
-                            </VisualStateGroup.Transitions>
-                        </VisualStateGroup>
-                    </VisualStateManager.VisualStateGroups>
-                    <ContentPresenter Content="{TemplateBinding Content}" VerticalAlignment="Center" HorizontalAlignment="Center" />
-                </Border>
-            </ControlTemplate>
-        </Page.Resources>
+        <StackPanel>
+            <Button Content="Button" Width="80" Height="25" Margin="0,10,360,10" HorizontalAlignment="Right" />
+            <Button Template="{StaticResource buttonTemplate}" Content="ubebe" Height="145" Foreground="White" FontWeight="Bold" FontSize="12" Margin="0,0,250,0" HorizontalAlignment="Right" Width="145" RenderTransformOrigin="0.382,0.674" />
+        </StackPanel>
     </Grid>
 </Page>
