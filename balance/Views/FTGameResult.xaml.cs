@@ -26,8 +26,23 @@ namespace balance.Views
         public balance.Views.TargetGame.Refresh_b target_e = null;
 
 
-        public balance.Views.FallGame.Refresh_fa fall_r = null;
-        public balance.Views.FallGame.Refresh_fb fall_e = null;
+
+
+        public balance.Views.FallGame_Normal.Refresh_fa fall_r = null;
+        public balance.Views.FallGame_Normal.Refresh_fb fall_e = null;
+
+        public balance.Views.FallGame_Easy.Refresh_fa fall_re = null;
+        public balance.Views.FallGame_Easy.Refresh_fb fall_ee = null;
+
+        public balance.Views.FallGame_Hard.Refresh_fa fall_rh = null;
+        public balance.Views.FallGame_Hard.Refresh_fb fall_eh = null;
+
+        public balance.Views.FallGame_Prec.Refresh_fc fall_rp = null;
+        public balance.Views.FallGame_Prec.Refresh_fd fall_ep = null;
+
+        
+
+        
 
 
 
@@ -47,7 +62,7 @@ namespace balance.Views
 
         }
 
-        public FTGameResult(balance.Views.FallGame.Refresh_fa pRefresh_fa, balance.Views.FallGame.Refresh_fb pRefresh_fb, int a)
+        public FTGameResult(balance.Views.FallGame_Normal.Refresh_fa pRefresh_fa, balance.Views.FallGame_Normal.Refresh_fb pRefresh_fb, int a)
         {
 
             InitializeComponent();
@@ -63,7 +78,23 @@ namespace balance.Views
             ftresulttime.Content = Application.Current.Properties["ftresulttime"].ToString() + " 秒";
         }
 
-      
+        public FTGameResult(balance.Views.FallGame_Prec.Refresh_fc pRefresh_fa, balance.Views.FallGame_Prec.Refresh_fd pRefresh_fb, int a)
+        {
+
+            InitializeComponent();
+
+            ftgamemode.Content = Application.Current.Properties["ftgamemodename"].ToString();
+
+            fall_rp = pRefresh_fa;
+            fall_ep = pRefresh_fb;
+
+            ftresult.Content = Application.Current.Properties["ftresult"].ToString() + " 点";
+
+            //練習モードでは表示しない
+//             fttokikai.Content = "計測時間";
+//             ftresulttime.Content = Application.Current.Properties["ftresulttime"].ToString() + " 秒";
+        }
+
 
         private void end_Click(object sender, RoutedEventArgs e)
         {
@@ -76,6 +107,11 @@ namespace balance.Views
             else if (Application.Current.Properties["ftgamemodename"].ToString().Equals("落下ゲーム"))
             {
                 fall_e(sender, e);
+                this.Close();
+            }
+            else if (Application.Current.Properties["ftgamemodename"].ToString().Equals("落下ゲーム(練習モード)"))
+            {
+                fall_ep (sender, e);
                 this.Close();
             }
             
@@ -95,8 +131,12 @@ namespace balance.Views
                 fall_r(sender, e);
                 this.Close();
             }
+            else if (Application.Current.Properties["ftgamemodename"].ToString().Equals("落下ゲーム(練習モード)"))
+            {
+                fall_rp(sender, e);
+                this.Close();
+            }
 
-            
         }
         
     }

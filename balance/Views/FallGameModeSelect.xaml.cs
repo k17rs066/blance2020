@@ -21,9 +21,9 @@ namespace balance.Views
     /// <summary>
     /// FTGameModeSelect.xaml の相互作用ロジック
     /// </summary>
-    public partial class FTGameModeSelect: Page
+    public partial class FallGameModeSelect: Page
     {
-        public FTGameModeSelect()
+        public FallGameModeSelect()
         {
             InitializeComponent();
 
@@ -47,18 +47,18 @@ namespace balance.Views
 
         private void FTGame_Easy(object sender, RoutedEventArgs e)
         {
-            var nextPage = new FTGame_Easy();
+            var nextPage = new FallGame_Easy();
             NavigationService.Navigate(nextPage);
         }
 
         private void FTGame_Normal(object sender, RoutedEventArgs e)
         {
-            var nextPage = new FTGame_Normal();
+            var nextPage = new FallGame_Normal();
             NavigationService.Navigate(nextPage);
         }
         private void FTGame_Hard(object sender, RoutedEventArgs e)
         {
-            var nextPage = new FTGame_Hard();
+            var nextPage = new FallGame_Hard();
             NavigationService.Navigate(nextPage);
         }
         private void back(object sender, RoutedEventArgs e)
