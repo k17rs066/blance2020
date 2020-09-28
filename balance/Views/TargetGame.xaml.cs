@@ -74,6 +74,11 @@ namespace balance.Views
 
         };
 
+
+        private void Precmode_Click(object sender,EventArgs e)
+        {
+
+        }
         public TargetGame()
         {
             InitializeComponent();
@@ -344,6 +349,8 @@ namespace balance.Views
                 ta[0, 1] = y;
 
             }
+
+
         }
 
         private void Thumb2_DragDelta(object sender, DragDeltaEventArgs e)

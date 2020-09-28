@@ -34,6 +34,12 @@ namespace balance.Views
 
         }
 
+        private void Precmode_Click(object sender,EventArgs e)
+        {
+
+
+        }
+
          void timer_Tick(object sender, EventArgs e)
         {
             datetimeb.Text = DateTime.Now.ToString();

@@ -58,20 +58,17 @@
         </Canvas>
 
         <Label Content="ターゲットゲーム" HorizontalAlignment="Left" Margin="75,10,0,0" VerticalAlignment="Top" Height="125" Width="473" FontSize="72"/>
-        <Button x:Name="startbutton" Content="スタート" HorizontalAlignment="Left" Margin="630,22,0,0" VerticalAlignment="Top" Width="322" Height="113" Click="start" FontSize="60"/>
-        <Button Content="戻る" HorizontalAlignment="Left" Margin="1057,22,0,0" VerticalAlignment="Top" Width="319" Height="113" Click="back" FontSize="60"/>
+        <Button x:Name="startbutton" Content="スタート" HorizontalAlignment="Left" Margin="663,20,0,0" VerticalAlignment="Top" Width="322" Height="113" Click="start" FontSize="60"/>
+        <Button Content="戻る" HorizontalAlignment="Left" Margin="1510,20,0,0" VerticalAlignment="Top" Width="319" Height="113" Click="back" FontSize="60"/>
         <!--Button x:Name="fix" Content="固定配置" HorizontalAlignment="Left" Margin="75,175,0,0" VerticalAlignment="Top" Width="213" Height="107" FontSize="48" AutomationProperties.Name="1"/>
         <Button x:Name="free" Content="自由配置" HorizontalAlignment="Left" Margin="459,175,0,0" VerticalAlignment="Top" Width="213" Height="107" FontSize="48"/-->
         <Label x:Name="time" Content="計測時間    0秒" HorizontalAlignment="Left" Margin="1057,158,0,0" VerticalAlignment="Top" Height="86" Width="706" FontSize="60"/>
         <Label x:Name="count" Content="残り個数     5個" HorizontalAlignment="Left" Margin="1057,249,0,0" VerticalAlignment="Top" Height="86" Width="706" FontSize="60"/>
         <Label x:Name="zyuu" Content="" HorizontalAlignment="Left" Margin="705,59,0,0" VerticalAlignment="Top" Height="80" Width="347" FontSize="36"/>
         <Label x:Name="tar1" Content="" HorizontalAlignment="Left" Margin="705,158,0,0" VerticalAlignment="Top" Height="80" Width="347" FontSize="36"/>
-        <StackPanel Orientation="Horizontal"  >
-            <RadioButton Content="パターン1" HorizontalAlignment="Left" Margin="100,261,0,0" VerticalAlignment="Top" Height="59" Width="261" FontSize="35"/>
-            <RadioButton Content="パターン2" HorizontalAlignment="Left" Margin="1,261,0,0" VerticalAlignment="Top" Height="40" Width="231" FontSize="35"/>
-            <RadioButton Content="パターン3" HorizontalAlignment="Left" Margin="1,261,0,0" VerticalAlignment="Top" Height="40" Width="231" FontSize="35"/>
-            <Button Content="練習モード" HorizontalAlignment="Left" VerticalAlignment="Top" Width="319" Height="113"  FontSize="60" Margin="600,20,0,0"/>
-        </StackPanel>
+
+        <Button x:Name="Precmode" Click="Precmode_Click" Content="練習モード" HorizontalAlignment="Left" VerticalAlignment="Top" Width="319" Height="113"  FontSize="60" Margin="1057,20,0,0"/>
+
 
     </Grid>
 </Page>
