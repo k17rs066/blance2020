@@ -19,8 +19,7 @@
         <!--<ComboBox x:Name="timepercent" HorizontalAlignment="Left" Margin="278,211,0,0" VerticalAlignment="Top" Width="109" Height="78" FontSize="48" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/> -->
 
         <Label Content="落下ゲーム(練習モード)" HorizontalAlignment="Left" Margin="75,10,0,0" VerticalAlignment="Top" Height="125" Width="665" FontSize="72"/>
-        <Button x:Name="startbutton" Content="スタート" HorizontalAlignment="Left" Margin="113,168,0,0" VerticalAlignment="Top" Width="322" Height="113" Click="start" FontSize="60"/>
-        <Button x:Name="stopbutton" Content="ストップ" HorizontalAlignment="Left" Margin="525,168,0,0" VerticalAlignment="Top" Width="322" Height="113" Click="start" FontSize="60"/>
+        <Button x:Name="startbutton" Content="スタート" HorizontalAlignment="Left" Margin="275,168,0,0" VerticalAlignment="Top" Width="322" Height="113" Click="start" FontSize="60"/>
 
         <Button Content="戻る" HorizontalAlignment="Left" Margin="1556,22,0,0" VerticalAlignment="Top" Width="319" Height="113" Click="back" FontSize="60"/>
         <!--<Label x:Name="time" Content="残り時間     30秒" HorizontalAlignment="Left" Margin="1057,158,0,0" VerticalAlignment="Top" Height="86" Width="706" FontSize="60"/> -->

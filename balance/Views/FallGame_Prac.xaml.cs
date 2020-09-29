@@ -424,7 +424,7 @@ namespace balance.Views
             
                 wiimote.Disconnect();
             
-            var nextPage = new GameSelect();
+            var nextPage = new FallGameModeSelect();
             NavigationService.Navigate(nextPage);
 
         }

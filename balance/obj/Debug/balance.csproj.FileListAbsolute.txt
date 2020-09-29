@@ -2146,14 +2146,6 @@ C:\Users\smkwlab02\Documents\GitHub\blanceNewGame\balance\obj\Debug\balance.cspr
 C:\Users\smkwlab02\Documents\GitHub\blanceNewGame\balance\obj\Debug\balance.csproj.CopyComplete
 C:\Users\smkwlab02\Documents\GitHub\blanceNewGame\balance\obj\Debug\balance.exe
 C:\Users\smkwlab02\Documents\GitHub\blanceNewGame\balance\obj\Debug\balance.pdb
-C:\Users\smkwlab02\Documents\GitHub\blanceNewGame\balance\obj\Debug\Views\FTGameModeSelect.g.cs
-C:\Users\smkwlab02\Documents\GitHub\blanceNewGame\balance\obj\Debug\Views\FTGame_Normal.g.cs
-C:\Users\smkwlab02\Documents\GitHub\blanceNewGame\balance\obj\Debug\Views\FTGame_Easy.g.cs
-C:\Users\smkwlab02\Documents\GitHub\blanceNewGame\balance\obj\Debug\Views\FTGame_Hard.g.cs
-C:\Users\smkwlab02\Documents\GitHub\blanceNewGame\balance\obj\Debug\Views\FTGameModeSelect.baml
-C:\Users\smkwlab02\Documents\GitHub\blanceNewGame\balance\obj\Debug\Views\FTGame_Easy.baml
-C:\Users\smkwlab02\Documents\GitHub\blanceNewGame\balance\obj\Debug\Views\FTGame_Hard.baml
-C:\Users\smkwlab02\Documents\GitHub\blanceNewGame\balance\obj\Debug\Views\FTGame_Normal.baml
 C:\Users\smkwlab02\Documents\GitHub\blanceNewGame\balance\obj\Debug\Views\FTGameRule.g.cs
 C:\Users\smkwlab02\Documents\GitHub\blanceNewGame\balance\obj\Debug\Views\FTGameRule.baml
 C:\Users\smkwlab02\Documents\GitHub\blanceNewGame\balance\bin\Debug\EntityFramework.dll
@@ -2175,3 +2167,8 @@ C:\Users\smkwlab02\Documents\GitHub\blanceNewGame\balance\obj\Debug\Views\FallGa
 C:\Users\smkwlab02\Documents\GitHub\blanceNewGame\balance\obj\Debug\Views\FallGame_Hard.g.cs
 C:\Users\smkwlab02\Documents\GitHub\blanceNewGame\balance\obj\Debug\Views\FallGame_Normal.g.cs
 C:\Users\smkwlab02\Documents\GitHub\blanceNewGame\balance\obj\Debug\Views\FallGame_Prac.g.cs
+C:\Users\smkwlab02\Documents\GitHub\blanceNewGame\balance\obj\Debug\Views\FallGameModeSelect.baml
+C:\Users\smkwlab02\Documents\GitHub\blanceNewGame\balance\obj\Debug\Views\FallGame_Easy.baml
+C:\Users\smkwlab02\Documents\GitHub\blanceNewGame\balance\obj\Debug\Views\FallGame_Hard.baml
+C:\Users\smkwlab02\Documents\GitHub\blanceNewGame\balance\obj\Debug\Views\FallGame_Normal.baml
+C:\Users\smkwlab02\Documents\GitHub\blanceNewGame\balance\obj\Debug\Views\FallGame_Prac.baml

@@ -88,10 +88,10 @@
         <Button Template="{StaticResource buttonTemp1}" Content="難しい" Margin="1095,470,0,180" Width="482" Height="350" Click="FallGame_Hard" FontSize="70" HorizontalAlignment="Left" VerticalAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Top"/>
         <Button Template="{StaticResource buttonTemp2}" Content="普通" Margin="575,470,0,180" Width="482" Height="350" Click="FallGame_Normal" FontSize="70" HorizontalAlignment="Left" VerticalAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Top"/>
         <Button Template="{StaticResource buttonTemp3}" Content="簡単" Margin="43,470,0,180" Width="482" Height="350" Click="FallGame_Easy" FontSize="70" HorizontalAlignment="Left" VerticalAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Top"/>
-        <TextBlock x:Name="datetimeb"/>
+        <TextBlock x:Name="datetimeb"  Margin="930,46,53,837" FontSize="60"/>
         <Label x:Name="select" Content="難易度を選択してください。" FontSize="110" Margin="245,212,185,0" VerticalAlignment="Top" Height="163"/>
         <Button Content="戻る" HorizontalAlignment="Left" Margin="62,46,0,0" VerticalAlignment="Top" Width="332" Height="117" Click="back" FontSize="60"/>
-        <Button Content="練習モード"  x:Name="Precmode" Margin="1245,46,0,0" VerticalAlignment="Top" Width="332" Height="117" Click="Precmode_Click" FontSize="60"/>
+        <Button Content="練習モード"  x:Name="Precmode" Margin="463,46,835,0" VerticalAlignment="Top" Width="332" Height="117" Click="Precmode_Click" FontSize="60"/>
 
     </Grid>
 </Page>

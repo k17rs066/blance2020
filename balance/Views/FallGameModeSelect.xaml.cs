@@ -36,7 +36,8 @@ namespace balance.Views
 
         private void Precmode_Click(object sender,EventArgs e)
         {
-
+            var nextPage = new FallGame_Prac();
+            NavigationService.Navigate(nextPage);
 
         }
 
