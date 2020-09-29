@@ -45,18 +45,18 @@ namespace balance.Views
             datetimeb.Text = DateTime.Now.ToString();
         }
 
-        private void FTGame_Easy(object sender, RoutedEventArgs e)
+        private void FallGame_Easy(object sender, RoutedEventArgs e)
         {
             var nextPage = new FallGame_Easy();
             NavigationService.Navigate(nextPage);
         }
 
-        private void FTGame_Normal(object sender, RoutedEventArgs e)
+        private void FallGame_Normal(object sender, RoutedEventArgs e)
         {
             var nextPage = new FallGame_Normal();
             NavigationService.Navigate(nextPage);
         }
-        private void FTGame_Hard(object sender, RoutedEventArgs e)
+        private void FallGame_Hard(object sender, RoutedEventArgs e)
         {
             var nextPage = new FallGame_Hard();
             NavigationService.Navigate(nextPage);

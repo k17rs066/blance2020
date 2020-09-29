@@ -313,7 +313,7 @@ namespace balance.Views
                         dispatcharTimer.Tick += new EventHandler(dispatcharTimer_Tick);
 
 
-                        Application.Current.Properties["ftgamemodename"] = "落下ゲーム";
+                        Application.Current.Properties["ftgamemodename"] = "落下ゲーム(難しい)";
 
                         Application.Current.Properties["ftresult"] = target;
 

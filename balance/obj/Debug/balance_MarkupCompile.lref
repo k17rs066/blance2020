@@ -1,11 +1,12 @@
 ﻿
 
 FC:\Users\smkwlab02\Documents\GitHub\blanceNewGame\balance\Views\buttonresources.xaml;;
-FC:\Users\smkwlab02\Documents\GitHub\blanceNewGame\balance\Views\FTGameModeSelect.xaml;;
-FC:\Users\smkwlab02\Documents\GitHub\blanceNewGame\balance\Views\FTGame_Easy.xaml;;
-FC:\Users\smkwlab02\Documents\GitHub\blanceNewGame\balance\Views\FTGame_Hard.xaml;;
-FC:\Users\smkwlab02\Documents\GitHub\blanceNewGame\balance\Views\FTGame_Normal.xaml;;
+FC:\Users\smkwlab02\Documents\GitHub\blanceNewGame\balance\Views\FallGameModeSelect.xaml;;
 FC:\Users\smkwlab02\Documents\GitHub\blanceNewGame\balance\Views\FallGame.xaml;;
+FC:\Users\smkwlab02\Documents\GitHub\blanceNewGame\balance\Views\FallGame_Easy.xaml;;
+FC:\Users\smkwlab02\Documents\GitHub\blanceNewGame\balance\Views\FallGame_Hard.xaml;;
+FC:\Users\smkwlab02\Documents\GitHub\blanceNewGame\balance\Views\FallGame_Normal.xaml;;
+FC:\Users\smkwlab02\Documents\GitHub\blanceNewGame\balance\Views\FallGame_Prac.xaml;;
 FC:\Users\smkwlab02\Documents\GitHub\blanceNewGame\balance\Views\FTGameResult.xaml;;
 FC:\Users\smkwlab02\Documents\GitHub\blanceNewGame\balance\Views\GameResult.xaml;;
 FC:\Users\smkwlab02\Documents\GitHub\blanceNewGame\balance\Views\GameSelect.xaml;;

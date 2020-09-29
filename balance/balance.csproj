@@ -93,23 +93,26 @@
       <DependentUpon>Calibration.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\Class1.cs" />
-    <Compile Include="Views\FTGameModeSelect.xaml.cs">
-      <DependentUpon>FTGameModeSelect.xaml</DependentUpon>
+    <Compile Include="Views\FallGameModeSelect.xaml.cs">
+      <DependentUpon>FallGameModeSelect.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\FTGame_Easy.xaml.cs">
-      <DependentUpon>FTGame_Easy.xaml</DependentUpon>
+    <Compile Include="Views\FallGame.xaml.cs">
+      <DependentUpon>FallGame.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\FTGame_Hard.xaml.cs">
-      <DependentUpon>FTGame_Hard.xaml</DependentUpon>
+    <Compile Include="Views\FallGame_Easy.xaml.cs">
+      <DependentUpon>FallGame_Easy.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\FTGame_Normal.xaml.cs">
-      <DependentUpon>FTGame_Normal.xaml</DependentUpon>
+    <Compile Include="Views\FallGame_Hard.xaml.cs">
+      <DependentUpon>FallGame_Hard.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\FallGame_Normal.xaml.cs">
+      <DependentUpon>FallGame_Normal.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\MainTitle.xaml.cs">
       <DependentUpon>MainTitle.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\FallGame.xaml.cs">
-      <DependentUpon>FallGame.xaml</DependentUpon>
+    <Compile Include="Views\FallGame_Prac.xaml.cs">
+      <DependentUpon>FallGame_Prac.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\FTGameResult.xaml.cs">
       <DependentUpon>FTGameResult.xaml</DependentUpon>
@@ -188,19 +191,23 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\FTGameModeSelect.xaml">
+    <Page Include="Views\FallGameModeSelect.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\FTGame_Easy.xaml">
+    <Page Include="Views\FallGame.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="Views\FTGame_Hard.xaml">
+    <Page Include="Views\FallGame_Easy.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="Views\FTGame_Normal.xaml">
+    <Page Include="Views\FallGame_Hard.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\FallGame_Normal.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -208,7 +215,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="Views\FallGame.xaml">
+    <Page Include="Views\FallGame_Prac.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

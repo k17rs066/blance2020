@@ -61,7 +61,7 @@ namespace balance.Views
 
         private void fall(object sender, RoutedEventArgs e)
         {
-            var nextPage = new FTGameModeSelect();
+            var nextPage = new FallGameModeSelect();
             NavigationService.Navigate(nextPage);
         }
     }

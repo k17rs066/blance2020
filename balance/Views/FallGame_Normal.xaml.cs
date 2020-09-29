@@ -27,9 +27,9 @@ namespace balance.Views
     public partial class FallGame_Normal : Page
     {
 
-        public delegate void Refresh_fa(object sender, RoutedEventArgs e);
+        public delegate void FNormal1(object sender, RoutedEventArgs e);
 
-        public delegate void Refresh_fb(object sender, RoutedEventArgs e);
+        public delegate void FNormal2(object sender, RoutedEventArgs e);
 
         Wiimote wiimote = new Wiimote();
 
@@ -377,7 +377,9 @@ namespace balance.Views
 
                         startbutton.Content = "スタート";
 
+#pragma warning disable IDE0017 // オブジェクトの初期化を簡略化します
                         FTGameResult s = new FTGameResult(this.start, this.back, 1);
+#pragma warning restore IDE0017 // オブジェクトの初期化を簡略化します
                         s.Title = "FTGameResult";
                         s.ShowDialog();
 
