@@ -153,6 +153,9 @@
     <Compile Include="Views\New_k_record.xaml.cs">
       <DependentUpon>New_k_record.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\GameOfTag.xaml.cs">
+      <DependentUpon>GameOfTag.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\PasswordEdit.xaml.cs">
       <DependentUpon>PasswordEdit.xaml</DependentUpon>
     </Compile>
@@ -281,6 +284,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\New_k_record.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\GameOfTag.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

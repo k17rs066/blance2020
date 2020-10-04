@@ -64,5 +64,10 @@ namespace balance.Views
             var nextPage = new FallGameModeSelect();
             NavigationService.Navigate(nextPage);
         }
+        private void tag(object sender,RoutedEventArgs e)
+        {
+            var nextPage = new GameOfTag();
+            NavigationService.Navigate(nextPage);
+        }
     }
 }

@@ -14,8 +14,8 @@
         <Button Content="OK" FontSize="40" HorizontalAlignment="Left" Height="62" Margin="175,465,0,0" VerticalAlignment="Top" Width="183" Click="ok_Click"/>
         <ComboBox Name ="combo" FontSize ="50" HorizontalAlignment="Left" Height="65" Margin="388,225,0,0" VerticalAlignment="Top" Width="175"/>
         <ComboBox Name ="combokei" FontSize ="50" HorizontalAlignment="Left" Height="65" Margin="388,331,0,0" VerticalAlignment="Top" Width="175"/>
-        <Button x:Name="scorebutton" Content="スコアアタック" HorizontalAlignment="Left" Margin="135,101,0,0" VerticalAlignment="Top" Width="208" Height="59" FontSize="30" Click="scoreButton_Click"/>
-        <Button x:Name="timebutton" Content="タイムアタック" HorizontalAlignment="Left" Margin="436,101,0,0" VerticalAlignment="Top" Width="208" Height="59" FontSize="30" Click="timeButton_Click"/>
+        <Button x:Name="scorebutton" Content="スコアアタック" HorizontalAlignment="Left" Margin="74,101,0,0" VerticalAlignment="Top" Width="176" Height="59" FontSize="30" Click="scoreButton_Click"/>
+        <Button x:Name="timebutton" Content="タイムアタック" HorizontalAlignment="Left" Margin="267,101,0,0" VerticalAlignment="Top" Width="168" Height="59" FontSize="30" Click="timeButton_Click"/>
         <Label Content="ゲームモード・クリアライン・計測時間/回数を選択してください。" HorizontalAlignment="Left" Margin="99,27,0,0" VerticalAlignment="Top" Height="43" Width="581" FontSize="24"/>
     </Grid>
 </Window>

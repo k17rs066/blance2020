@@ -7,8 +7,9 @@
 	Title="GameMode" Height="1080" Width="1920">
 
     <Grid>
-        <Canvas HorizontalAlignment="Left" Name="leftleg" Background="AliceBlue" Height="703" Margin="110,170,0,0" VerticalAlignment="Top" Width="200"/>
-        <Canvas HorizontalAlignment="Left" Name="rightleg" Background="AliceBlue" Height="703" Margin="482,175,0,0" VerticalAlignment="Top" Width="200"/>
+        <TextBlock Text="アタックゲーム（練習モード）" Margin="55,60,1195,919" FontSize="50"/>
+        <Canvas HorizontalAlignment="Left" Name="leftleg" Background="AliceBlue" Height="698" Margin="110,305,0,0" VerticalAlignment="Top" Width="200"/>
+        <Canvas HorizontalAlignment="Left" Name="rightleg" Background="AliceBlue" Height="698" Margin="482,305,0,0" VerticalAlignment="Top" Width="200"/>
         <Canvas HorizontalAlignment="Left" Name="bdraw" Background="Black" Height="465.6" Margin="973.2,537.684,0,0" VerticalAlignment="Top" Width="859.2">
             <Rectangle Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="25" Margin="350,215,0,0" VerticalAlignment="Top" Width="150"/>
             <Rectangle Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="25" Margin="350,215,0,0" VerticalAlignment="Top" Width="150" RenderTransformOrigin="0.5,0.5">
@@ -25,10 +26,10 @@
             <Label x:Name="rightflag" Content="" Canvas.Left="616" Canvas.Top="160" Height="139" Width="136" FontSize="120" FontWeight="Bold" Foreground="#FFF4F4F5"/>
 
         </Canvas>
-        <Button Name ="back" Content="戻る" FontSize="50" HorizontalAlignment="Left" Height="99" Margin="1441,28,0,0" VerticalAlignment="Top" Width="398" Click="bac"/>
-        <Button Name ="scorea" Content="スコアアタック" FontSize ="50" HorizontalAlignment="Left" Height="101" Margin="760,164,0,0" VerticalAlignment="Top" Width="439" Click="set_score" />
-        <Button Name ="timea" Content="タイムアタック" FontSize ="50" HorizontalAlignment="Left" Height="101" Margin="1441,164,0,0" VerticalAlignment="Top" Width="398" Click="set_time"/>
-        <Button Name ="con" Content="スタート" FontSize ="50" HorizontalAlignment="Left" Height="99" Margin="1441,305,0,0" VerticalAlignment="Top" Width="398" Click="cone"/>
+        <Button Name ="back" Content="戻る" FontSize="50" HorizontalAlignment="Left" Height="99" Margin="1477,44,0,0" VerticalAlignment="Top" Width="398" Click="bac"/>
+        <Button Name ="scorea" Content="スコアアタック" FontSize ="50" HorizontalAlignment="Left" Height="101" Margin="1400,428,0,0" VerticalAlignment="Top" Width="439" Click="set_score" />
+        <Button Name ="timea" Content="タイムアタック" FontSize ="50" HorizontalAlignment="Left" Height="101" Margin="1393,282,0,0" VerticalAlignment="Top" Width="439" Click="set_time"/>
+        <Button Name ="con" Content="スタート" FontSize ="50" HorizontalAlignment="Left" Height="99" Margin="687,44,0,0" VerticalAlignment="Top" Width="398" Click="cone"/>
         <!--        <Rectangle Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="25" Margin="1333.2,702,0,0" VerticalAlignment="Top" Width="150"/>
         <Rectangle Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="25" Margin="1334.391,705.673,0,0" VerticalAlignment="Top" Width="150" RenderTransformOrigin="0.5,0.5">
             <Rectangle.RenderTransform>
@@ -44,19 +45,19 @@
         <TextBlock Name ="leftpar" HorizontalAlignment="Left" FontSize="100" Height="125.374" Margin="110.149,877.91,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="240"/>
         <TextBlock Name ="rightpar" HorizontalAlignment="Left" FontSize ="100" Height="125.374" Margin="445.2,877.91,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="240"/>
         <TextBlock Name ="settin" FontSize ="50" HorizontalAlignment="Left" Height="99.2" Margin="759.6,283.657,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="695.4"/>
-        <Button Content="練習モード" FontSize="50" Height="99.2" HorizontalAlignment="Left" Width="429" Margin="770,305,0,676"/>
+        <Button Content="通常モード" FontSize="50" Height="99.2" HorizontalAlignment="Left" Width="429" Margin="870,428,0,553"/>
         <!--leftpar　左の％
         　　rightpar　右の％
         　　settin 設定したクリアライン、時間（回数）
         　　tim 残り秒数
             cc　回数
         　　next 青い■-->
-        <Canvas Name="next" HorizontalAlignment="Left" Height="50" Margin="187.6,50.6,0,0" VerticalAlignment="Top" Width="400" RenderTransformOrigin="0.5,0.5"/>
+        <Canvas Name="next" HorizontalAlignment="Left" Height="50" Margin="195,215,0,0" VerticalAlignment="Top" Width="400" RenderTransformOrigin="0.5,0.5"/>
         <TextBlock Name ="tim" FontSize="80" HorizontalAlignment="Left" Height="95.209" Margin="1114.925,404.191,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="350.325"/>
         <TextBlock Name ="cc" FontSize="80" HorizontalAlignment="Left" Height="95.209" Margin="759.6,404.191,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="350.325"/>
         <Label x:Name="countdown" Content="" HorizontalAlignment="Left" Margin="687,356,0,0" Height="374" Width="512"   FontSize="250" FontWeight="Bold" VerticalAlignment="Top" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Background="{x:Null}" Foreground="#FFF72218" />
         <Slider HorizontalAlignment="Left" VerticalAlignment="Top"/>
-        <Button  Content="設定" FontSize ="50" HorizontalAlignment="Left" Height="101" Margin="760,28,0,0" VerticalAlignment="Top" Width="439" Click="setDialog"/>
+        <Button  Content="設定" FontSize ="50" HorizontalAlignment="Left" Height="101" Margin="860,285,0,0" VerticalAlignment="Top" Width="439" Click="setDialog"/>
 
     </Grid>
 </Page>

@@ -9,6 +9,7 @@
       Title="GameSelect">
 
     <Grid>
+        <Button Name="バランス鬼ごっこ" Margin="1810,912,0,0" Click="tag"/> 
         <Button Margin="1335,430,48,173" Width="537" Height="477" Click="fall" FontSize="70" HorizontalAlignment="Center" VerticalAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Top"  Background="#FF7f50">
             <Button.Content>
                 <Grid>
