@@ -101,9 +101,9 @@ namespace balance.Views
                     yza = bbs.CenterOfGravity.Y * 9.6 * 3 + 337 - 35;//*(Canvas.Height/ballHeight)*倍率 + (Canvas.Height/2) - (ballHeight /2)
                     //                  leftsize = 700 - (350 + 14 * (bbs.CenterOfGravity.X));
                     leftsize = (1 - (xza / 790)) * 700;
-                    if (xza > 978) //枠内に収まるように
+                    if (xza > 1173) //枠内に収まるように
                     {
-                        xza = 978;// 1200 - 222 bdraw.Width - ballSize
+                        xza = 1173;// 1200 - 222 bdraw.Width - ballSize
                     }
                     else if (xza < 0)
                     {
@@ -133,34 +133,47 @@ namespace balance.Views
                     //                * (pictureBox1.Width / ballWidth)) + (pictureBox1.Width / 2) - (ballWidth / 2)
 
                     //敵
-
+                    //分岐：敵が自分を追尾
                     if (xza > xe)
                     {
-                        xe += 1;
+                        xe += 0.5;
 
                     }
 
                     if(xza<xe)
                     {
-                        xe--;
+                        xe -= 0.5;
                     }
                     if (yza > ye)
                     {
-                        ye++;
+                        ye+=0.5;
                     }
                     if (yza < ye)
                     {
-                        ye--;
+                        ye-=0.5;
                     }
+
                     if(this.Enemy!=null)
                     {
                         this.field.Children.Remove(this.Enemy);
                     }
-                    this.Enemy = new Ellipse() { Fill = System.Windows.Media.Brushes.Red, Width =45, Height=45 , Margin = new Thickness(xe,ye,0,0)};
+
+                    ImageBrush enemy = new ImageBrush();
+                    enemy.ImageSource = new BitmapImage(new Uri("C:/Users/smkwlab02/Documents/GitHub/blanceNewGame/balance/Image/noumen.png"));
+                    this.Enemy = new Ellipse() { Fill = enemy, Width =45, Height=45 , Margin = new Thickness(xe,ye,0,0)};
                     this.field.Children.Add(this.Enemy);
-                    if (xe > 978)   //枠内に収まるようにする
+
+                    double r = 35 + 35; //半径の和
+                    double x = xza - xe;    //2つの円の中心のx座標の距離
+                    double y = yza - ye;    //2つの円の中心のy座標の距離
+
+                    if (r * r>= x*x + y*y) {//当たり判定、　 ---三平方の定理を利用---
+                        GameOver_flg = true;
+
+                    }
+                    if (xe > 1173)   //枠内に収まるようにする
                     {
-                        xe = 978;
+                        xe = 1173;
 
                     }else if(xe < 0){
 
@@ -187,9 +200,9 @@ namespace balance.Views
         void dispatcharTimer_Tick(object sender, EventArgs e)
         {
 
-            timekeeper--;
+            time_t--;
 
-            time.Content = "残り時間     " + timekeeper + "秒";
+            time.Content = "残り時間     " + time_t + "秒";
         }
         private void timeok_Click(object sender, RoutedEventArgs e)
         {
@@ -229,7 +242,7 @@ namespace balance.Views
                 countdown.Content = "3";
                 cdtime = 0;
 
-                count.Content = "獲得点数    0点";
+//                 count.Content = "獲得点数    0点";
                 wiimote.Connect();
                 dispatcharTimer11.Start();
             }
