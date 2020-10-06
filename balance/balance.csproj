@@ -159,6 +159,9 @@
     <Compile Include="Views\PasswordEdit.xaml.cs">
       <DependentUpon>PasswordEdit.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\TargetGame _Prac.xaml.cs">
+      <DependentUpon>TargetGame _Prac.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\TargetGame.xaml.cs">
       <DependentUpon>TargetGame.xaml</DependentUpon>
     </Compile>
@@ -294,6 +297,10 @@
     <Page Include="Views\PasswordEdit.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\TargetGame _Prac.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
     <Page Include="Views\TargetGame.xaml">
       <SubType>Designer</SubType>

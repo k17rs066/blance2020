@@ -160,10 +160,10 @@ namespace balance.Views
 
                     ImageBrush enemy = new ImageBrush();
                     enemy.ImageSource = new BitmapImage(new Uri("C:/Users/smkwlab02/Documents/GitHub/blanceNewGame/balance/Image/noumen.png"));
-                    this.Enemy = new Ellipse() { Fill = enemy, Width =45, Height=45 , Margin = new Thickness(xe,ye,0,0)};
+                    this.Enemy = new Ellipse() { Fill = enemy, Width =250, Height=250 , Margin = new Thickness(xe,ye,0,0)};
                     this.field.Children.Add(this.Enemy);
 
-                    double r = 35 + 35; //半径の和
+                    double r = 35 + 125; //半径の和
                     double x = xza - xe;    //2つの円の中心のx座標の距離
                     double y = yza - ye;    //2つの円の中心のy座標の距離
 
@@ -171,20 +171,22 @@ namespace balance.Views
                         GameOver_flg = true;
 
                     }
-                    if (xe > 1173)   //枠内に収まるようにする
-                    {
-                        xe = 1173;
 
-                    }else if(xe < 0){
-
-                        xe = 0;
-                    }else if(ye > 605)
+                    //枠内に収まるようにする 
+                    if (xe > 945)   //1200-255  (枠からはみ出さないように5px余分にとる)
                     {
-                        ye = 605;
+                        xe = 945;
 
-                    }else if(ye < 0)
+                    }else if(xe < 5){
+
+                        xe = 5;
+                    }else if(ye > 420) //675-255
                     {
-                        ye = 0;
+                        ye = 420;
+
+                    }else if(ye < 5)
+                    {
+                        ye = 5;
                     }
 
                     
