@@ -2244,7 +2244,6 @@ C:\Users\balance\Documents\GitHub\blanceNewGame\balance\bin\Debug\EntityFramewor
 C:\Users\balance\Documents\GitHub\blanceNewGame\balance\bin\Debug\EntityFramework.SqlServer.xml
 C:\Users\balance\Documents\GitHub\blanceNewGame\balance\bin\Debug\System.Data.SQLite.xml
 C:\Users\balance\Documents\GitHub\blanceNewGame\balance\bin\Debug\System.Data.SQLite.dll.config
-C:\Users\balance\Documents\GitHub\blanceNewGame\balance\obj\Debug\balance.csprojAssemblyReference.cache
 C:\Users\balance\Documents\GitHub\blanceNewGame\balance\obj\Debug\Views\Calibration.baml
 C:\Users\balance\Documents\GitHub\blanceNewGame\balance\obj\Debug\Views\MainTitle.baml
 C:\Users\balance\Documents\GitHub\blanceNewGame\balance\obj\Debug\Views\GameMode.baml

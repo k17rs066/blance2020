@@ -13,7 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.Windows.Threading;
-
+using System.IO;
 using WiimoteLib;
 using balance.DataBase;
 
@@ -159,7 +159,8 @@ namespace balance.Views
                     }
 
                     ImageBrush enemy = new ImageBrush();
-                    enemy.ImageSource = new BitmapImage(new Uri("C:/Users/smkwlab02/Documents/GitHub/blanceNewGame/balance/Image/noumen.png"));
+                    string abspath = System.IO.Path.GetFullPath("Image/noumen.png");    //絶対パスを取得
+                    enemy.ImageSource = new BitmapImage(new Uri(abspath));  //
                     this.Enemy = new Ellipse() { Fill = enemy, Width =250, Height=250 , Margin = new Thickness(xe,ye,0,0)};
                     this.field.Children.Add(this.Enemy);
 
