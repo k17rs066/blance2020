@@ -2324,3 +2324,4 @@ C:\Users\balance\Documents\GitHub\blanceNewGame\balance\obj\Debug\balance.csproj
 C:\Users\balance\Documents\GitHub\blanceNewGame\balance\obj\Debug\balance.csproj.CopyComplete
 C:\Users\balance\Documents\GitHub\blanceNewGame\balance\obj\Debug\balance.exe
 C:\Users\balance\Documents\GitHub\blanceNewGame\balance\obj\Debug\balance.pdb
+C:\Users\balance\Documents\GitHub\blanceNewGame\balance\obj\Debug\balance.csprojAssemblyReference.cache

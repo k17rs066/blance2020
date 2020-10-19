@@ -48,7 +48,7 @@ namespace balance.Views
 
         double xe, ye;
         double spe;
-        
+
 
         String SQL = "";
         int user_id = -1;
@@ -60,7 +60,8 @@ namespace balance.Views
         int time_t; //計測タイム
         DispatcherTimer dispatcharTimer11; //カウントダウンの秒数を保持する
         int cdtime;
- 
+
+
 
         public GameOfTag()
         {
@@ -82,7 +83,19 @@ namespace balance.Views
             dispatcharTimer11.Tick += dispatcharTimer11_Tick;
 
 
+            for (int i = 30; i <= 90; i += 30)
+            {
+                if (i == timekeeper)
+                    {
+                        timepercent.Items.Add(new ComboBoxItem() { IsSelected = true, Content = i });
+                    }
+                    else
+                    {
+                    timepercent.Items.Add(i);
+                    }
+            }
         }
+
         void OnWiimoteChanged(object sender, WiimoteChangedEventArgs e)
         {
             if (game == true)
@@ -190,9 +203,7 @@ namespace balance.Views
                         ye = 5;
                     }
 
-                    dispatcharTimer = new DispatcherTimer(DispatcherPriority.Normal);
-                    dispatcharTimer.Interval = new TimeSpan(0, 0, 1);
-                    dispatcharTimer.Tick += new EventHandler(dispatcharTimer_Tick);
+
 
                     if (time_t == 0)    //制限時間まで逃げきれたら
                     {
@@ -200,8 +211,12 @@ namespace balance.Views
                         PlaySound("clear.wav");
                         dispatcharTimer.Stop();
                         Application.Current.Properties["GameResult"] = "クリア！";
-                        Application.Current.Properties["GameResultTime"]=""
+                        Application.Current.Properties["GameResultTime"] = "";
 
+
+                        dispatcharTimer = new DispatcherTimer(DispatcherPriority.Normal);
+                        dispatcharTimer.Interval = new TimeSpan(0, 0, 1);
+                        dispatcharTimer.Tick += new EventHandler(dispatcharTimer_Tick);
                     }
 
 
@@ -314,6 +329,12 @@ namespace balance.Views
                 player.Stop();
                 player = null;
             }
+        }
+
+
+        private void Tagsetting_Click(object sender,RoutedEventArgs e)
+        {
+
         }
 
 

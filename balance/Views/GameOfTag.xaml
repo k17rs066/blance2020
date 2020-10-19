@@ -28,7 +28,7 @@
         <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="131" Margin="75,182,0,0" VerticalAlignment="Top" Width="629">
             <Label x:Name="con" Content="秒" HorizontalAlignment="Left" VerticalAlignment="Top" Height="65" Width="104" FontSize="48" Margin="309,33,0,0" RenderTransformOrigin="-0.021,2.177" HorizontalContentAlignment="Center" />
         </Border>
-
+        <Button Margin="760,184,1010,775" Content="設定" Click="TagSetting_click" FontSize="30"/>
         <Button x:Name="Pracmode"   Content="練習モード" HorizontalAlignment="Left" VerticalAlignment="Top" Width="319" Height="113"  FontSize="60" Margin="1489,192,0,0"/>
         <!--Click="NomalMode_Click"-->
 

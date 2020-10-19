@@ -20,19 +20,19 @@
             <Canvas.Background>
                 <SolidColorBrush Color="{DynamicResource {x:Static SystemColors.GradientInactiveCaptionColorKey}}"/>
             </Canvas.Background>
-            <Ellipse x:Name="ball1" Fill="#FF6AE226" Height="100" Width="100" Canvas.Left="264" Canvas.Top="546" MouseLeftButtonDown="mark0_MouseLeftButtonDown"
+            <Ellipse x:Name="ball1" Fill="#FF6AE226" Height="100" Width="100" Canvas.Left="180" Canvas.Top="536" MouseLeftButtonDown="mark0_MouseLeftButtonDown"
                  MouseLeftButtonUp="mark0_MouseLeftButtonUp"
                  MouseMove="mark0_MouseMove"/>
             <Ellipse x:Name="ball2" Fill="#FF6AE226" Height="100" Canvas.Left="476" Canvas.Top="536" Width="100" MouseLeftButtonDown="mark0_MouseLeftButtonDown"
                  MouseLeftButtonUp="mark0_MouseLeftButtonUp"
                  MouseMove="mark0_MouseMove"/>
-            <Ellipse x:Name="ball3" Fill="#FF6AE226" Height="100" Canvas.Left="704" Canvas.Top="546" Width="100" MouseLeftButtonDown="mark0_MouseLeftButtonDown"
+            <Ellipse x:Name="ball3" Fill="#FF6AE226" Height="100" Canvas.Left="715" Canvas.Top="536" Width="100" MouseLeftButtonDown="mark0_MouseLeftButtonDown"
                  MouseLeftButtonUp="mark0_MouseLeftButtonUp"
                  MouseMove="mark0_MouseMove"/>
-            <Ellipse x:Name="ball4" Fill="#FF6AE226" Height="100" Canvas.Left="929" Canvas.Top="546" Width="100" MouseLeftButtonDown="mark0_MouseLeftButtonDown"
+            <Ellipse x:Name="ball4" Fill="#FF6AE226" Height="100" Canvas.Left="930" Canvas.Top="536" Width="100" MouseLeftButtonDown="mark0_MouseLeftButtonDown"
                  MouseLeftButtonUp="mark0_MouseLeftButtonUp"
                  MouseMove="mark0_MouseMove"/>
-            <Ellipse x:Name="ball5" Fill="#FF6AE226" Height="100" Canvas.Left="1124" Canvas.Top="546" Width="100" MouseLeftButtonDown="mark0_MouseLeftButtonDown"
+            <Ellipse x:Name="ball5" Fill="#FF6AE226" Height="100" Canvas.Left="1160" Canvas.Top="536" Width="100" MouseLeftButtonDown="mark0_MouseLeftButtonDown"
                  MouseLeftButtonUp="mark0_MouseLeftButtonUp"
                  MouseMove="mark0_MouseMove"/>
         </Canvas>
