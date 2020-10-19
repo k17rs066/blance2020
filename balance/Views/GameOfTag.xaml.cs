@@ -332,9 +332,14 @@ namespace balance.Views
         }
 
 
-        private void Tagsetting_Click(object sender,RoutedEventArgs e)
+        private void TagSetting_Click(object sender,RoutedEventArgs e)  //設定ボタンを押す
         {
+            Application.Current.Properties[""]="";
+            Application.Current.Properties[""] = "";
 
+
+            Window w = new Tagsetting();
+            w.ShowDialog();
         }
 
 
