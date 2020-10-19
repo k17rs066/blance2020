@@ -159,7 +159,7 @@ namespace balance.Views
                     }
 
                     ImageBrush enemy = new ImageBrush();
-                    string abspath = System.IO.Path.GetFullPath("Image/noumen.png");    //絶対パスを取得
+                    string abspath = System.IO.Path.GetFullPath("Image/akaoni.png");    //絶対パスを取得
                     enemy.ImageSource = new BitmapImage(new Uri(abspath));  //
                     this.Enemy = new Ellipse() { Fill = enemy, Width =250, Height=250 , Margin = new Thickness(xe,ye,0,0)};
                     this.field.Children.Add(this.Enemy);
@@ -190,12 +190,27 @@ namespace balance.Views
                         ye = 5;
                     }
 
-                    
+                    dispatcharTimer = new DispatcherTimer(DispatcherPriority.Normal);
+                    dispatcharTimer.Interval = new TimeSpan(0, 0, 1);
+                    dispatcharTimer.Tick += new EventHandler(dispatcharTimer_Tick);
 
                     if (time_t == 0)    //制限時間まで逃げきれたら
                     {
+                        game = false;
+                        PlaySound("clear.wav");
+                        dispatcharTimer.Stop();
+                        Application.Current.Properties["GameResult"] = "クリア！";
+                        Application.Current.Properties["GameResultTime"]=""
 
                     }
+
+
+
+                    Application.Current.Properties["GameTitle"] = "鬼ごっこ";
+
+
+                    startbutton.Content = "スタート";
+
                 }));
             }
                 

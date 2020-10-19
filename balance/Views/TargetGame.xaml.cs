@@ -44,6 +44,10 @@ namespace balance.Views
         private Label drawingLabel = null; //カウントダウン表示
         private Label drawingLabel1 = null; //END表示
 
+
+        private Rectangle DrawingTarget = null;
+        private Label DrawingTargetLabel1 = null;
+
         double leftsize = 0;  //左足の加重量
         double rightsize = 0; //右足の加重量
 
@@ -165,6 +169,7 @@ namespace balance.Views
                         this.beback.Children.Remove(this.target1);
                     }
 
+                   //DrawingTarget = new Rectangle() { Fill = System.Windows.Media.Brushes.LightGray, Width =100, Height =100, Margin = new Thickness(0,0), };
                     this.beback.Children.Add(this.target1);
                     /*        double hlength = 35 + 44; //重心半径　-　標的半径
                             double xlength = xza - ta[0, 0]; //重心X座標　-　標的X座標
@@ -254,6 +259,7 @@ namespace balance.Views
         }
 
         
+        //ターゲットに当たった時の処理
 
         void atari(double a, double b, int han)
         {
@@ -528,6 +534,11 @@ namespace balance.Views
                 target3.Background = imageBrush3;
                 target4.Background = imageBrush4;
                 target5.Background = imageBrush5;
+
+
+
+
+                
                 
             }
             else if (startbutton.Content.Equals("リスタート"))
