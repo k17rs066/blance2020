@@ -2175,7 +2175,6 @@ C:\Users\smkwlab02\Documents\GitHub\blanceNewGame\balance\obj\Debug\Views\GameOf
 C:\Users\smkwlab02\Documents\GitHub\blanceNewGame\balance\obj\Debug\Views\GameOfTag.baml
 C:\Users\smkwlab02\Documents\GitHub\blanceNewGame\balance\obj\Debug\Views\TargetGame _Prac.g.cs
 C:\Users\smkwlab02\Documents\GitHub\blanceNewGame\balance\obj\Debug\Views\TargetGame _Prac.baml
-C:\Users\smkwlab02\Documents\GitHub\blanceNewGame\balance\obj\Debug\balance.csprojAssemblyReference.cache
 C:\Users\balance\Documents\GitHub\blanceNewGame\blanceNewGame\balance\obj\Debug\balance.csprojAssemblyReference.cache
 C:\Users\balance\Documents\GitHub\blanceNewGame\blanceNewGame\balance\obj\Debug\Views\Calibration.baml
 C:\Users\balance\Documents\GitHub\blanceNewGame\blanceNewGame\balance\obj\Debug\Views\MainTitle.baml
@@ -2325,3 +2324,6 @@ C:\Users\balance\Documents\GitHub\blanceNewGame\balance\obj\Debug\balance.csproj
 C:\Users\balance\Documents\GitHub\blanceNewGame\balance\obj\Debug\balance.exe
 C:\Users\balance\Documents\GitHub\blanceNewGame\balance\obj\Debug\balance.pdb
 C:\Users\balance\Documents\GitHub\blanceNewGame\balance\obj\Debug\balance.csprojAssemblyReference.cache
+C:\Users\smkwlab02\Documents\GitHub\blanceNewGame\balance\obj\Debug\Views\TagSetting.g.cs
+C:\Users\smkwlab02\Documents\GitHub\blanceNewGame\balance\obj\Debug\Views\TagSetting.baml
+C:\Users\smkwlab02\Documents\GitHub\blanceNewGame\balance\obj\Debug\balance.csprojAssemblyReference.cache

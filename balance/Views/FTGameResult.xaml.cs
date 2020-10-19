@@ -90,8 +90,8 @@ namespace balance.Views
             ftresult.Content = Application.Current.Properties["ftresult"].ToString() + " 点";
 
 
-                        fttokikai.Content = "計測時間";
-                        ftresulttime.Content = Application.Current.Properties["ftresulttime"].ToString() + " 秒";
+            fttokikai.Content = "計測時間";
+            ftresulttime.Content = Application.Current.Properties["ftresulttime"].ToString() + " 秒";
         }
 
 

@@ -28,6 +28,12 @@ namespace balance.Views
 
         delegate void UpdateWiimoteStateDelegate(object sender, WiimoteChangedEventArgs args);
 
+        public delegate void Refresh();
+
+        TagSetting set;
+
+        
+
         DispatcherTimer dispatcharTimer; //ゲームの秒数を保持する
 
         double leftsize = 0;  //左足の加重量
@@ -47,7 +53,7 @@ namespace balance.Views
 
 
         double xe, ye;
-        double spe;
+        public double spe=1.0;
 
 
         String SQL = "";
@@ -56,7 +62,7 @@ namespace balance.Views
         bool GameOver_flg = false;  //ゲームオーバーフラグ
 
         Boolean game = false;
-        int timekeeper = 30;    //選択タイムの保持
+        public int timekeeper = 30;    //選択タイムの保持
         int time_t; //計測タイム
         DispatcherTimer dispatcharTimer11; //カウントダウンの秒数を保持する
         int cdtime;
@@ -83,17 +89,7 @@ namespace balance.Views
             dispatcharTimer11.Tick += dispatcharTimer11_Tick;
 
 
-            for (int i = 30; i <= 90; i += 30)
-            {
-                if (i == timekeeper)
-                    {
-                        timepercent.Items.Add(new ComboBoxItem() { IsSelected = true, Content = i });
-                    }
-                    else
-                    {
-                    timepercent.Items.Add(i);
-                    }
-            }
+
         }
 
         void OnWiimoteChanged(object sender, WiimoteChangedEventArgs e)
@@ -149,21 +145,21 @@ namespace balance.Views
                     //分岐：敵が自分を追尾
                     if (xza > xe)
                     {
-                        xe += 0.5;
+                        xe += spe;
 
                     }
 
                     if(xza<xe)
                     {
-                        xe -= 0.5;
+                        xe -= spe;
                     }
                     if (yza > ye)
                     {
-                        ye+=0.5;
+                        ye+=spe;
                     }
                     if (yza < ye)
                     {
-                        ye-=0.5;
+                        ye-=spe;
                     }
 
                     if(this.Enemy!=null)
@@ -237,11 +233,7 @@ namespace balance.Views
 
             time.Content = "残り時間     " + time_t + "秒";
         }
-        private void timeok_Click(object sender, RoutedEventArgs e)
-        {
-            timekeeper = int.Parse(timepercent.Text);
-            time.Content = "残り時間     " + timekeeper + "秒";
-        }
+
         void dispatcharTimer11_Tick(object sender, EventArgs e)
         {
 
@@ -334,15 +326,20 @@ namespace balance.Views
 
         private void TagSetting_Click(object sender,RoutedEventArgs e)  //設定ボタンを押す
         {
-            Application.Current.Properties[""]="";
-            Application.Current.Properties[""] = "";
 
 
-            Window w = new Tagsetting();
-            w.ShowDialog();
+
+            set = new TagSetting();
+            set.ShowDialog();
+
+
+            spe = set.ReciveSpeed;
+
+            timekeeper = set.ReciveTime;
+            time_t = timekeeper;
+            time.Content = "残り時間     " + time_t + "秒";
+
         }
-
-
 
 
     }
