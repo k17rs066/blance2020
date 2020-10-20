@@ -13,6 +13,7 @@
         <Label Margin="131,308,469,198" RenderTransformOrigin="0.5,0.5" Content="・制限時間：" FontSize="30"/>
 
         <Label Margin="131,215,469,303" Content="・鬼の速さ：" FontSize="30" RenderTransformOrigin="0.5,0.5"/>
+        <Label Content="秒"  FontSize="30" Margin="625,308,109,0" Height="55" VerticalAlignment="Top"></Label>
         <ComboBox x:Name="OrgSpeed" Margin="410,215,180,296" FontSize="30"/>
         <ComboBox x:Name="TimeSet" Margin="410,308,180,210" FontSize="30"/>
         <Button Content="決定" FontSize="30" Margin="291,442,309,63" Click="Button_Click"/>
