@@ -215,11 +215,6 @@ namespace balance.Views
                         dispatcharTimer.Tick += new EventHandler(dispatcharTimer_Tick);
                     }
 
-
-
-                    Application.Current.Properties["GameTitle"] = "鬼ごっこ";
-
-
                     startbutton.Content = "スタート";
 
                 }));
@@ -326,15 +321,19 @@ namespace balance.Views
 
         private void TagSetting_Click(object sender,RoutedEventArgs e)  //設定ボタンを押す
         {
-
+            if (startbutton.Content.Equals("スタート"))
+            {
+                dispatcharTimer11.Stop();
+                startbutton.Content = "ストップ";
+            }
 
 
             set = new TagSetting();
             set.ShowDialog();
 
 
-            spe = set.ReciveSpeed;
 
+            spe = set.ReciveSpeed;
             timekeeper = set.ReciveTime;
             time_t = timekeeper;
             time.Content = "残り時間     " + time_t + "秒";
