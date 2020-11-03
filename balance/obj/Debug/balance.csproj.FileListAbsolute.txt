@@ -2231,7 +2231,6 @@ C:\Users\balance\Documents\GitHub\blanceNewGame\balance\obj\Debug\balance.csproj
 C:\Users\balance\Documents\GitHub\blanceNewGame\balance\obj\Debug\balance.csproj.CopyComplete
 C:\Users\balance\Documents\GitHub\blanceNewGame\balance\obj\Debug\balance.exe
 C:\Users\balance\Documents\GitHub\blanceNewGame\balance\obj\Debug\balance.pdb
-C:\Users\balance\Documents\GitHub\blanceNewGame\balance\obj\Debug\balance.csprojAssemblyReference.cache
 C:\Users\smkwlab02\Documents\GitHub\blanceNewGame\balance\bin\Debug\balance.exe.config
 C:\Users\smkwlab02\Documents\GitHub\blanceNewGame\balance\bin\Debug\balance.pdb
 C:\Users\smkwlab02\Documents\GitHub\blanceNewGame\balance\bin\Debug\EntityFramework.dll
@@ -2328,3 +2327,4 @@ C:\Users\smkwlab02\Documents\GitHub\blanceNewGame\balance\obj\Debug\balance.exe
 C:\Users\smkwlab02\Documents\GitHub\blanceNewGame\balance\obj\Debug\balance.pdb
 C:\Users\balance\Documents\GitHub\blanceNewGame\balance\obj\Debug\Views\TagSetting.g.cs
 C:\Users\balance\Documents\GitHub\blanceNewGame\balance\obj\Debug\Views\TagSetting.baml
+C:\Users\balance\Documents\GitHub\blanceNewGame\balance\obj\Debug\balance.csprojAssemblyReference.cache

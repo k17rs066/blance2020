@@ -17,9 +17,12 @@
             <Thumb x:Name="target1" Width="100" Height="100"
                Canvas.Left="126"
                Canvas.Top="92"
-               DragDelta="Thumb1_DragDelta"  RenderTransformOrigin="0.5,0.5" >
+               DragDelta="Thumb1_DragDelta"  RenderTransformOrigin="0.5,0.5" Margin="0" Cursor="None" >
+                <Thumb.BorderBrush>
+                    <ImageBrush Stretch="None" ImageSource="/balance;component/Image/1.png"/>
+                </Thumb.BorderBrush>
                 <Thumb.Background>
-                    <ImageBrush ImageSource="/balance;component/image/1.png"/>
+                    <ImageBrush ImageSource="/balance;component/Image/1.png" TileMode="FlipX"/>
                 </Thumb.Background>
             </Thumb>
             <Thumb x:Name="target2" Width="100" Height="100"
@@ -57,8 +60,8 @@
             <!-- Content="" Canvas.Left="342" Canvas.Top="245" Height="272" Width="545" FontWeight="Bold" FontSize="210"/-->
         </Canvas>
 
-        <Label Content="ターゲットゲーム" HorizontalAlignment="Left" Margin="75,10,0,0" VerticalAlignment="Top" Height="125" Width="473" FontSize="72"/>
-        <Button x:Name="startbutton" Content="スタート" HorizontalAlignment="Left" Margin="663,20,0,0" VerticalAlignment="Top" Width="322" Height="113" Click="start" FontSize="60"/>
+        <Label Content="ターゲットゲーム(通常モード)" HorizontalAlignment="Left" Margin="67,20,0,0" VerticalAlignment="Top" Height="125" Width="758" FontSize="72"/>
+        <Button x:Name="startbutton" Content="スタート" HorizontalAlignment="Left" Margin="113,157,0,0" VerticalAlignment="Top" Width="322" Height="113" Click="start" FontSize="60"/>
         <Button Content="戻る" HorizontalAlignment="Left" Margin="1510,20,0,0" VerticalAlignment="Top" Width="319" Height="113" Click="back" FontSize="60"/>
         <!--Button x:Name="fix" Content="固定配置" HorizontalAlignment="Left" Margin="75,175,0,0" VerticalAlignment="Top" Width="213" Height="107" FontSize="48" AutomationProperties.Name="1"/>
         <Button x:Name="free" Content="自由配置" HorizontalAlignment="Left" Margin="459,175,0,0" VerticalAlignment="Top" Width="213" Height="107" FontSize="48"/-->
@@ -67,7 +70,7 @@
         <Label x:Name="zyuu" Content="" HorizontalAlignment="Left" Margin="705,59,0,0" VerticalAlignment="Top" Height="80" Width="347" FontSize="36"/>
         <Label x:Name="tar1" Content="" HorizontalAlignment="Left" Margin="705,158,0,0" VerticalAlignment="Top" Height="80" Width="347" FontSize="36"/>
 
-        <Button x:Name="Precmode" Click="Precmode_Click" Content="練習モード" HorizontalAlignment="Left" VerticalAlignment="Top" Width="319" Height="113"  FontSize="60" Margin="1057,20,0,0"/>
+        <Button x:Name="Precmode" Click="Precmode_Click" Content="練習モード" HorizontalAlignment="Left" VerticalAlignment="Top" Width="319" Height="113"  FontSize="60" Margin="506,158,0,0"/>
 
 
     </Grid>
