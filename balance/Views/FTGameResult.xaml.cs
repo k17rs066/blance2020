@@ -37,9 +37,6 @@ namespace balance.Views
 
         
 
-        
-
-
 
         public FTGameResult(balance.Views.TargetGame.Refresh_a pRefresh_a, balance.Views.TargetGame.Refresh_b pRefresh_b)
         {

@@ -2328,3 +2328,4 @@ C:\Users\smkwlab02\Documents\GitHub\blanceNewGame\balance\obj\Debug\balance.pdb
 C:\Users\balance\Documents\GitHub\blanceNewGame\balance\obj\Debug\Views\TagSetting.g.cs
 C:\Users\balance\Documents\GitHub\blanceNewGame\balance\obj\Debug\Views\TagSetting.baml
 C:\Users\balance\Documents\GitHub\blanceNewGame\balance\obj\Debug\balance.csprojAssemblyReference.cache
+C:\Users\smkwlab02\Documents\GitHub\blanceNewGame\balance\obj\Debug\balance.csprojAssemblyReference.cache

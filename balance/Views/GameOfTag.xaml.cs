@@ -321,14 +321,15 @@ namespace balance.Views
 
         private void TagSetting_Click(object sender,RoutedEventArgs e)  //設定ボタンを押す
         {
-            if (startbutton.Content.Equals("スタート"))
+            if (startbutton.Content.Equals("ストップ"))
             {
                 dispatcharTimer11.Stop();
-                startbutton.Content = "ストップ";
+                startbutton.Content = "スタート";
             }
 
 
             set = new TagSetting();
+            game = false; dispatcharTimer.Stop();
             set.ShowDialog();
 
 
