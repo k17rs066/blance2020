@@ -28,11 +28,18 @@ namespace balance.Views
 
         delegate void UpdateWiimoteStateDelegate(object sender, WiimoteChangedEventArgs args);
 
-        public delegate void Refresh();
 
-        TagSetting set;
+        //public delegate void Refresh();
 
-        
+
+
+
+        TagSetting set; //設定画面のダイアログをセット
+
+        TagResult result;   //結果画面のダイアログをセット
+
+        public delegate void TagRestart(object sender, RoutedEventArgs e);  //デリゲート型の宣言
+        public delegate void TagEnd(object sender, RoutedEventArgs e);  
 
         DispatcherTimer dispatcharTimer; //ゲームの秒数を保持する
 
@@ -63,7 +70,7 @@ namespace balance.Views
 
         Boolean game = false;
         public int timekeeper = 30;    //選択タイムの保持
-        int time_t; //計測タイム
+        int time_t; //計測タイム ()
         DispatcherTimer dispatcharTimer11; //カウントダウンの秒数を保持する
         int cdtime;
 
@@ -77,6 +84,8 @@ namespace balance.Views
                 user_id = int.Parse(Application.Current.Properties["u_id"].ToString());
             }
 
+            Application.Current.Properties["TagSpeed"] = "普通";
+            Application.Current.Properties["GameResultTime"] = timekeeper;
             wiimote.WiimoteChanged += OnWiimoteChanged;
 
             dispatcharTimer = new DispatcherTimer(DispatcherPriority.Normal);
@@ -106,10 +115,12 @@ namespace balance.Views
                 }
                 else
                 {
-                    xza = bbs.CenterOfGravity.X * 17 * 2 + 600 - 35;//*(Canvas.Width/ballWidth)*倍率 + (Canvas.Width/2) - (ballWidth /2)
-                    yza = bbs.CenterOfGravity.Y * 9.6 * 3 + 337 - 35;//*(Canvas.Height/ballHeight)*倍率 + (Canvas.Height/2) - (ballHeight /2)
+                    xza = bbs.CenterOfGravity.X * 9.6 * 2 + 600 - 35;//*(Canvas.Width/ballWidth)*倍率 + (Canvas.Width/2) - (ballWidth /2)
+                    yza = bbs.CenterOfGravity.Y * 9.6 * 2 + 337 - 35;//*(Canvas.Height/ballHeight)*倍率 + (Canvas.Height/2) - (ballHeight /2)
                     //                  leftsize = 700 - (350 + 14 * (bbs.CenterOfGravity.X));
-                    leftsize = (1 - (xza / 790)) * 700;
+                    //leftsize = (1 - (xza / 790)) * 700;
+
+
                     if (xza > 1173) //枠内に収まるように
                     {
                         xza = 1173;// 1200 - 222 bdraw.Width - ballSize
@@ -167,6 +178,7 @@ namespace balance.Views
                         this.field.Children.Remove(this.Enemy);
                     }
 
+                    //敵（鬼）を表示
                     ImageBrush enemy = new ImageBrush();
                     string abspath = System.IO.Path.GetFullPath("Image/akaoni.png");    //絶対パスを取得
                     enemy.ImageSource = new BitmapImage(new Uri(abspath));  //
@@ -174,10 +186,10 @@ namespace balance.Views
                     this.field.Children.Add(this.Enemy);
 
                     double r = 35 + 125; //半径の和
-                    double x = xza - xe;    //2つの円の中心のx座標の距離
-                    double y = yza - ye;    //2つの円の中心のy座標の距離
+                    double x = xza - xe;    //2つの円の中心のx座標の差
+                    double y = yza - ye;    //2つの円の中心のy座標の差
 
-                    if (r * r>= x*x + y*y) {//当たり判定、　 ---三平方の定理を利用---
+                    if ((r * r)> ((x*x) + (y*y)) ) {//当たり判定、　 ---三平方の定理を利用---
                         GameOver_flg = true;
 
                     }
@@ -199,23 +211,42 @@ namespace balance.Views
                         ye = 5;
                     }
 
+                    if (GameOver_flg == true )
+                    {
+                        game = false;
+                        dispatcharTimer.Stop();
 
+                        Application.Current.Properties["GameResult"] = "ゲームオーバー!";
+                        Application.Current.Properties["GameResultTime"] = timekeeper;
+
+                        result = new TagResult(this.start,this.back);
+                        result.ShowDialog();
+
+                        startbutton.Content = "スタート";
+                    }
 
                     if (time_t == 0)    //制限時間まで逃げきれたら
                     {
                         game = false;
                         PlaySound("clear.wav");
                         dispatcharTimer.Stop();
-                        Application.Current.Properties["GameResult"] = "クリア！";
-                        Application.Current.Properties["GameResultTime"] = "";
+
 
 
                         dispatcharTimer = new DispatcherTimer(DispatcherPriority.Normal);
                         dispatcharTimer.Interval = new TimeSpan(0, 0, 1);
                         dispatcharTimer.Tick += new EventHandler(dispatcharTimer_Tick);
+
+                        Application.Current.Properties["GameResult"] = "クリア！";
+                        Application.Current.Properties["GameResultTime"] = timekeeper;
+
+                        result = new TagResult(this.start,this.back);
+                        result.ShowDialog();
+
+                        startbutton.Content = "スタート";
                     }
 
-                    startbutton.Content = "スタート";
+
 
                 }));
             }
@@ -235,9 +266,9 @@ namespace balance.Views
             cdtime++;
             countdown.Content = (3 - cdtime).ToString();
 
-            if (cdtime == 3) //スタート押されてると
+            if (cdtime == 3) //スタートが押されてると
             {
-
+                time_t = timekeeper;
                 countdown.Content = "";
                 dispatcharTimer11.Stop();
 
@@ -260,9 +291,17 @@ namespace balance.Views
 //                 target = 0;
                 countdown.Foreground = System.Windows.Media.Brushes.Red;
                 countdown.Content = "3";
+                GameOver_flg = false;
                 cdtime = 0;
 
-//                 count.Content = "獲得点数    0点";
+                //鬼のオブジェクト・座標を初期化
+                ye = 0; xe = 0;
+                this.field.Children.Remove(this.Enemy);
+
+                //重心のオブジェクト・座標を初期化
+                xza = 0;yza = 0;
+                this.field.Children.Remove(this.drawingBalance);
+
                 wiimote.Connect();
                 dispatcharTimer11.Start();
             }
@@ -321,11 +360,7 @@ namespace balance.Views
 
         private void TagSetting_Click(object sender,RoutedEventArgs e)  //設定ボタンを押す
         {
-            if (startbutton.Content.Equals("ストップ"))
-            {
-                dispatcharTimer11.Stop();
-                startbutton.Content = "スタート";
-            }
+
 
 
             set = new TagSetting();
@@ -337,7 +372,7 @@ namespace balance.Views
             spe = set.ReciveSpeed;
             timekeeper = set.ReciveTime;
             time_t = timekeeper;
-            time.Content = "残り時間     " + time_t + "秒";
+            time.Content = "残り時間     " + timekeeper + "秒";
 
         }
 

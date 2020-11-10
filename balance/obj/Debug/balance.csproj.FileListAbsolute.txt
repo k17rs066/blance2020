@@ -2329,3 +2329,5 @@ C:\Users\balance\Documents\GitHub\blanceNewGame\balance\obj\Debug\Views\TagSetti
 C:\Users\balance\Documents\GitHub\blanceNewGame\balance\obj\Debug\Views\TagSetting.baml
 C:\Users\balance\Documents\GitHub\blanceNewGame\balance\obj\Debug\balance.csprojAssemblyReference.cache
 C:\Users\smkwlab02\Documents\GitHub\blanceNewGame\balance\obj\Debug\balance.csprojAssemblyReference.cache
+C:\Users\smkwlab02\Documents\GitHub\blanceNewGame\balance\obj\Debug\Views\TagResult.g.cs
+C:\Users\smkwlab02\Documents\GitHub\blanceNewGame\balance\obj\Debug\Views\TagResult.baml

@@ -22,9 +22,8 @@ namespace balance.Views
     /// </summary>
     public partial class FTGameResult : Window
     {
-        public balance.Views.TargetGame.Refresh_a target_r = null;
-        public balance.Views.TargetGame.Refresh_b target_e = null;
-
+        public TargetGame.Refresh_a target_r = null;
+        public TargetGame.Refresh_b target_e = null;
 
 
 

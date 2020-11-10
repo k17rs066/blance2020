@@ -19,7 +19,7 @@ namespace balance.Views
     /// </summary>
     public partial class TagSetting : Window
     {
-        public GameOfTag.Refresh GetRefresh = null;
+        //public GameOfTag.Refresh GetRefresh = null;
 
         public double ReciveSpeed { get; set; }
         public int ReciveTime { get; set; }
@@ -62,14 +62,22 @@ namespace balance.Views
             if (OrgSpeed.Text == "速い")
             {
                 ReciveSpeed = 1.5;
+                Application.Current.Properties["TagSpeed"] = "速い";
             }
             else if (OrgSpeed.Text == "普通")
             {
                 ReciveSpeed = 1.0;
+                Application.Current.Properties["TagSpeed"] = "普通";
             }
             else if (OrgSpeed.Text == "遅い")
             {
                 ReciveSpeed = 0.5;
+                Application.Current.Properties["TagSpeed"] = "遅い";
+            }
+            else
+            {
+                ReciveSpeed = 1.0;
+                Application.Current.Properties["TagSpeed"] = "普通";
             }
 
             ReciveTime = int.Parse(TimeSet.Text);
