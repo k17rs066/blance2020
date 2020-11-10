@@ -71,7 +71,7 @@ namespace balance.Views
             }
             else if (OrgSpeed.Text == "遅い")
             {
-                ReciveSpeed = 0.5;
+                ReciveSpeed = 0;
                 Application.Current.Properties["TagSpeed"] = "遅い";
             }
             else
