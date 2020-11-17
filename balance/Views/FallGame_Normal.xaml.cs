@@ -170,17 +170,20 @@ namespace balance.Views
                     {
                         this.beback.Children.Remove(this.drawingBalance);
                     }
-                    ImageBrush kago= new ImageBrush();
-                    kago.ImageSource = new BitmapImage(new Uri("C:/Users/smkwlab02/Documents/GitHub/blanceNewGame/balance/Image/kago.png"));
+                    ImageBrush kago = new ImageBrush();
+                    string abskago = System.IO.Path.GetFullPath("Image/kago.png");    //絶対パスを取得
+                    kago.ImageSource = new BitmapImage(new Uri(abskago));  //イメージソースに代入
+
                     this.drawingBalance = new Rectangle() { Fill=kago, Width = 222, Height = 45, Margin = new Thickness(xza, 630, 0, 0), };
                     this.beback.Children.Add(this.drawingBalance);
 
                     /////////////玉(イチゴ)
                     int randtama = cRandom.Next(10);
                     int randtama1 = cRandom1.Next(20);
-
                     ImageBrush straw = new ImageBrush();
-                    straw.ImageSource = new BitmapImage(new Uri("C:/Users/smkwlab02/Documents/GitHub/blanceNewGame/balance/Image/strawberry.png"));
+                    string absstraw = System.IO.Path.GetFullPath("Image/straw.png");    //絶対パスを取得
+                    straw.ImageSource = new BitmapImage(new Uri(absstraw));  //イメージソースに代入
+
                     //int randtama1 = cRandom1.Next(10);
                     y += 2;        //落下する玉の速さ
                     if (this.drawingEllipse != null)
@@ -208,7 +211,8 @@ namespace balance.Views
 
                     /////////////玉2(芋虫)
                     ImageBrush caterpillar = new ImageBrush();
-                    caterpillar.ImageSource = new BitmapImage(new Uri("C:/Users/smkwlab02/Documents/GitHub/blanceNewGame/balance/Image/caterpillar.png"));
+                    string abscat = System.IO.Path.GetFullPath("Image/caterpillar.png");    //絶対パスを取得
+                    caterpillar.ImageSource = new BitmapImage(new Uri(abscat));  //イメージソースに代入
                     y1 += 2;
                     if (this.drawingEllipse1 != null)
                     {
@@ -234,8 +238,10 @@ namespace balance.Views
 
 
                     /////////////玉3(ばなな)
+
                     ImageBrush banana = new ImageBrush();
-                    banana.ImageSource = new BitmapImage(new Uri("C:/Users/smkwlab02/Documents/GitHub/blanceNewGame/balance/Image/banana.png"));
+                    string absbanana = System.IO.Path.GetFullPath("Image/banana.png");    //絶対パスを取得
+                    banana.ImageSource = new BitmapImage(new Uri(absbanana));
                     y2 += 2;
                     if (this.drawingEllipse2 != null)
                     {

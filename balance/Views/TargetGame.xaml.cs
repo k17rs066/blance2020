@@ -476,6 +476,7 @@ namespace balance.Views
             cdtime++;
             drawingLabel.Content = (3 - cdtime).ToString();
 
+            
             if (cdtime == 3) //スタート押されてると
             {
                 drawingLabel.Content = "";

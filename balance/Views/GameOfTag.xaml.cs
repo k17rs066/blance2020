@@ -152,26 +152,33 @@ namespace balance.Views
 
                     //                * (pictureBox1.Width / ballWidth)) + (pictureBox1.Width / 2) - (ballWidth / 2)
 
-                    //敵
-                    //分岐：敵が自分を追尾
-                    if (xza > xe)
-                    {
-                        xe += spe;
 
-                    }
+                    Task.Run(async () =>
+                    {
+                        //敵
+                        //分岐：敵が自分を追尾
+                        if (xza > xe)
+                        {
+                            await Task.Delay(100);
+                            xe += spe;
 
-                    if(xza<xe)
-                    {
-                        xe -= spe;
-                    }
-                    if (yza > ye)
-                    {
-                        ye+=spe;
-                    }
-                    if (yza < ye)
-                    {
-                        ye-=spe;
-                    }
+                        }
+
+                        if (xza < xe)
+                        {
+                            xe -= spe;
+
+                        }
+                        if (yza > ye)
+                        {
+                            ye += spe;
+                        }
+                        if (yza < ye)
+                        {
+                            ye -= spe;
+                        }
+                    });
+
 
                     if(this.Enemy!=null)
                     {
@@ -252,6 +259,7 @@ namespace balance.Views
             }
                 
         }
+
         void dispatcharTimer_Tick(object sender, EventArgs e)
         {
 
