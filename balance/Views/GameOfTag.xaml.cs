@@ -161,7 +161,7 @@ namespace balance.Views
 
                         }
 
-                        if (xza < xe)
+                        if (xza <= xe)
                         {
                             xe -= spe;
 
@@ -170,7 +170,7 @@ namespace balance.Views
                         {
                             ye += spe;
                         }
-                        if (yza < ye)
+                        if (yza <= ye)
                         {
                             ye -= spe;
                         }
@@ -187,7 +187,7 @@ namespace balance.Views
                     string abspath = System.IO.Path.GetFullPath("Image/akaoni.png");    //絶対パスを取得
                     enemy.ImageSource = new BitmapImage(new Uri(abspath));  //イメージソースに代入
 
-                    this.Enemy = new Ellipse() { Fill = enemy, Width =200, Height=200 , Margin = new Thickness(xe,0,0,ye)};
+                    this.Enemy = new Ellipse() { Fill = enemy, Width =200, Height=200 , Margin = new Thickness(xe,ye,0,0)};
                     this.field.Children.Add(this.Enemy);
 
                     double r = 35 + 100; //半径の和
@@ -311,7 +311,7 @@ namespace balance.Views
                 wiimote.Connect();
                 dispatcharTimer11.Start();
             }
-            else if (startbutton.Content.Equals("リスタート"))
+            else if (startbutton.Content.Equals("リスタート")) //リスタートの状態だと
             {
                 countdown.Foreground = System.Windows.Media.Brushes.Red;
                 countdown.Content = "3";
@@ -366,20 +366,17 @@ namespace balance.Views
 
         private void TagSetting_Click(object sender,RoutedEventArgs e)  //設定ボタンを押す
         {
-
-
-
+            startbutton.Content = "ストップ";
             set = new TagSetting();
             game = false; dispatcharTimer.Stop();
             set.ShowDialog();
-
 
 
             spe = set.ReciveSpeed;
             timekeeper = set.ReciveTime;
             time_t = timekeeper;
             time.Content = "残り時間     " + timekeeper + "秒";
-
+            startbutton.Content = "スタート";
         }
 
 
