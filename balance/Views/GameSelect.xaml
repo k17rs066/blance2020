@@ -9,39 +9,43 @@
       Title="GameSelect">
 
     <Grid>
-        <Button Name="バランス鬼ごっこ" Margin="1810,912,0,0" Click="tag"/> 
-        <Button Margin="1335,430,48,173" Width="537" Height="477" Click="fall" FontSize="70" HorizontalAlignment="Center" VerticalAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Top"  Background="#FF7f50">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="0*"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Button Name="バランス鬼ごっこ" Margin="1070,695,193,10" Click="tag" Grid.Row="1"/>
+        <Button Margin="180,0,1050,10" Width="690" Height="375" Click="fall" FontSize="70" HorizontalAlignment="Center" VerticalAlignment="Bottom" HorizontalContentAlignment="Center" VerticalContentAlignment="Top"  Background="#FF7f50" Grid.Row="1">
             <Button.Content>
-                <Grid>
-                    <Image Source="/balance;component/Image/fall.PNG" Width="491" Margin="0,0,0,-47" />
-                    <TextBlock Text="落下ゲーム" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="99,354,96,-145" />
+                <Grid Height="330">
+                    <Image Source="/balance;component/Image/fall.PNG" Margin="10,10,26,87" RenderTransformOrigin="0.518,0.442" />
+                    <TextBlock Text="落下ゲーム" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="80,254,66,-12" Height="88" Width="345" />
                 </Grid>
             </Button.Content>
         </Button>
 
-        <Button Margin="698,430,685,173" Width="537" Height="477" Click="target" FontSize="70" HorizontalAlignment="Center" VerticalAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Top"  Background="#FF7f50">
+        <Button Margin="1070,294,193,410" Width="657" Height="376" Click="target" FontSize="70" HorizontalAlignment="Center" VerticalAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Top"  Background="#FF7f50" Grid.Row="1">
             <Button.Content>
                 <Grid>
-                    <Image Source="/balance;component/Image/target.PNG" Width="491" Margin="0,0,0,-47" />
-                    <TextBlock Text="ターゲットゲーム" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="52,354,63,-145" Width="418" />
+                    <Image Source="/balance;component/Image/target.PNG" Width="491" Margin="21,10,21,108" />
+                    <TextBlock Text="ターゲットゲーム" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="58,269,57,10" Width="418" />
                 </Grid>
             </Button.Content>
         </Button>
 
-        <Button Margin="62,430,1321,173" Width="537" Height="477" Click="attack" FontSize="70" HorizontalAlignment="Center" VerticalAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Top"  Background="#FF7f50">
+        <Button Margin="180,294,1050,410" Width="690" Height="376" Click="attack" FontSize="70" HorizontalAlignment="Center" VerticalAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Top"  Background="#FF7f50" Grid.Row="1">
             <Button.Content>
-                <Grid>
-                    <Image Source="/balance;component/Image/attack.PNG" Width="491" Margin="0,0,0,-47" />
-                    <TextBlock Text="アタックゲーム" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="73,354,84,-146" Width="376" />
+                <Grid Height="366">
+                    <Image Source="/balance;component/Image/attack.PNG" Margin="40,30,54,88" />
+                    <TextBlock Text="アタックゲーム" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="100,278,113,0" Width="376" Height="88" />
                 </Grid>
             </Button.Content>
         </Button>
 
 
 
-        <TextBlock x:Name ="datetimeb" FontSize="80" HorizontalAlignment="Left" Margin="1122,46,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="114" Width="750"/>
-        <Label x:Name="select" Content="ゲームを選択してください。" FontSize="110" HorizontalAlignment="Left" Margin="366,207,0,0" VerticalAlignment="Top" Height="163" Width="1200"/>
-        <Button Content="戻る" HorizontalAlignment="Left" Margin="62,46,0,0" VerticalAlignment="Top" Width="332" Height="117" Click="back" FontSize="60"/>
+        <TextBlock x:Name ="datetimeb" FontSize="80" HorizontalAlignment="Center" Margin="1146,26,24,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="114" Width="750" Grid.Row="1"/>
+        <Label x:Name="select" Content="ゲームを選択してください。" FontSize="100" HorizontalAlignment="Center" Margin="410,140,310,0" VerticalAlignment="Top" Height="145" Width="1200" Grid.Row="1"/>
+        <Button Content="戻る" HorizontalAlignment="Left" Margin="73,26,0,0" VerticalAlignment="Top" Width="332" Height="114" Click="back" FontSize="60" Grid.Row="1"/>
 
 
     </Grid>

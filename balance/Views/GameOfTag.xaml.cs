@@ -43,8 +43,7 @@ namespace balance.Views
 
         DispatcherTimer dispatcharTimer; //ゲームの秒数を保持する
 
-        double leftsize = 0;  //左足の加重量
-        double rightsize = 0; //右足の加重量
+
 
 
         double xza = 0; //重心のX座標
@@ -60,7 +59,7 @@ namespace balance.Views
 
 
         double xe, ye;
-        public double spe=1.0;
+        public double spe=0.75;
 
 
         String SQL = "";
@@ -107,36 +106,36 @@ namespace balance.Views
             {
 
                 BalanceBoardState bbs = e.WiimoteState.BalanceBoardState;
+
                 if (bbs.WeightKg < 5)
                 {
-                    xza = 600 - 35;  //(Canvas.Width/2) - (ballWidth /2)
-                    yza = 337 - 35;  //(Canvas.Height/2) - (ballHeight /2)
-                    leftsize = 0;
+                    xza = 827 - 35;  //(Canvas.Width/2) - (ballWidth /2)
+                    yza = 350 - 35;  //(Canvas.Height/2) - (ballHeight /2)
+
                 }
                 else
                 {
-                    xza = bbs.CenterOfGravity.X * 9.6 * 2 + 600 - 35;//*(Canvas.Width/ballWidth)*倍率 + (Canvas.Width/2) - (ballWidth /2)
-                    yza = bbs.CenterOfGravity.Y * 9.6 * 2 + 337 - 35;//*(Canvas.Height/ballHeight)*倍率 + (Canvas.Height/2) - (ballHeight /2)
-                    //                  leftsize = 700 - (350 + 14 * (bbs.CenterOfGravity.X));
-                    //leftsize = (1 - (xza / 790)) * 700;
+                    xza = bbs.CenterOfGravity.X * 15 * 2 + 827 - 35;//*(Canvas.Width/ballWidth)*倍率 + (Canvas.Width/2) - (ballWidth /2)
+                    yza = bbs.CenterOfGravity.Y * 15 * 4 + 350 - 35;//*(Canvas.Height/ballHeight)*倍率 + (Canvas.Height/2) - (ballHeight /2)
 
 
-                    if (xza > 1173) //枠内に収まるように
+
+                    if (xza > 1627) //枠内に収まるように
                     {
-                        xza = 1173;// 1200 - 222 bdraw.Width - ballSize
+                        xza = 1627;//  bdraw.Width - ballSize
                     }
-                    else if (xza < 0)
+                    else if (xza < 5)
                     {
-                        xza = 0;
+                        xza = 5;
                     }
 
-                    if (yza > 605)
+                    if (yza > 630)
                     {
-                        yza = 605;// 675 - 70 bdraw.Height - ballSize
+                        yza = 630;//bdraw.Height - ballSize
                     }
-                    else if (yza < 0)
+                    else if (yza < 5)
                     {
-                        yza = 0;
+                        yza = 5;
                     }
                 }
 
@@ -150,8 +149,6 @@ namespace balance.Views
                     this.drawingBalance = new Ellipse() { Fill = System.Windows.Media.Brushes.LimeGreen, Width = 70, Height = 70, Margin = new Thickness(xza, yza, 0, 0) }; //重心のマーク
                     this.field.Children.Add(this.drawingBalance);
 
-                    //                * (pictureBox1.Width / ballWidth)) + (pictureBox1.Width / 2) - (ballWidth / 2)
-
 
                     Task.Run(async () =>
                     {
@@ -159,7 +156,7 @@ namespace balance.Views
                         //分岐：敵が自分を追尾
                         if (xza > xe)
                         {
-                            await Task.Delay(100);
+
                             xe += spe;
 
                         }
@@ -188,11 +185,12 @@ namespace balance.Views
                     //敵（鬼）を表示
                     ImageBrush enemy = new ImageBrush();
                     string abspath = System.IO.Path.GetFullPath("Image/akaoni.png");    //絶対パスを取得
-                    enemy.ImageSource = new BitmapImage(new Uri(abspath));  //
-                    this.Enemy = new Ellipse() { Fill = enemy, Width =250, Height=250 , Margin = new Thickness(xe,ye,0,0)};
+                    enemy.ImageSource = new BitmapImage(new Uri(abspath));  //イメージソースに代入
+
+                    this.Enemy = new Ellipse() { Fill = enemy, Width =200, Height=200 , Margin = new Thickness(xe,0,0,ye)};
                     this.field.Children.Add(this.Enemy);
 
-                    double r = 35 + 125; //半径の和
+                    double r = 35 + 100; //半径の和
                     double x = xza - xe;    //2つの円の中心のx座標の差
                     double y = yza - ye;    //2つの円の中心のy座標の差
 
@@ -202,16 +200,16 @@ namespace balance.Views
                     }
 
                     //枠内に収まるようにする 
-                    if (xe > 945)   //1200-255  (枠からはみ出さないように5px余分にとる)
+                    if (xe > 1349)   //(枠からはみ出さないように5px余分にとる)
                     {
-                        xe = 945;
+                        xe = 1349;
 
                     }else if(xe < 5){
 
                         xe = 5;
-                    }else if(ye > 420) //675-255
+                    }else if(ye > 695) //枠からはみ出さないように5px余分にとる
                     {
-                        ye = 420;
+                        ye = 695;
 
                     }else if(ye < 5)
                     {

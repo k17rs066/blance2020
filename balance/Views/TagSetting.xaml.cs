@@ -61,22 +61,22 @@ namespace balance.Views
 
             if (OrgSpeed.Text == "速い")
             {
-                ReciveSpeed = 1.5;
+                ReciveSpeed = 1.0;
                 Application.Current.Properties["TagSpeed"] = "速い";
             }
             else if (OrgSpeed.Text == "普通")
             {
-                ReciveSpeed = 1.0;
+                ReciveSpeed = 0.75;
                 Application.Current.Properties["TagSpeed"] = "普通";
             }
             else if (OrgSpeed.Text == "遅い")
             {
-                ReciveSpeed = 0;
+                ReciveSpeed = 0.5;
                 Application.Current.Properties["TagSpeed"] = "遅い";
             }
             else
             {
-                ReciveSpeed = 1.0;
+                ReciveSpeed = 0.75;
                 Application.Current.Properties["TagSpeed"] = "普通";
             }
 

@@ -9,7 +9,7 @@
       Title="鬼ごっこ">
 
     <Grid Width="1920">
-        <Canvas HorizontalAlignment="Left" x:Name="field" Height="675" Margin="364,340,0,0" VerticalAlignment="Top" Width="1200">
+        <Canvas HorizontalAlignment="Left" x:Name="field" Height="700" Margin="154,315,0,0" VerticalAlignment="Top" Width="1654">
             <Canvas.Background>
                 <SolidColorBrush Color="{DynamicResource {x:Static SystemColors.GradientActiveCaptionColorKey}}">
                 </SolidColorBrush>
