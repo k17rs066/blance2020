@@ -2231,7 +2231,6 @@ C:\Users\balance\Documents\GitHub\blanceNewGame\balance\obj\Debug\balance.exe
 C:\Users\balance\Documents\GitHub\blanceNewGame\balance\obj\Debug\balance.pdb
 C:\Users\balance\Documents\GitHub\blanceNewGame\balance\obj\Debug\Views\TagSetting.g.cs
 C:\Users\balance\Documents\GitHub\blanceNewGame\balance\obj\Debug\Views\TagSetting.baml
-C:\Users\balance\Documents\GitHub\blanceNewGame\balance\obj\Debug\balance.csprojAssemblyReference.cache
 C:\Users\balance\Documents\GitHub\blanceNewGame\balance\obj\Debug\Views\TagResult.g.cs
 C:\Users\balance\Documents\GitHub\blanceNewGame\balance\obj\Debug\Views\TagResult.baml
 C:\Users\smkwlab02\Documents\GitHub\blanceNewGame\balance\bin\Debug\balance.exe.config
@@ -2346,3 +2345,6 @@ C:\Users\balance\Documents\GitHub\blanceNewGame\balance\obj\Debug\Views\TargetSe
 C:\Users\balance\Documents\GitHub\blanceNewGame\balance\obj\Debug\Views\FallGameRule.baml
 C:\Users\balance\Documents\GitHub\blanceNewGame\balance\obj\Debug\Views\GameOfTag_Prac.g.cs
 C:\Users\balance\Documents\GitHub\blanceNewGame\balance\obj\Debug\Views\GameOfTag_Prac.baml
+C:\Users\balance\Documents\GitHub\blanceNewGame\balance\bin\Debug\balance.exe.CodeAnalysisLog.xml
+C:\Users\balance\Documents\GitHub\blanceNewGame\balance\bin\Debug\balance.exe.lastcodeanalysissucceeded
+C:\Users\balance\Documents\GitHub\blanceNewGame\balance\obj\Debug\balance.csprojAssemblyReference.cache
