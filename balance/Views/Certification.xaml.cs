@@ -67,7 +67,7 @@ namespace balance.Views
 
 
             ////ユーザ数をカウントし、buttonNumに代入
-            DBConnect.Connect("test.db");
+            DBConnect.Connect("kashiihara.db");
             DBConnect.ExecuteReader("SELECT COUNT(*) as num FROM t_user WHERE usertype = '患者' ORDER BY user_id");
             DBConnect.Reader.Read();
             ButtonNum = int.Parse(DBConnect.Reader[0].ToString());
@@ -110,13 +110,13 @@ namespace balance.Views
             }
 
             ////患者のボタンの作成
-            DBConnect.Connect("test.db");
+            DBConnect.Connect("kasiihara.db");
 //            DBConnect.ExecuteReader("SELECT * FROM t_user WHERE usertype = '患者' ORDER BY user_id Limit " +(14*(PageNum-1))+",14");
             DBConnect.ExecuteReader("SELECT * FROM t_user WHERE usertype = '患者' ORDER BY user_name_kana Limit " + (14 * (PageNum - 1)) + ",14");
 
             while (DBConnect.Reader.Read())
             {
-                    ButtonContent = DBConnect.Reader[2].ToString();
+                    ButtonContent = DBConnect.Reader[1].ToString();
                     ButtonName = DBConnect.Reader[0].ToString();
                     button[ButtonNu] = new Button() { Content = ButtonContent, FontSize = 50, Margin = margin, Width = 320, Height = 210,HorizontalContentAlignment = HorizontalAlignment.Center, HorizontalAlignment = HorizontalAlignment.Left, VerticalAlignment = VerticalAlignment.Top,VerticalContentAlignment=VerticalAlignment.Center, ClickMode = ClickMode.Press, Background = Brushes.Coral };
 
