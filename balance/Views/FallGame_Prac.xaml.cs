@@ -167,7 +167,7 @@ namespace balance.Views
                     /////////////玉
                     int randtama = cRandom.Next(12);
                     //int randtama1 = cRandom1.Next(10);
-                    y += 10;        //落下する玉の速さ
+                    y += 2;        //落下する玉の速さ
                     if (this.drawingEllipse != null)
                     {
                         this.beback.Children.Remove(this.drawingEllipse);

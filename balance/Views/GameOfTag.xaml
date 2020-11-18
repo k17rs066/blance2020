@@ -29,10 +29,8 @@
             <Label x:Name="con" Content="秒" HorizontalAlignment="Left" VerticalAlignment="Top" Height="65" Width="104" FontSize="48" Margin="309,33,0,0" RenderTransformOrigin="-0.021,2.177" HorizontalContentAlignment="Center" />
         </Border-->
         <Button Margin="1255,192,0,0" Content="設定" Click="TagSetting_Click" FontSize="60" HorizontalAlignment="Left" VerticalAlignment="Top" Height="113" Width="159"/>
-        <Button x:Name="Pracmode"   Content="練習モード" HorizontalAlignment="Left" VerticalAlignment="Top" Width="319" Height="113"  FontSize="60" Margin="1489,192,0,0"/>
+        <Button x:Name="Pracmode"   Content="練習モード"  Click="PracMode"  HorizontalAlignment="Left" VerticalAlignment="Top" Width="319" Height="113"  FontSize="60" Margin="1489,192,0,0"/>
         <!--Click="NomalMode_Click"-->
-
-        <Button Content="ルール"  HorizontalAlignment="Left" Height="113" Margin="705,22,0,0" VerticalAlignment="Top" Width="155" FontSize="60" Background="Wheat" RenderTransformOrigin="1.71,1.442" />
         <!--Click="Rule_Click"-->
     </Grid>
 </Page>

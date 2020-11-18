@@ -67,7 +67,7 @@ namespace balance.Views
 
 
             ////ユーザ数をカウントし、buttonNumに代入
-            DBConnect.Connect("kashiihara.db");
+            DBConnect.Connect("kasiihara.db");
             DBConnect.ExecuteReader("SELECT COUNT(*) as num FROM t_user WHERE usertype = '患者' ORDER BY user_id");
             DBConnect.Reader.Read();
             ButtonNum = int.Parse(DBConnect.Reader[0].ToString());

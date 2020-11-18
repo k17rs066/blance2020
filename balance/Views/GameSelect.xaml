@@ -13,8 +13,7 @@
             <RowDefinition Height="0*"/>
             <RowDefinition/>
         </Grid.RowDefinitions>
-        <Button Name="バランス鬼ごっこ" Margin="1070,695,193,10" Click="tag" Grid.Row="1"/>
-        <Button Margin="180,0,1050,10" Width="690" Height="375" Click="fall" FontSize="70" HorizontalAlignment="Center" VerticalAlignment="Bottom" HorizontalContentAlignment="Center" VerticalContentAlignment="Top"  Background="#FF7f50" Grid.Row="1">
+        <Button Margin="180,0,1050,39" Width="690" Height="375" Click="fall" FontSize="70" HorizontalAlignment="Center" VerticalAlignment="Bottom" HorizontalContentAlignment="Center" VerticalContentAlignment="Top"  Background="#FF7f50" Grid.Row="1">
             <Button.Content>
                 <Grid Height="330">
                     <Image Source="/balance;component/Image/fall.PNG" Margin="10,10,26,87" RenderTransformOrigin="0.518,0.442" />
@@ -23,16 +22,29 @@
             </Button.Content>
         </Button>
 
-        <Button Margin="1070,294,193,410" Width="657" Height="376" Click="target" FontSize="70" HorizontalAlignment="Center" VerticalAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Top"  Background="#FF7f50" Grid.Row="1">
+        <Button Margin="1070,0,193,39" Width="657" Height="375" Click="tag" FontSize="70" HorizontalAlignment="Center" VerticalAlignment="Bottom" HorizontalContentAlignment="Center" VerticalContentAlignment="Top"  Background="#FF7f50" Grid.Row="1">
             <Button.Content>
-                <Grid>
-                    <Image Source="/balance;component/Image/target.PNG" Width="491" Margin="21,10,21,108" />
-                    <TextBlock Text="ターゲットゲーム" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="58,269,57,10" Width="418" />
+                <Grid Height="330">
+                    <Image Source="/balance;component/Image/tag.PNG" Margin="10,10,26,87" RenderTransformOrigin="0.518,0.442" />
+                    <TextBlock Text="バランス鬼ごっこ" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="37,254,26,-12" Height="88" Width="428" />
                 </Grid>
             </Button.Content>
         </Button>
 
-        <Button Margin="180,294,1050,410" Width="690" Height="376" Click="attack" FontSize="70" HorizontalAlignment="Center" VerticalAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Top"  Background="#FF7f50" Grid.Row="1">
+        <Button Margin="1070,285,193,419" Width="657" Height="376" Click="target" FontSize="70" HorizontalAlignment="Center" VerticalAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Top"  Background="#FF7f50" Grid.Row="1">
+            <Button.Content>
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="76*"/>
+                        <RowDefinition Height="17*"/>
+                    </Grid.RowDefinitions>
+                    <Image Source="/balance;component/Image/target.PNG" Width="491" Margin="21,10,21,40" />
+                    <TextBlock Text="ターゲットゲーム" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="58,269,57,9" Width="418" Grid.RowSpan="2" />
+                </Grid>
+            </Button.Content>
+        </Button>
+
+        <Button Margin="180,285,1050,419" Width="690" Height="376" Click="attack" FontSize="70" HorizontalAlignment="Center" VerticalAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Top"  Background="#FF7f50" Grid.Row="1">
             <Button.Content>
                 <Grid Height="366">
                     <Image Source="/balance;component/Image/attack.PNG" Margin="40,30,54,88" />

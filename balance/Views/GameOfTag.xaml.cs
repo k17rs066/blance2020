@@ -363,6 +363,10 @@ namespace balance.Views
             }
         }
 
+        private void Pracmode_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
 
         private void TagSetting_Click(object sender,RoutedEventArgs e)  //設定ボタンを押す
         {
@@ -379,6 +383,10 @@ namespace balance.Views
             startbutton.Content = "スタート";
         }
 
-
+        private void PracMode(object sender,RoutedEventArgs e)
+        {
+            var nextPage = new GameOfTag_Prac();
+            NavigationService.Navigate(nextPage);
+        }
     }
 }

@@ -109,6 +109,9 @@
     <Compile Include="Views\FallGame_Normal.xaml.cs">
       <DependentUpon>FallGame_Normal.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\GameOfTag_Prac.xaml.cs">
+      <DependentUpon>GameOfTag_Prac.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\MainTitle.xaml.cs">
       <DependentUpon>MainTitle.xaml</DependentUpon>
     </Compile>
@@ -232,6 +235,10 @@
     <Page Include="Views\FallGame_Normal.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\GameOfTag_Prac.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
     <Page Include="Views\MainTitle.xaml">
       <Generator>MSBuild:Compile</Generator>
@@ -445,6 +452,9 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Image\gameover.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image\tag.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

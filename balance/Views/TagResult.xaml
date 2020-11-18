@@ -11,9 +11,9 @@
 
         <Label Content="経過時間："  x:Name="TimeResult" Margin="190,175,367,180"  FontSize="30"/>
 
-        <Label Content=""  x:Name="TimeResult2" Margin="430,175,127,180"  FontSize="30" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+        <Label Content=""  x:Name="TimeResult2" Margin="430,182,162,187"  FontSize="30" VerticalAlignment="Center" HorizontalAlignment="Center" Width="200"/>
         <Label Content="鬼の速さ：" x:Name="TagSpeed" Margin="190,244,367,125" FontSize="30"/>
-        <Label Content="" x:Name="TagSpeed2" Margin="542,244,240,125" FontSize="30" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+        <Label Content="" x:Name="TagSpeed2" Margin="430,244,162,125" FontSize="30" VerticalAlignment="Center" HorizontalAlignment="Center" Width="200"/>
 
 
 
