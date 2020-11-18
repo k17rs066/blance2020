@@ -1,0 +1,20 @@
+﻿<Page x:Class="balance.Views.TargetSetting"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:balance.Views"
+      mc:Ignorable="d" 
+      d:DesignHeight="1030" d:DesignWidth="1920"
+      Title="ターゲットゲーム設定画面">
+
+    <Grid Margin="10,10,0,0">
+        <Label Content="ターゲットの配置を選択してください。" FontSize="80" Margin="445,228,340,675"/>
+        <TextBlock x:Name="datetimeb"  Margin="930,46,53,837" FontSize="60"/>
+        <Button Content="戻る" HorizontalAlignment="Left" Margin="62,46,0,0" VerticalAlignment="Top" Width="332" Height="117" Click="back" FontSize="60"/>
+        <Label Content="配置：" FontSize="80" Margin="445,525,1090,360"/>
+        <ComboBox x:Name="Placement" Margin="930,525,0,360" FontSize="80" HorizontalAlignment="Left" Width="430" />
+        <Button Content="決定" Click="decision" Margin="565,840,670,55" HorizontalAlignment="Center" FontSize="90"/>
+
+    </Grid>
+</Page>

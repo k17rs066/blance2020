@@ -163,11 +163,20 @@
     <Compile Include="Views\TagResult.xaml.cs">
       <DependentUpon>TagResult.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\TargetGame_p3.xaml.cs">
+      <DependentUpon>TargetGame_p3.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\TargetGame_p2.xaml.cs">
+      <DependentUpon>TargetGame_p2.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\TargetGame _Prac.xaml.cs">
       <DependentUpon>TargetGame _Prac.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\TargetGame.xaml.cs">
       <DependentUpon>TargetGame.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\TargetSetting.xaml.cs">
+      <DependentUpon>TargetSetting.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\t_top.xaml.cs">
       <DependentUpon>t_top.xaml</DependentUpon>
@@ -309,11 +318,23 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Views\TargetGame_p3.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\TargetGame_p2.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="Views\TargetGame _Prac.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
     <Page Include="Views\TargetGame.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\TargetSetting.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

@@ -67,15 +67,18 @@ namespace balance.Views
         DispatcherTimer dispatcharTimer11; //カウントダウンの秒数を保持する
         int cdtime;
 
+        Random randx = new Random();
 
-        double[,] ta = new double[,]
-        {
+
+        Random randy = new Random();
+
+
+        double [,] ta = new double[,] {
             {126,92},
             {342,92},
             {582,92},
             {840,92},
             {1071,92},
-
         };
 
 
@@ -85,6 +88,7 @@ namespace balance.Views
         }
         public TargetGame()
         {
+
             InitializeComponent();
 
             if (!Application.Current.Properties["u_id"].ToString().Equals("guest")) //user,guest確認
@@ -153,6 +157,9 @@ namespace balance.Views
                     }
                     this.drawingBalance = new Ellipse() { Fill = System.Windows.Media.Brushes.LimeGreen, Width = 70, Height = 70, Margin = new Thickness(xza, yza, 0, 0) }; //重心のマーク
                     this.beback.Children.Add(this.drawingBalance);
+
+
+
 
                     //tar1.Content = ("1ターゲット" + ta[0,0] + "," + ta[0,1]);
                     //zyuu.Content = ("2ターゲット" + ta[1, 0] + "," + ta[1, 1]);
@@ -514,21 +521,26 @@ namespace balance.Views
 
                 wiimote.Connect();
 
-                // イメージブラシの作成　画像のパスを間違うと実行できない
+
                 ImageBrush imageBrush1 = new ImageBrush();
-                imageBrush1.ImageSource = new BitmapImage(new Uri("C:/Users/smkwlab02/Documents/GitHub/blanceNewGame/balance/Image/1.png"));
+                string abstag1 = System.IO.Path.GetFullPath("Image/1.png");    //絶対パスを取得
+                imageBrush1.ImageSource = new BitmapImage(new Uri(abstag1));
 
                 ImageBrush imageBrush2 = new ImageBrush();
-                imageBrush2.ImageSource = new BitmapImage(new Uri("C:/Users/smkwlab02/Documents/GitHub/blanceNewGame/balance/Image/2.png"));
+                string abstag2 = System.IO.Path.GetFullPath("Image/2.png");    //絶対パスを取得
+                imageBrush2.ImageSource = new BitmapImage(new Uri(abstag2));
 
                 ImageBrush imageBrush3 = new ImageBrush();
-                imageBrush3.ImageSource = new BitmapImage(new Uri("C:/Users/smkwlab02/Documents/GitHub/blanceNewGame/balance/Image/3.png"));
+                string abstag3 = System.IO.Path.GetFullPath("Image/3.png");    //絶対パスを取得
+                imageBrush3.ImageSource = new BitmapImage(new Uri(abstag3));
 
                 ImageBrush imageBrush4 = new ImageBrush();
-                imageBrush4.ImageSource = new BitmapImage(new Uri("C:/Users/smkwlab02/Documents/GitHub/blanceNewGame/balance/Image/4.png"));
+                string abstag4 = System.IO.Path.GetFullPath("Image/4.png");    //絶対パスを取得
+                imageBrush4.ImageSource = new BitmapImage(new Uri(abstag4));
 
                 ImageBrush imageBrush5 = new ImageBrush();
-                imageBrush5.ImageSource = new BitmapImage(new Uri("C:/Users/smkwlab02/Documents/GitHub/blanceNewGame/balance/Image/5.png"));
+                string abstag5 = System.IO.Path.GetFullPath("Image/5.png");    //絶対パスを取得
+                imageBrush5.ImageSource = new BitmapImage(new Uri(abstag5));
 
                 target1.Background = imageBrush1;
                 target2.Background = imageBrush2;

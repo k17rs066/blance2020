@@ -55,7 +55,7 @@ namespace balance.Views
 
         private void target(object sender, RoutedEventArgs e)
         {
-            var nextPage = new TargetGame();
+            var nextPage = new TargetSetting();
             NavigationService.Navigate(nextPage);
         }
 

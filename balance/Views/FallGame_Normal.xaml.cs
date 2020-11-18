@@ -181,7 +181,7 @@ namespace balance.Views
                     int randtama = cRandom.Next(10);
                     int randtama1 = cRandom1.Next(20);
                     ImageBrush straw = new ImageBrush();
-                    string absstraw = System.IO.Path.GetFullPath("Image/straw.png");    //絶対パスを取得
+                    string absstraw = System.IO.Path.GetFullPath("Image/strawberry.png");    //絶対パスを取得
                     straw.ImageSource = new BitmapImage(new Uri(absstraw));  //イメージソースに代入
 
                     //int randtama1 = cRandom1.Next(10);
