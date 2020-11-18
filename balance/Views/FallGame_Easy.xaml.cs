@@ -249,7 +249,7 @@ namespace balance.Views
                         y2 = 0;
                     }
 
-                    this.drawingEllipse2 = new Ellipse() { Fill = banana, Width = 125, Height = 1125, Margin = new Thickness(x2, y2, 0, 0) };
+                    this.drawingEllipse2 = new Ellipse() { Fill = banana, Width = 125, Height = 125, Margin = new Thickness(x2, y2, 0, 0) };
                     this.beback.Children.Add(this.drawingEllipse2);
 
                     if (this.drawingLabel2 != null)
