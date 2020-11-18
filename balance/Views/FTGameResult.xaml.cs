@@ -100,7 +100,7 @@ namespace balance.Views
                 target_e(sender, e);
                 this.Close();
             }
-            else if (Application.Current.Properties["ftgamemodename"].ToString().Equals("落下ゲーム(普通)"))
+            else if (Application.Current.Properties["ftgamemodename"].ToString().Equals("落下ゲーム"))
             {
                 fall_e(sender, e);
                 this.Close();
@@ -122,7 +122,7 @@ namespace balance.Views
                 target_r(sender, e);
                 this.Close();
             }
-            else if (Application.Current.Properties["ftgamemodename"].ToString().Equals("落下ゲーム(普通)"))
+            else if (Application.Current.Properties["ftgamemodename"].ToString().Equals("落下ゲーム"))
             {
                 fall_r(sender, e);
                 this.Close();

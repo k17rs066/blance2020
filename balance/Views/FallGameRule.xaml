@@ -1,0 +1,39 @@
+﻿<Window x:Class="balance.Views.FallGameRule"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:balance.Views"
+        mc:Ignorable="d"
+        Title="落下ゲームのルール" Height="650" Width="800">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="25*"/>
+            <ColumnDefinition Width="239*"/>
+        </Grid.ColumnDefinitions>
+
+
+
+        <TextBlock Text="イチゴ　＋１点" Foreground="Red" Height="80" Width="530" FontSize="50" Grid.Column="1" Margin="187,116,0,423"/>
+
+
+        <TextBlock Text="バナナ　＋3点" Foreground="SandyBrown" Height="80" Width="530" Margin="187,230,0,309" FontSize="50" Grid.Column="1"/>
+
+
+        <TextBlock Text="マスクメロン　＋5点" Foreground="YellowGreen" Height="80" Width="530" Margin="177,350,10,189" FontSize="50" Grid.Column="1"/>
+
+
+
+        <TextBlock Text="毛虫　-1点" Foreground="Black" Height="80" Width="530" Margin="170,466,17,73" FontSize="50" Grid.Column="1"/>
+
+
+
+        <TextBlock HorizontalAlignment="Left" Height="80" Margin="20,35,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="697" FontSize="40" Text="フルーツをゲットして高得点を目指そう！！" Grid.Column="1" Foreground="Black"/>
+        <Image Source="/balance;component/Image/banana.png" Height="80" Width="100" Grid.Column="1" Margin="70,230,547,309"/>
+        <Image Source="/balance;component/Image/strawberry.png" Height="80" Width="100" Grid.Column="1" Margin="70,120,547,419"/>
+        <Image Source="/balance;component/Image/melon.png" Height="80" Width="100" Margin="70,350,547,189" Grid.Column="1"/>
+        <Image Source="/balance;component/Image/caterpillar.png" Height="80" Width="100" Grid.Column="1" Margin="70,465,547,74"/>
+
+        <!-- <Button Content="戻る" Click="Return_Click" Height="58" VerticalAlignment="Bottom" Grid.Column="1" Margin="245,0,372,10" FontSize="45"/>  -->
+    </Grid>
+</Window>

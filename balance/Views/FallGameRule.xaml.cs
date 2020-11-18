@@ -24,11 +24,17 @@ namespace balance.Views
     /// <summary>
     /// Window2.xaml の相互作用ロジック
     /// </summary>
-    public partial class FTGameRule : Window
+    public partial class FallGameRule : Window
     {
-        public FTGameRule()
+
+        public FallGameRule()
         {
             InitializeComponent();
         }
+
+       /* private void Return_Click()
+        {
+            this.Close();
+        }*/
     }
 }

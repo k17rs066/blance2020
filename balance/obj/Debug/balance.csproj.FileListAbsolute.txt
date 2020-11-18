@@ -2292,7 +2292,6 @@ C:\Users\smkwlab02\Documents\GitHub\blanceNewGame\balance\obj\Debug\Views\UserMa
 C:\Users\smkwlab02\Documents\GitHub\blanceNewGame\balance\obj\Debug\Views\UserRecordCheck.g.cs
 C:\Users\smkwlab02\Documents\GitHub\blanceNewGame\balance\obj\Debug\Views\User_Delete.g.cs
 C:\Users\smkwlab02\Documents\GitHub\blanceNewGame\balance\obj\Debug\Views\Window1.g.cs
-C:\Users\smkwlab02\Documents\GitHub\blanceNewGame\balance\obj\Debug\Views\FTGameRule.g.cs
 C:\Users\smkwlab02\Documents\GitHub\blanceNewGame\balance\obj\Debug\Views\Window2.g.cs
 C:\Users\smkwlab02\Documents\GitHub\blanceNewGame\balance\obj\Debug\Views\TagSetting.g.cs
 C:\Users\smkwlab02\Documents\GitHub\blanceNewGame\balance\obj\Debug\App.g.cs
@@ -2315,7 +2314,6 @@ C:\Users\smkwlab02\Documents\GitHub\blanceNewGame\balance\obj\Debug\Views\Target
 C:\Users\smkwlab02\Documents\GitHub\blanceNewGame\balance\obj\Debug\Views\TargetGame.baml
 C:\Users\smkwlab02\Documents\GitHub\blanceNewGame\balance\obj\Debug\Views\User_Delete.baml
 C:\Users\smkwlab02\Documents\GitHub\blanceNewGame\balance\obj\Debug\Views\Window1.baml
-C:\Users\smkwlab02\Documents\GitHub\blanceNewGame\balance\obj\Debug\Views\FTGameRule.baml
 C:\Users\smkwlab02\Documents\GitHub\blanceNewGame\balance\obj\Debug\Views\Window2.baml
 C:\Users\smkwlab02\Documents\GitHub\blanceNewGame\balance\obj\Debug\Views\TagSetting.baml
 C:\Users\smkwlab02\Documents\GitHub\blanceNewGame\balance\obj\Debug\balance.g.resources
@@ -2339,3 +2337,5 @@ C:\Users\smkwlab02\Documents\GitHub\blanceNewGame\balance\obj\Debug\Views\Target
 C:\Users\smkwlab02\Documents\GitHub\blanceNewGame\balance\obj\Debug\Views\TargetGame_p3.baml
 C:\Users\smkwlab02\Documents\GitHub\blanceNewGame\balance\obj\Debug\Views\TargetGame_p2.baml
 C:\Users\smkwlab02\Documents\GitHub\blanceNewGame\balance\obj\Debug\Views\TargetSetting.baml
+C:\Users\smkwlab02\Documents\GitHub\blanceNewGame\balance\obj\Debug\Views\FallGameRule.g.cs
+C:\Users\smkwlab02\Documents\GitHub\blanceNewGame\balance\obj\Debug\Views\FallGameRule.baml

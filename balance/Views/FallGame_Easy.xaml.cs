@@ -42,9 +42,18 @@ namespace balance.Views
 
         private Ellipse drawingEllipse1 = null;
 
+        private Ellipse drawingEllipse2 = null;
+
+        private Ellipse drawingEllipse3 = null;
+
+
         private Label drawingLabel = null;
 
         private Label drawingLabel1 = null;
+
+        private Label drawingLabel2 = null;
+
+        private Label drawingLabel3 = null;
 
         double leftsize = 0;  //左足の加重量
         double rightsize = 0; //右足の加重量
@@ -64,7 +73,7 @@ namespace balance.Views
 
         Random cRandom = new System.Random(); // 玉ランダム
         Random cRandom1 = new System.Random(); // 玉1ランダム
-        int x, y, x1, y1;
+        double x, y, x1, y1, x2, y2, x3, y3;
 
         int target = 0; //得点
 
@@ -163,10 +172,15 @@ namespace balance.Views
                     this.drawingBalance = new Rectangle() { Fill = System.Windows.Media.Brushes.LimeGreen, Width = 222, Height = 45, Margin = new Thickness(xza, 630, 0, 0), };
                     this.beback.Children.Add(this.drawingBalance);
 
-                    /////////////玉
-                    int randtama = cRandom.Next(12);
+                    /////////////玉(イチゴ)
+                    int randtama = cRandom.Next(10);
+                    int randtama1 = cRandom1.Next(20);
+                    ImageBrush straw = new ImageBrush();
+                    string absstraw = System.IO.Path.GetFullPath("Image/strawberry.png");    //絶対パスを取得
+                    straw.ImageSource = new BitmapImage(new Uri(absstraw));  //イメージソースに代入
+
                     //int randtama1 = cRandom1.Next(10);
-                    y += 10;        //落下する玉の速さ
+                    y += 1.5;        //落下する玉の速さ
                     if (this.drawingEllipse != null)
                     {
                         this.beback.Children.Remove(this.drawingEllipse);
@@ -178,7 +192,7 @@ namespace balance.Views
                         y = 0;
                     }
 
-                    this.drawingEllipse = new Ellipse() { Fill = System.Windows.Media.Brushes.Red, Width = 70, Height = 70, Margin = new Thickness(x, y, 0, 0) };
+                    this.drawingEllipse = new Ellipse() { Fill = straw, Width = 125, Height = 125, Margin = new Thickness(x, y, 0, 0) };
                     this.beback.Children.Add(this.drawingEllipse);
 
                     if (this.drawingLabel != null)
@@ -186,12 +200,15 @@ namespace balance.Views
                         this.beback.Children.Remove(this.drawingLabel);
                     }
 
-                    this.drawingLabel = new Label() { Content = "十", Width = 70, Height = 75, Margin = new Thickness(x, y - 10, 0, 0), FontSize = 60, Foreground = System.Windows.Media.Brushes.White, FontWeight = FontWeights.Bold, HorizontalContentAlignment = HorizontalAlignment.Center, VerticalContentAlignment = VerticalAlignment.Center };
+                    this.drawingLabel = new Label() { Width = 125, Height = 130, Margin = new Thickness(x, y - 10, 0, 0), FontSize = 60, Foreground = System.Windows.Media.Brushes.White, FontWeight = FontWeights.Bold, HorizontalContentAlignment = HorizontalAlignment.Center, VerticalContentAlignment = VerticalAlignment.Center };
                     this.beback.Children.Add(this.drawingLabel);
 
 
-                    /////////////玉2
-                    y1 += 2;
+                    /////////////玉2(芋虫)
+                    ImageBrush caterpillar = new ImageBrush();
+                    string abscat = System.IO.Path.GetFullPath("Image/caterpillar.png");    //絶対パスを取得
+                    caterpillar.ImageSource = new BitmapImage(new Uri(abscat));  //イメージソースに代入
+                    y1 += 1.5;
                     if (this.drawingEllipse1 != null)
                     {
                         this.beback.Children.Remove(this.drawingEllipse1);
@@ -199,11 +216,11 @@ namespace balance.Views
 
                     if (y1 > 675)
                     {
-                        x1 = randtama * 100;
+                        x1 = randtama1 * 50;
                         y1 = 0;
                     }
 
-                    this.drawingEllipse1 = new Ellipse() { Fill = System.Windows.Media.Brushes.Blue, Width = 70, Height = 70, Margin = new Thickness(x1, y1, 0, 0) };
+                    this.drawingEllipse1 = new Ellipse() { Fill = caterpillar, Width = 125, Height = 125, Margin = new Thickness(x1, y1, 0, 0) };
                     this.beback.Children.Add(this.drawingEllipse1);
 
                     if (this.drawingLabel1 != null)
@@ -211,9 +228,37 @@ namespace balance.Views
                         this.beback.Children.Remove(this.drawingLabel1);
                     }
 
-                    this.drawingLabel1 = new Label() { Content = "一", Width = 70, Height = 70, Margin = new Thickness(x1, y1 - 10, 0, 0), FontSize = 60, Foreground = System.Windows.Media.Brushes.White, FontWeight = FontWeights.Bold, HorizontalContentAlignment = HorizontalAlignment.Center, VerticalContentAlignment = VerticalAlignment.Center };
+                    this.drawingLabel1 = new Label() { Width = 125, Height = 130, Margin = new Thickness(x1, y1 - 10, 0, 0), FontSize = 60, Foreground = System.Windows.Media.Brushes.White, FontWeight = FontWeights.Bold, HorizontalContentAlignment = HorizontalAlignment.Center, VerticalContentAlignment = VerticalAlignment.Center };
                     this.beback.Children.Add(this.drawingLabel1);
 
+
+                    /////////////玉3(ばなな)
+
+                    ImageBrush banana = new ImageBrush();
+                    string absbanana = System.IO.Path.GetFullPath("Image/banana.png");    //絶対パスを取得
+                    banana.ImageSource = new BitmapImage(new Uri(absbanana));
+                    y2 += 2;
+                    if (this.drawingEllipse2 != null)
+                    {
+                        this.beback.Children.Remove(this.drawingEllipse2);
+                    }
+
+                    if (y2 > 675)
+                    {
+                        x2 = randtama1 * 50;
+                        y2 = 0;
+                    }
+
+                    this.drawingEllipse2 = new Ellipse() { Fill = banana, Width = 125, Height = 1125, Margin = new Thickness(x2, y2, 0, 0) };
+                    this.beback.Children.Add(this.drawingEllipse2);
+
+                    if (this.drawingLabel2 != null)
+                    {
+                        this.beback.Children.Remove(this.drawingLabel2);
+                    }
+
+                    this.drawingLabel2 = new Label() { Width = 125, Height = 130, Margin = new Thickness(x1, y1 - 10, 0, 0), FontSize = 60, Foreground = System.Windows.Media.Brushes.White, FontWeight = FontWeights.Bold, HorizontalContentAlignment = HorizontalAlignment.Center, VerticalContentAlignment = VerticalAlignment.Center };
+                    this.beback.Children.Add(this.drawingLabel2);
 
                     ///////////////Ellipse,Ellipse1当たり判定 y1は7の倍数の速さで動いているから585の数値にならないy1=588になる
                     ///585%y=0ならよい　585%y1=1なら-1する
@@ -227,20 +272,32 @@ namespace balance.Views
                         target--;
                         PlaySound("fall_down.wav");
                     }
+                    else if (xza < x2 + 35 && xza + 222 > x2 + 35 && 585 == y2 - 1)
+                    {
+                        target += 3;
+                        PlaySound("fall_up.wav");
+                    }
                     else if (xza < x + 35 && xza + 222 > x + 35 && 585 <= y)
                     {
 
 
-                        drawingEllipse.Fill = System.Windows.Media.Brushes.LimeGreen;
+                        //drawingEllipse.Fill = System.Windows.Media.Brushes.LimeGreen;
+                        this.beback.Children.Remove(this.drawingEllipse);
                         get.Foreground = System.Windows.Media.Brushes.Red;
                         get.Content = "+1";
+                    }
+                    else if (xza < x + 35 && xza + 222 > x2 + 35 && 585 <= y2)
+                    {
+                        this.beback.Children.Remove(this.drawingEllipse2);
+                        get.Foreground = System.Windows.Media.Brushes.Yellow;
+                        get.Content = "+3";
                     }
                     else if (xza < x1 + 35 && xza + 222 > x1 + 35 && 585 <= y1)
                     {
 
 
 
-                        drawingEllipse1.Fill = System.Windows.Media.Brushes.LimeGreen;
+                        this.beback.Children.Remove(this.drawingEllipse1);
                         get.Foreground = System.Windows.Media.Brushes.Blue;
                         get.Content = "-1";
                     }
@@ -313,7 +370,7 @@ namespace balance.Views
                         dispatcharTimer.Tick += new EventHandler(dispatcharTimer_Tick);
 
 
-                        Application.Current.Properties["ftgamemodename"] = "落下ゲーム(簡単)";
+                        Application.Current.Properties["ftgamemodename"] = "落下ゲーム";
 
                         Application.Current.Properties["ftresult"] = target;
 

@@ -44,7 +44,6 @@
         <TextBlock Name ="leftpar" HorizontalAlignment="Left" FontSize="100" Height="125.374" Margin="110.149,877.91,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="240"/>
         <TextBlock Name ="rightpar" HorizontalAlignment="Left" FontSize ="100" Height="125.374" Margin="445.2,877.91,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="240"/>
         <TextBlock Name ="settin" FontSize ="50" HorizontalAlignment="Left" Height="99.2" Margin="759.6,283.657,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="695.4"/>
-        <Button Content="練習モード" FontSize="50" Height="99.2" HorizontalAlignment="Left" Width="429" Margin="770,305,0,676"/>
         <!--leftpar　左の％
         　　rightpar　右の％
         　　settin 設定したクリアライン、時間（回数）
