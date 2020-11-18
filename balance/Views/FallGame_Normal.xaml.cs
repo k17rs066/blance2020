@@ -97,7 +97,7 @@ namespace balance.Views
 
             x = 300;
             y = 380;
-            x1 = 1000;
+            x1 = 100;
             y1 = 10;
 
             dispatcharTimer11 = new DispatcherTimer();
@@ -178,7 +178,7 @@ namespace balance.Views
                     this.beback.Children.Add(this.drawingBalance);
 
                     /////////////玉(イチゴ)
-                    int randtama = cRandom.Next(10);
+                    int randtama = cRandom.Next(12);
                     int randtama1 = cRandom1.Next(20);
                     ImageBrush straw = new ImageBrush();
                     string absstraw = System.IO.Path.GetFullPath("Image/strawberry.png");    //絶対パスを取得
@@ -197,7 +197,7 @@ namespace balance.Views
                         y = 0;
                     }
 
-                    this.drawingEllipse = new Ellipse() { Fill = straw, Width = 100, Height = 100, Margin = new Thickness(x, y, 0, 0) };
+                    this.drawingEllipse = new Ellipse() { Fill = straw, Width = 70, Height = 70, Margin = new Thickness(x, y, 0, 0) };
                     this.beback.Children.Add(this.drawingEllipse);
 
                     if (this.drawingLabel != null)
@@ -205,7 +205,7 @@ namespace balance.Views
                         this.beback.Children.Remove(this.drawingLabel);
                     }
 
-                    this.drawingLabel = new Label() {  Width = 110, Height = 110, Margin = new Thickness(x, y - 10, 0, 0), FontSize = 60, Foreground = System.Windows.Media.Brushes.White, FontWeight = FontWeights.Bold, HorizontalContentAlignment = HorizontalAlignment.Center, VerticalContentAlignment = VerticalAlignment.Center };
+                    this.drawingLabel = new Label() {  Width = 75, Height = 75, Margin = new Thickness(x, y - 10, 0, 0), FontSize = 60, Foreground = System.Windows.Media.Brushes.White, FontWeight = FontWeights.Bold, HorizontalContentAlignment = HorizontalAlignment.Center, VerticalContentAlignment = VerticalAlignment.Center };
                     this.beback.Children.Add(this.drawingLabel);
 
 
@@ -225,7 +225,7 @@ namespace balance.Views
                         y1 = 0;
                     }
 
-                    this.drawingEllipse1 = new Ellipse() { Fill = caterpillar, Width = 100, Height = 100, Margin = new Thickness(x1, y1, 0, 0) };
+                    this.drawingEllipse1 = new Ellipse() { Fill = caterpillar, Width = 70, Height = 70, Margin = new Thickness(x1, y1, 0, 0) };
                     this.beback.Children.Add(this.drawingEllipse1);
 
                     if (this.drawingLabel1 != null)
@@ -233,7 +233,7 @@ namespace balance.Views
                         this.beback.Children.Remove(this.drawingLabel1);
                     }
 
-                    this.drawingLabel1 = new Label() {  Width = 110, Height = 110, Margin = new Thickness(x1, y1 - 10, 0, 0), FontSize = 60, Foreground = System.Windows.Media.Brushes.White, FontWeight = FontWeights.Bold, HorizontalContentAlignment = HorizontalAlignment.Center, VerticalContentAlignment = VerticalAlignment.Center };
+                    this.drawingLabel1 = new Label() {  Width = 75, Height = 75, Margin = new Thickness(x1, y1 - 10, 0, 0), FontSize = 60, Foreground = System.Windows.Media.Brushes.White, FontWeight = FontWeights.Bold, HorizontalContentAlignment = HorizontalAlignment.Center, VerticalContentAlignment = VerticalAlignment.Center };
                     this.beback.Children.Add(this.drawingLabel1);
 
 
@@ -254,7 +254,7 @@ namespace balance.Views
                         y2 = 0;
                     }
 
-                    this.drawingEllipse2 = new Ellipse() { Fill = banana, Width = 100, Height = 100, Margin = new Thickness(x2, y2, 0, 0) };
+                    this.drawingEllipse2 = new Ellipse() { Fill = banana, Width = 70, Height = 70, Margin = new Thickness(x2, y2, 0, 0) };
                     this.beback.Children.Add(this.drawingEllipse2);
 
                     if (this.drawingLabel2 != null)
@@ -262,27 +262,27 @@ namespace balance.Views
                         this.beback.Children.Remove(this.drawingLabel2);
                     }
 
-                    this.drawingLabel2 = new Label() { Width = 110, Height = 110, Margin = new Thickness(x2, y2 - 10, 0, 0), FontSize = 60, Foreground = System.Windows.Media.Brushes.White, FontWeight = FontWeights.Bold, HorizontalContentAlignment = HorizontalAlignment.Center, VerticalContentAlignment = VerticalAlignment.Center };
+                    this.drawingLabel2 = new Label() { Width = 75, Height = 75, Margin = new Thickness(x2, y2 - 10, 0, 0), FontSize = 60, Foreground = System.Windows.Media.Brushes.White, FontWeight = FontWeights.Bold, HorizontalContentAlignment = HorizontalAlignment.Center, VerticalContentAlignment = VerticalAlignment.Center };
                     this.beback.Children.Add(this.drawingLabel2);
 
                     ///////////////Ellipse,Ellipse1当たり判定 y1は7の倍数の速さで動いているから585の数値にならないy1=588になる
                     ///585%y=0ならよい　585%y1=1なら-1する
-                    if (xza < x + 50 && xza + 222 > x + 50 && 585 == y - 1)
+                    if (xza < x + 35 && xza + 222 > x + 35 && 585 == y - 1)
                     {
                         target++;
                         PlaySound("fall_up.wav");
                     }
-                    else if (xza < x1 + 50 && xza + 222 > x1 + 50 && 585 == y1 - 1)
+                    else if (xza < x1 + 35 && xza + 222 > x1 + 35 && 585 == y1 - 1)
                     {
                         target--;
                         PlaySound("fall_down.wav");
                     }
-                    else if(xza<x2+50 && xza +222 >x2+50 && 585 == y2 - 1)
+                    else if(xza<x2+35 && xza +222 >x2+35 && 585 == y2 - 1)
                     {
                         target += 3;
                         PlaySound("fall_up.wav");
                     }
-                    else if (xza < x + 50 && xza + 222 > x + 50 && 585 <= y)
+                    else if (xza < x + 35 && xza + 222 > x + 35 && 585 <= y)
                     {
 
 
@@ -291,13 +291,13 @@ namespace balance.Views
                         get.Foreground = System.Windows.Media.Brushes.Red;
                         get.Content = "+1";
                     }
-                    else if(xza < x + 50 && xza + 222 >x2 + 50 && 585 <= y2)
+                    else if(xza < x + 35 && xza + 222 >x2 + 35 && 585 <= y2)
                     {
                         this.beback.Children.Remove(this.drawingEllipse2);
                         get.Foreground = System.Windows.Media.Brushes.Yellow;
                         get.Content = "+3";
                     }
-                    else if (xza < x1 + 50 && xza + 222 > x1 + 50 && 585 <= y1)
+                    else if (xza < x1 + 35 && xza + 222 > x1 + 35 && 585 <= y1)
                     {
 
                         this.beback.Children.Remove(this.drawingEllipse1);
