@@ -8,9 +8,8 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("image/%e5%89%8d%ef%bc%92.png")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("image/%e5%89%8d%ef%bc%93.png")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("image/%e5%89%8d%ef%bc%94.png")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("image/%e5%89%8d%ef%bc%95.png")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("wiimotelib_extras/msrs/wiimote.y2007.m06.dll")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("wiimotelib_extras/msrs/wiimote.y2007.m06.proxy.dll")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("wiimotelib_extras/msrs/wiimote.y2007.m06.transform.dll")]
 
 

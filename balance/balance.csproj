@@ -474,9 +474,6 @@
     <Resource Include="Image\strawberry.png" />
   </ItemGroup>
   <ItemGroup>
-    <Analyzer Include="..\..\..\..\Desktop\Fit Try%28弄り用%29\FitTri\bin\Debug\WiimoteLib.dll" />
-  </ItemGroup>
-  <ItemGroup>
     <Resource Include="Image\kago.png" />
   </ItemGroup>
   <ItemGroup>
