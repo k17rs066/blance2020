@@ -68,6 +68,8 @@ namespace balance.Views
         {
             var nextPage = new GameOfTag();
             NavigationService.Navigate(nextPage);
+
+            
         }
     }
 }

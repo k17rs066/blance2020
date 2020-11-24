@@ -18,9 +18,7 @@ using balance.DataBase;
 
 namespace balance.Views
 {
-    /// <summary>
-    /// GameSetting.xaml の相互作用ロジック
-    /// </summary>
+
     public partial class GameSetting : Window
     {
 
@@ -33,11 +31,9 @@ namespace balance.Views
         int user_id;
         public GameSetting()
         {
-            /*InitializeComponent();
-
             //gamemode.Text = Application.Current.Properties["gamemodename"].ToString();
             han.Text = Application.Current.Properties["hantei"].ToString() + ":";
-            tan.Text = Application.Current.Properties["tani"].ToString();*/
+            tan.Text = Application.Current.Properties["tani"].ToString();
 
             
 

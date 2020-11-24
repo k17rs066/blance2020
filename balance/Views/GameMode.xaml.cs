@@ -24,6 +24,7 @@ namespace balance.Views
         public delegate void Refresh2(object sender, EventArgs e);
 
         Wiimote wiimote = new Wiimote();
+
         String SoundFile = "count.wav";　//音のファイル
         Boolean game; //game true起動、false終了の合図
 
@@ -75,8 +76,10 @@ namespace balance.Views
         int time_s = -1;//GameSttingから設定秒数を引き継ぎ
         int htimes_s = 0; //
 
+        
 
-        System.Diagnostics.Stopwatch StopWatch = new System.Diagnostics.Stopwatch(); //ストップウォッチsw生成
+
+        System.Diagnostics.Stopwatch StopWatch = new System.Diagnostics.Stopwatch(); 
         DispatcherTimer dispatcharTimer; //ゲームの秒数を保持する
 
         delegate void UpdateWiimoteStateDelegate(object sender, WiimoteChangedEventArgs args);
@@ -90,16 +93,36 @@ namespace balance.Views
         int cdtime;
 
 
-
         public GameMode()
         {
+
             InitializeComponent();
+
+
+
             if (!Application.Current.Properties["u_id"].ToString().Equals("guest")) //user,guest確認
             {
                 user_id = int.Parse(Application.Current.Properties["u_id"].ToString());
             }
 
             wiimote.WiimoteChanged += OnWiimoteChanged;
+
+
+                Refresh rf = new Refresh(this.Button_Color);
+
+
+                Application.Current.Properties["setuser_id"] = user_id;
+
+                Application.Current.Properties["gamemodename"] = "スコアアタック";
+
+                Application.Current.Properties["hantei"] = "計測時間";
+                Application.Current.Properties["tani"] = "秒";
+
+
+                Window setting_window = new GameSetting(rf);
+                setting_window.Title = "GameSetting";
+                setting_window.ShowDialog();
+
 
             dispatcharTimer = new DispatcherTimer(DispatcherPriority.Normal);
             dispatcharTimer.Interval = new TimeSpan(0, 0, 1);
@@ -115,7 +138,6 @@ namespace balance.Views
 
         void OnWiimoteChanged(object sender, WiimoteChangedEventArgs e)
         {
-
 
             if (game == true)
             {
@@ -155,7 +177,6 @@ namespace balance.Views
                 {
 
 
- 
                     //////////////重心の表示
                     if (this.DrawingBalance != null)
                     {
@@ -393,10 +414,7 @@ namespace balance.Views
 
         }
 
-        private void GameSetting()
-        {
-            throw new NotImplementedException();
-        }
+
 
         void Page_Closing(object sender, System.ComponentModel.CancelEventArgs e)　//アプリ閉じたら
         {
@@ -412,8 +430,9 @@ namespace balance.Views
         {
            // if (game == true)
            // {
-                wiimote.Disconnect();
-           // }
+           wiimote.Disconnect();
+            // }
+
             var nextPage = new GameSelect();
             NavigationService.Navigate(nextPage);
         }
@@ -473,13 +492,13 @@ namespace balance.Views
         }
 
 
-
         void SetDialog_Click(object sender, RoutedEventArgs e) 　//設定のダイアログ
         {
             ScoreAttackButton.Background = Brushes.Gainsboro;　//ボタン押したときの色変更
             TimeAttackButton.Background = Brushes.Gainsboro;
             ScoreFlag = false;
             TimeFlag = false;
+
             Refresh rf = new Refresh(this.Button_Color);
 
 
@@ -682,24 +701,7 @@ namespace balance.Views
                             
                         }
                     }
-                    /*coneの方のストップに行く
-                     * else
-                    { 
-                        //ストップの状態だと
-                        wiimote.Disconnect();
-                        con.Content = "スタート";
-                        game = false;
-                        gameState = false;
-                        dispatcharTimer.Stop();
-                        if (gameM == true)
-                        {
-                            sw.Stop();
-                        }
-                        else
-                        {
-                        }
-                    }
-                    */
+
                 }
                 else
                 {
