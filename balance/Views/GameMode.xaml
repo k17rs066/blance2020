@@ -25,10 +25,10 @@
             <Label x:Name="rightflag" Content="" Canvas.Left="616" Canvas.Top="160" Height="139" Width="136" FontSize="120" FontWeight="Bold" Foreground="#FFF4F4F5"/>
 
         </Canvas>
-        <Button Name ="back" Content="戻る" FontSize="50" HorizontalAlignment="Left" Height="99" Margin="1441,28,0,0" VerticalAlignment="Top" Width="398" Click="bac"/>
-        <Button Name ="scorea" Content="スコアアタック" FontSize ="50" HorizontalAlignment="Left" Height="101" Margin="760,164,0,0" VerticalAlignment="Top" Width="439" Click="set_score" />
-        <Button Name ="timea" Content="タイムアタック" FontSize ="50" HorizontalAlignment="Left" Height="101" Margin="1441,164,0,0" VerticalAlignment="Top" Width="398" Click="set_time"/>
-        <Button Name ="con" Content="スタート" FontSize ="50" HorizontalAlignment="Left" Height="99" Margin="1441,305,0,0" VerticalAlignment="Top" Width="398" Click="cone"/>
+        <Button Name ="back" Content="戻る" FontSize="50" HorizontalAlignment="Left" Height="99" Margin="1441,28,0,0" VerticalAlignment="Top" Width="398" Click="BackButton_Click"/>
+        <Button Name ="ScoreAttackButton" Content="スコアアタック" FontSize ="50" HorizontalAlignment="Left" Height="101" Margin="760,164,0,0" VerticalAlignment="Top" Width="439" Click="set_score" />
+        <Button Name ="TimeAttackButton" Content="タイムアタック" FontSize ="50" HorizontalAlignment="Left" Height="101" Margin="1441,164,0,0" VerticalAlignment="Top" Width="398" Click="set_time"/>
+        <Button Name ="StartButton" Content="スタート" FontSize ="50" HorizontalAlignment="Left" Height="99" Margin="1441,305,0,0" VerticalAlignment="Top" Width="398" Click="StartButton_Click"/>
         <!--        <Rectangle Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="25" Margin="1333.2,702,0,0" VerticalAlignment="Top" Width="150"/>
         <Rectangle Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="25" Margin="1334.391,705.673,0,0" VerticalAlignment="Top" Width="150" RenderTransformOrigin="0.5,0.5">
             <Rectangle.RenderTransform>
@@ -55,7 +55,7 @@
         <TextBlock Name ="cc" FontSize="80" HorizontalAlignment="Left" Height="95.209" Margin="759.6,404.191,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="350.325"/>
         <Label x:Name="countdown" Content="" HorizontalAlignment="Left" Margin="687,356,0,0" Height="374" Width="512"   FontSize="250" FontWeight="Bold" VerticalAlignment="Top" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Background="{x:Null}" Foreground="#FFF72218" />
         <Slider HorizontalAlignment="Left" VerticalAlignment="Top"/>
-        <Button  Content="設定" FontSize ="50" HorizontalAlignment="Left" Height="101" Margin="760,28,0,0" VerticalAlignment="Top" Width="439" Click="setDialog"/>
+        <Button  Content="設定" FontSize ="50" HorizontalAlignment="Left" Height="101" Margin="760,28,0,0" VerticalAlignment="Top" Width="439" Click="SetDialog_Click"/>
 
     </Grid>
 </Page>

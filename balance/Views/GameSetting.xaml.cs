@@ -24,7 +24,7 @@ namespace balance.Views
     public partial class GameSetting : Window
     {
 
-        public balance.Views.GameMode.Refresh rf = null;
+        public GameMode.Refresh rf = null;
         int bnum = -1;
 
         String SQL = "";
@@ -43,7 +43,7 @@ namespace balance.Views
 
         }
 
-        public GameSetting(balance.Views.GameMode.Refresh pRefresh)
+        public GameSetting(GameMode.Refresh pRefresh)
         {
             InitializeComponent();
 

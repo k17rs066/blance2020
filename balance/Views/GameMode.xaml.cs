@@ -49,7 +49,7 @@ namespace balance.Views
 
         Boolean nexts = false;//おそらくdrawingNextの右のマーク
         Boolean gameState = false;//現在gameをしているか
-        Boolean gameM = false;//ゲーム種類　scoreatack、trueでtimatack
+        Boolean gametype = false;//ゲーム種類　scoreatack、trueでtimatack
 
         double leftsize = 0;  //左足の加重量
         double rightsize = 0; //右足の加重量
@@ -63,10 +63,8 @@ namespace balance.Views
         Boolean timeB = false; //秒数の設定されてるか
 
 
-        int Count = 0;//重心移動成功時にカウントする、インクリメント
-        /// <summary>
-        /// timeattack用の変数
-        /// </summary>
+        int count = 0;//重心移動成功時にカウントする、インクリメント
+
 
 
         int nextx = 0;//次に重心移動を行う青い■のｘ座標
@@ -86,7 +84,7 @@ namespace balance.Views
         int htimes_s = 0; //
 
 
-        System.Diagnostics.Stopwatch sw = new System.Diagnostics.Stopwatch(); //ストップウォッチsw生成
+        System.Diagnostics.Stopwatch stopwatch = new System.Diagnostics.Stopwatch(); //ストップウォッチsw生成
         DispatcherTimer dispatcharTimer; //ゲームの秒数を保持する
 
         delegate void UpdateWiimoteStateDelegate(object sender, WiimoteChangedEventArgs args);
@@ -94,9 +92,7 @@ namespace balance.Views
         String SQL = "";　//SQL文
         int user_id = -1; //ログインのu_id
 
-        /// <summary>
-        /// countdown用の変数
-        /// </summary>
+
 
         DispatcherTimer dispatcharTimer11; //カウントダウンの秒数を保持する
         int cdtime;
@@ -162,6 +158,9 @@ namespace balance.Views
                 //                * (pictureBox1.Width / ballWidth)) + (pictureBox1.Width / 2) - (ballWidth / 2)
                 Dispatcher.Invoke(new Action(() =>
                 {
+
+
+ 
                     //////////////重心の表示
                     if (this.drawingBalance != null)
                     {
@@ -251,11 +250,11 @@ namespace balance.Views
                             {
                                 PlaySound(SoundFile);
                                 nexts = true;
-                                Count++;
+                                count++;
                                 tCount--;
-                                if (gameM == false)　//回数表示
+                                if (gametype == false)　//回数表示
                                 {
-                                    tim.Text = Count + "回";
+                                    tim.Text = count + "回";
                                 }
                                 else
                                 {
@@ -285,29 +284,29 @@ namespace balance.Views
                             {
                                 PlaySound(SoundFile);
                                 nexts = false;
-                                Count++;
+                                count++;
                                 tCount--;
-                                if (gameM == true)
+                                if (gametype == true)
                                 {
                                     cc.Text = "残り" + tCount + "回";
                                 }
                                 else
                                 {
-                                    tim.Text = Count + "回";
+                                    tim.Text = count + "回";
                                 }
                             }
                         }
 
-                        if ((gameM == true && clearCount == Count) || (gameM == false && time_s == 0))　//ゲームの終了条件
+                        if ((gametype == true && clearCount == count) || (gametype == false && time_s == 0))　//ゲームの終了条件
                         {
                             gameState = false;
                             PlaySound("clear.wav");
-                            sw.Stop();
+                            stopwatch.Stop();
                             dispatcharTimer.Stop();
 
 
 
-                            if (gameM == true)　//タイムアタック時のデータベース
+                            if (gametype == true)　//タイムアタック時のデータベース
                             {
                                 if (!Application.Current.Properties["u_id"].ToString().Equals("guest"))
                                 {
@@ -332,19 +331,19 @@ namespace balance.Views
 
 
                                 tim.Text = "0秒";
-                                sw = new System.Diagnostics.Stopwatch();
+                                stopwatch = new System.Diagnostics.Stopwatch();
                                 dispatcharTimer = new DispatcherTimer(DispatcherPriority.Normal);
                                 dispatcharTimer.Interval = new TimeSpan(0, 0, 1);
                                 dispatcharTimer.Tick += new EventHandler(dispatcharTimer_Tick);
-                                Count = 0;
+                                count = 0;
                                 tCount = tCounth;
                                 nextx = 0;
                                 time_t = 0;
 
                                 game = false;
-                                con.Content = "スタート";
+                                StartButton.Content = "スタート";
 
-                                GameResult w = new GameResult(this.button_color, this.bac, this.cone);
+                                GameResult w = new GameResult(this.Button_color, this.BackButton_Click, this.StartButton_Click);
                                 w.Title = "GameResult";
                                 w.ShowDialog();
 
@@ -361,14 +360,14 @@ namespace balance.Views
                                     SQL = "SELECT * FROM t_userrecord ORDER BY userrecord_id DESC";
                                     DBConnect.ExecuteReader(SQL);
                                     DBConnect.Reader.Read();
-                                    SQL = "INSERT INTO t_gametrain(userrecord_id,setting,clear_record,clear_line)VALUES('" + DBConnect.Reader[0] + "','" + htimes_s + "','" + Count + "','" + lin + "')";
+                                    SQL = "INSERT INTO t_gametrain(userrecord_id,setting,clear_record,clear_line)VALUES('" + DBConnect.Reader[0] + "','" + htimes_s + "','" + count + "','" + lin + "')";
                                     DBConnect.ExecuteReader(SQL);
                                     DBConnect.Dispose();
 
 
                                 }
                                 //MessageBox.Show("終了です" + Count + "回");
-                                Application.Current.Properties["Count"] = Count;
+                                Application.Current.Properties["Count"] = count;
 
                                 
                             
@@ -376,13 +375,13 @@ namespace balance.Views
                                 dispatcharTimer.Interval = new TimeSpan(0, 0, 1);
                                 dispatcharTimer.Tick += new EventHandler(dispatcharTimer_Tick);
                                 time_s = htimes_s;
-                                Count = 0;
+                                count = 0;
 
                                 game = false;
-                                con.Content = "スタート";
+                                StartButton.Content = "スタート";
                                
                                 
-                                GameResult w = new GameResult(this.button_color,this.bac,this.cone);
+                                GameResult w = new GameResult(this.Button_color,this.BackButton_Click,this.StartButton_Click);
                                 w.Title = "GameResult";
                                 w.ShowDialog();
                                 
@@ -399,6 +398,10 @@ namespace balance.Views
 
         }
 
+        private void GameSetting()
+        {
+            throw new NotImplementedException();
+        }
 
         void Page_Closing(object sender, System.ComponentModel.CancelEventArgs e)　//アプリ閉じたら
         {
@@ -409,7 +412,7 @@ namespace balance.Views
         }
 
 
-        void bac(object sender, EventArgs e) //戻るボタン
+        void BackButton_Click(object sender, EventArgs e) //戻るボタン
         {
            // if (game == true)
            // {
@@ -419,19 +422,19 @@ namespace balance.Views
             NavigationService.Navigate(nextPage);
         }
 
-        public void cone(object sender, EventArgs e)　//スタートボタン
+        public void StartButton_Click(object sender, EventArgs e)　//スタートボタン
         {
              
-             if (con.Content.Equals("スタート"))
+             if (StartButton.Content.Equals("スタート"))
              {
                  countdown.Content = "3";
                  cdtime = 0;
                  dispatcharTimer11.Start();
                  Console.WriteLine("スタート");
 
-                if (gameM == true)
+                if (gametype == true)
                 {
-                    sw.Start();
+                    stopwatch.Start();
                     cc.Text = "残り" + tCount + "回";
                     tim.Text = "0" + "秒";
 
@@ -439,10 +442,10 @@ namespace balance.Views
                 else
                 {
                     cc.Text = "残り" + time_s + "秒";
-                    tim.Text = Count + "回";
+                    tim.Text = count + "回";
                 }
              }
-            else if (con.Content.Equals("リスタート"))
+            else if (StartButton.Content.Equals("リスタート"))
             {
                 countdown.Content = "3";
                 cdtime = 0;
@@ -457,13 +460,13 @@ namespace balance.Views
 
                  //ストップの状態だと
                  wiimote.Disconnect();
-                 con.Content = "リスタート";
+                 StartButton.Content = "リスタート";
                  game = false;
                  gameState = false;
                  dispatcharTimer.Stop();
-                 if (gameM == true)
+                 if (gametype == true)
                  {
-                     sw.Stop();
+                     stopwatch.Stop();
                  }
                  else
                  {
@@ -474,16 +477,14 @@ namespace balance.Views
         }
 
 
-        void setDialog(object sender, RoutedEventArgs e) 　//設定のダイアログ
+        void SetDialog_Click(object sender, RoutedEventArgs e) 　//設定のダイアログ
         {
-            scorea.Background = Brushes.Gainsboro;　//ボタン押したときの色変更
-            timea.Background = Brushes.Gainsboro;
+            ScoreAttackButton.Background = Brushes.Gainsboro;　//ボタン押したときの色変更
+            TimeAttackButton.Background = Brushes.Gainsboro;
             scoreB = false;
             timeB = false;
+            Refresh rf = new Refresh(this.Button_color);
 
-            Refresh rf = new Refresh(this.button_color);
-
-            
 
             Application.Current.Properties["setuser_id"] = user_id;
 
@@ -491,18 +492,8 @@ namespace balance.Views
 
             Application.Current.Properties["hantei"] = "計測時間";
             Application.Current.Properties["tani"] = "秒";
-            /*if ((sender as Button).Name.Equals("スコアアタック"))
-            {
-                Application.Current.Properties["hantei"] = "計測時間";
-                Application.Current.Properties["tani"] = "秒";
-            }
-            else
-            {
-                Application.Current.Properties["hantei"] = "計測回数";
-                Application.Current.Properties["tani"] = "回";
 
-            }
-            */
+
             Window w = new GameSetting(rf);
             w.Title = "GameSetting";
             w.ShowDialog();
@@ -511,10 +502,10 @@ namespace balance.Views
         //スコアタックを選択
         private void set_score(object sender, RoutedEventArgs e)
         {
-            scorea.Background = Brushes.Coral;　//ボタン押したときの色変更
-            timea.Background = Brushes.Gainsboro;
+            ScoreAttackButton.Background = Brushes.Coral;　//ボタン押したときの色変更
+            TimeAttackButton.Background = Brushes.Gainsboro;
             
-            Refresh rf = new Refresh(this.button_color);
+            Refresh rf = new Refresh(this.Button_color);
 
             Application.Current.Properties["setuser_id"] = user_id;
 
@@ -546,10 +537,10 @@ namespace balance.Views
         //タイムアタックを選択
         private void set_time(object sender, RoutedEventArgs e)
         {
-            scorea.Background = Brushes.Gainsboro;　//ボタン押したときの色変更
-            timea.Background = Brushes.Coral;
+            ScoreAttackButton.Background = Brushes.Gainsboro;　//ボタン押したときの色変更
+            TimeAttackButton.Background = Brushes.Coral;
 
-            Refresh rf = new Refresh(this.button_color);
+            Refresh rf = new Refresh(this.Button_color);
 
             Application.Current.Properties["setuser_id"] = user_id;
 
@@ -579,15 +570,15 @@ namespace balance.Views
 
 
 
-        void button_color(int t)
+        void Button_color(int t)
         {
             lin = Application.Current.Properties["line"].ToString();
             set = Application.Current.Properties["settei"].ToString();
             se = Application.Current.Properties["sette"].ToString(); //設定画面での秒数、回数
             if (t == 0) //scoreattackモード
             {
-                scorea.Background = Brushes.Coral;
-                gameM = false;
+                ScoreAttackButton.Background = Brushes.Coral;
+                gametype = false;
                 time_s = int.Parse(se);
                 htimes_s = time_s;
                 scoreB = true;
@@ -595,8 +586,8 @@ namespace balance.Views
             }
             else
             {
-                timea.Background = Brushes.Coral;
-                gameM = true;
+                TimeAttackButton.Background = Brushes.Coral;
+                gametype = true;
                 scoreB = false;
                 timeB = true;
             }
@@ -650,7 +641,7 @@ namespace balance.Views
 
         void dispatcharTimer_Tick(object sender, EventArgs e)
         {
-            if (gameM == false)
+            if (gametype == false)
             {
                 time_s--;
                 cc.Text = "残り" + time_s + "秒";
@@ -686,7 +677,7 @@ namespace balance.Views
                         {
                             
                             wiimote.Connect();
-                            con.Content = "ストップ";
+                            StartButton.Content = "ストップ";
                             game = true;
                             gameState = true;
                             dispatcharTimer.Start();
