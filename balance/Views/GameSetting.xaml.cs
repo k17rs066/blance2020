@@ -33,11 +33,11 @@ namespace balance.Views
         int user_id;
         public GameSetting()
         {
-            InitializeComponent();
+            /*InitializeComponent();
 
             //gamemode.Text = Application.Current.Properties["gamemodename"].ToString();
             han.Text = Application.Current.Properties["hantei"].ToString() + ":";
-            tan.Text = Application.Current.Properties["tani"].ToString();
+            tan.Text = Application.Current.Properties["tani"].ToString();*/
 
             
 
@@ -97,7 +97,7 @@ namespace balance.Views
 
 
 
-        void modo_Click(object sender, EventArgs e)
+        void Back_Click(object sender, EventArgs e)
         {
             this.Close();
 

@@ -1,20 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+﻿using balance.DataBase;
+using System;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
 using System.Windows.Media;
-using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.Windows.Threading;
-
 using WiimoteLib;
-using balance.DataBase;
 
 
 
@@ -84,7 +76,7 @@ namespace balance.Views
         int htimes_s = 0; //
 
 
-        System.Diagnostics.Stopwatch stopwatch = new System.Diagnostics.Stopwatch(); //ストップウォッチsw生成
+        System.Diagnostics.Stopwatch StopWatch = new System.Diagnostics.Stopwatch(); //ストップウォッチsw生成
         DispatcherTimer dispatcharTimer; //ゲームの秒数を保持する
 
         delegate void UpdateWiimoteStateDelegate(object sender, WiimoteChangedEventArgs args);
@@ -96,6 +88,7 @@ namespace balance.Views
 
         DispatcherTimer dispatcharTimer11; //カウントダウンの秒数を保持する
         int cdtime;
+
 
 
         public GameMode()
@@ -122,6 +115,8 @@ namespace balance.Views
 
         void OnWiimoteChanged(object sender, WiimoteChangedEventArgs e)
         {
+
+
             if (game == true)
             {
                 BalanceBoardState bbs = e.WiimoteState.BalanceBoardState;
@@ -301,7 +296,7 @@ namespace balance.Views
                         {
                             GameState = false;
                             PlaySound("clear.wav");
-                            stopwatch.Stop();
+                            StopWatch.Stop();
                             dispatcharTimer.Stop();
 
 
@@ -331,7 +326,7 @@ namespace balance.Views
 
 
                                 tim.Text = "0秒";
-                                stopwatch = new System.Diagnostics.Stopwatch();
+                                StopWatch = new System.Diagnostics.Stopwatch();
                                 dispatcharTimer = new DispatcherTimer(DispatcherPriority.Normal);
                                 dispatcharTimer.Interval = new TimeSpan(0, 0, 1);
                                 dispatcharTimer.Tick += new EventHandler(dispatcharTimer_Tick);
@@ -343,7 +338,7 @@ namespace balance.Views
                                 game = false;
                                 StartButton.Content = "スタート";
 
-                                GameResult w = new GameResult(this.Button_color, this.BackButton_Click, this.StartButton_Click);
+                                GameResult w = new GameResult(this.Button_Color, this.BackButton_Click, this.StartButton_Click);
                                 w.Title = "GameResult";
                                 w.ShowDialog();
 
@@ -381,7 +376,7 @@ namespace balance.Views
                                 StartButton.Content = "スタート";
                                
                                 
-                                GameResult w = new GameResult(this.Button_color,this.BackButton_Click,this.StartButton_Click);
+                                GameResult w = new GameResult(this.Button_Color,this.BackButton_Click,this.StartButton_Click);
                                 w.Title = "GameResult";
                                 w.ShowDialog();
                                 
@@ -412,6 +407,7 @@ namespace balance.Views
         }
 
 
+
         void BackButton_Click(object sender, EventArgs e) //戻るボタン
         {
            // if (game == true)
@@ -434,7 +430,7 @@ namespace balance.Views
 
                 if (GameType == true)
                 {
-                    stopwatch.Start();
+                    StopWatch.Start();
                     cc.Text = "残り" + tCount + "回";
                     tim.Text = "0" + "秒";
 
@@ -466,7 +462,7 @@ namespace balance.Views
                  dispatcharTimer.Stop();
                  if (GameType == true)
                  {
-                     stopwatch.Stop();
+                     StopWatch.Stop();
                  }
                  else
                  {
@@ -477,13 +473,14 @@ namespace balance.Views
         }
 
 
+
         void SetDialog_Click(object sender, RoutedEventArgs e) 　//設定のダイアログ
         {
             ScoreAttackButton.Background = Brushes.Gainsboro;　//ボタン押したときの色変更
             TimeAttackButton.Background = Brushes.Gainsboro;
             ScoreFlag = false;
             TimeFlag = false;
-            Refresh rf = new Refresh(this.Button_color);
+            Refresh rf = new Refresh(this.Button_Color);
 
 
             Application.Current.Properties["setuser_id"] = user_id;
@@ -494,18 +491,18 @@ namespace balance.Views
             Application.Current.Properties["tani"] = "秒";
 
 
-            Window w = new GameSetting(rf);
-            w.Title = "GameSetting";
-            w.ShowDialog();
+            Window setting_window = new GameSetting(rf);
+            setting_window.Title = "GameSetting";
+            setting_window.ShowDialog();
         }
 
         //スコアタックを選択
-        private void set_score(object sender, RoutedEventArgs e)
+        private void Set_ScoreAttack(object sender, RoutedEventArgs e)
         {
             ScoreAttackButton.Background = Brushes.Coral;　//ボタン押したときの色変更
             TimeAttackButton.Background = Brushes.Gainsboro;
             
-            Refresh rf = new Refresh(this.Button_color);
+            Refresh rf = new Refresh(this.Button_Color);
 
             Application.Current.Properties["setuser_id"] = user_id;
 
@@ -535,12 +532,12 @@ namespace balance.Views
         }
 
         //タイムアタックを選択
-        private void set_time(object sender, RoutedEventArgs e)
+        private void Set_TimeAttack(object sender, RoutedEventArgs e)
         {
             ScoreAttackButton.Background = Brushes.Gainsboro;　//ボタン押したときの色変更
             TimeAttackButton.Background = Brushes.Coral;
 
-            Refresh rf = new Refresh(this.Button_color);
+            Refresh rf = new Refresh(this.Button_Color);
 
             Application.Current.Properties["setuser_id"] = user_id;
 
@@ -570,7 +567,7 @@ namespace balance.Views
 
 
 
-        void Button_color(int t)
+        void Button_Color(int t)
         {
             lin = Application.Current.Properties["line"].ToString();
             set = Application.Current.Properties["settei"].ToString();
@@ -653,6 +650,7 @@ namespace balance.Views
             }
         }
 
+        
    
 
         void dispatcharTimer11_Tick(object sender, EventArgs e)
@@ -661,7 +659,7 @@ namespace balance.Views
             cdtime++;
             countdown.Content = (3 - cdtime).ToString();
 
-            
+
 
             if (cdtime == 3)
             {
