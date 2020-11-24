@@ -38,29 +38,29 @@ namespace balance.Views
         double xza = 0; //重心のX座標
         double yza = 0; //重心のY座標
 
-        private Ellipse drawingBalance = null;    //重心のマーク
-        private Rectangle drawingLeftleg = null;　//左の％
-        private Rectangle drawingRightleg = null;　//右の％
+        private Ellipse DrawingBalance = null;    //重心のマーク
+        private Rectangle DrawingLeftLeg = null;　//左の％
+        private Rectangle DrawingRightLeg = null;　//右の％
 
-        private Rectangle drawingLineL = null;  //左の設定％ライン
-        private Rectangle drawingLineR = null;　//右の設定％ライン
+        private Rectangle DrawingLeftLine = null;  //左の設定％ライン
+        private Rectangle DrawingRightLine = null;　//右の設定％ライン
 
-        private Rectangle drawingNext = null; //％の青の■マーク
+        private Rectangle DrawingNextLeft = null; //％の青の■マーク
 
-        Boolean nexts = false;//おそらくdrawingNextの右のマーク
-        Boolean gameState = false;//現在gameをしているか
-        Boolean gametype = false;//ゲーム種類　scoreatack、trueでtimatack
+        Boolean DrawingNextRight = false;//drawingNextの右のマーク
+        Boolean GameState = false;//現在gameをしているか
+        Boolean GameType = false;//ゲーム種類　scoreatack、trueでtimatack
 
-        double leftsize = 0;  //左足の加重量
-        double rightsize = 0; //右足の加重量
+        double LeftSize = 0;  //左足の加重量
+        double RightSize = 0; //右足の加重量
 
         String st = ""; //settin画面文字表示
         String lin = ""; //クリア設定％
         String set = "";　
         String se = "";
 
-        Boolean scoreB = false; //回数の設定されてるか
-        Boolean timeB = false; //秒数の設定されてるか
+        Boolean ScoreFlag = false; //回数の設定されてるか
+        Boolean TimeFlag = false; //秒数の設定されてるか
 
 
         int count = 0;//重心移動成功時にカウントする、インクリメント
@@ -72,7 +72,7 @@ namespace balance.Views
         int time_t = 0;//時間を表示する際に扱う変数、インクリメント
         int line = 0;//クリアラインの設定を引き継ぐ0～100のいずれかの整数をもつ
 
-        int clearCount = -1;//クリア回数が代入されている　変数は変わらない
+        int ClearCount = -1;//クリア回数が代入されている　変数は変わらない
         int tCount = 0;//テキストカウント（テキスト表示用のカウント変数）デクリメント
         int tCounth = 0;//テキストカウント保持（テキスト表示用のカウント変数に入る値を保持する）;
 
@@ -129,14 +129,14 @@ namespace balance.Views
                 {
                     xza = 430 - 35;
                     yza = 230 - 35;
-                    leftsize = 0;
+                    LeftSize = 0;
                 }
                 else
                 {
                     xza = bbs.CenterOfGravity.X * 12 * 2 + 430 - 35;//*(Canvas.Width/ballWidth)*倍率 + (Canvas.Width/2) - (ballWidth /2)
                     yza = bbs.CenterOfGravity.Y * 6.6 * 3 + 230 - 35;
                     //                    leftsize = 700 - (350 + 14 * (bbs.CenterOfGravity.X));
-                    leftsize = (1 - (xza / 790)) * 700;
+                    LeftSize = (1 - (xza / 790)) * 700;
                     if (xza > 790)　//枠内に収まるように
                     {
                         xza = 790;// 860 - 70 bdraw.Width - ballSize
@@ -162,97 +162,97 @@ namespace balance.Views
 
  
                     //////////////重心の表示
-                    if (this.drawingBalance != null)
+                    if (this.DrawingBalance != null)
                     {
-                        this.bdraw.Children.Remove(this.drawingBalance);
+                        this.balancedraw.Children.Remove(this.DrawingBalance);
                     }
-                    this.drawingBalance = new Ellipse() { Fill = System.Windows.Media.Brushes.GreenYellow, Width = 70, Height = 70, Margin = new Thickness(xza, yza, 0, 0) };　//重心のマーク
-                    this.bdraw.Children.Add(this.drawingBalance);
+                    this.DrawingBalance = new Ellipse() { Fill = System.Windows.Media.Brushes.GreenYellow, Width = 70, Height = 70, Margin = new Thickness(xza, yza, 0, 0) };　//重心のマーク
+                    this.balancedraw.Children.Add(this.DrawingBalance);
 
                     //////////////左足の荷重量表示
-                    if (this.drawingLeftleg != null)
+                    if (this.DrawingLeftLeg != null)
                     {
-                        this.leftleg.Children.Remove(this.drawingLeftleg);
+                        this.leftleg.Children.Remove(this.DrawingLeftLeg);
                     }
-                    this.drawingLeftleg = new Rectangle() { Fill = System.Windows.Media.Brushes.GreenYellow, Width = leftleg.Width, MaxHeight = leftleg.Height, MinHeight = 0 };
-                    if (leftsize < 0)
+                    this.DrawingLeftLeg = new Rectangle() { Fill = System.Windows.Media.Brushes.GreenYellow, Width = leftleg.Width, MaxHeight = leftleg.Height, MinHeight = 0 };
+                    if (LeftSize < 0)
                     {
-                        this.drawingLeftleg.Height = 0;
+                        this.DrawingLeftLeg.Height = 0;
                     }
-                    else if (leftsize > leftleg.Height)
+                    else if (LeftSize > leftleg.Height)
                     {
-                        this.drawingLeftleg.Height = leftleg.Height;
+                        this.DrawingLeftLeg.Height = leftleg.Height;
                     }
                     else
                     {
-                        this.drawingLeftleg.Height = leftsize;
+                        this.DrawingLeftLeg.Height = LeftSize;
                     }
-                    this.drawingLeftleg.Margin = new Thickness(0, leftleg.Height - leftsize, 0, 0);
-                    this.leftleg.Children.Add(this.drawingLeftleg);
+                    this.DrawingLeftLeg.Margin = new Thickness(0, leftleg.Height - LeftSize, 0, 0);
+                    this.leftleg.Children.Add(this.DrawingLeftLeg);
 
                     /////////////////右足の荷重量表示
-                    if (this.drawingRightleg != null)
+                    if (this.DrawingRightLeg != null)
                     {
-                        this.rightleg.Children.Remove(this.drawingRightleg);
+                        this.RightLeg.Children.Remove(this.DrawingRightLeg);
                     }
-                    this.drawingRightleg = new Rectangle() { Fill = System.Windows.Media.Brushes.GreenYellow, Width = rightleg.Width, MaxHeight = rightleg.Height, MinHeight = 0 };
-                    if (rightleg.Height - leftsize < 0)
+                    this.DrawingRightLeg = new Rectangle() { Fill = System.Windows.Media.Brushes.GreenYellow, Width = RightLeg.Width, MaxHeight = RightLeg.Height, MinHeight = 0 };
+                    if (RightLeg.Height - LeftSize < 0)
                     {
-                        this.drawingRightleg.Height = 0;
+                        this.DrawingRightLeg.Height = 0;
                     }
-                    else if (rightleg.Height - leftsize > rightleg.Height)
+                    else if (RightLeg.Height - LeftSize > RightLeg.Height)
                     {
-                        this.drawingRightleg.Height = rightleg.Height;
+                        this.DrawingRightLeg.Height = RightLeg.Height;
                     }
-                    else if (leftsize == 0)
+                    else if (LeftSize == 0)
                     {
-                        this.drawingRightleg.Height = 0;
+                        this.DrawingRightLeg.Height = 0;
                     }
                     else
                     {
-                        this.drawingRightleg.Height = rightleg.Height - leftsize;
+                        this.DrawingRightLeg.Height = RightLeg.Height - LeftSize;
                     }
-                    this.drawingRightleg.Margin = new Thickness(0, rightleg.Height - (rightleg.Height - leftsize), 0, 0);
-                    this.rightleg.Children.Add(this.drawingRightleg);
+                    this.DrawingRightLeg.Margin = new Thickness(0, RightLeg.Height - (RightLeg.Height - LeftSize), 0, 0);
+                    this.RightLeg.Children.Add(this.DrawingRightLeg);
 
                     //////////////////////////////////////////////
 
-                    leftpar.Text = ((int)((leftsize / leftleg.Height) * 100)).ToString() + "%"; //左足荷重％
-                    if ((int)((leftsize / leftleg.Height) * 100) == 0)
+                    leftparcent.Text = ((int)((LeftSize / leftleg.Height) * 100)).ToString() + "%"; //左足荷重％
+                    if ((int)((LeftSize / leftleg.Height) * 100) == 0)
                     {
-                        rightpar.Text = "0%";
+                        rightparcent.Text = "0%";
                     }
                     else
                     {
-                        rightpar.Text = (100 - ((int)((leftsize / leftleg.Height) * 100))).ToString() + "%";
+                        rightparcent.Text = (100 - ((int)((LeftSize / leftleg.Height) * 100))).ToString() + "%";
                     }
 
                     /////////////////青い■を表示
-                    if (gameState == true)
+                    if (GameState == true)
                     {
-                        if (nexts == false) //左の％表示
+                        if (DrawingNextRight == false) //左の％表示
                         {
-                            if (drawingNext != null)
+                            if (DrawingNextLeft != null)
                             {
-                                this.next.Children.Remove(this.drawingNext);
+                                this.next.Children.Remove(this.DrawingNextLeft);
                             }
 
-                            this.drawingNext = new Rectangle() { Fill = System.Windows.Media.Brushes.Blue, Width = 50, Height = next.Height };
+                            this.DrawingNextLeft = new Rectangle() { Fill = System.Windows.Media.Brushes.Blue, Width = 50, Height = next.Height };
 
-                            this.drawingNext.Margin = new Thickness(nextx, 0, 0, 0);
+                            this.DrawingNextLeft.Margin = new Thickness(nextx, 0, 0, 0);
 
-                            this.next.Children.Add(this.drawingNext);
-                            rightflag.Content = ""; //黒い画面の矢印
+                            this.next.Children.Add(this.DrawingNextLeft);
+                            RightFlag.Content = ""; //黒い画面の矢印
 
-                            leftflag.Content = "⬅︎"; //黒い画面の矢印
+                            LeftFlag.Content = "⬅︎"; //黒い画面の矢印
 
-                            if ((int)((leftsize / leftleg.Height) * 100) > (100 - line))　//赤い線を超えた場合
+                            if ((int)((LeftSize / leftleg.Height) * 100) > (100 - line))　//赤い線を超えた場合
                             {
                                 PlaySound(SoundFile);
-                                nexts = true;
+                                DrawingNextRight = true;
                                 count++;
                                 tCount--;
-                                if (gametype == false)　//回数表示
+                                if (GameType == false)　//回数表示
                                 {
                                     tim.Text = count + "回";
                                 }
@@ -262,31 +262,31 @@ namespace balance.Views
                                 }
                             }
                         }
-                        else if (nexts == true)　//右の％表示
+                        else if (DrawingNextRight == true)　//右の％表示
                         {
-                            if (drawingNext != null)
+                            if (DrawingNextLeft != null)
                             {
-                                this.next.Children.Remove(this.drawingNext);
+                                this.next.Children.Remove(this.DrawingNextLeft);
                             }
 
-                            this.drawingNext = new Rectangle() { Fill = System.Windows.Media.Brushes.Blue, Width = 50, Height = next.Height };
+                            this.DrawingNextLeft = new Rectangle() { Fill = System.Windows.Media.Brushes.Blue, Width = 50, Height = next.Height };
 
-                            this.drawingNext.Margin = new Thickness(next.Width - drawingNext.Width, 0, 0, 0);
+                            this.DrawingNextLeft.Margin = new Thickness(next.Width - DrawingNextLeft.Width, 0, 0, 0);
 
-                            this.next.Children.Add(this.drawingNext);
+                            this.next.Children.Add(this.DrawingNextLeft);
 
-                            leftflag.Content = ""; //黒い画面の矢印
+                            LeftFlag.Content = ""; //黒い画面の矢印
 
 
-                            rightflag.Content = "➡︎"; //黒い画面の矢印
+                            RightFlag.Content = "➡︎"; //黒い画面の矢印
 
-                            if ((int)(((rightleg.Height - leftsize) / rightleg.Height) * 100) > (100 - line))
+                            if ((int)(((RightLeg.Height - LeftSize) / RightLeg.Height) * 100) > (100 - line))
                             {
                                 PlaySound(SoundFile);
-                                nexts = false;
+                                DrawingNextRight = false;
                                 count++;
                                 tCount--;
-                                if (gametype == true)
+                                if (GameType == true)
                                 {
                                     cc.Text = "残り" + tCount + "回";
                                 }
@@ -297,16 +297,16 @@ namespace balance.Views
                             }
                         }
 
-                        if ((gametype == true && clearCount == count) || (gametype == false && time_s == 0))　//ゲームの終了条件
+                        if ((GameType == true && ClearCount == count) || (GameType == false && time_s == 0))　//ゲームの終了条件
                         {
-                            gameState = false;
+                            GameState = false;
                             PlaySound("clear.wav");
                             stopwatch.Stop();
                             dispatcharTimer.Stop();
 
 
 
-                            if (gametype == true)　//タイムアタック時のデータベース
+                            if (GameType == true)　//タイムアタック時のデータベース
                             {
                                 if (!Application.Current.Properties["u_id"].ToString().Equals("guest"))
                                 {
@@ -316,7 +316,7 @@ namespace balance.Views
                                     SQL = "SELECT * FROM t_userrecord ORDER BY userrecord_id DESC";
                                     DBConnect.ExecuteReader(SQL);
                                     DBConnect.Reader.Read();
-                                    SQL = "INSERT INTO t_gametrain(userrecord_id,setting,clear_record,clear_line)VALUES('" + DBConnect.Reader[0] + "','" + clearCount + "','" + time_t + "','" + lin + "')";
+                                    SQL = "INSERT INTO t_gametrain(userrecord_id,setting,clear_record,clear_line)VALUES('" + DBConnect.Reader[0] + "','" + ClearCount + "','" + time_t + "','" + lin + "')";
                                     DBConnect.ExecuteReader(SQL);
                                     DBConnect.Dispose();
 
@@ -432,7 +432,7 @@ namespace balance.Views
                  dispatcharTimer11.Start();
                  Console.WriteLine("スタート");
 
-                if (gametype == true)
+                if (GameType == true)
                 {
                     stopwatch.Start();
                     cc.Text = "残り" + tCount + "回";
@@ -462,9 +462,9 @@ namespace balance.Views
                  wiimote.Disconnect();
                  StartButton.Content = "リスタート";
                  game = false;
-                 gameState = false;
+                 GameState = false;
                  dispatcharTimer.Stop();
-                 if (gametype == true)
+                 if (GameType == true)
                  {
                      stopwatch.Stop();
                  }
@@ -481,8 +481,8 @@ namespace balance.Views
         {
             ScoreAttackButton.Background = Brushes.Gainsboro;　//ボタン押したときの色変更
             TimeAttackButton.Background = Brushes.Gainsboro;
-            scoreB = false;
-            timeB = false;
+            ScoreFlag = false;
+            TimeFlag = false;
             Refresh rf = new Refresh(this.Button_color);
 
 
@@ -578,44 +578,44 @@ namespace balance.Views
             if (t == 0) //scoreattackモード
             {
                 ScoreAttackButton.Background = Brushes.Coral;
-                gametype = false;
+                GameType = false;
                 time_s = int.Parse(se);
                 htimes_s = time_s;
-                scoreB = true;
-                timeB = false;
+                ScoreFlag = true;
+                TimeFlag = false;
             }
             else
             {
                 TimeAttackButton.Background = Brushes.Coral;
-                gametype = true;
-                scoreB = false;
-                timeB = true;
+                GameType = true;
+                ScoreFlag = false;
+                TimeFlag = true;
             }
 
             st = "クリアライン:" + lin + "%　" + set;
             settin.Text = st;
 
             line = 100 - int.Parse(lin);
-            clearCount = int.Parse(se);
+            ClearCount = int.Parse(se);
             tCount = int.Parse(se);
             tCounth = int.Parse(se);
-            if (drawingLineL != null)
+            if (DrawingLeftLine != null)
             {
-                this.leftleg.Children.Remove(this.drawingLineL);
+                this.leftleg.Children.Remove(this.DrawingLeftLine);
             }
-            this.drawingLineL = new Rectangle() { Fill = System.Windows.Media.Brushes.Red, Width = leftleg.Width, Height = 10, MaxHeight = leftleg.Height, MinHeight = 0 };
-            this.drawingLineL.Margin = new Thickness(0, leftleg.Height * (((double)line / 100)), 0, 0);
+            this.DrawingLeftLine = new Rectangle() { Fill = System.Windows.Media.Brushes.Red, Width = leftleg.Width, Height = 10, MaxHeight = leftleg.Height, MinHeight = 0 };
+            this.DrawingLeftLine.Margin = new Thickness(0, leftleg.Height * (((double)line / 100)), 0, 0);
 
-            this.leftleg.Children.Add(this.drawingLineL);
+            this.leftleg.Children.Add(this.DrawingLeftLine);
             //            this.rightleg.Children.Add(this.drawingLineL);
-            if (drawingLineR != null)
+            if (DrawingRightLine != null)
             {
-                this.rightleg.Children.Remove(this.drawingLineR);
+                this.RightLeg.Children.Remove(this.DrawingRightLine);
             }
-            this.drawingLineR = new Rectangle() { Fill = System.Windows.Media.Brushes.Red, Width = rightleg.Width, Height = 10, MaxHeight = rightleg.Height, MinHeight = 0 };
-            this.drawingLineR.Margin = new Thickness(0, rightleg.Height * (((double)line / 100)), 0, 0);
+            this.DrawingRightLine = new Rectangle() { Fill = System.Windows.Media.Brushes.Red, Width = RightLeg.Width, Height = 10, MaxHeight = RightLeg.Height, MinHeight = 0 };
+            this.DrawingRightLine.Margin = new Thickness(0, RightLeg.Height * (((double)line / 100)), 0, 0);
 
-            this.rightleg.Children.Add(this.drawingLineR);
+            this.RightLeg.Children.Add(this.DrawingRightLine);
         }
 
         private System.Media.SoundPlayer player = null;
@@ -641,7 +641,7 @@ namespace balance.Views
 
         void dispatcharTimer_Tick(object sender, EventArgs e)
         {
-            if (gametype == false)
+            if (GameType == false)
             {
                 time_s--;
                 cc.Text = "残り" + time_s + "秒";
@@ -669,7 +669,7 @@ namespace balance.Views
                 dispatcharTimer11.Stop();
                 dispatcharTimer11.IsEnabled = false;
 
-                if (scoreB == true || timeB == true) //秒・回数設定されると
+                if (ScoreFlag == true || TimeFlag == true) //秒・回数設定されると
                 {
                     if (game == false) //スタート押されてると
                     {
@@ -679,7 +679,7 @@ namespace balance.Views
                             wiimote.Connect();
                             StartButton.Content = "ストップ";
                             game = true;
-                            gameState = true;
+                            GameState = true;
                             dispatcharTimer.Start();
                             
                         }
