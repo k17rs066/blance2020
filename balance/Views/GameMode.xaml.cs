@@ -44,6 +44,9 @@ namespace balance.Views
         Boolean GameState = false;//現在gameをしているか
         Boolean GameType = false;//ゲーム種類　scoreatack、trueでtimatack
 
+
+        int gametype = 0; //ゲームの種類（0:スコアアタック、1:タイムアタック、2：練習モード）
+
         double LeftSize = 0;  //左足の加重量
         double RightSize = 0; //右足の加重量
 
@@ -54,6 +57,7 @@ namespace balance.Views
 
         Boolean ScoreFlag = false; //回数の設定されてるか
         Boolean TimeFlag = false; //秒数の設定されてるか
+        Boolean PracticeFlag = false; //練習モードでプレイするときにtrue
 
 
         int count = 0;//重心移動成功時にカウントする、インクリメント
@@ -92,12 +96,18 @@ namespace balance.Views
         DispatcherTimer dispatcharTimer11; //カウントダウンの秒数を保持する
         int cdtime;
 
+        
+
 
         public GameMode()
         {
 
             InitializeComponent();
 
+
+            Combo_GameMode.Items.Add("スコアアタック");
+            Combo_GameMode.Items.Add("タイムアタック");
+            Combo_GameMode.Items.Add("練習モード");
 
 
             if (!Application.Current.Properties["u_id"].ToString().Equals("guest")) //user,guest確認
@@ -268,13 +278,18 @@ namespace balance.Views
                                 DrawingNextRight = true;
                                 count++;
                                 tCount--;
-                                if (GameType == false)　//回数表示
+                                if (gametype == 0)　//回数表示、スコアアタック
                                 {
                                     tim.Text = count + "回";
                                 }
-                                else
+                                else if (gametype ==1)// タイムアタック
                                 {
                                     cc.Text = "残り" + tCount + "回";
+                                }
+                                else //練習モード
+                                {
+                                    cc.Text = count + "回";
+
                                 }
                             }
                         }
@@ -302,18 +317,22 @@ namespace balance.Views
                                 DrawingNextRight = false;
                                 count++;
                                 tCount--;
-                                if (GameType == true)
+                                if (gametype == 1) //タイムアタック
                                 {
                                     cc.Text = "残り" + tCount + "回";
                                 }
-                                else
+                                else if (gametype == 0) //スコアアタック
                                 {
                                     tim.Text = count + "回";
+                                }
+                                else //練習モード
+                                {
+                                    cc.Text = count + "回";
                                 }
                             }
                         }
 
-                        if ((GameType == true && ClearCount == count) || (GameType == false && time_s == 0))　//ゲームの終了条件
+                        if ((gametype == 1 && ClearCount == count) || (gametype == 0 && time_s == 0))　//ゲームの終了条件
                         {
                             GameState = false;
                             PlaySound("clear.wav");
@@ -322,7 +341,7 @@ namespace balance.Views
 
 
 
-                            if (GameType == true)　//タイムアタック時のデータベース
+                            if (gametype == 1)　//タイムアタック時のデータベース , gametype = 1
                             {
                                 if (!Application.Current.Properties["u_id"].ToString().Equals("guest"))
                                 {
@@ -366,7 +385,7 @@ namespace balance.Views
 
 
                             }
-                            else //スコアタック時
+                            else if(gametype == 0)//スコアタック時
                             {
                                 if (!Application.Current.Properties["u_id"].ToString().Equals("guest"))
                                 {
@@ -392,6 +411,10 @@ namespace balance.Views
                                 dispatcharTimer.Tick += new EventHandler(dispatcharTimer_Tick);
                                 time_s = htimes_s;
                                 count = 0;
+                                count = 0;
+                                tCount = tCounth;
+                                nextx = 0;
+                                time_t = 0;
 
                                 game = false;
                                 StartButton.Content = "スタート";
@@ -402,6 +425,18 @@ namespace balance.Views
                                 w.ShowDialog();
                                 
 
+                            }
+
+                            else //練習モード
+                            {
+                                Application.Current.Properties["time_t"] = time_t;
+                                tim.Text = "0秒";
+                                StopWatch = new System.Diagnostics.Stopwatch();
+                                dispatcharTimer = new DispatcherTimer(DispatcherPriority.Normal);
+                                dispatcharTimer.Interval = new TimeSpan(0, 0, 1);
+                                dispatcharTimer.Tick += new EventHandler(dispatcharTimer_Tick);
+                                count = 0;
+                                time_t = 0;
                             }
 
                         }
@@ -447,17 +482,24 @@ namespace balance.Views
                  dispatcharTimer11.Start();
                  Console.WriteLine("スタート");
 
-                if (GameType == true)
+                if (gametype == 1) //タイムアタック
                 {
                     StopWatch.Start();
                     cc.Text = "残り" + tCount + "回";
                     tim.Text = "0" + "秒";
 
                 }
-                else
+                else if(gametype == 0) //スコアアタック
                 {
                     cc.Text = "残り" + time_s + "秒";
                     tim.Text = count + "回";
+                }
+                else
+                {
+                    StopWatch.Start();
+                    cc.Text = count + "回";
+                    tim.Text = "0" + "秒";
+
                 }
              }
             else if (StartButton.Content.Equals("リスタート"))
@@ -479,7 +521,7 @@ namespace balance.Views
                  game = false;
                  GameState = false;
                  dispatcharTimer.Stop();
-                 if (GameType == true)
+                 if (gametype == 1 || gametype == 2)
                  {
                      StopWatch.Stop();
                  }
@@ -494,10 +536,10 @@ namespace balance.Views
 
         void SetDialog_Click(object sender, RoutedEventArgs e) 　//設定のダイアログ
         {
-            ScoreAttackButton.Background = Brushes.Gainsboro;　//ボタン押したときの色変更
-            TimeAttackButton.Background = Brushes.Gainsboro;
+
             ScoreFlag = false;
             TimeFlag = false;
+            PracticeFlag = false;
 
             Refresh rf = new Refresh(this.Button_Color);
 
@@ -515,75 +557,8 @@ namespace balance.Views
             setting_window.ShowDialog();
         }
 
-        //スコアタックを選択
-        private void Set_ScoreAttack(object sender, RoutedEventArgs e)
-        {
-            ScoreAttackButton.Background = Brushes.Coral;　//ボタン押したときの色変更
-            TimeAttackButton.Background = Brushes.Gainsboro;
-            
-            Refresh rf = new Refresh(this.Button_Color);
-
-            Application.Current.Properties["setuser_id"] = user_id;
-
-            Application.Current.Properties["gamemodename"] = (sender as Button).Content;
-
-
-            DBConnect.Connect("kasiihara.db");
-            SQL = "SELECT * FROM t_userrecord NATURAL JOIN t_gametrain WHERE user_id ='" + user_id + "' AND traintype ='スコアアタック' ORDER BY userrecord_id DESC";
-            DBConnect.ExecuteReader(SQL);
-            if (DBConnect.Reader.Read())
-            {
-                Application.Current.Properties["line"] = int.Parse(DBConnect.Reader[7].ToString());
-                Application.Current.Properties["sette"] = int.Parse(DBConnect.Reader[5].ToString());
-              
-                Application.Current.Properties["settei"] = "計測時間" + Application.Current.Properties["sette"] + "秒";
-                rf(0);
-            }
-            else
-            {
-                Application.Current.Properties["line"] = 60;
-                Application.Current.Properties["sette"] = 10;
-
-                Application.Current.Properties["settei"] = "計測時間" + Application.Current.Properties["sette"] + "秒";
-                rf(0);
-            }
-            DBConnect.Dispose();
-        }
-
-        //タイムアタックを選択
-        private void Set_TimeAttack(object sender, RoutedEventArgs e)
-        {
-            ScoreAttackButton.Background = Brushes.Gainsboro;　//ボタン押したときの色変更
-            TimeAttackButton.Background = Brushes.Coral;
-
-            Refresh rf = new Refresh(this.Button_Color);
-
-            Application.Current.Properties["setuser_id"] = user_id;
-
-            Application.Current.Properties["gamemodename"] = (sender as Button).Content;
-
-            DBConnect.Connect("kasiihara.db");
-            SQL = "SELECT * FROM t_userrecord NATURAL JOIN t_gametrain WHERE user_id ='" + user_id + "' AND traintype ='タイムアタック' ORDER BY userrecord_id DESC";
-            DBConnect.ExecuteReader(SQL);
-            if (DBConnect.Reader.Read())
-            {
-                Application.Current.Properties["line"] = int.Parse(DBConnect.Reader[7].ToString());
-                Application.Current.Properties["sette"] = int.Parse(DBConnect.Reader[5].ToString());
-
-                Application.Current.Properties["settei"] = "計測回数" + Application.Current.Properties["sette"] + "回";
-                rf(1);
-            }
-            else
-            {
-                Application.Current.Properties["line"] = 60;
-                Application.Current.Properties["sette"] = 10;
-
-                Application.Current.Properties["settei"] = "計測回数" + Application.Current.Properties["sette"] + "回";
-                rf(1);
-            }
-            DBConnect.Dispose();
-        }
-
+ 
+        
 
 
         void Button_Color(int t)
@@ -591,25 +566,38 @@ namespace balance.Views
             lin = Application.Current.Properties["line"].ToString();
             set = Application.Current.Properties["settei"].ToString();
             se = Application.Current.Properties["sette"].ToString(); //設定画面での秒数、回数
-            if (t == 0) //scoreattackモード
+            if (t == 0) //スコアアタックモード
             {
-                ScoreAttackButton.Background = Brushes.Coral;
-                GameType = false;
+                gametype = 0;
+                Combo_GameMode.SelectedIndex=gametype;
                 time_s = int.Parse(se);
                 htimes_s = time_s;
                 ScoreFlag = true;
                 TimeFlag = false;
+                st = "クリアライン:" + lin + "%　" + set;
+                settin.Text = st;
             }
-            else
+            else if(t == 1) //タイムアタックモード
             {
-                TimeAttackButton.Background = Brushes.Coral;
-                GameType = true;
+                gametype = 1;
+                Combo_GameMode.SelectedIndex = gametype;
                 ScoreFlag = false;
                 TimeFlag = true;
+                st = "クリアライン:" + lin + "%　" + set;
+                settin.Text = st;
+            }
+            else //練習モード
+            {
+                gametype = 2;
+                Combo_GameMode.SelectedIndex = gametype;
+                PracticeFlag = true;
+                ScoreFlag = false;
+                TimeFlag = false;
+                st = "クリアライン:" + lin + "%　";
+                settin.Text = st;
+
             }
 
-            st = "クリアライン:" + lin + "%　" + set;
-            settin.Text = st;
 
             line = 100 - int.Parse(lin);
             ClearCount = int.Parse(se);
@@ -657,7 +645,7 @@ namespace balance.Views
 
         void dispatcharTimer_Tick(object sender, EventArgs e)
         {
-            if (GameType == false)
+            if (gametype == 0)
             {
                 time_s--;
                 cc.Text = "残り" + time_s + "秒";
@@ -686,7 +674,7 @@ namespace balance.Views
                 dispatcharTimer11.Stop();
                 dispatcharTimer11.IsEnabled = false;
 
-                if (ScoreFlag == true || TimeFlag == true) //秒・回数設定されると
+                if (ScoreFlag == true || TimeFlag == true || PracticeFlag ==true) //秒・回数設定されると
                 {
                     if (game == false) //スタート押されてると
                     {
@@ -713,7 +701,83 @@ namespace balance.Views
             
 
         }
-        
+
+        private void Combo_GameMode_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            string selectedItem = Combo_GameMode.SelectedItem.ToString();
+            gametype = Combo_GameMode.SelectedIndex;
+            if (gametype == 1) //タイムアタック
+            {
+
+                Refresh rf = new Refresh(this.Button_Color);
+
+                Application.Current.Properties["setuser_id"] = user_id;
+
+                Application.Current.Properties["gamemodename"] = Combo_GameMode.SelectedItem.ToString();
+
+                DBConnect.Connect("kasiihara.db");
+                SQL = "SELECT * FROM t_userrecord NATURAL JOIN t_gametrain WHERE user_id ='" + user_id + "' AND traintype ='タイムアタック' ORDER BY userrecord_id DESC";
+                DBConnect.ExecuteReader(SQL);
+                if (DBConnect.Reader.Read())
+                {
+                    Application.Current.Properties["line"] = int.Parse(DBConnect.Reader[7].ToString());
+                    Application.Current.Properties["sette"] = int.Parse(DBConnect.Reader[5].ToString());
+
+                    Application.Current.Properties["settei"] = "計測回数" + Application.Current.Properties["sette"] + "回";
+                    rf(1);
+                }
+                else
+                {
+                    Application.Current.Properties["line"] = 60;
+                    Application.Current.Properties["sette"] = 10;
+
+                    Application.Current.Properties["settei"] = "計測回数" + Application.Current.Properties["sette"] + "回";
+                    rf(1);
+                }
+                DBConnect.Dispose();
+
+            } else if (gametype == 0) //スコアアタック
+            {
+
+
+                Refresh rf = new Refresh(this.Button_Color);
+
+                Application.Current.Properties["setuser_id"] = user_id;
+
+                Application.Current.Properties["gamemodename"] = Combo_GameMode.SelectedItem.ToString();
+
+
+                DBConnect.Connect("kasiihara.db");
+                SQL = "SELECT * FROM t_userrecord NATURAL JOIN t_gametrain WHERE user_id ='" + user_id + "' AND traintype ='スコアアタック' ORDER BY userrecord_id DESC";
+                DBConnect.ExecuteReader(SQL);
+                if (DBConnect.Reader.Read())
+                {
+                    Application.Current.Properties["line"] = int.Parse(DBConnect.Reader[7].ToString());
+                    Application.Current.Properties["sette"] = int.Parse(DBConnect.Reader[5].ToString());
+
+                    Application.Current.Properties["settei"] = "計測時間" + Application.Current.Properties["sette"] + "秒";
+                    rf(0);
+                }
+                else
+                {
+                    Application.Current.Properties["line"] = 60;
+                    Application.Current.Properties["sette"] = 10;
+
+                    Application.Current.Properties["settei"] = "計測時間" + Application.Current.Properties["sette"] + "秒";
+                    rf(0);
+                }
+                DBConnect.Dispose();
+            }
+            else //練習モード
+            {
+                Refresh rf = new Refresh(this.Button_Color);
+                Application.Current.Properties["setuser_id"] = user_id;
+
+                Application.Current.Properties["gamemodename"] = Combo_GameMode.SelectedItem.ToString();
+                rf(2);
+            }
+        }
+
 
     }
 }

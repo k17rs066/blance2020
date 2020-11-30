@@ -29,10 +29,10 @@
             <Label x:Name="RightFlag" Content="" Canvas.Left="616" Canvas.Top="160" Height="139" Width="136" FontSize="120" FontWeight="Bold" Foreground="#FFF4F4F5"/>
 
         </Canvas>
-        <Button Name ="back" Content="戻る" FontSize="50" HorizontalAlignment="Left" Height="99" Margin="416.385,28,0,0" VerticalAlignment="Top" Width="398" Click="BackButton_Click" Grid.Column="1"/>
-        <Button Name ="ScoreAttackButton" Content="スコアアタック" FontSize ="50" HorizontalAlignment="Left" Height="101" Margin="760,164,0,0" VerticalAlignment="Top" Width="439" Click="Set_ScoreAttack" Grid.ColumnSpan="2" />
-        <Button Name ="TimeAttackButton" Content="タイムアタック" FontSize ="50" HorizontalAlignment="Left" Height="101" Margin="416.385,164,0,0" VerticalAlignment="Top" Width="398" Click="Set_TimeAttack" Grid.Column="1"/>
-        <Button Name ="StartButton" Content="スタート" FontSize ="50" HorizontalAlignment="Left" Height="99" Margin="416.385,305,0,0" VerticalAlignment="Top" Width="398" Click="StartButton_Click" Grid.Column="1"/>
+        <Button Name ="back" Content="戻る" FontSize="50" HorizontalAlignment="Left" Height="101" Margin="416,28,0,0" VerticalAlignment="Top" Width="398" Click="BackButton_Click" Grid.Column="1"/>
+        <Label Name="modeselect" Content="ゲームモード：" FontSize="60" Margin="44,186,0,0" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+        <ComboBox Name="Combo_GameMode"  Margin="416,186,155,0" FontSize ="50" HorizontalAlignment="Center" Height="90"  VerticalAlignment="Top" Width="324" SelectedIndex="0" SelectionChanged="Combo_GameMode_SelectionChanged" Grid.Column="1" />
+        <Button Name ="StartButton" Content="スタート" FontSize ="50" HorizontalAlignment="Left" Height="101" Margin="42,28,0,0" VerticalAlignment="Top" Width="331" Click="StartButton_Click" Grid.Column="1"/>
         <!--        <Rectangle Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="25" Margin="1333.2,702,0,0" VerticalAlignment="Top" Width="150"/>
         <Rectangle Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="25" Margin="1334.391,705.673,0,0" VerticalAlignment="Top" Width="150" RenderTransformOrigin="0.5,0.5">
             <Rectangle.RenderTransform>
@@ -47,7 +47,7 @@
 -->
         <TextBlock Name ="leftparcent" HorizontalAlignment="Left" FontSize="100" Height="126" Margin="110,878,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="240"/>
         <TextBlock Name ="rightparcent" HorizontalAlignment="Left" FontSize ="100" Height="126" Margin="445,878,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="240"/>
-        <TextBlock Name ="settin" FontSize ="50" HorizontalAlignment="Left" Height="100" Margin="760,284,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="696" Grid.ColumnSpan="2"/>
+        <TextBlock Name ="settin" FontSize ="50" HorizontalAlignment="Left" Height="100" Margin="764,332,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="696" Grid.ColumnSpan="2"/>
         <!--leftpar　左の％
         　　rightpar　右の％
         　　settin 設定したクリアライン、時間（回数）
@@ -55,10 +55,10 @@
             cc　回数
         　　next 青い■-->
         <Canvas Name="next" HorizontalAlignment="Left" Height="50" Margin="188,51,0,0" VerticalAlignment="Top" Width="400" RenderTransformOrigin="0.5,0.5"/>
-        <TextBlock Name ="tim" FontSize="80" HorizontalAlignment="Left" Height="96" Margin="90.385,404,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="351" Grid.Column="1"/>
-        <TextBlock Name ="cc" FontSize="80" HorizontalAlignment="Left" Height="96" Margin="760,404,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="351" Grid.ColumnSpan="2"/>
+        <TextBlock Name ="tim" FontSize="80" HorizontalAlignment="Left" Height="96" Margin="174,437,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="351" Grid.Column="1"/>
+        <TextBlock Name ="cc" FontSize="80" HorizontalAlignment="Left" Height="96" Margin="764,437,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="351" Grid.ColumnSpan="2"/>
         <Label x:Name="countdown" Content="" HorizontalAlignment="Left" Margin="687,356,0,0" Height="374" Width="512"   FontSize="250" FontWeight="Bold" VerticalAlignment="Top" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Background="{x:Null}" Foreground="#FFF72218" Grid.ColumnSpan="2" />
-        <Button x:Name="SetDialog" Content="設定" FontSize ="50" HorizontalAlignment="Left" Height="101" Margin="760,28,0,0" VerticalAlignment="Top" Width="439" Click="SetDialog_Click" Grid.ColumnSpan="2"/>
+        <Button x:Name="SetDialog" Content="設定" FontSize ="50" HorizontalAlignment="Left" Height="101" Margin="674,28,0,0" VerticalAlignment="Top" Width="351" Click="SetDialog_Click"/>
 
     </Grid>
 </Page>

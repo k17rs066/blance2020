@@ -49,8 +49,9 @@ namespace balance.Views
             tan.Text = Application.Current.Properties["tani"].ToString();
             user_id = int.Parse(Application.Current.Properties["setuser_id"].ToString());
 
-            timebutton.Background = Brushes.Gainsboro;
-            scorebutton.Background = Brushes.Coral;
+            TimeButton.Background = Brushes.Gainsboro;
+            ScoreButton.Background = Brushes.Coral;
+            PracticeButton.Background = Brushes.Gainsboro;
 
             rf = pRefresh;
 
@@ -104,13 +105,16 @@ namespace balance.Views
             if (!combo.Text
                 .ToString().Equals("") && !combokei.Text.ToString().Equals(""))
             {
-                if (han.Text.Equals("計測時間:"))
+                if (han.Text.Equals("計測時間:")) // スコアアタック
                 {
                     bnum = 0;
                 }
-                else
+                else if(han.Text.Equals("計測回数:")) //　タイムアタック
                 {
                     bnum = 1;
+                }else //練習モード
+                {
+                    bnum = 2;
                 }
                 Application.Current.Properties["line"] = combo.Text;
                 Application.Current.Properties["settei"] = han.Text + combokei.Text + tan.Text;
@@ -121,20 +125,36 @@ namespace balance.Views
         }
 
 
-         void scoreButton_Click(object sender, EventArgs e)
+         void ScoreButton_Click(object sender, EventArgs e)
         {
-            timebutton.Background = Brushes.Gainsboro;
-            scorebutton.Background = Brushes.Coral;
+            TimeButton.Background = Brushes.Gainsboro;
+            ScoreButton.Background = Brushes.Coral;
+            PracticeButton.Background = Brushes.Gainsboro;
+
             han.Text = "計測時間:";
             tan.Text = "秒";
             Application.Current.Properties["gamemodename"] = "スコアアタック";
 
         }
 
-         void timeButton_Click(object sender, EventArgs e)
+        void PracticeButton_Click(object sender, EventArgs e)
         {
-            timebutton.Background = Brushes.Coral;
-            scorebutton.Background = Brushes.Gainsboro;
+            TimeButton.Background = Brushes.Gainsboro;
+            ScoreButton.Background = Brushes.Gainsboro;
+            PracticeButton.Background = Brushes.Coral;
+
+            combokei.Visibility = Visibility.Hidden;
+            han.Text = null;
+            tan.Text = null;
+            Application.Current.Properties["gamemodename"] = "練習モード";
+        }
+
+         void TimeButton_Click(object sender, EventArgs e)
+        {
+            TimeButton.Background = Brushes.Coral;
+            ScoreButton.Background = Brushes.Gainsboro;
+            PracticeButton.Background = Brushes.Gainsboro;
+
             han.Text = "計測回数:";
             tan.Text = "回";
             Application.Current.Properties["gamemodename"] = "タイムアタック";

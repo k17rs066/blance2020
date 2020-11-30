@@ -18,8 +18,10 @@
         <Button Content="OK" FontSize="40" HorizontalAlignment="Left" Height="62" Margin="175,465,0,0" VerticalAlignment="Top" Width="183" Click="ok_Click" Grid.ColumnSpan="2"/>
         <ComboBox Name ="combo" FontSize ="50" HorizontalAlignment="Left" Height="65" Margin="183,225,0,0" VerticalAlignment="Top" Width="175" Grid.Column="1"/>
         <ComboBox Name ="combokei" FontSize ="50" HorizontalAlignment="Left" Height="65" Margin="183,331,0,0" VerticalAlignment="Top" Width="175" Grid.Column="1"/>
-        <Button x:Name="scorebutton" Content="スコアアタック" HorizontalAlignment="Left" Margin="74,101,0,0" VerticalAlignment="Top" Width="176" Height="59" FontSize="30" Click="scoreButton_Click" Grid.ColumnSpan="2"/>
-        <Button x:Name="timebutton" Content="タイムアタック" HorizontalAlignment="Left" Margin="62,101,0,0" VerticalAlignment="Top" Width="168" Height="59" FontSize="30" Click="timeButton_Click" Grid.Column="1"/>
+        <Button x:Name="ScoreButton" Content="スコアアタック" HorizontalAlignment="Left" Margin="74,101,0,0" VerticalAlignment="Top" Width="176" Height="59" FontSize="30" Click="ScoreButton_Click" Grid.ColumnSpan="2"/>
+        <Button x:Name="TimeButton" Content="タイムアタック" HorizontalAlignment="Left" Margin="90,101,0,0" VerticalAlignment="Top" Width="168" Height="59" FontSize="30" Click="TimeButton_Click" Grid.Column="1"/>
         <Label Content="ゲームモード・クリアライン・計測時間/回数を選択してください。" HorizontalAlignment="Left" Margin="99,27,0,0" VerticalAlignment="Top" Height="43" Width="581" FontSize="24" Grid.ColumnSpan="2"/>
+        <Button x:Name="PracticeButton" Content="練習モード" HorizontalAlignment="Left" Margin="297,101,0,0" VerticalAlignment="Top" Width="176" Height="59" FontSize="30" Click="PracticeButton_Click" Grid.Column="3"/>
+
     </Grid>
 </Window>
