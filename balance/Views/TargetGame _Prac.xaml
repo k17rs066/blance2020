@@ -14,14 +14,7 @@
             <Canvas.Background>
                 <SolidColorBrush Color="{DynamicResource {x:Static SystemColors.GradientInactiveCaptionColorKey}}"/>
             </Canvas.Background>
-            <Thumb x:Name="target1" Width="100" Height="100"
-               Canvas.Left="126"
-               Canvas.Top="92"
-               DragDelta="Thumb1_DragDelta"  RenderTransformOrigin="0.5,0.5" >
-                <Thumb.Background>
-                    <ImageBrush ImageSource="/balance;component/image/1.png"/>
-                </Thumb.Background>
-            </Thumb>
+
             <Thumb x:Name="target2" Width="100" Height="100"
                Canvas.Left="342"
                Canvas.Top="92"

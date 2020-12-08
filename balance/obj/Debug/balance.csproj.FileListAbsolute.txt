@@ -2242,8 +2242,6 @@ C:\Users\smkwlab02\Documents\GitHub\blanceNewGame\balance\obj\Debug\balance.exe
 C:\Users\smkwlab02\Documents\GitHub\blanceNewGame\balance\obj\Debug\balance.pdb
 C:\Users\balance\Documents\GitHub\blanceNewGame\balance\obj\Debug\Views\Calibration.baml
 C:\Users\balance\Documents\GitHub\blanceNewGame\balance\obj\Debug\Views\MainTitle.baml
-C:\Users\balance\Documents\GitHub\blanceNewGame\balance\obj\Debug\Views\GameMode.baml
-C:\Users\balance\Documents\GitHub\blanceNewGame\balance\obj\Debug\Views\GameSetting.baml
 C:\Users\balance\Documents\GitHub\blanceNewGame\balance\obj\Debug\Views\k_RecordConfirmation.baml
 C:\Users\balance\Documents\GitHub\blanceNewGame\balance\obj\Debug\Views\k_Top.baml
 C:\Users\balance\Documents\GitHub\blanceNewGame\balance\obj\Debug\Views\LoadTraining.baml
@@ -2267,10 +2265,8 @@ C:\Users\balance\Documents\GitHub\blanceNewGame\balance\obj\Debug\Views\GameOfTa
 C:\Users\balance\Documents\GitHub\blanceNewGame\balance\obj\Debug\Views\MainTitle.g.cs
 C:\Users\balance\Documents\GitHub\blanceNewGame\balance\obj\Debug\Views\FallGame_Prac.g.cs
 C:\Users\balance\Documents\GitHub\blanceNewGame\balance\obj\Debug\Views\FTGameResult.g.cs
-C:\Users\balance\Documents\GitHub\blanceNewGame\balance\obj\Debug\Views\GameMode.g.cs
 C:\Users\balance\Documents\GitHub\blanceNewGame\balance\obj\Debug\Views\GameResult.g.cs
 C:\Users\balance\Documents\GitHub\blanceNewGame\balance\obj\Debug\Views\GameSelect.g.cs
-C:\Users\balance\Documents\GitHub\blanceNewGame\balance\obj\Debug\Views\GameSetting.g.cs
 C:\Users\balance\Documents\GitHub\blanceNewGame\balance\obj\Debug\Views\k_RecordConfirmation.g.cs
 C:\Users\balance\Documents\GitHub\blanceNewGame\balance\obj\Debug\Views\k_Top.g.cs
 C:\Users\balance\Documents\GitHub\blanceNewGame\balance\obj\Debug\Views\LoadTraining.g.cs
@@ -2450,3 +2446,7 @@ C:\Users\balance\Downloads\blanceNewGame-2020_3rd\blanceNewGame-2020_3rd\balance
 C:\Users\balance\Downloads\blanceNewGame-2020_3rd\blanceNewGame-2020_3rd\balance\obj\Debug\balance.csproj.CopyComplete
 C:\Users\balance\Downloads\blanceNewGame-2020_3rd\blanceNewGame-2020_3rd\balance\obj\Debug\balance.exe
 C:\Users\balance\Downloads\blanceNewGame-2020_3rd\blanceNewGame-2020_3rd\balance\obj\Debug\balance.pdb
+C:\Users\balance\Documents\GitHub\blanceNewGame\balance\obj\Debug\Views\AttackGame.baml
+C:\Users\balance\Documents\GitHub\blanceNewGame\balance\obj\Debug\Views\AttackGameSetting.baml
+C:\Users\balance\Documents\GitHub\blanceNewGame\balance\obj\Debug\Views\AttackGame.g.cs
+C:\Users\balance\Documents\GitHub\blanceNewGame\balance\obj\Debug\Views\AttackGameSetting.g.cs

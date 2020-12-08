@@ -157,8 +157,8 @@
     <Compile Include="Views\FTGameResult.xaml.cs">
       <DependentUpon>FTGameResult.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\GameMode.xaml.cs">
-      <DependentUpon>GameMode.xaml</DependentUpon>
+    <Compile Include="Views\AttackGame.xaml.cs">
+      <DependentUpon>AttackGame.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\GameResult.xaml.cs">
       <DependentUpon>GameResult.xaml</DependentUpon>
@@ -166,8 +166,8 @@
     <Compile Include="Views\GameSelect.xaml.cs">
       <DependentUpon>GameSelect.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\GameSetting.xaml.cs">
-      <DependentUpon>GameSetting.xaml</DependentUpon>
+    <Compile Include="Views\AttackGameSetting.xaml.cs">
+      <DependentUpon>AttackGameSetting.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\k_RecordConfirmation.xaml.cs">
       <DependentUpon>k_RecordConfirmation.xaml</DependentUpon>
@@ -288,7 +288,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\GameMode.xaml">
+    <Page Include="Views\AttackGame.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -300,7 +300,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\GameSetting.xaml">
+    <Page Include="Views\AttackGameSetting.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

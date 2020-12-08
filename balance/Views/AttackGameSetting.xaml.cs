@@ -19,7 +19,7 @@ using balance.DataBase;
 namespace balance.Views
 {
 
-    public partial class GameSetting : Window
+    public partial class AttackGameSetting : Window
     {
 
         public AttackGame.Refresh rf = null;
@@ -29,7 +29,7 @@ namespace balance.Views
         int c_line = 70;
         int seti = 10;
         int user_id;
-        public GameSetting()
+        public AttackGameSetting()
         {
             //gamemode.Text = Application.Current.Properties["gamemodename"].ToString();
             han.Text = Application.Current.Properties["hantei"].ToString() + ":";
@@ -39,7 +39,7 @@ namespace balance.Views
 
         }
 
-        public GameSetting(AttackGame.Refresh pRefresh)
+        public AttackGameSetting(AttackGame.Refresh pRefresh)
         {
             InitializeComponent();
 

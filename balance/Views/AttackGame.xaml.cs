@@ -129,7 +129,7 @@ namespace balance.Views
                 Application.Current.Properties["tani"] = "秒";
 
 
-                Window setting_window = new GameSetting(rf);
+                Window setting_window = new AttackGameSetting(rf);
                 setting_window.Title = "GameSetting";
                 setting_window.ShowDialog();
 
@@ -552,7 +552,7 @@ namespace balance.Views
             Application.Current.Properties["tani"] = "秒";
 
 
-            Window setting_window = new GameSetting(rf);
+            Window setting_window = new AttackGameSetting(rf);
             setting_window.Title = "GameSetting";
             setting_window.ShowDialog();
         }

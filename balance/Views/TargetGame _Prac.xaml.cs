@@ -29,6 +29,9 @@ namespace balance.Views
 
     public partial class TargetGame_Prac : Page
     {
+        private Thumb target1 = new Thumb();
+        
+
 
         public delegate void Refresh_a(object sender, RoutedEventArgs e);
 
