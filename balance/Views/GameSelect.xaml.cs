@@ -49,7 +49,7 @@ namespace balance.Views
 
         private void attack(object sender, RoutedEventArgs e)
         {
-            var nextPage = new GameMode();
+            var nextPage = new AttackGame();
             NavigationService.Navigate(nextPage);
         }
 

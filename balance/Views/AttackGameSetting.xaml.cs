@@ -22,7 +22,7 @@ namespace balance.Views
     public partial class GameSetting : Window
     {
 
-        public GameMode.Refresh rf = null;
+        public AttackGame.Refresh rf = null;
         int bnum = -1;
 
         String SQL = "";
@@ -39,7 +39,7 @@ namespace balance.Views
 
         }
 
-        public GameSetting(GameMode.Refresh pRefresh)
+        public GameSetting(AttackGame.Refresh pRefresh)
         {
             InitializeComponent();
 

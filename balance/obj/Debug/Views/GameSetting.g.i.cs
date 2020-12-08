@@ -38,7 +38,7 @@ namespace balance.Views {
     /// <summary>
     /// GameSetting
     /// </summary>
-    public partial class GameSetting : System.Windows.Window, System.Windows.Markup.IComponentConnector {
+    public partial class AttackGameSetting : System.Windows.Window, System.Windows.Markup.IComponentConnector {
         
         
         #line 13 "..\..\..\Views\GameSetting.xaml"

@@ -15,7 +15,7 @@ namespace balance.Views
     /// <summary>
     /// GameMode.xaml の相互作用ロジック  314行ダイアログ解除
     /// </summary>
-    public partial class GameMode : Page
+    public partial class AttackGame : Page
     {
         public delegate void Refresh(int a);
 
@@ -99,7 +99,7 @@ namespace balance.Views
         
 
 
-        public GameMode()
+        public AttackGame()
         {
 
             InitializeComponent();
@@ -118,7 +118,7 @@ namespace balance.Views
             wiimote.WiimoteChanged += OnWiimoteChanged;
 
 
-                Refresh rf = new Refresh(this.Button_Color);
+                Refresh rf = new Refresh(this.Combo_Select);
 
 
                 Application.Current.Properties["setuser_id"] = user_id;
@@ -378,7 +378,7 @@ namespace balance.Views
                                 game = false;
                                 StartButton.Content = "スタート";
 
-                                GameResult w = new GameResult(this.Button_Color, this.BackButton_Click, this.StartButton_Click);
+                                GameResult w = new GameResult(this.Combo_Select, this.BackButton_Click, this.StartButton_Click);
                                 w.Title = "GameResult";
                                 w.ShowDialog();
 
@@ -420,7 +420,7 @@ namespace balance.Views
                                 StartButton.Content = "スタート";
                                
                                 
-                                GameResult w = new GameResult(this.Button_Color,this.BackButton_Click,this.StartButton_Click);
+                                GameResult w = new GameResult(this.Combo_Select,this.BackButton_Click,this.StartButton_Click);
                                 w.Title = "GameResult";
                                 w.ShowDialog();
                                 
@@ -541,7 +541,7 @@ namespace balance.Views
             TimeFlag = false;
             PracticeFlag = false;
 
-            Refresh rf = new Refresh(this.Button_Color);
+            Refresh rf = new Refresh(this.Combo_Select);
 
 
             Application.Current.Properties["setuser_id"] = user_id;
@@ -561,7 +561,7 @@ namespace balance.Views
         
 
 
-        void Button_Color(int t)
+        void Combo_Select(int t)
         {
             lin = Application.Current.Properties["line"].ToString();
             set = Application.Current.Properties["settei"].ToString();
@@ -709,7 +709,7 @@ namespace balance.Views
             if (gametype == 1) //タイムアタック
             {
 
-                Refresh rf = new Refresh(this.Button_Color);
+                Refresh rf = new Refresh(this.Combo_Select);
 
                 Application.Current.Properties["setuser_id"] = user_id;
 
@@ -740,7 +740,7 @@ namespace balance.Views
             {
 
 
-                Refresh rf = new Refresh(this.Button_Color);
+                Refresh rf = new Refresh(this.Combo_Select);
 
                 Application.Current.Properties["setuser_id"] = user_id;
 
@@ -770,7 +770,7 @@ namespace balance.Views
             }
             else //練習モード
             {
-                Refresh rf = new Refresh(this.Button_Color);
+                Refresh rf = new Refresh(this.Combo_Select);
                 Application.Current.Properties["setuser_id"] = user_id;
 
                 Application.Current.Properties["gamemodename"] = Combo_GameMode.SelectedItem.ToString();

@@ -20,11 +20,11 @@ namespace balance.Views
     /// </summary>
     public partial class GameResult : Window
     {
-        public balance.Views.GameMode.Refresh rf = null;
-        public balance.Views.GameMode.Refresh1 rf1 = null;
-        public balance.Views.GameMode.Refresh2 rf2 = null;
+        public balance.Views.AttackGame.Refresh rf = null;
+        public balance.Views.AttackGame.Refresh1 rf1 = null;
+        public balance.Views.AttackGame.Refresh2 rf2 = null;
 
-        public GameResult(balance.Views.GameMode.Refresh pRefresh, balance.Views.GameMode.Refresh1 pRefresh1, balance.Views.GameMode.Refresh2 pRefresh2)
+        public GameResult(balance.Views.AttackGame.Refresh pRefresh, balance.Views.AttackGame.Refresh1 pRefresh1, balance.Views.AttackGame.Refresh2 pRefresh2)
         {
             InitializeComponent();
             gamemode.Content = Application.Current.Properties["gamemodename"].ToString();
