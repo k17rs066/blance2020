@@ -29,7 +29,11 @@ namespace balance.Views
 
     public partial class TargetGame : Page
     {
-
+        Thumb target1 = null;
+        Thumb target2 = null;
+        Thumb target3 = null;
+        Thumb target4 = null;
+        Thumb target5 = null;
         public delegate void Refresh_a(object sender, RoutedEventArgs e);
 
         public delegate void Refresh_b(object sender, RoutedEventArgs e);
@@ -81,12 +85,13 @@ namespace balance.Views
             {1071,92},
         };
 
+        int index = 0;
 
 
         public TargetGame()
         {
 
-            
+
 
             InitializeComponent();
 
@@ -113,10 +118,7 @@ namespace balance.Views
 
             if (game == true)
             {
-                int x = randomx.Next(0, 100);
-                int y = randomy.Next(0, 100);
-                Thumb target6 = new Thumb() { Width = 100, Height = 100, Margin = new Thickness(x, y, 0, 0) };
-                this.beback.Children.Add(target6);
+
                 BalanceBoardState bbs = e.WiimoteState.BalanceBoardState;
                 if (bbs.WeightKg < 5)
                 {
@@ -153,6 +155,7 @@ namespace balance.Views
 
                 Dispatcher.Invoke(new Action(() =>
                 {
+                    Target_Placement();
 
                     //////////////重心の表示
                     if (this.drawingBalance != null)
@@ -171,7 +174,7 @@ namespace balance.Views
                     atari(ta[4, 0], ta[4, 1], 5);
 
 
-                    
+
 
 
 
@@ -180,7 +183,7 @@ namespace balance.Views
                     if (ctarget == 0 && target5.IsEnabled == false)
                     {
 
-                        
+
 
                         PlaySound("clear.wav");
                         //drawingLabel1.Content = "クリア";
@@ -205,7 +208,7 @@ namespace balance.Views
                         target4.IsEnabled = true;
                         target5.IsEnabled = true;
 
-                        this.beback.Children.Remove(this.target1);
+                        this.beback.Children.Remove(target1);
                         this.beback.Children.Remove(this.target2);
                         this.beback.Children.Remove(this.target3);
                         this.beback.Children.Remove(this.target4);
@@ -255,7 +258,7 @@ namespace balance.Views
                             SQL = "INSERT INTO t_targetgame (userrecord_id,result_time)VALUES('" + DBConnect.Reader[0] + "', '" + time_t + "')";
                             DBConnect.ExecuteReader(SQL);
                             DBConnect.Dispose();
-     
+
                         }
 
                         dispatcharTimer = new DispatcherTimer(DispatcherPriority.Normal);
@@ -280,7 +283,35 @@ namespace balance.Views
 
         }
 
-        
+        private void Target_Placement()
+        {
+            this.target1 = new Thumb() { Width = 100, Height = 100, Background = Brushes.LimeGreen };
+            Canvas.SetLeft(target1, 126);
+            Canvas.SetTop(target1, 96);
+            this.beback.Children.Add(target1);
+
+            this.target2 = new Thumb() { Width = 100, Height = 100, Background = System.Windows.Media.Brushes.LimeGreen };
+            Canvas.SetLeft(target2, 200);
+            Canvas.SetTop(target2, 96);
+            this.beback.Children.Add(target2);
+
+            this.target3 = new Thumb() { Width = 100, Height = 100, Background = System.Windows.Media.Brushes.LimeGreen };
+            Canvas.SetLeft(target3, 300);
+            Canvas.SetTop(target3, 96);
+            this.beback.Children.Add(target3);
+
+            this.target4 = new Thumb() { Width = 100, Height = 100, Background = System.Windows.Media.Brushes.LimeGreen };
+            Canvas.SetLeft(target4, 500);
+            Canvas.SetTop(target4, 96);
+            this.beback.Children.Add(target4);
+
+            this.target5 = new Thumb() { Width = 100, Height = 100, Background = System.Windows.Media.Brushes.LimeGreen };
+            Canvas.SetLeft(target5, 700);
+            Canvas.SetTop(target5, 96);
+            this.beback.Children.Add(target5);
+        }
+
+
         //ターゲットに当たった時の処理
 
         void atari(double a, double b, int targetnum)
@@ -291,7 +322,7 @@ namespace balance.Views
 
             if (hlength * hlength >= xlength * xlength + ylength * ylength)
             {
-                switch (targetnum)
+               /* switch (targetnum)
                 {
                     case 1:
                         if (target1.IsEnabled == true)
@@ -345,7 +376,7 @@ namespace balance.Views
                         }
                         break;
                 }
-
+                */
 
             }
 
@@ -538,7 +569,7 @@ namespace balance.Views
                 wiimote.Connect();
 
 
-                ImageBrush imageBrush1 = new ImageBrush();
+                /*ImageBrush imageBrush1 = new ImageBrush();
                 string abstag1 = System.IO.Path.GetFullPath("Image/1.png");    //絶対パスを取得
                 imageBrush1.ImageSource = new BitmapImage(new Uri(abstag1));
 
@@ -562,7 +593,7 @@ namespace balance.Views
                 target2.Background = imageBrush2;
                 target3.Background = imageBrush3;
                 target4.Background = imageBrush4;
-                target5.Background = imageBrush5;
+                target5.Background = imageBrush5;*/
 
 
 

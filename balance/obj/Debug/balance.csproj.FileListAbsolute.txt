@@ -2450,3 +2450,4 @@ C:\Users\balance\Documents\GitHub\blanceNewGame\balance\obj\Debug\Views\AttackGa
 C:\Users\balance\Documents\GitHub\blanceNewGame\balance\obj\Debug\Views\AttackGameSetting.baml
 C:\Users\balance\Documents\GitHub\blanceNewGame\balance\obj\Debug\Views\AttackGame.g.cs
 C:\Users\balance\Documents\GitHub\blanceNewGame\balance\obj\Debug\Views\AttackGameSetting.g.cs
+C:\Users\balance\Documents\GitHub\blanceNewGame\balance\obj\Debug\balance_Content.g.cs

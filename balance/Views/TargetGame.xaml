@@ -14,7 +14,7 @@
             <Canvas.Background>
                 <SolidColorBrush Color="{DynamicResource {x:Static SystemColors.GradientInactiveCaptionColorKey}}"/>
             </Canvas.Background>
-            <Thumb x:Name="target1" Width="100" Height="100"
+            <!--<Thumb x:Name="target1" Width="100" Height="100"
                    
                Canvas.Left="126"
                Canvas.Top="92"
@@ -57,7 +57,8 @@
                 <Thumb.Background>
                     <ImageBrush ImageSource="/balance;component/image/5.png"/>
                 </Thumb.Background>
-            </Thumb>
+            </Thumb>-->
+            
             <!-- Content="" Canvas.Left="342" Canvas.Top="245" Height="272" Width="545" FontWeight="Bold" FontSize="210"/-->
         </Canvas>
 
