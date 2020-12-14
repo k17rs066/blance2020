@@ -1065,10 +1065,10 @@ namespace balance.Views
 
             }
         }
-        
 
-       
+        private void GameRecordSelect_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
 
-
+        }
     }
 }

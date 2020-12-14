@@ -67,5 +67,27 @@ namespace balance.Views
             var nextPage = new GameSelect();
             NavigationService.Navigate(nextPage);
         }
+
+        private void FallGameMode_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if (FallGameMode.Items.Equals("通常モード"))
+            {
+
+            }
+            else
+            {
+
+            }
+        }
+
+        private void BallSize_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
+
+        private void BallSpeed_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
     }
 }

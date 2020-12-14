@@ -5,7 +5,7 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:balance.Views"
       mc:Ignorable="d"
-      Title="難易度選択"       Height="1000" Width="1630">
+      Title="難易度設定"       Height="1000" Width="1630">
     <Page.Resources>
         <ControlTemplate x:Key="buttonTemp1" TargetType="Button">
             <Border x:Name="Border" Background="#FFA6658D" CornerRadius="30" BorderThickness="0">
@@ -82,16 +82,50 @@
                 <ContentPresenter Content="{TemplateBinding Content}" VerticalAlignment="Center" HorizontalAlignment="Center" />
             </Border>
         </ControlTemplate>
+
+
     </Page.Resources>
 
     <Grid>
-        <Button Template="{StaticResource buttonTemp1}" Content="難しい" Margin="1095,470,0,180" Width="482" Height="350" Click="FallGame_Hard" FontSize="70" HorizontalAlignment="Left" VerticalAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Top"/>
-        <Button Template="{StaticResource buttonTemp2}" Content="普通" Margin="575,470,0,180" Width="482" Height="350" Click="FallGame_Normal" FontSize="70" HorizontalAlignment="Left" VerticalAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Top"/>
-        <Button Template="{StaticResource buttonTemp3}" Content="簡単" Margin="43,470,0,180" Width="482" Height="350" Click="FallGame_Easy" FontSize="70" HorizontalAlignment="Left" VerticalAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Top"/>
+        <Button Template="{StaticResource buttonTemp1}" Content="難しい" Margin="554,808,0,121" Width="147" Height="71" Click="FallGame_Hard" FontSize="70" HorizontalAlignment="Left" VerticalAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Top"/>
+        <Button Template="{StaticResource buttonTemp2}" Content="普通" Margin="374,808,0,110" Width="127" Height="82" Click="FallGame_Normal" FontSize="70" HorizontalAlignment="Left" VerticalAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Top"/>
+        <Button Template="{StaticResource buttonTemp3}" Content="簡単" Margin="140,796,0,86" Width="144" Height="118" Click="FallGame_Easy" FontSize="70" HorizontalAlignment="Left" VerticalAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Top"/>
         <TextBlock x:Name="datetimeb"  Margin="930,46,53,837" FontSize="60"/>
-        <Label x:Name="select" Content="難易度を選択してください。" FontSize="110" Margin="245,212,185,0" VerticalAlignment="Top" Height="163"/>
+        <Label x:Name="select" Content="難易度を設定してください。" FontSize="60" Margin="463,230,455,0" VerticalAlignment="Top" Height="104"/>
         <Button Content="戻る" HorizontalAlignment="Left" Margin="62,46,0,0" VerticalAlignment="Top" Width="332" Height="117" Click="back" FontSize="60"/>
         <Button Content="練習モード"  x:Name="Precmode" Margin="463,46,835,0" VerticalAlignment="Top" Width="332" Height="117" Click="Precmode_Click" FontSize="60"/>
+        
+        <ComboBox 
+            
+            x:Name="FallGameMode"
+            Margin="845,368,552,520" 
+            SelectionChanged="FallGameMode_SelectionChanged" SelectedIndex="0" 
+            
+            >
+            <ComboBoxItem>通常モード</ComboBoxItem>
+            <ComboBoxItem>練習モード</ComboBoxItem>
+            
+
+
+        </ComboBox>
+        <ComboBox x:Name="BallSpeed" Margin="845,540,552,357" SelectedIndex="1" SelectionChanged="BallSpeed_SelectionChanged">
+            <ComboBoxItem>速い</ComboBoxItem>
+            <ComboBoxItem>普通</ComboBoxItem>
+            <ComboBoxItem>遅い</ComboBoxItem>
+
+
+        </ComboBox>
+        <ComboBox x:Name="BallSize" Margin="845,717,552,185" SelectionChanged="BallSize_SelectionChanged" SelectedIndex="1">
+
+
+            <ComboBoxItem>大きい</ComboBoxItem>
+            <ComboBoxItem>普通</ComboBoxItem>
+            <ComboBoxItem>小さい</ComboBoxItem> 
+        </ComboBox>
+
+        <Label Content="モード選択" Margin="237,384,975,481"/>
+        <Label Content="ボールの速さ" Margin="237,569,975,296"/>
+        <Label Content="ボールの大きさ" Margin="237,755,975,110"/>
 
     </Grid>
 </Page>

@@ -183,7 +183,20 @@
 
             </Label>
 
-
+            <ComboBox 
+                x:Name="GameRecordSelect" 
+                Margin="101,345,1499,1161" 
+                SelectionChanged="GameRecordSelect_SelectionChanged" 
+                SelectedItem="1"
+                
+             >
+                <ComboBoxItem Content="スコアアタックゲーム" HorizontalAlignment="Left" Width="301" BorderBrush="Gray"/>
+                <ComboBoxItem Content="タイムアタックゲーム" BorderBrush="Gray"></ComboBoxItem>
+                <ComboBoxItem Content="ターゲットゲーム" HorizontalAlignment="Left" Width="301" BorderBrush="Gray"/>
+                <ComboBoxItem Content="落下ゲーム" BorderBrush="Gray"></ComboBoxItem>
+                <ComboBoxItem Content="鬼ごっこゲーム" HorizontalAlignment="Left" Width="301" BorderBrush="Gray"/>
+                
+            </ComboBox>
 
             <!-- Label Content="スコアアタック" HorizontalAlignment="Right" Margin="0,754,558,0" VerticalAlignment="Top" Width="370" Height="76" FontSize="48"/>
             <visualizationToolkit:Title Content="回&#xa;数" HorizontalAlignment="Left" Margin="985,941,0,0" VerticalAlignment="Top" FontSize="18" RenderTransformOrigin="0.417,-1.25"/-->
