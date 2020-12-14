@@ -23,6 +23,10 @@ namespace balance.Views
     /// </summary>
     public partial class FallGameModeSelect: Page
     {
+
+        int ballsize = 0;
+        double ballspeed = 0;
+        int time = 0;
         public FallGameModeSelect()
         {
             InitializeComponent();
@@ -70,14 +74,31 @@ namespace balance.Views
 
         private void FallGameMode_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            if (FallGameMode.Items.Equals("通常モード"))
+
+            if (FallGameMode.Text=="通常モード")
             {
+                TimeSet_Label.Visibility = Visibility.Hidden;
+                MinSet.Visibility = Visibility.Hidden;
+                Min_Label.Visibility = Visibility.Hidden;
+                SecSet.Visibility = Visibility.Hidden;
+                Sec_Label.Visibility = Visibility.Hidden;
+            }
+            else if(FallGameMode.Text=="練習モード")
+            {
+                TimeSet_Label.Visibility = Visibility.Visible;
+                MinSet.Visibility = Visibility.Visible;
+                Min_Label.Visibility = Visibility.Visible;
+                SecSet.Visibility = Visibility.Visible;
+                Sec_Label.Visibility = Visibility.Visible;
+
 
             }
             else
             {
 
             }
+
+
         }
 
         private void BallSize_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -88,6 +109,42 @@ namespace balance.Views
         private void BallSpeed_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
 
+        }
+
+        private void MinSet_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
+
+        private void SecSet_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
+
+        private void Deside_Click(object sender, RoutedEventArgs e)
+        {
+            if (FallGameMode.Text.Equals("通常モード"))
+            {
+                int min = int.Parse(MinSet.Text);
+                int sec = int.Parse(SecSet.Text);
+                time =( min * 60) + sec;
+
+                Application.Current.Properties["ballsize"] = ballsize;
+                Application.Current.Properties["ballspeed"] = ballspeed;
+                Application.Current.Properties["timeset"] = time;
+
+                var nextPage = new FallGame();
+                NavigationService.Navigate(nextPage);
+            }
+            else
+            {
+                Application.Current.Properties["ballsize"] = ballsize;
+                Application.Current.Properties["ballspeed"] = ballspeed;
+                Application.Current.Properties["timeset"] = 0;
+
+                var nextPage = new FallGame_Prac();
+                NavigationService.Navigate(nextPage);
+            }
         }
     }
 }

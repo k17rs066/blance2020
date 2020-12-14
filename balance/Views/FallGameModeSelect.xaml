@@ -98,7 +98,7 @@
         <ComboBox 
             
             x:Name="FallGameMode"
-            Margin="845,368,552,520" 
+            Margin="845,368,552,560" 
             SelectionChanged="FallGameMode_SelectionChanged" SelectedIndex="0" 
             
             >
@@ -108,14 +108,16 @@
 
 
         </ComboBox>
-        <ComboBox x:Name="BallSpeed" Margin="845,540,552,357" SelectedIndex="1" SelectionChanged="BallSpeed_SelectionChanged">
+        
+        <ComboBox x:Name="BallSpeed" Margin="845,524,552,406" SelectedIndex="1" SelectionChanged="BallSpeed_SelectionChanged">
             <ComboBoxItem>速い</ComboBoxItem>
             <ComboBoxItem>普通</ComboBoxItem>
             <ComboBoxItem>遅い</ComboBoxItem>
 
 
         </ComboBox>
-        <ComboBox x:Name="BallSize" Margin="845,717,552,185" SelectionChanged="BallSize_SelectionChanged" SelectedIndex="1">
+        
+        <ComboBox x:Name="BallSize" Margin="845,650,552,280" SelectionChanged="BallSize_SelectionChanged" SelectedIndex="1">
 
 
             <ComboBoxItem>大きい</ComboBoxItem>
@@ -123,10 +125,36 @@
             <ComboBoxItem>小さい</ComboBoxItem> 
         </ComboBox>
 
-        <Label Content="モード選択" Margin="237,384,975,481"/>
-        <Label Content="ボールの速さ" Margin="237,569,975,296"/>
-        <Label Content="ボールの大きさ" Margin="237,755,975,110"/>
+        <Label Content="モード選択" x:Name="FallGameMode_Label" Margin="374,368,838,560"/>
+        <Label Content="ボールの速さ" x:Name="BallSpeed_Label" Margin="374,506,838,406"/>
+        <Label Content="ボールの大きさ" x:Name ="BallSize_Label" Margin="374,668,838,280"/>
+        <Label Content="時間設定" x:Name="TimeSet_Label" Margin="374,778,838,170"/>
 
+        <ComboBox x:Name="MinSet" Margin="797,780,704,150" SelectedIndex="0" SelectionChanged="MinSet_SelectionChanged" >
+            <ComboBoxItem>0</ComboBoxItem>
+            <ComboBoxItem>1</ComboBoxItem>
+            <ComboBoxItem>2</ComboBoxItem>
+            <ComboBoxItem>3</ComboBoxItem>
+            <ComboBoxItem>4</ComboBoxItem>
+            <ComboBoxItem>5</ComboBoxItem>
+
+        </ComboBox>
+        
+        
+        <Label Content="分" x:Name="Min_Label" Margin="1010,778,500,121" />
+
+        <ComboBox x:Name="SecSet" Margin="1130,780,371,150" SelectedIndex="3" SelectionChanged="SecSet_SelectionChanged" >
+            <ComboBoxItem>0</ComboBoxItem>
+            <ComboBoxItem>10</ComboBoxItem>
+            <ComboBoxItem>20</ComboBoxItem>
+            <ComboBoxItem>30</ComboBoxItem>
+            <ComboBoxItem>40</ComboBoxItem>
+            <ComboBoxItem>50</ComboBoxItem>
+
+        </ComboBox>
+        <Label Content="秒" x:Name="Sec_Label" Margin="1285,778,225,121" />
+
+        <Button Content="決定" x:Name="Deside" Margin="957,879,53,33" Click="Deside_Click"/>
     </Grid>
 </Page>
 

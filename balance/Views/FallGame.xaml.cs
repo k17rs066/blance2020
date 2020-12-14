@@ -60,7 +60,7 @@ namespace balance.Views
         int user_id = -1; //ログインのu_id
 
         Boolean game = false;
-        int timese = 30;//選択タイム保持
+        int timese = 0;//選択タイム保持
 
         Random cRandom = new System.Random(); // 玉ランダム
         Random cRandom1 = new System.Random(); // 玉1ランダム
@@ -90,21 +90,16 @@ namespace balance.Views
             x1 = 1000;
             y1 = 10;
 
+
+            timese = (int)Application.Current.Properties["timeset"];
+
+            time_t = (int)Application.Current.Properties["timeset"];
+            time.Content = "残り時間　" + time_t / 60 + "分　" + time_t % 60 + "秒";
             dispatcharTimer11 = new DispatcherTimer();
             dispatcharTimer11.Interval = new TimeSpan(0, 0, 1);
             dispatcharTimer11.Tick += dispatcharTimer11_Tick;
 
-            for (int i = 30; i <= 90; i += 30)
-            {
-                if (i == timese)
-                {
-                    timepercent.Items.Add(new ComboBoxItem() { IsSelected = true, Content = i });
-                }
-                else
-                {
-                    timepercent.Items.Add(i);
-                }
-            }
+
 
 
 
@@ -414,7 +409,7 @@ namespace balance.Views
 
             wiimote.Disconnect();
 
-            var nextPage = new GameSelect();
+            var nextPage = new FallGameModeSelect();
             NavigationService.Navigate(nextPage);
 
         }
