@@ -155,7 +155,7 @@ namespace balance.Views
 
                 Dispatcher.Invoke(new Action(() =>
                 {
-                    Target_Placement();
+
 
                     //////////////重心の表示
                     if (this.drawingBalance != null)

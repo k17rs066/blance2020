@@ -46,7 +46,8 @@ namespace balance.Views
             else if (Application.Current.Properties["gamemodename"].ToString().Equals("スコアアタック"))
             {
                 tokikai.Content = "計測時間";
-                resulttime.Content = Application.Current.Properties["sette"].ToString() + " 秒";
+                int time = (int)Application.Current.Properties["sette"];
+                resulttime.Content = time/60 + "分"+ time%60 + " 秒";
                 resultscore.Content = Application.Current.Properties["Count"].ToString() + " 回";
             }
             else if (Application.Current.Properties["gamemodename"].ToString().Equals("タイムアタック"))

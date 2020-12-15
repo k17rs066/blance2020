@@ -2,8 +2,8 @@
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         Title="アタックゲーム設定" Height="614.5" Width="791.5" WindowStartupLocation="CenterScreen">
-    
-        <Window.Resources>
+
+    <Window.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
                 <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.Light.xaml" />
@@ -21,16 +21,20 @@
         <!-- TextBlock Name ="gamemode" HorizontalAlignment="Left" FontSize ="50" Height="80.8" Margin="32.2,34.6,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="351.2"/-->
         <Button Content="戻る" FontSize ="40" HorizontalAlignment="Left" Height="62" Margin="221,465,0,0" VerticalAlignment="Top" Width="183" Click="Back_Click" RenderTransformOrigin="0.76,1.016" Grid.Column="1"/>
         <TextBlock Text ="クリアライン：" FontSize="50" HorizontalAlignment="Left" Height="65" Margin="74,218,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="281" Grid.ColumnSpan="2"/>
-        <TextBlock Name ="han" FontSize="50" HorizontalAlignment="Left" Height="65" Margin="72,331,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="281" Grid.ColumnSpan="2"/>
+        <TextBlock Name ="han" FontSize="50" HorizontalAlignment="Left" Height="65" Margin="74,331,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="246" Grid.ColumnSpan="2"/>
         <TextBox Name ="cline" Text ="" FontSize ="50" HorizontalAlignment="Left" Height="65" Margin="621,165,-218,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="176" Grid.Column="1"/>
         <TextBox Name ="set" Text ="" FontSize="50" HorizontalAlignment="Left" Height="65" Margin="621,274,-218,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="176" Grid.Column="1"/>
-        <TextBlock Text ="%" FontSize ="50" HorizontalAlignment="Left" Height="65" Margin="413,224,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="60" RenderTransformOrigin="0.758,0.764" Grid.Column="1"/>
-        <TextBlock Name ="tan" FontSize ="50" HorizontalAlignment="Left" Height="65" Margin="413,331,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="60" Grid.Column="1"/>
+        <TextBlock Text ="%" FontSize ="50" HorizontalAlignment="Left" Height="65" Margin="465,225,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="60" RenderTransformOrigin="0.758,0.764" Grid.Column="1"/>
+
+        <TextBlock Text="秒" Name ="tan" FontSize ="50" HorizontalAlignment="Left" Height="65" Margin="465,331,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="60" Grid.Column="1"/>
+        <TextBlock Text="分" Name ="min" FontSize ="50" HorizontalAlignment="Left" Height="65" Margin="232,331,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="60" Grid.Column="1"/>
         <Button Content="OK" FontSize="40" HorizontalAlignment="Left" Height="62" Margin="175,465,0,0" VerticalAlignment="Top" Width="183" Click="ok_Click" Grid.ColumnSpan="2"/>
-        <ComboBox Name ="combo" FontSize ="50" HorizontalAlignment="Left" Height="65" Margin="183,225,0,0" VerticalAlignment="Top" Width="175" Grid.Column="1"/>
-        <ComboBox Name ="combokei" FontSize ="50" HorizontalAlignment="Left" Height="65" Margin="183,331,0,0" VerticalAlignment="Top" Width="175" Grid.Column="1"/>
-        <Button x:Name="ScoreButton" Content="スコアアタック" HorizontalAlignment="Left" Margin="74,101,0,0" VerticalAlignment="Top" Width="176" Height="59" FontSize="30" Click="ScoreButton_Click" Grid.ColumnSpan="2"/>
-        <Button x:Name="TimeButton" Content="タイムアタック" HorizontalAlignment="Left" Margin="90,101,0,0" VerticalAlignment="Top" Width="168" Height="59" FontSize="30" Click="TimeButton_Click" Grid.Column="1"/>
+        <ComboBox Name ="combo" FontSize ="50" HorizontalAlignment="Left" Height="65" Margin="221,225,0,0" VerticalAlignment="Top" Width="175" Grid.Column="1"/>
+        <ComboBox Name ="combokei" FontSize ="50" HorizontalAlignment="Left" Height="65" Margin="297,331,0,0" VerticalAlignment="Top" Width="163" Grid.Column="1"/>
+        <ComboBox x:Name ="score_min" FontSize ="50" HorizontalAlignment="Left" Height="65" Margin="120,331,0,0" VerticalAlignment="Top" Width="107" Grid.Column="1"/>
+
+        <Button x:Name="ScoreButton" Content="スコアアタック" HorizontalAlignment="Left" Margin="55,101,0,0" VerticalAlignment="Top" Width="190" Height="59" FontSize="30" Click="ScoreButton_Click" Grid.ColumnSpan="2"/>
+        <Button x:Name="TimeButton" Content="タイムアタック" HorizontalAlignment="Left" Margin="80,101,0,0" VerticalAlignment="Top" Width="188" Height="59" FontSize="30" Click="TimeButton_Click" Grid.Column="1"/>
         <Label Content="ゲームモード・クリアライン・計測時間/回数を選択してください。" HorizontalAlignment="Left" Margin="99,27,0,0" VerticalAlignment="Top" Height="43" Width="581" FontSize="24" Grid.ColumnSpan="2"/>
         <Button x:Name="PracticeButton" Content="練習モード" HorizontalAlignment="Left" Margin="297,101,0,0" VerticalAlignment="Top" Width="176" Height="59" FontSize="30" Click="PracticeButton_Click" Grid.Column="3"/>
 

@@ -338,7 +338,7 @@ namespace balance.Views
 
             time_t--;
 
-            time.Content = "残り時間     " + time_t + "秒";
+            time.Content = "残り時間　" + time_t / 60 + "分　" + time_t % 60 + "秒";
         }
 
         private void timeok_Click(object sender, RoutedEventArgs e)

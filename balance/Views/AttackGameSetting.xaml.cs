@@ -27,15 +27,20 @@ namespace balance.Views
 
         String SQL = "";
         int c_line = 70;
-        int seti = 10;
+        int seti = 0;
+        int setting_min = 0;
         int user_id;
+
+        int total_time=0;
+
+
         public AttackGameSetting()
         {
             //gamemode.Text = Application.Current.Properties["gamemodename"].ToString();
             han.Text = Application.Current.Properties["hantei"].ToString() + ":";
             tan.Text = Application.Current.Properties["tani"].ToString();
 
-            
+
 
         }
 
@@ -66,6 +71,19 @@ namespace balance.Views
             }
             DBConnect.Dispose();
 
+            for(int i = 0; i <= 5; i++)
+            {
+                if(i == setting_min)
+                {
+                    score_min.Items.Add(new ComboBoxItem() { IsSelected = true,Content = i});
+                }
+                else
+                {
+                    score_min.Items.Add(i);
+                }
+            }
+
+
             for (int i = 50; i <= 100; i+=10)
             {
                 if (i == c_line)
@@ -77,7 +95,8 @@ namespace balance.Views
                     combo.Items.Add(i);
                 }
             }
-            for (int i = 10; i <= 100; i+=10)
+
+            for (int i = 0; i <= 60; i += 10)
             {
                 if (i == seti)
                 {
@@ -102,23 +121,30 @@ namespace balance.Views
 
         void ok_Click(object sender, EventArgs e)
         {
+
+
+
             if (!combo.Text
                 .ToString().Equals("") && !combokei.Text.ToString().Equals(""))
             {
                 if (han.Text.Equals("計測時間:")) // スコアアタック
                 {
                     bnum = 0;
+                    total_time = int.Parse(score_min.Text)*60 + int.Parse(combokei.Text);
                 }
                 else if(han.Text.Equals("計測回数:")) //　タイムアタック
                 {
                     bnum = 1;
+                    total_time = int.Parse(combokei.Text);
+
                 }else //練習モード
                 {
                     bnum = 2;
+                    total_time = 0;
                 }
                 Application.Current.Properties["line"] = combo.Text;
                 Application.Current.Properties["settei"] = han.Text + combokei.Text + tan.Text;
-                Application.Current.Properties["sette"] =combokei.Text;
+                Application.Current.Properties["sette"] =total_time;
                 rf(bnum);
             }
             this.Close();
@@ -132,8 +158,25 @@ namespace balance.Views
             PracticeButton.Background = Brushes.Gainsboro;
 
             combokei.Visibility = Visibility.Visible;
+            min.Visibility = Visibility.Visible;
+            score_min.Visibility = Visibility.Visible;
+
+            combokei.Items.Clear();
+            seti=0;
+            for (int i = 0; i <= 60; i += 10)
+            {
+                if (i == seti)
+                {
+                    combokei.Items.Add(new ComboBoxItem() { IsSelected = true, Content = i });
+                }
+                else
+                {
+                    combokei.Items.Add(i);
+                }
+            }
 
             han.Text = "計測時間:";
+            min.Text = "分";
             tan.Text = "秒";
             Application.Current.Properties["gamemodename"] = "スコアアタック";
 
@@ -146,6 +189,10 @@ namespace balance.Views
             PracticeButton.Background = Brushes.Coral;
 
             combokei.Visibility = Visibility.Hidden;
+            min.Visibility = Visibility.Hidden;
+            score_min.Visibility = Visibility.Hidden;
+
+
             han.Text = null;
             tan.Text = null;
             Application.Current.Properties["gamemodename"] = "練習モード";
@@ -158,7 +205,28 @@ namespace balance.Views
             PracticeButton.Background = Brushes.Gainsboro;
 
             combokei.Visibility = Visibility.Visible;
+            min.Visibility = Visibility.Hidden;
+            score_min.Visibility = Visibility.Hidden;
 
+
+            combokei.Items.Clear();
+            seti = 10;
+
+            for (int i = 10; i <= 100; i += 10)
+            {
+                if (i == seti)
+                {
+                    combokei.Items.Add(new ComboBoxItem() { IsSelected = true, Content = i });
+                }
+                else
+                {
+                    combokei.Items.Add(i);
+                }
+            }
+
+
+            han.Text = null;
+            tan.Text = null;
 
             han.Text = "計測回数:";
             tan.Text = "回";

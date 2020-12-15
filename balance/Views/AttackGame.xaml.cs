@@ -53,7 +53,7 @@ namespace balance.Views
         String st = ""; //settin画面文字表示
         String lin = ""; //クリア設定％
         String set = "";　
-        String se = "";
+        int se = 0;
 
         Boolean ScoreFlag = false; //回数の設定されてるか
         Boolean TimeFlag = false; //秒数の設定されてるか
@@ -102,6 +102,7 @@ namespace balance.Views
         public AttackGame()
         {
 
+
             InitializeComponent();
 
 
@@ -141,7 +142,6 @@ namespace balance.Views
             dispatcharTimer11 = new DispatcherTimer();
             dispatcharTimer11.Interval = new TimeSpan(0, 0, 1);
             dispatcharTimer11.Tick += dispatcharTimer11_Tick;
-
 
 
         }
@@ -491,14 +491,15 @@ namespace balance.Views
                 }
                 else if(gametype == 0) //スコアアタック
                 {
-                    cc.Text = "残り" + time_s + "秒";
+
+                    cc.Text = "残り" + time_s / 60 + "分" +  time_s % 60 + "秒";
                     tim.Text = count + "回";
                 }
                 else
                 {
                     StopWatch.Start();
                     cc.Text = count + "回";
-                    tim.Text = "0" + "秒";
+                    tim.Text = time_t / 60 + "分" + time_t % 60 + "秒";
 
                 }
              }
@@ -565,16 +566,16 @@ namespace balance.Views
         {
             lin = Application.Current.Properties["line"].ToString();
             set = Application.Current.Properties["settei"].ToString();
-            se = Application.Current.Properties["sette"].ToString(); //設定画面での秒数、回数
+            se = (int)Application.Current.Properties["sette"]; //設定画面での秒数、回数
             if (t == 0) //スコアアタックモード
             {
                 gametype = 0;
                 Combo_GameMode.SelectedIndex=gametype;
-                time_s = int.Parse(se);
+                time_s = se;
                 htimes_s = time_s;
                 ScoreFlag = true;
                 TimeFlag = false;
-                st = "クリアライン:" + lin + "%　" + set;
+                st = "クリアライン:" + lin + "%　" + "計測時間:" + se/60 +"分" + se%60 + "秒" ;
                 settin.Text = st;
             }
             else if(t == 1) //タイムアタックモード
@@ -600,9 +601,9 @@ namespace balance.Views
 
 
             line = 100 - int.Parse(lin);
-            ClearCount = int.Parse(se);
-            tCount = int.Parse(se);
-            tCounth = int.Parse(se);
+            ClearCount = se;
+            tCount = se;
+            tCounth = se;
             if (DrawingLeftLine != null)
             {
                 this.leftleg.Children.Remove(this.DrawingLeftLine);
@@ -648,12 +649,12 @@ namespace balance.Views
             if (gametype == 0)
             {
                 time_s--;
-                cc.Text = "残り" + time_s + "秒";
+                cc.Text = "残り" + time_s / 60 + "分" +  time_s%60 + "秒";
             }
             else
             {
                 time_t++;
-                tim.Text = time_t + "秒";
+                tim.Text = time_t/60+"分"+time_t%60 + "秒";
             }
         }
 
@@ -720,8 +721,8 @@ namespace balance.Views
                 DBConnect.ExecuteReader(SQL);
                 if (DBConnect.Reader.Read())
                 {
-                    Application.Current.Properties["line"] = int.Parse(DBConnect.Reader[7].ToString());
-                    Application.Current.Properties["sette"] = int.Parse(DBConnect.Reader[5].ToString());
+                    //Application.Current.Properties["line"] = int.Parse(DBConnect.Reader[7].ToString());
+                    //Application.Current.Properties["sette"] = int.Parse(DBConnect.Reader[5].ToString());
 
                     Application.Current.Properties["settei"] = "計測回数" + Application.Current.Properties["sette"] + "回";
                     rf(1);
@@ -752,10 +753,10 @@ namespace balance.Views
                 DBConnect.ExecuteReader(SQL);
                 if (DBConnect.Reader.Read())
                 {
-                    Application.Current.Properties["line"] = int.Parse(DBConnect.Reader[7].ToString());
-                    Application.Current.Properties["sette"] = int.Parse(DBConnect.Reader[5].ToString());
+                    //Application.Current.Properties["line"] = int.Parse(DBConnect.Reader[7].ToString());
+                    //Application.Current.Properties["sette"] = int.Parse(DBConnect.Reader[5].ToString());
 
-                    Application.Current.Properties["settei"] = "計測時間" + Application.Current.Properties["sette"] + "秒";
+                    Application.Current.Properties["settei"] = "計測時間" + (int)Application.Current.Properties["sette"] / 60 +"分"+ (int)Application.Current.Properties["sette"]%60 + "秒";
                     rf(0);
                 }
                 else
@@ -763,7 +764,7 @@ namespace balance.Views
                     Application.Current.Properties["line"] = 60;
                     Application.Current.Properties["sette"] = 10;
 
-                    Application.Current.Properties["settei"] = "計測時間" + Application.Current.Properties["sette"] + "秒";
+                    Application.Current.Properties["settei"] = "計測時間" + (int)Application.Current.Properties["sette"] / 60 + "分" + (int)Application.Current.Properties["sette"]%60 + "秒";
                     rf(0);
                 }
                 DBConnect.Dispose();
