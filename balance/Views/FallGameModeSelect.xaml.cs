@@ -50,22 +50,6 @@ namespace balance.Views
             datetimeb.Text = DateTime.Now.ToString();
         }
 
-        private void FallGame_Easy(object sender, RoutedEventArgs e)
-        {
-            var nextPage = new FallGame_Easy();
-            NavigationService.Navigate(nextPage);
-        }
-
-        private void FallGame_Normal(object sender, RoutedEventArgs e)
-        {
-            var nextPage = new FallGame_Normal();
-            NavigationService.Navigate(nextPage);
-        }
-        private void FallGame_Hard(object sender, RoutedEventArgs e)
-        {
-            var nextPage = new FallGame_Hard();
-            NavigationService.Navigate(nextPage);
-        }
         private void back(object sender, RoutedEventArgs e)
         {
             var nextPage = new GameSelect();
@@ -129,6 +113,36 @@ namespace balance.Views
                 int sec = int.Parse(SecSet.Text);
                 time =( min * 60) + sec;
 
+                if (BallSize.Text=="普通")
+                {
+                    ballsize = 100;
+                }else if (BallSize.Text == "大きい")
+                {
+                    ballsize = 125;
+                }else if(BallSize.Text == "小さい")
+                {
+                    ballsize = 70;
+                }
+                else
+                {
+                    ballsize = 100;
+                }
+
+                if (BallSpeed.Text == "普通")
+                {
+                    ballspeed = 2;
+                }else if (BallSpeed.Text == "速い")
+                {
+                    ballspeed = 3;
+                }else if (BallSpeed.Text == "遅い")
+                {
+                    ballspeed = 1;
+                }
+                else
+                {
+                    ballspeed = 2;
+                }
+
                 Application.Current.Properties["ballsize"] = ballsize;
                 Application.Current.Properties["ballspeed"] = ballspeed;
                 Application.Current.Properties["timeset"] = time;
@@ -138,6 +152,38 @@ namespace balance.Views
             }
             else
             {
+
+                if (BallSize.Text == "普通")
+                {
+                    ballsize = 100;
+                }
+                else if (BallSize.Text == "大きい")
+                {
+                    ballsize = 125;
+                }
+                else if (BallSize.Text == "小さい")
+                {
+                    ballsize = 70;
+                }
+
+
+                if (BallSpeed.Text == "普通")
+                {
+                    ballspeed = 2;
+                }
+                else if (BallSpeed.Text == "速い")
+                {
+                    ballspeed = 3;
+                }
+                else if (BallSpeed.Text == "遅い")
+                {
+                    ballspeed = 1;
+                }
+                else
+                {
+
+                }
+
                 Application.Current.Properties["ballsize"] = ballsize;
                 Application.Current.Properties["ballspeed"] = ballspeed;
                 Application.Current.Properties["timeset"] = 0;

@@ -27,9 +27,9 @@ namespace balance.Views
     public partial class FallGame_Normal : Page
     {
 
-        public delegate void FNormal1(object sender, RoutedEventArgs e);
+        //public delegate void FNormal1(object sender, RoutedEventArgs e);
 
-        public delegate void FNormal2(object sender, RoutedEventArgs e);
+        //public delegate void FNormal2(object sender, RoutedEventArgs e);
 
         Wiimote wiimote = new Wiimote();
 
@@ -97,7 +97,7 @@ namespace balance.Views
 
             x = 300;
             y = 380;
-            x1 = 100;
+            x1 = 1000;
             y1 = 10;
 
             dispatcharTimer11 = new DispatcherTimer();
@@ -205,7 +205,7 @@ namespace balance.Views
                         this.beback.Children.Remove(this.drawingLabel);
                     }
 
-                    this.drawingLabel = new Label() {  Width = 75, Height = 75, Margin = new Thickness(x, y - 10, 0, 0), FontSize = 60, Foreground = System.Windows.Media.Brushes.White, FontWeight = FontWeights.Bold, HorizontalContentAlignment = HorizontalAlignment.Center, VerticalContentAlignment = VerticalAlignment.Center };
+                    this.drawingLabel = new Label() {  Width = 70, Height = 70, Margin = new Thickness(x, y - 10, 0, 0), FontSize = 60, Foreground = System.Windows.Media.Brushes.White, FontWeight = FontWeights.Bold, HorizontalContentAlignment = HorizontalAlignment.Center, VerticalContentAlignment = VerticalAlignment.Center };
                     this.beback.Children.Add(this.drawingLabel);
 
 
@@ -233,7 +233,7 @@ namespace balance.Views
                         this.beback.Children.Remove(this.drawingLabel1);
                     }
 
-                    this.drawingLabel1 = new Label() {  Width = 75, Height = 75, Margin = new Thickness(x1, y1 - 10, 0, 0), FontSize = 60, Foreground = System.Windows.Media.Brushes.White, FontWeight = FontWeights.Bold, HorizontalContentAlignment = HorizontalAlignment.Center, VerticalContentAlignment = VerticalAlignment.Center };
+                    this.drawingLabel1 = new Label() {  Width = 70, Height = 70, Margin = new Thickness(x1, y1 - 10, 0, 0), FontSize = 60, Foreground = System.Windows.Media.Brushes.White, FontWeight = FontWeights.Bold, HorizontalContentAlignment = HorizontalAlignment.Center, VerticalContentAlignment = VerticalAlignment.Center };
                     this.beback.Children.Add(this.drawingLabel1);
 
 
@@ -262,7 +262,7 @@ namespace balance.Views
                         this.beback.Children.Remove(this.drawingLabel2);
                     }
 
-                    this.drawingLabel2 = new Label() { Width = 75, Height = 75, Margin = new Thickness(x2, y2 - 10, 0, 0), FontSize = 60, Foreground = System.Windows.Media.Brushes.White, FontWeight = FontWeights.Bold, HorizontalContentAlignment = HorizontalAlignment.Center, VerticalContentAlignment = VerticalAlignment.Center };
+                    this.drawingLabel2 = new Label() { Width = 70, Height = 70, Margin = new Thickness(x2, y2 - 10, 0, 0), FontSize = 60, Foreground = System.Windows.Media.Brushes.White, FontWeight = FontWeights.Bold, HorizontalContentAlignment = HorizontalAlignment.Center, VerticalContentAlignment = VerticalAlignment.Center };
                     this.beback.Children.Add(this.drawingLabel2);
 
                     ///////////////Ellipse,Ellipse1当たり判定 y1は7の倍数の速さで動いているから585の数値にならないy1=588になる
