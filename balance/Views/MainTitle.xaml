@@ -6,14 +6,23 @@
       mc:Ignorable="d" 
       Height="1080" Width="1920"
 	Title="MainTitle">
-
+    <Page.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.Light.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.Defaults.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MaterialDesignColors;component/Themes/Recommended/Primary/MaterialDesignColor.DeepPurple.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MaterialDesignColors;component/Themes/Recommended/Accent/MaterialDesignColor.Lime.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Page.Resources>
     <Grid>
         <Button  HorizontalAlignment="Left" Margin="-2,-3,0,0" VerticalAlignment="Top" Height="1080" Width="1920" Click="Button_Click" FontSize="92" BorderBrush="{x:Null}" FontWeight="Bold">
             <Button.Background>
-                <SolidColorBrush Color="#FF89C59C" Opacity="0.9"/>
+                <SolidColorBrush Opacity="0.9" Color="#00000000"/>
             </Button.Background>
             <Grid Height="166">
-                <Label Content="荷重計アプリケーション" Margin="-6,-338,6,338" FontSize="120" FontWeight="Bold"/>
+                <Label Content="バランス君2020" Margin="-6,-338,6,338" FontSize="120" FontWeight="Bold" HorizontalAlignment="Center"/>
                 <Label Content="タッチして開始です！" Margin="150,-57,177,82" FontWeight="Bold"/>
                 <Image Source="/balance;component/Image/attack.PNG" HorizontalAlignment="Left" Height="276" Margin="332,250,0,-360" VerticalAlignment="Top" Width="434" RenderTransformOrigin="0.5,0.5"/>
                 <Image Source="/balance;component/Image/fall.PNG" HorizontalAlignment="Left" Height="272" Margin="-288,261,0,-367" VerticalAlignment="Top" Width="414" RenderTransformOrigin="0.5,0.5"/>

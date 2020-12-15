@@ -8,21 +8,32 @@
       Height="1080" Width="1920"
       Title="GameSelect">
 
+    <Page.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.Light.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.Defaults.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MaterialDesignColors;component/Themes/Recommended/Primary/MaterialDesignColor.DeepPurple.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MaterialDesignColors;component/Themes/Recommended/Accent/MaterialDesignColor.Lime.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Page.Resources>
+
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="0*"/>
             <RowDefinition/>
         </Grid.RowDefinitions>
-        <Button Margin="180,0,1050,39" Width="690" Height="375" Click="fall" FontSize="70" HorizontalAlignment="Center" VerticalAlignment="Bottom" HorizontalContentAlignment="Center" VerticalContentAlignment="Top"  Background="#FF7f50" Grid.Row="1">
+        <Button Margin="180,0,1055,20" Width="685" Height="375" Click="fall" FontSize="70" HorizontalAlignment="Center" VerticalAlignment="Bottom" HorizontalContentAlignment="Center" VerticalContentAlignment="Top"  Background="#FF7f50" Grid.Row="1">
             <Button.Content>
                 <Grid Height="330">
                     <Image Source="/balance;component/Image/fall.PNG" Margin="10,10,26,87" RenderTransformOrigin="0.518,0.442" />
-                    <TextBlock Text="落下ゲーム" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="80,254,66,-12" Height="88" Width="345" />
+                    <TextBlock Text="落下ゲーム" VerticalAlignment="Bottom" HorizontalAlignment="Center" Margin="80,0,66,-12" Height="88" Width="345" />
                 </Grid>
             </Button.Content>
         </Button>
 
-        <Button Margin="1070,0,193,39" Width="657" Height="375" Click="tag" FontSize="70" HorizontalAlignment="Center" VerticalAlignment="Bottom" HorizontalContentAlignment="Center" VerticalContentAlignment="Top"  Background="#FF7f50" Grid.Row="1">
+        <Button Margin="1068,0,195,30" Width="657" Height="375" Click="tag" FontSize="70" HorizontalAlignment="Center" VerticalAlignment="Bottom" HorizontalContentAlignment="Center" VerticalContentAlignment="Top"  Background="#FF7f50" Grid.Row="1">
             <Button.Content>
                 <Grid Height="330">
                     <Image Source="/balance;component/Image/tag.PNG" Margin="10,10,26,87" RenderTransformOrigin="0.518,0.442" />
@@ -31,7 +42,7 @@
             </Button.Content>
         </Button>
 
-        <Button Margin="1070,285,193,419" Width="657" Height="376" Click="target" FontSize="70" HorizontalAlignment="Center" VerticalAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Top"  Background="#FF7f50" Grid.Row="1">
+        <Button Margin="1068,275,195,429" Width="657" Height="376" Click="target" FontSize="70" HorizontalAlignment="Center" VerticalAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Top"  Background="#FF7f50" Grid.Row="1">
             <Button.Content>
                 <Grid>
                     <Grid.RowDefinitions>
@@ -44,11 +55,11 @@
             </Button.Content>
         </Button>
 
-        <Button Margin="180,285,1050,419" Width="690" Height="376" Click="attack" FontSize="70" HorizontalAlignment="Center" VerticalAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Top"  Background="#FF7f50" Grid.Row="1">
+        <Button Margin="180,285,1050,440" Width="690" Height="355" Click="attack" FontSize="70" HorizontalAlignment="Center" VerticalAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Top"  Background="#FF7f50" Grid.Row="1">
             <Button.Content>
                 <Grid Height="366">
-                    <Image Source="/balance;component/Image/attack.PNG" Margin="40,30,54,88" />
-                    <TextBlock Text="アタックゲーム" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="100,278,113,0" Width="376" Height="88" />
+                    <Image Source="/balance;component/Image/attack.PNG" Margin="40,16,54,102" />
+                    <TextBlock Text="アタックゲーム" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="100,261,113,20" Width="376" Height="85" />
                 </Grid>
             </Button.Content>
         </Button>

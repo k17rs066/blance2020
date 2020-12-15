@@ -7,89 +7,17 @@
       mc:Ignorable="d"
       Title="難易度設定"       Height="1000" Width="1630">
     <Page.Resources>
-        <ControlTemplate x:Key="buttonTemp1" TargetType="Button">
-            <Border x:Name="Border" Background="#FFA6658D" CornerRadius="30" BorderThickness="0">
-                <VisualStateManager.VisualStateGroups>
-                    <VisualStateGroup x:Name="CommonStates">
-                        <VisualState x:Name="Normal"/>
-                        <VisualState x:Name="MouseOver">
-                            <Storyboard>
-                                <ColorAnimation Storyboard.TargetName="Border" Storyboard.TargetProperty="(Border.Background).(SolidColorBrush.Color)" To="DeepSkyBlue" Duration="0:0:0.1"/>
-                            </Storyboard>
-                        </VisualState>
-                        <VisualState x:Name="Pressed">
-                            <Storyboard>
-                                <ColorAnimation Storyboard.TargetName="Border" Storyboard.TargetProperty="(Border.Background).(SolidColorBrush.Color)" To="Orange" Duration="0"/>
-                            </Storyboard>
-                        </VisualState>
-                        <VisualStateGroup.Transitions>
-                            <VisualTransition From="Pressed" GeneratedDuration="0:0:0.3"/>
-                            <VisualTransition From="MouseOver" To="Normal" GeneratedDuration="0:0:0.2"/>
-                        </VisualStateGroup.Transitions>
-                    </VisualStateGroup>
-                </VisualStateManager.VisualStateGroups>
-                <ContentPresenter Content="{TemplateBinding Content}" VerticalAlignment="Center" HorizontalAlignment="Center" />
-            </Border>
-        </ControlTemplate>
-
-        <ControlTemplate x:Key="buttonTemp2" TargetType="Button">
-            <Border x:Name="Border" Background="#FFdd9dbf" CornerRadius="30" BorderThickness="0">
-                <VisualStateManager.VisualStateGroups>
-                    <VisualStateGroup x:Name="CommonStates">
-                        <VisualState x:Name="Normal"/>
-                        <VisualState x:Name="MouseOver">
-                            <Storyboard>
-                                <ColorAnimation Storyboard.TargetName="Border" Storyboard.TargetProperty="(Border.Background).(SolidColorBrush.Color)" To="DeepSkyBlue" Duration="0:0:0.1"/>
-                            </Storyboard>
-                        </VisualState>
-                        <VisualState x:Name="Pressed">
-                            <Storyboard>
-                                <ColorAnimation Storyboard.TargetName="Border" Storyboard.TargetProperty="(Border.Background).(SolidColorBrush.Color)" To="Orange" Duration="0"/>
-                            </Storyboard>
-                        </VisualState>
-                        <VisualStateGroup.Transitions>
-                            <VisualTransition From="Pressed" GeneratedDuration="0:0:0.3"/>
-                            <VisualTransition From="MouseOver" To="Normal" GeneratedDuration="0:0:0.2"/>
-                        </VisualStateGroup.Transitions>
-                    </VisualStateGroup>
-                </VisualStateManager.VisualStateGroups>
-                <ContentPresenter Content="{TemplateBinding Content}" VerticalAlignment="Center" HorizontalAlignment="Center" />
-            </Border>
-        </ControlTemplate>
-
-
-        <ControlTemplate x:Key="buttonTemp3" TargetType="Button">
-            <Border x:Name="Border" Background="#FFdd9b9d" CornerRadius="30" BorderThickness="0">
-                <VisualStateManager.VisualStateGroups>
-                    <VisualStateGroup x:Name="CommonStates">
-                        <VisualState x:Name="Normal"/>
-                        <VisualState x:Name="MouseOver">
-                            <Storyboard>
-                                <ColorAnimation Storyboard.TargetName="Border" Storyboard.TargetProperty="(Border.Background).(SolidColorBrush.Color)" To="DeepSkyBlue" Duration="0:0:0.1"/>
-                            </Storyboard>
-                        </VisualState>
-                        <VisualState x:Name="Pressed">
-                            <Storyboard>
-                                <ColorAnimation Storyboard.TargetName="Border" Storyboard.TargetProperty="(Border.Background).(SolidColorBrush.Color)" To="Orange" Duration="0"/>
-                            </Storyboard>
-                        </VisualState>
-                        <VisualStateGroup.Transitions>
-                            <VisualTransition From="Pressed" GeneratedDuration="0:0:0.3"/>
-                            <VisualTransition From="MouseOver" To="Normal" GeneratedDuration="0:0:0.2"/>
-                        </VisualStateGroup.Transitions>
-                    </VisualStateGroup>
-                </VisualStateManager.VisualStateGroups>
-                <ContentPresenter Content="{TemplateBinding Content}" VerticalAlignment="Center" HorizontalAlignment="Center" />
-            </Border>
-        </ControlTemplate>
-
-
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.Light.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.Defaults.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MaterialDesignColors;component/Themes/Recommended/Primary/MaterialDesignColor.DeepPurple.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MaterialDesignColors;component/Themes/Recommended/Accent/MaterialDesignColor.Lime.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
     </Page.Resources>
 
     <Grid>
-        <Button Template="{StaticResource buttonTemp1}" Content="難しい" Margin="554,808,0,121" Width="147" Height="71" Click="FallGame_Hard" FontSize="70" HorizontalAlignment="Left" VerticalAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Top"/>
-        <Button Template="{StaticResource buttonTemp2}" Content="普通" Margin="374,808,0,110" Width="127" Height="82" Click="FallGame_Normal" FontSize="70" HorizontalAlignment="Left" VerticalAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Top"/>
-        <Button Template="{StaticResource buttonTemp3}" Content="簡単" Margin="140,796,0,86" Width="144" Height="118" Click="FallGame_Easy" FontSize="70" HorizontalAlignment="Left" VerticalAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Top"/>
         <TextBlock x:Name="datetimeb"  Margin="930,46,53,837" FontSize="60"/>
         <Label x:Name="select" Content="難易度を設定してください。" FontSize="60" Margin="463,230,455,0" VerticalAlignment="Top" Height="104"/>
         <Button Content="戻る" HorizontalAlignment="Left" Margin="62,46,0,0" VerticalAlignment="Top" Width="332" Height="117" Click="back" FontSize="60"/>

@@ -1,0 +1,71 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Avalonia.Logging.Serilog</name>
+    </assembly>
+    <members>
+        <member name="T:Avalonia.Logging.Serilog.SerilogExtensions">
+            <summary>
+            Extension methods for Serilog logging.
+            </summary>
+        </member>
+        <member name="M:Avalonia.Logging.Serilog.SerilogExtensions.LogToDebug``1(``0,Avalonia.Logging.LogEventLevel)">
+            <summary>
+            Logs Avalonia events to the <see cref="T:System.Diagnostics.Debug"/> sink.
+            </summary>
+            <typeparam name="T">The application class type.</typeparam>
+            <param name="builder">The app builder instance.</param>
+            <param name="level">The minimum level to log.</param>
+            <returns>The app builder instance.</returns>
+        </member>
+        <member name="M:Avalonia.Logging.Serilog.SerilogExtensions.LogToDebug``1(``0,System.String,Avalonia.Logging.LogEventLevel)">
+            <summary>
+            Logs Avalonia events to the <see cref="T:System.Diagnostics.Debug"/> sink.
+            </summary>
+            <typeparam name="T">The application class type.</typeparam>
+            <param name="builder">The app builder instance.</param>
+            <param name="area">The area to log. Valid values are listed in <see cref="T:Avalonia.Logging.LogArea"/>.</param>
+            <param name="level">The minimum level to log.</param>
+            <returns>The app builder instance.</returns>
+        </member>
+        <member name="M:Avalonia.Logging.Serilog.SerilogExtensions.LogToTrace``1(``0,Avalonia.Logging.LogEventLevel)">
+            <summary>
+            Logs Avalonia events to the <see cref="T:System.Diagnostics.Trace"/> sink.
+            </summary>
+            <typeparam name="T">The application class type.</typeparam>
+            <param name="builder">The app builder instance.</param>
+            <param name="level">The minimum level to log.</param>
+            <returns>The app builder instance.</returns>
+        </member>
+        <member name="M:Avalonia.Logging.Serilog.SerilogExtensions.LogToTrace``1(``0,System.String,Avalonia.Logging.LogEventLevel)">
+            <summary>
+            Logs Avalonia events to the <see cref="T:System.Diagnostics.Trace"/> sink.
+            </summary>
+            <typeparam name="T">The application class type.</typeparam>
+            <param name="builder">The app builder instance.</param>
+            <param name="area">The area to log. Valid values are listed in <see cref="T:Avalonia.Logging.LogArea"/>.</param>
+            <param name="level">The minimum level to log.</param>
+            <returns>The app builder instance.</returns>
+        </member>
+        <member name="T:Avalonia.Logging.Serilog.SerilogLogger">
+            <summary>
+            Sends log output to serilog.
+            </summary>
+        </member>
+        <member name="M:Avalonia.Logging.Serilog.SerilogLogger.#ctor(Serilog.ILogger)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Avalonia.Logging.Serilog.SerilogLogger"/> class.
+            </summary>
+            <param name="output">The serilog logger to use.</param>
+        </member>
+        <member name="M:Avalonia.Logging.Serilog.SerilogLogger.Initialize(Serilog.ILogger)">
+            <summary>
+            Initializes the Avalonia logging with a new instance of a <see cref="T:Avalonia.Logging.Serilog.SerilogLogger"/>.
+            </summary>
+            <param name="output">The serilog logger to use.</param>
+        </member>
+        <member name="M:Avalonia.Logging.Serilog.SerilogLogger.Log(Avalonia.Logging.LogEventLevel,System.String,System.Object,System.String,System.Object[])">
+            <inheritdoc/>
+        </member>
+    </members>
+</doc>

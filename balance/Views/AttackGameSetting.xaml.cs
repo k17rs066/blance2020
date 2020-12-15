@@ -131,6 +131,8 @@ namespace balance.Views
             ScoreButton.Background = Brushes.Coral;
             PracticeButton.Background = Brushes.Gainsboro;
 
+            combokei.Visibility = Visibility.Visible;
+
             han.Text = "計測時間:";
             tan.Text = "秒";
             Application.Current.Properties["gamemodename"] = "スコアアタック";
@@ -154,6 +156,9 @@ namespace balance.Views
             TimeButton.Background = Brushes.Coral;
             ScoreButton.Background = Brushes.Gainsboro;
             PracticeButton.Background = Brushes.Gainsboro;
+
+            combokei.Visibility = Visibility.Visible;
+
 
             han.Text = "計測回数:";
             tan.Text = "回";

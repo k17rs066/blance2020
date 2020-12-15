@@ -1,0 +1,169 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Avalonia.Markup.Xaml</name>
+    </assembly>
+    <members>
+        <member name="T:Avalonia.Markup.Xaml.AvaloniaXamlLoader">
+            <summary>
+            Loads XAML for a avalonia application.
+            </summary>
+        </member>
+        <member name="M:Avalonia.Markup.Xaml.AvaloniaXamlLoader.Load(System.Object)">
+            <summary>
+            Loads the XAML into a Avalonia component.
+            </summary>
+            <param name="obj">The object to load the XAML into.</param>
+        </member>
+        <member name="M:Avalonia.Markup.Xaml.AvaloniaXamlLoader.Load(System.Uri,System.Uri)">
+            <summary>
+            Loads XAML from a URI.
+            </summary>
+            <param name="uri">The URI of the XAML file.</param>
+            <param name="baseUri">
+            A base URI to use if <paramref name="uri"/> is relative.
+            </param>
+            <returns>The loaded object.</returns>
+        </member>
+        <member name="M:Avalonia.Markup.Xaml.AvaloniaXamlLoader.Load(System.String,System.Reflection.Assembly,System.Object)">
+            <summary>
+            Loads XAML from a string.
+            </summary>
+            <param name="xaml">The string containing the XAML.</param>
+            <param name="localAssembly">Default assembly for clr-namespace:</param>
+            <param name="rootInstance">
+            The optional instance into which the XAML should be loaded.
+            </param>
+            <returns>The loaded object.</returns>
+        </member>
+        <member name="M:Avalonia.Markup.Xaml.AvaloniaXamlLoader.Load(System.IO.Stream,System.Reflection.Assembly,System.Object,System.Uri)">
+            <summary>
+            Loads XAML from a stream.
+            </summary>
+            <param name="stream">The stream containing the XAML.</param>
+            <param name="localAssembly">Default assembly for clr-namespace</param>
+            <param name="rootInstance">
+            The optional instance into which the XAML should be loaded.
+            </param>
+            <param name="uri">The URI of the XAML</param>
+            <returns>The loaded object.</returns>
+        </member>
+        <member name="T:Avalonia.Markup.Xaml.MarkupExtensions.ResourceInclude">
+            <summary>
+            Loads a resource dictionary from a specified URL.
+            </summary>
+        </member>
+        <member name="P:Avalonia.Markup.Xaml.MarkupExtensions.ResourceInclude.Loaded">
+            <summary>
+            Gets the loaded resource dictionary.
+            </summary>
+        </member>
+        <member name="P:Avalonia.Markup.Xaml.MarkupExtensions.ResourceInclude.Source">
+            <summary>
+            Gets or sets the source URL.
+            </summary>
+        </member>
+        <member name="P:Avalonia.Markup.Xaml.MarkupExtensions.ResourceInclude.Avalonia#Controls#IResourceProvider#HasResources">
+            <inhertidoc/>
+        </member>
+        <member name="P:Avalonia.Markup.Xaml.MarkupExtensions.ResourceInclude.Avalonia#Controls#IResourceNode#ResourceParent">
+            <inhertidoc/>
+        </member>
+        <member name="M:Avalonia.Markup.Xaml.MarkupExtensions.ResourceInclude.Avalonia#Controls#IResourceProvider#TryGetResource(System.Object,System.Object@)">
+            <inhertidoc/>
+        </member>
+        <member name="M:Avalonia.Markup.Xaml.MarkupExtensions.ResourceInclude.Avalonia#Controls#ISetResourceParent#SetParent(Avalonia.Controls.IResourceNode)">
+            <inhertidoc/>
+        </member>
+        <member name="M:Avalonia.Markup.Xaml.MarkupExtensions.ResourceInclude.Avalonia#Controls#ISetResourceParent#ParentResourcesChanged(Avalonia.Controls.ResourcesChangedEventArgs)">
+            <inhertidoc/>
+        </member>
+        <member name="T:Avalonia.Markup.Xaml.Styling.StyleInclude">
+            <summary>
+            Includes a style from a URL.
+            </summary>
+        </member>
+        <member name="M:Avalonia.Markup.Xaml.Styling.StyleInclude.#ctor(System.Uri)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Avalonia.Markup.Xaml.Styling.StyleInclude"/> class.
+            </summary>
+            <param name="baseUri"></param>
+        </member>
+        <member name="E:Avalonia.Markup.Xaml.Styling.StyleInclude.ResourcesChanged">
+            <inheritdoc/>
+        </member>
+        <member name="P:Avalonia.Markup.Xaml.Styling.StyleInclude.Source">
+            <summary>
+            Gets or sets the source URL.
+            </summary>
+        </member>
+        <member name="P:Avalonia.Markup.Xaml.Styling.StyleInclude.Loaded">
+            <summary>
+            Gets the loaded style.
+            </summary>
+        </member>
+        <member name="P:Avalonia.Markup.Xaml.Styling.StyleInclude.Avalonia#Controls#IResourceProvider#HasResources">
+            <inheritdoc/>
+        </member>
+        <member name="P:Avalonia.Markup.Xaml.Styling.StyleInclude.Avalonia#Controls#IResourceNode#ResourceParent">
+            <inheritdoc/>
+        </member>
+        <member name="M:Avalonia.Markup.Xaml.Styling.StyleInclude.Attach(Avalonia.Styling.IStyleable,Avalonia.Styling.IStyleHost)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Avalonia.Markup.Xaml.Styling.StyleInclude.TryGetResource(System.Object,System.Object@)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Avalonia.Markup.Xaml.Styling.StyleInclude.Avalonia#Controls#ISetResourceParent#ParentResourcesChanged(Avalonia.Controls.ResourcesChangedEventArgs)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Avalonia.Markup.Xaml.Styling.StyleInclude.Avalonia#Controls#ISetResourceParent#SetParent(Avalonia.Controls.IResourceNode)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Avalonia.Markup.Xaml.XamlIl.CompilerExtensions.Transformers.XNameTransformer.Transform(XamlIl.Transform.XamlIlAstTransformationContext,XamlIl.Ast.IXamlIlAstNode)">
+            <summary>
+            Converts x:Name directives to regular Name assignments
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="P:Avalonia.Markup.Xaml.IRootObjectProvider.RootObject">
+            <summary>
+            The root object of the xaml file
+            </summary>
+        </member>
+        <member name="P:Avalonia.Markup.Xaml.IRootObjectProvider.IntermediateRootObject">
+            <summary>
+            The "current" root object, contains either the root of the xaml file
+            or the root object of the control/data template 
+            </summary>
+        </member>
+        <member name="M:XamlIl.Transform.XamlIlCompiler.CompilePopulate(XamlIl.TypeSystem.IFileSource,XamlIl.Ast.IXamlIlAstManipulationNode,System.Func{System.String,XamlIl.TypeSystem.IXamlIlType,XamlIl.TypeSystem.IXamlIlTypeBuilder},XamlIl.TypeSystem.IXamlIlEmitter,XamlIl.Transform.XamlIlContext)">
+            <summary>
+            void Populate(IServiceProvider sp, T target);
+            </summary>
+        </member>
+        <member name="P:XamlIl.Transform.XamlIlLanguageTypeMappings.InnerServiceProviderFactoryMethod">
+            <summary>
+            Expected signature:
+            static IServiceProvider InnerServiceProviderFactory(IServiceProvider self);
+            </summary>
+        </member>
+        <member name="P:XamlIl.Transform.XamlIlLanguageTypeMappings.DeferredContentExecutorCustomization">
+            <summary>
+            static Func&lt;IServiceProvider, object&gt; DeferredTransformationFactory(Func&lt;IServiceProvider, object&gt; builder, IServiceProvider provider);
+            </summary>
+        </member>
+        <member name="M:XamlIl.Transform.XamlIlTransformerConfiguration.GetExtra``1">
+            <summary>
+            Gets extension configuration section
+            </summary>
+        </member>
+        <member name="M:XamlIl.Transform.XamlIlTransformerConfiguration.AddExtra``1(``0)">
+            <summary>
+            Adds extension configuration section
+            </summary>
+            <param name="extra"></param>
+            <typeparam name="T"></typeparam>
+        </member>
+    </members>
+</doc>
