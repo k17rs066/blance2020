@@ -34,7 +34,8 @@ namespace balance.Views
         public balance.Views.FallGame_Prac.Refresh_fPrac1 fall_rp = null;
         public balance.Views.FallGame_Prac.Refresh_fPrac2 fall_ep = null;
 
-        
+        int cleartime;
+
 
 
         public FTGameResult(balance.Views.TargetGame.Refresh_a pRefresh_a, balance.Views.TargetGame.Refresh_b pRefresh_b)
@@ -85,9 +86,9 @@ namespace balance.Views
 
             ftresult.Content = Application.Current.Properties["ftresult"].ToString() + " 点";
 
-
+            cleartime = (int)Application.Current.Properties["ftresulttime"];
             fttokikai.Content = "計測時間";
-            ftresulttime.Content = Application.Current.Properties["ftresulttime"].ToString() + " 秒";
+            ftresulttime.Content = cleartime/60 +"分" + cleartime%60+ " 秒";
         }
 
 

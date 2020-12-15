@@ -74,7 +74,7 @@ namespace balance.Views
         int timese = 30;//選択タイム保持
 
         Random cRandom = new System.Random(); // 玉ランダム
-        Random cRandom1 = new System.Random(); // 玉1ランダム
+
         double x, y, x1, y1, x2, y2, x3, y3;
 
         int target = 0; //得点
@@ -85,6 +85,8 @@ namespace balance.Views
         int ballsize;
         int ballspeed;
 
+        int min;
+        int sec;
         public FallGame()
         {
             InitializeComponent();
@@ -107,22 +109,17 @@ namespace balance.Views
 
             ballsize = (int)Application.Current.Properties["ballsize"];
             ballspeed = (int)Application.Current.Properties["ballspeed"];
+            time_t= (int)Application.Current.Properties["timeset"];
+            timese = (int)Application.Current.Properties["timeset"];
+            min = time_t / 60;
+            sec = time_t % 60;
+            time.Content = "残り時間   " + min + "分" + sec + "秒";
+
 
             dispatcharTimer11 = new DispatcherTimer();
             dispatcharTimer11.Interval = new TimeSpan(0, 0, 1);
             dispatcharTimer11.Tick += dispatcharTimer11_Tick;
 
-            for (int i = 30; i <= 90; i += 30)
-            {
-                if (i == timese)
-                {
-                    timepercent.Items.Add(new ComboBoxItem() { IsSelected = true, Content = i });
-                }
-                else
-                {
-                    timepercent.Items.Add(i);
-                }
-            }
 
 
 
@@ -277,22 +274,22 @@ namespace balance.Views
 
                     ///////////////Ellipse,Ellipse1当たり判定 y1は7の倍数の速さで動いているから585の数値にならないy1=588になる
                     ///585%y=0ならよい　585%y1=1なら-1する
-                    if (xza < x + ballsize/2 && xza + 222 > x + ballsize / 2 && 585 == y - ballspeed/2)
+                    if (xza < x + ballsize/2 && xza + 222 > x + ballsize / 2 && 585 + ballsize / 2 == y - 1)
                     {
                         target++;
                         PlaySound("fall_up.wav");
                     }
-                    else if (xza < x1 + ballsize/2 && xza + 222 > x1 + ballsize / 2 && 585 == y1 - ballspeed / 2)
+                    else if (xza < x1 + ballsize/2 && xza + 222 > x1 + ballsize / 2 && 585 + ballsize / 2 == y1 - 1)
                     {
                         target--;
                         PlaySound("fall_down.wav");
                     }
-                    else if (xza < x2 + ballsize/2 && xza + 222 > x2 + ballsize / 2 && 585 == y2 - ballspeed / 2)
+                    else if (xza < x2 + ballsize/2 && xza + 222 > x2 + ballsize / 2 && 585 + ballsize / 2 == y2 - 1)
                     {
                         target += 3;
                         PlaySound("fall_up.wav");
                     }
-                    else if (xza < x + ballsize / 2 && xza + 222 > x + ballsize / 2 && 585 <= y)
+                    else if (xza < x + ballsize / 2 && xza + 222 > x + ballsize / 2 && 585+ ballsize / 2 <= y + ballsize / 2)
                     {
 
                         //drawingEllipse.Fill = System.Windows.Media.Brushes.LimeGreen;
@@ -300,13 +297,13 @@ namespace balance.Views
                         get.Foreground = System.Windows.Media.Brushes.Red;
                         get.Content = "+1";
                     }
-                    else if (xza < x2 + ballsize / 2 && xza + 222 > x2 + ballsize / 2 && 585 <= y2)
+                    else if (xza < x2 + ballsize / 2 && xza + 222 > x2 + ballsize / 2 && 585 + ballsize / 2 <= y2 + ballsize / 2)
                     {
                         this.beback.Children.Remove(this.drawingEllipse2);
                         get.Foreground = System.Windows.Media.Brushes.Yellow;
                         get.Content = "+3";
                     }
-                    else if (xza < x1 + ballsize / 2 && xza + 222 > x1 + ballsize / 2 && 585 <= y1)
+                    else if (xza < x1 + ballsize / 2 && xza + 222 > x1 + ballsize / 2 && 585 + ballsize / 2 <= y1 + ballsize / 2)
                     {
 
                         this.beback.Children.Remove(this.drawingEllipse1);
@@ -414,14 +411,9 @@ namespace balance.Views
 
             time_t--;
 
-            time.Content = "残り時間     " + time_t + "秒";
+            time.Content = "残り時間   " + time_t/60 +"分" + time_t%60+ "秒";
         }
 
-        private void timeok_Click(object sender, RoutedEventArgs e)
-        {
-            timese = int.Parse(timepercent.Text);
-            time.Content = "残り時間     " + timese + "秒";
-        }
 
         void dispatcharTimer11_Tick(object sender, EventArgs e)
         {
@@ -485,9 +477,9 @@ namespace balance.Views
 
             wiimote.Disconnect();
 
-            var nextPage = new GameSelect();
-            NavigationService.Navigate(nextPage);
+            var nextPage = new FallGameModeSelect();
 
+            NavigationService.Navigate(nextPage);
         }
 
         private void Button_IsMouseCapturedChanged(object sender, DependencyPropertyChangedEventArgs e)

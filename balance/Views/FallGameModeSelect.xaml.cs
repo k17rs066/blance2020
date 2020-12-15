@@ -25,7 +25,7 @@ namespace balance.Views
     {
 
         int ballsize = 0;
-        double ballspeed = 0;
+        int ballspeed = 0;
         int time = 0;
         public FallGameModeSelect()
         {
