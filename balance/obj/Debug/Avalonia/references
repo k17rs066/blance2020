@@ -1,69 +1,73 @@
-C:\Users\smkwlab02\Documents\GitHub\blanceNewGame\packages\Avalonia.0.9.4\lib\net461\Avalonia.Animation.dll
-C:\Users\smkwlab02\Documents\GitHub\blanceNewGame\packages\Avalonia.0.9.4\lib\net461\Avalonia.Base.dll
-C:\Users\smkwlab02\Documents\GitHub\blanceNewGame\packages\Avalonia.0.9.4\lib\net461\Avalonia.Controls.dll
-C:\Users\smkwlab02\Documents\GitHub\blanceNewGame\packages\Avalonia.0.9.4\lib\net461\Avalonia.DesignerSupport.dll
-C:\Users\smkwlab02\Documents\GitHub\blanceNewGame\packages\Avalonia.0.9.4\lib\net461\Avalonia.DesktopRuntime.dll
-C:\Users\smkwlab02\Documents\GitHub\blanceNewGame\packages\Avalonia.0.9.4\lib\net461\Avalonia.Diagnostics.dll
-C:\Users\smkwlab02\Documents\GitHub\blanceNewGame\packages\Avalonia.0.9.4\lib\net461\Avalonia.Dialogs.dll
-C:\Users\smkwlab02\Documents\GitHub\blanceNewGame\packages\Avalonia.0.9.4\lib\net461\Avalonia.dll
-C:\Users\smkwlab02\Documents\GitHub\blanceNewGame\packages\Avalonia.0.9.4\lib\net461\Avalonia.Input.dll
-C:\Users\smkwlab02\Documents\GitHub\blanceNewGame\packages\Avalonia.0.9.4\lib\net461\Avalonia.Interactivity.dll
-C:\Users\smkwlab02\Documents\GitHub\blanceNewGame\packages\Avalonia.0.9.4\lib\net461\Avalonia.Layout.dll
-C:\Users\smkwlab02\Documents\GitHub\blanceNewGame\packages\Avalonia.0.9.4\lib\net461\Avalonia.Logging.Serilog.dll
-C:\Users\smkwlab02\Documents\GitHub\blanceNewGame\packages\Avalonia.0.9.4\lib\net461\Avalonia.Markup.dll
-C:\Users\smkwlab02\Documents\GitHub\blanceNewGame\packages\Avalonia.0.9.4\lib\net461\Avalonia.Markup.Xaml.dll
-C:\Users\smkwlab02\Documents\GitHub\blanceNewGame\packages\Avalonia.0.9.4\lib\net461\Avalonia.OpenGL.dll
-C:\Users\smkwlab02\Documents\GitHub\blanceNewGame\packages\Avalonia.Remote.Protocol.0.9.4\lib\netstandard2.0\Avalonia.Remote.Protocol.dll
-C:\Users\smkwlab02\Documents\GitHub\blanceNewGame\packages\Avalonia.0.9.4\lib\net461\Avalonia.Styling.dll
-C:\Users\smkwlab02\Documents\GitHub\blanceNewGame\packages\Avalonia.0.9.4\lib\net461\Avalonia.Themes.Default.dll
-C:\Users\smkwlab02\Documents\GitHub\blanceNewGame\packages\Avalonia.0.9.4\lib\net461\Avalonia.Visuals.dll
-C:\Users\smkwlab02\Documents\GitHub\blanceNewGame\packages\ControlzEx.4.3.0\lib\net462\ControlzEx.dll
-C:\Users\smkwlab02\Documents\GitHub\blanceNewGame\packages\EntityFramework.6.3.0\lib\net45\EntityFramework.dll
-C:\Users\smkwlab02\Documents\GitHub\blanceNewGame\packages\EntityFramework.6.3.0\lib\net45\EntityFramework.SqlServer.dll
-C:\Users\smkwlab02\Documents\GitHub\blanceNewGame\balance\bin\Debug\Eternal.DataVisualization.WPF.dll
-C:\Users\smkwlab02\Documents\GitHub\blanceNewGame\packages\JetBrains.Annotations.10.3.0\lib\net\JetBrains.Annotations.dll
-C:\Users\smkwlab02\Documents\GitHub\blanceNewGame\packages\MahApps.Metro.2.0.0\lib\net47\MahApps.Metro.dll
-C:\Users\smkwlab02\Documents\GitHub\blanceNewGame\packages\MaterialDesignColors.1.2.7\lib\net45\MaterialDesignColors.dll
-C:\Users\smkwlab02\Documents\GitHub\blanceNewGame\packages\MaterialDesignThemes.MahApps.0.1.5\lib\net452\MaterialDesignThemes.MahApps.dll
-C:\Users\smkwlab02\Documents\GitHub\blanceNewGame\packages\MaterialDesignThemes.3.2.0\lib\net45\MaterialDesignThemes.Wpf.dll
-C:\Users\smkwlab02\Documents\GitHub\blanceNewGame\packages\Microsoft.Xaml.Behaviors.Wpf.1.1.19\lib\net45\Microsoft.Xaml.Behaviors.dll
+C:\Users\balance\Documents\GitHub\blanceNewGame\packages\Avalonia.0.9.4\lib\net461\Avalonia.Animation.dll
+C:\Users\balance\Documents\GitHub\blanceNewGame\packages\Avalonia.0.9.4\lib\net461\Avalonia.Base.dll
+C:\Users\balance\Documents\GitHub\blanceNewGame\packages\Avalonia.0.9.4\lib\net461\Avalonia.Controls.dll
+C:\Users\balance\Documents\GitHub\blanceNewGame\packages\Avalonia.0.9.4\lib\net461\Avalonia.DesignerSupport.dll
+C:\Users\balance\Documents\GitHub\blanceNewGame\packages\Avalonia.0.9.4\lib\net461\Avalonia.DesktopRuntime.dll
+C:\Users\balance\Documents\GitHub\blanceNewGame\packages\Avalonia.0.9.4\lib\net461\Avalonia.Diagnostics.dll
+C:\Users\balance\Documents\GitHub\blanceNewGame\packages\Avalonia.0.9.4\lib\net461\Avalonia.Dialogs.dll
+C:\Users\balance\Documents\GitHub\blanceNewGame\packages\Avalonia.0.9.4\lib\net461\Avalonia.dll
+C:\Users\balance\Documents\GitHub\blanceNewGame\packages\Avalonia.0.9.4\lib\net461\Avalonia.Input.dll
+C:\Users\balance\Documents\GitHub\blanceNewGame\packages\Avalonia.0.9.4\lib\net461\Avalonia.Interactivity.dll
+C:\Users\balance\Documents\GitHub\blanceNewGame\packages\Avalonia.0.9.4\lib\net461\Avalonia.Layout.dll
+C:\Users\balance\Documents\GitHub\blanceNewGame\packages\Avalonia.0.9.4\lib\net461\Avalonia.Logging.Serilog.dll
+C:\Users\balance\Documents\GitHub\blanceNewGame\packages\Avalonia.0.9.4\lib\net461\Avalonia.Markup.dll
+C:\Users\balance\Documents\GitHub\blanceNewGame\packages\Avalonia.0.9.4\lib\net461\Avalonia.Markup.Xaml.dll
+C:\Users\balance\Documents\GitHub\blanceNewGame\packages\Avalonia.0.9.4\lib\net461\Avalonia.OpenGL.dll
+C:\Users\balance\Documents\GitHub\blanceNewGame\packages\Avalonia.Remote.Protocol.0.9.4\lib\netstandard2.0\Avalonia.Remote.Protocol.dll
+C:\Users\balance\Documents\GitHub\blanceNewGame\packages\Avalonia.0.9.4\lib\net461\Avalonia.Styling.dll
+C:\Users\balance\Documents\GitHub\blanceNewGame\packages\Avalonia.0.9.4\lib\net461\Avalonia.Themes.Default.dll
+C:\Users\balance\Documents\GitHub\blanceNewGame\packages\Avalonia.0.9.4\lib\net461\Avalonia.Visuals.dll
+C:\Users\balance\Documents\GitHub\blanceNewGame\packages\ControlzEx.4.3.0\lib\net462\ControlzEx.dll
+C:\Users\balance\Documents\GitHub\blanceNewGame\packages\EntityFramework.6.3.0\lib\net45\EntityFramework.dll
+C:\Users\balance\Documents\GitHub\blanceNewGame\packages\EntityFramework.6.3.0\lib\net45\EntityFramework.SqlServer.dll
+C:\Users\balance\Documents\GitHub\blanceNewGame\balance\bin\Debug\Eternal.DataVisualization.WPF.dll
+C:\Users\balance\Documents\GitHub\blanceNewGame\packages\JetBrains.Annotations.10.3.0\lib\net\JetBrains.Annotations.dll
+C:\Users\balance\Documents\GitHub\blanceNewGame\packages\MahApps.Metro.2.0.0\lib\net47\MahApps.Metro.dll
+C:\Users\balance\Documents\GitHub\blanceNewGame\packages\MaterialDesignColors.1.2.7\lib\net45\MaterialDesignColors.dll
+C:\Users\balance\Documents\GitHub\blanceNewGame\packages\MaterialDesignThemes.MahApps.0.1.5\lib\net452\MaterialDesignThemes.MahApps.dll
+C:\Users\balance\Documents\GitHub\blanceNewGame\packages\MaterialDesignThemes.3.2.0\lib\net45\MaterialDesignThemes.Wpf.dll
+C:\Users\balance\Documents\GitHub\blanceNewGame\packages\Microsoft.Xaml.Behaviors.Wpf.1.1.19\lib\net45\Microsoft.Xaml.Behaviors.dll
 C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\mscorlib.dll
-C:\Users\smkwlab02\Documents\GitHub\blanceNewGame\balance\bin\Debug\MySql.Data.dll
+C:\Users\balance\Documents\GitHub\blanceNewGame\balance\bin\Debug\MySql.Data.dll
+C:\Users\balance\Documents\GitHub\blanceNewGame\packages\OpenCvSharp3-AnyCPU.4.0.0.20181129\lib\net461\OpenCvSharp.Blob.dll
+C:\Users\balance\Documents\GitHub\blanceNewGame\packages\OpenCvSharp3-AnyCPU.4.0.0.20181129\lib\net461\OpenCvSharp.dll
+C:\Users\balance\Documents\GitHub\blanceNewGame\packages\OpenCvSharp3-AnyCPU.4.0.0.20181129\lib\net461\OpenCvSharp.Extensions.dll
+C:\Users\balance\Documents\GitHub\blanceNewGame\packages\OpenCvSharp3-AnyCPU.4.0.0.20181129\lib\net461\OpenCvSharp.UserInterface.dll
 C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\PresentationCore.dll
 C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\PresentationFramework.dll
-C:\Users\smkwlab02\Documents\GitHub\blanceNewGame\packages\Serilog.2.5.0\lib\net46\Serilog.dll
-C:\Users\smkwlab02\Documents\GitHub\blanceNewGame\packages\Serilog.Sinks.Debug.1.0.0\lib\netstandard1.0\Serilog.Sinks.Debug.dll
-C:\Users\smkwlab02\Documents\GitHub\blanceNewGame\packages\Serilog.Sinks.Trace.2.1.0\lib\net45\Serilog.Sinks.Trace.dll
-C:\Users\smkwlab02\Documents\GitHub\blanceNewGame\packages\System.Buffers.4.4.0\lib\netstandard2.0\System.Buffers.dll
-C:\Users\smkwlab02\Documents\GitHub\blanceNewGame\packages\System.ComponentModel.Annotations.4.5.0\lib\net461\System.ComponentModel.Annotations.dll
+C:\Users\balance\Documents\GitHub\blanceNewGame\packages\Serilog.2.5.0\lib\net46\Serilog.dll
+C:\Users\balance\Documents\GitHub\blanceNewGame\packages\Serilog.Sinks.Debug.1.0.0\lib\netstandard1.0\Serilog.Sinks.Debug.dll
+C:\Users\balance\Documents\GitHub\blanceNewGame\packages\Serilog.Sinks.Trace.2.1.0\lib\net45\Serilog.Sinks.Trace.dll
+C:\Users\balance\Documents\GitHub\blanceNewGame\packages\System.Buffers.4.4.0\lib\netstandard2.0\System.Buffers.dll
+C:\Users\balance\Documents\GitHub\blanceNewGame\packages\System.ComponentModel.Annotations.4.5.0\lib\net461\System.ComponentModel.Annotations.dll
 C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\System.ComponentModel.DataAnnotations.dll
 C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\System.Configuration.dll
 C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\System.Core.dll
 C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\System.Data.DataSetExtensions.dll
 C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\System.Data.dll
-C:\Users\smkwlab02\Documents\GitHub\blanceNewGame\packages\System.Data.SQLite.Core.1.0.113.1\lib\net451\System.Data.SQLite.dll
-C:\Users\smkwlab02\Documents\GitHub\blanceNewGame\packages\System.Data.SQLite.EF6.1.0.113.0\lib\net451\System.Data.SQLite.EF6.dll
-C:\Users\smkwlab02\Documents\GitHub\blanceNewGame\packages\System.Data.SQLite.Linq.1.0.113.0\lib\net451\System.Data.SQLite.Linq.dll
+C:\Users\balance\Documents\GitHub\blanceNewGame\packages\System.Data.SQLite.Core.1.0.113.1\lib\net451\System.Data.SQLite.dll
+C:\Users\balance\Documents\GitHub\blanceNewGame\packages\System.Data.SQLite.EF6.1.0.113.0\lib\net451\System.Data.SQLite.EF6.dll
+C:\Users\balance\Documents\GitHub\blanceNewGame\packages\System.Data.SQLite.Linq.1.0.113.0\lib\net451\System.Data.SQLite.Linq.dll
 C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\System.dll
 C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\System.Drawing.dll
-C:\Users\smkwlab02\Documents\GitHub\blanceNewGame\packages\System.Memory.4.5.3\lib\netstandard2.0\System.Memory.dll
+C:\Users\balance\Documents\GitHub\blanceNewGame\packages\System.Memory.4.5.3\lib\netstandard2.0\System.Memory.dll
 C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\System.Numerics.dll
-C:\Users\smkwlab02\Documents\GitHub\blanceNewGame\packages\System.Numerics.Vectors.4.4.0\lib\net46\System.Numerics.Vectors.dll
-C:\Users\smkwlab02\Documents\GitHub\blanceNewGame\packages\System.Reactive.4.1.6\lib\net46\System.Reactive.dll
-C:\Users\smkwlab02\Documents\GitHub\blanceNewGame\packages\System.Runtime.CompilerServices.Unsafe.4.6.0\lib\netstandard2.0\System.Runtime.CompilerServices.Unsafe.dll
+C:\Users\balance\Documents\GitHub\blanceNewGame\packages\System.Numerics.Vectors.4.4.0\lib\net46\System.Numerics.Vectors.dll
+C:\Users\balance\Documents\GitHub\blanceNewGame\packages\System.Reactive.4.1.6\lib\net46\System.Reactive.dll
+C:\Users\balance\Documents\GitHub\blanceNewGame\packages\System.Runtime.CompilerServices.Unsafe.4.6.0\lib\netstandard2.0\System.Runtime.CompilerServices.Unsafe.dll
 C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\Facades\System.Runtime.InteropServices.RuntimeInformation.dll
-C:\Users\smkwlab02\Documents\GitHub\blanceNewGame\packages\System.Threading.Tasks.Extensions.4.5.2\lib\netstandard2.0\System.Threading.Tasks.Extensions.dll
-C:\Users\smkwlab02\Documents\GitHub\blanceNewGame\packages\System.ValueTuple.4.5.0\lib\net47\System.ValueTuple.dll
+C:\Users\balance\Documents\GitHub\blanceNewGame\packages\System.Threading.Tasks.Extensions.4.5.2\lib\netstandard2.0\System.Threading.Tasks.Extensions.dll
+C:\Users\balance\Documents\GitHub\blanceNewGame\packages\System.ValueTuple.4.5.0\lib\net47\System.ValueTuple.dll
 C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\System.Web.dll
 C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\System.Web.Extensions.dll
-C:\Users\smkwlab02\Documents\GitHub\blanceNewGame\balance\bin\Debug\System.Windows.Controls.DataVisualization.Toolkit.dll
+C:\Users\balance\Documents\GitHub\blanceNewGame\balance\bin\Debug\System.Windows.Controls.DataVisualization.Toolkit.dll
 C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\System.Windows.dll
 C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\System.Windows.Forms.DataVisualization.dll
 C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\System.Windows.Forms.dll
 C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\System.Xaml.dll
 C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\System.Xml.dll
 C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\System.Xml.Linq.dll
-C:\Users\smkwlab02\Documents\GitHub\blanceNewGame\balance\bin\Debug\WiimoteLib.dll
+C:\Users\balance\Documents\GitHub\blanceNewGame\balance\bin\Debug\WiimoteLib.dll
 C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\WindowsBase.dll
 C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\WindowsFormsIntegration.dll
 C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\Facades\Microsoft.Win32.Primitives.dll

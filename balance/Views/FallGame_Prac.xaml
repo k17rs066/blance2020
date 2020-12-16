@@ -6,7 +6,16 @@
       xmlns:local="clr-namespace:balance.Views"
       mc:Ignorable="d" 
       Title="FallGame_Prac" Height="1080" Width="1920">
-
+    <Page.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.Light.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.Defaults.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MaterialDesignColors;component/Themes/Recommended/Primary/MaterialDesignColor.DeepPurple.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MaterialDesignColors;component/Themes/Recommended/Accent/MaterialDesignColor.Lime.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Page.Resources>
     <Grid Width="1920">
 
         <Canvas HorizontalAlignment="Left" x:Name="beback" Height="675" Margin="364,340,0,0" VerticalAlignment="Top" Width="1200">
@@ -19,7 +28,7 @@
         <!--<ComboBox x:Name="timepercent" HorizontalAlignment="Left" Margin="278,211,0,0" VerticalAlignment="Top" Width="109" Height="78" FontSize="48" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/> -->
 
         <Label Content="落下ゲーム(練習モード)" HorizontalAlignment="Left" Margin="90,52,0,0" VerticalAlignment="Top" Height="125" Width="665" FontSize="72"/>
-        <Button x:Name="startbutton" Content="スタート" HorizontalAlignment="Left" Margin="1088,52,0,0" VerticalAlignment="Top" Width="322" Height="113" Click="start" FontSize="60"/>
+        <Button x:Name="startbutton" Content="スタート" HorizontalAlignment="Left" Margin="1150,55,0,0" VerticalAlignment="Top" Width="322" Height="113" Click="start" FontSize="60"/>
         <Button Content="戻る" HorizontalAlignment="Left" Margin="1561,52,0,0" VerticalAlignment="Top" Width="319" Height="113" Click="back" FontSize="60"/>
         <!--<Label x:Name="time" Content="残り時間     30秒" HorizontalAlignment="Left" Margin="1057,158,0,0" VerticalAlignment="Top" Height="86" Width="706" FontSize="60"/> -->
         <Label x:Name="count" Content="獲得点数    0点" HorizontalAlignment="Left" Margin="1055,195,0,0" VerticalAlignment="Top" Height="86" Width="706" FontSize="60"/>
@@ -30,5 +39,7 @@
         <!-- <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="131" Margin="75,182,0,0" VerticalAlignment="Top" Width="629">
             <Label x:Name="con" Content="秒" HorizontalAlignment="Left" VerticalAlignment="Top" Height="65" Width="104" FontSize="48" Margin="309,33,0,0" RenderTransformOrigin="-0.021,2.177" HorizontalContentAlignment="Center" />
         </Border> -->
+        <Button x:Name="rule" Content="ルール" HorizontalAlignment="Left" Margin="770,55,0,0" VerticalAlignment="Top" Width="322" Height="113"  FontSize="60" Click="rule_Click"/>
+
     </Grid>
 </Page>

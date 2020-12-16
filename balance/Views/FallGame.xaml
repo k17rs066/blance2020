@@ -35,6 +35,7 @@
         <Label x:Name="count" Content="獲得点数    0点" HorizontalAlignment="Left" Margin="1057,249,0,0" VerticalAlignment="Top" Height="86" Width="706" FontSize="60"/>
         <Label x:Name="get" Content="" HorizontalAlignment="Left" Margin="600,441,0,287" VerticalAlignment="Center" Height="352" Width="686" FontSize="300" FontWeight="Bold" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" />
         <Label x:Name="countdown" Content="" HorizontalAlignment="Left" Margin="600,441,0,194" VerticalAlignment="Center" Height="445" Width="713" FontSize="350" FontWeight="Bold" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Foreground="#FFF70505" />
+        <Button x:Name="rule" Content="ルール" HorizontalAlignment="Left" Margin="650,17,0,0" VerticalAlignment="Top" Width="322" Height="113"  FontSize="60" Click="rule_Click"/>
 
     </Grid>
 </Page>

@@ -17,7 +17,7 @@ using System.Windows.Threading;
 
 using WiimoteLib;
 using balance.DataBase;
-
+using System.IO;
 
 namespace balance.Views
     /// </summary>
@@ -29,10 +29,11 @@ namespace balance.Views
 
     public partial class TargetGame_Prac : Page
     {
-        private Thumb target1 = new Thumb();
-        
-
-
+        Thumb target1 = null;
+        Thumb target2 = null;
+        Thumb target3 = null;
+        Thumb target4 = null;
+        Thumb target5 = null;
         public delegate void Refresh_a(object sender, RoutedEventArgs e);
 
         public delegate void Refresh_b(object sender, RoutedEventArgs e);
@@ -46,6 +47,10 @@ namespace balance.Views
         private Ellipse drawingBalance = null;  //重心のマーク
         private Label drawingLabel = null; //カウントダウン表示
         private Label drawingLabel1 = null; //END表示
+
+
+        private Rectangle DrawingTarget = null;
+        private Label DrawingTargetLabel1 = null;
 
         double leftsize = 0;  //左足の加重量
         double rightsize = 0; //右足の加重量
@@ -67,6 +72,8 @@ namespace balance.Views
         int cdtime;
 
 
+
+
         double[,] ta = new double[,]
         {
             {126,92},
@@ -77,10 +84,69 @@ namespace balance.Views
 
         };
 
+        double [,] ta1 = new double[,] {
+            {126,92},
+            {600,80},
+            {250,540},
+            {550,60},
+            {175,315},
+            { 345,535},
+            { 235,325}
+        };
 
+        double[,] ta2 = new double[,] {
+            {342,92},
+            {1070,270},
+            {880,55},
+            {535,380},
+            {975,495},
+            { 1035,65},
+            {1000,325}
+        };
+
+        double[,] ta3 = new double[,] {
+            {582,92},
+            {900,270},
+            {240,60},
+            {150,510},
+            {555,115},
+            { 125,75},
+            {100,50}
+        };
+
+        double[,] ta4 = new double[,] {
+            {840,92},
+            {410,525},
+            {565,275},
+            {155,55},
+            {970,70},
+            {825,540},
+            {875,325 }
+        };
+
+        double[,] ta5 = new double[,]
+        {
+            {1072,92},
+            {830,515},
+            {895,540},
+            {1040,65},
+            {555,450},
+            {565,70},
+            { 555,545}
+        };
+
+        int play_count = 0;
+        Boolean gameflg = false;
+
+        Random randomx = new Random();
+        Random randomy = new Random();
+
+        
 
         public TargetGame_Prac()
         {
+
+
             InitializeComponent();
 
             if (!Application.Current.Properties["u_id"].ToString().Equals("guest")) //user,guest確認
@@ -92,17 +158,19 @@ namespace balance.Views
 
             dispatcharTimer = new DispatcherTimer(DispatcherPriority.Normal);
             dispatcharTimer.Interval = new TimeSpan(0, 0, 0, 1, 1);
-//             dispatcharTimer.Tick += new EventHandler(dispatcharTimer_Tick);
+            dispatcharTimer.Tick += new EventHandler(dispatcharTimer_Tick);
 
             dispatcharTimer11 = new DispatcherTimer();
             dispatcharTimer11.Interval = new TimeSpan(0, 0, 1);
-            dispatcharTimer11.Tick += dispatcharTimer11_Tick;
+            dispatcharTimer11.Tick += dispatcharTimer_CountDown;
 
 
+            Target_Placement(0,0);
         }
 
         void OnWiimoteChanged(object sender, WiimoteChangedEventArgs e)
         {
+
             if (game == true)
             {
 
@@ -115,8 +183,8 @@ namespace balance.Views
                 }
                 else
                 {
-                    xza = bbs.CenterOfGravity.X * 18 * 2 + 621 - 35;//*(Canvas.Width/ballWidth)*倍率 + (Canvas.Width/2) - (ballWidth /2)
-                    yza = bbs.CenterOfGravity.Y * 9.6 * 3 + 337 - 35;//*(Canvas.Height/ballHeight)*倍率 + (Canvas.Height/2) - (ballHeight /2)
+                    xza = bbs.CenterOfGravity.X * 18 * 3.5 + 621 - 35;//*(Canvas.Width/ballWidth)*倍率 + (Canvas.Width/2) - (ballWidth /2)
+                    yza = bbs.CenterOfGravity.Y * 9.6 * 3 + 350 - 35;//*(Canvas.Height/ballHeight)*倍率 + (Canvas.Height/2) - (ballHeight /2)
                     //                  leftsize = 700 - (350 + 14 * (bbs.CenterOfGravity.X));
                     leftsize = (1 - (xza / 790)) * 700;
                     if (xza > 1173) //枠内に収まるように
@@ -142,6 +210,9 @@ namespace balance.Views
 
                 Dispatcher.Invoke(new Action(() =>
                 {
+                    count.Content = "残り個数     " + ctarget + "個";
+                    startbutton.Content = "ストップ";
+                    gameflg = true;
                     //////////////重心の表示
                     if (this.drawingBalance != null)
                     {
@@ -150,49 +221,59 @@ namespace balance.Views
                     this.drawingBalance = new Ellipse() { Fill = System.Windows.Media.Brushes.LimeGreen, Width = 70, Height = 70, Margin = new Thickness(xza, yza, 0, 0) }; //重心のマーク
                     this.beback.Children.Add(this.drawingBalance);
 
-                    //tar1.Content = ("1ターゲット" + ta[0,0] + "," + ta[0,1]);
-                    //zyuu.Content = ("2ターゲット" + ta[1, 0] + "," + ta[1, 1]);
-                    atari(ta[0, 0], ta[0, 1], 1);
-                    atari(ta[1, 0], ta[1, 1], 2);
-                    atari(ta[2, 0], ta[2, 1], 3);
-                    atari(ta[3, 0], ta[3, 1], 4);
-                    atari(ta[4, 0], ta[4, 1], 5);
+
+                        atari(ta1[play_count, 0], ta1[play_count, 1], 1);
+                        atari(ta2[play_count, 0], ta2[play_count, 1], 2);
+                        atari(ta3[play_count, 0], ta3[play_count, 1], 3);
+                        atari(ta4[play_count, 0], ta4[play_count, 1], 4);
+                        atari(ta5[play_count, 0], ta5[play_count, 1], 5);
 
 
 
-                    if (target1 != null)
-                    {
-                        this.beback.Children.Remove(this.target1);
-                    }
 
-                    this.beback.Children.Add(this.target1);
-                    /*        double hlength = 35 + 44; //重心半径　-　標的半径
-                            double xlength = xza - ta[0, 0]; //重心X座標　-　標的X座標
-                            double ylength = yza - ta[0, 1]; //重心Y座標　-　標的Y座標
 
-                            if (hlength * hlength >= xlength * xlength + ylength * ylength && target1.IsEnabled == true)
-                            {
-                                target1.IsEnabled = false;
-                                target1.Background = Brushes.Yellow;
-                                ctarget--;
-
-                            }
-        */
-                    //count.Content = "残り個数　　　" + ctarget + "個";
-                    //count.Content = "残り個数　4個";
 
                     //////////////////////////終了条件
-                    if (ctarget == 0 && target5.IsEnabled == false)
+                    if (ctarget == 0 )
                     {
-                        //this.drawingLabel1 = new Label() { Content = "", Width = 841, Height = 445, Margin = new Thickness(210, 176, 0, 0), FontSize = 350, Foreground = System.Windows.Media.Brushes.Red, FontWeight = FontWeights.Bold, HorizontalContentAlignment = HorizontalAlignment.Center, VerticalContentAlignment = VerticalAlignment.Center };
-                        //this.beback.Children.Add(this.drawingLabel1);
-                        game = false;
+                        this.beback.Children.Remove(this.target1);
+                        this.beback.Children.Remove(this.target2);
+                        this.beback.Children.Remove(this.target3);
+                        this.beback.Children.Remove(this.target4);
+                        this.beback.Children.Remove(this.target5);
 
-                        PlaySound("clear.wav");
+
+
+
                         //drawingLabel1.Content = "クリア";
                         //drawingLabel1.Foreground = System.Windows.Media.Brushes.Black;
-                        dispatcharTimer.Stop();
-                        startbutton.Content = "ストップ";
+
+                        target1.IsEnabled = true;
+                        target2.IsEnabled = true;
+                        target3.IsEnabled = true;
+                        target4.IsEnabled = true;
+                        target5.IsEnabled = true;
+
+                        play_count++;
+                        if (play_count > 6)
+                        {
+                            play_count = 0;
+                        }
+
+                        Target_Placement(play_count, play_count);
+
+
+                        ctarget = 5;
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -208,28 +289,11 @@ namespace balance.Views
                             DBConnect.ExecuteReader(SQL);
                             DBConnect.Dispose();
 
-
-                            
-                            
-
                         }
 
                         dispatcharTimer = new DispatcherTimer(DispatcherPriority.Normal);
                         dispatcharTimer.Interval = new TimeSpan(0, 0, 1);
-//                         dispatcharTimer.Tick += new EventHandler(dispatcharTimer_Tick);
-
-
-                       
-
-                        target1.IsEnabled = true;
-                        target2.IsEnabled = true;
-                        target3.IsEnabled = true;
-                        target4.IsEnabled = true;
-                        target5.IsEnabled = true;
-
-                       
-
-
+                        dispatcharTimer.Tick += new EventHandler(dispatcharTimer_Tick);
 
 
 
@@ -238,10 +302,6 @@ namespace balance.Views
                         Application.Current.Properties["ftresult"] = time_t;
 
                         startbutton.Content = "スタート";
-
-                        FTGameResult s = new FTGameResult(this.start, this.back);
-                        s.Title = "FTGameResult";
-                        s.ShowDialog();
 
 
                     }
@@ -253,12 +313,78 @@ namespace balance.Views
 
         }
 
-        private void Rule_Click(object sender,RoutedEventArgs e)
+        private void Target_Placement(int x, int y)
         {
+            if (gameflg==false)
+            {
 
+
+
+                this.target1 = new Thumb() { Width = 100, Height = 100, Background = System.Windows.Media.Brushes.Black };
+                this.target2 = new Thumb() { Width = 100, Height = 100, Background = System.Windows.Media.Brushes.Black };
+                this.target3 = new Thumb() { Width = 100, Height = 100, Background = System.Windows.Media.Brushes.Black };
+                this.target4 = new Thumb() { Width = 100, Height = 100, Background = System.Windows.Media.Brushes.Black };
+                this.target5 = new Thumb() { Width = 100, Height = 100, Background = System.Windows.Media.Brushes.Black };
+
+
+
+            }
+
+            ImageBrush imageBrush1 = new ImageBrush();
+            string abstag1 = System.IO.Path.GetFullPath("Image/1.png");    //絶対パスを取得
+            imageBrush1.ImageSource = new BitmapImage(new Uri(abstag1));
+
+            ImageBrush imageBrush2 = new ImageBrush();
+            string abstag2 = System.IO.Path.GetFullPath("Image/2.png");    //絶対パスを取得
+            imageBrush2.ImageSource = new BitmapImage(new Uri(abstag2));
+
+            ImageBrush imageBrush3 = new ImageBrush();
+            string abstag3 = System.IO.Path.GetFullPath("Image/3.png");    //絶対パスを取得
+            imageBrush3.ImageSource = new BitmapImage(new Uri(abstag3));
+
+            ImageBrush imageBrush4 = new ImageBrush();
+            string abstag4 = System.IO.Path.GetFullPath("Image/4.png");    //絶対パスを取得
+            imageBrush4.ImageSource = new BitmapImage(new Uri(abstag4));
+
+            ImageBrush imageBrush5 = new ImageBrush();
+            string abstag5 = System.IO.Path.GetFullPath("Image/5.png");    //絶対パスを取得
+            imageBrush5.ImageSource = new BitmapImage(new Uri(abstag5));
+
+            target1.Background = imageBrush1;
+            target2.Background = imageBrush2;
+            target3.Background = imageBrush3;
+            target4.Background = imageBrush4;
+            target5.Background = imageBrush5;
+
+            Canvas.SetLeft(target1, ta1[x, 0]);
+            Canvas.SetTop(target1, ta1[y,1]);
+            this.beback.Children.Add(target1);
+
+
+            Canvas.SetLeft(target2, ta2[x, 0]);
+            Canvas.SetTop(target2, ta2[y, 1]);
+            this.beback.Children.Add(target2);
+
+
+            Canvas.SetLeft(target3, ta3[x, 0]);
+            Canvas.SetTop(target3, ta3[y, 1]);
+            this.beback.Children.Add(target3);
+
+
+            Canvas.SetLeft(target4, ta4[x, 0]);
+            Canvas.SetTop(target4, ta4[y, 1]);
+            this.beback.Children.Add(target4);
+
+
+            Canvas.SetLeft(target5, ta5[x, 0]);
+            Canvas.SetTop(target5, ta5[y, 1]);
+            this.beback.Children.Add(target5);
         }
 
-        void atari(double a, double b, int han)
+
+        //ターゲットに当たった時の処理
+
+        void atari(double a, double b, int targetnum)
         {
             double hlength = 35 + 44; //重心半径　-　標的半径
             double xlength = xza - a; //重心X座標　-　標的X座標
@@ -266,7 +392,7 @@ namespace balance.Views
 
             if (hlength * hlength >= xlength * xlength + ylength * ylength)
             {
-                switch (han)
+                switch (targetnum)
                 {
                     case 1:
                         if (target1.IsEnabled == true)
@@ -320,7 +446,7 @@ namespace balance.Views
                         }
                         break;
                 }
-
+                
 
             }
 
@@ -453,6 +579,7 @@ namespace balance.Views
                 }
 
                 Canvas.SetLeft(thumb, x);
+
                 Canvas.SetTop(thumb, y);
 
                 ta[4, 0] = x;
@@ -460,20 +587,20 @@ namespace balance.Views
 
             }
         }
-        //練習モードでは時間計測は不要
-//         void dispatcharTimer_Tick(object sender, EventArgs e)
-//         {
-// 
-//             time_t++;
-//             time.Content = "計測時間    " + time_t + "秒";
-// 
-//         }
+        void dispatcharTimer_Tick(object sender, EventArgs e)
+        {
 
-        void dispatcharTimer11_Tick(object sender, EventArgs e)
+            time_t++;
+            time.Content = "計測時間    " + time_t + "秒";
+
+        }
+
+        void dispatcharTimer_CountDown(object sender, EventArgs e)
         {
             cdtime++;
             drawingLabel.Content = (3 - cdtime).ToString();
 
+            
             if (cdtime == 3) //スタート押されてると
             {
                 drawingLabel.Content = "";
@@ -506,12 +633,13 @@ namespace balance.Views
                 drawingLabel.Content = "3";
                 cdtime = 0;
                 dispatcharTimer11.Start();
-//                 time.Content = "計測時間    " + time_t + "秒";
+                time.Content = "計測時間    " + time_t + "秒";
                 count.Content = "残り個数     " + ctarget + "個";
 
                 wiimote.Connect();
 
-                ImageBrush imageBrush1 = new ImageBrush();
+
+                /*ImageBrush imageBrush1 = new ImageBrush();
                 string abstag1 = System.IO.Path.GetFullPath("Image/1.png");    //絶対パスを取得
                 imageBrush1.ImageSource = new BitmapImage(new Uri(abstag1));
 
@@ -535,7 +663,12 @@ namespace balance.Views
                 target2.Background = imageBrush2;
                 target3.Background = imageBrush3;
                 target4.Background = imageBrush4;
-                target5.Background = imageBrush5;
+                target5.Background = imageBrush5;*/
+
+
+
+
+                
                 
             }
             else if (startbutton.Content.Equals("リスタート"))
@@ -565,7 +698,7 @@ namespace balance.Views
 
             wiimote.Disconnect();
 
-            var nextPage = new TargetSetting();
+            var nextPage = new GameSelect();
             NavigationService.Navigate(nextPage);
 
          }

@@ -109,33 +109,33 @@ namespace balance.Views
 
                 if (bbs.WeightKg < 5)
                 {
-                    xza = 827 - 35;  //(Canvas.Width/2) - (ballWidth /2)
-                    yza = 350 - 35;  //(Canvas.Height/2) - (ballHeight /2)
+                    xza = 1654/2 - 35;  //(Canvas.Width/2) - (ballWidth /2)
+                    yza = 700/2 - 35;  //(Canvas.Height/2) - (ballHeight /2)
 
                 }
                 else
                 {
-                    xza = bbs.CenterOfGravity.X * 15 * 2 + 827 - 35;//*(Canvas.Width/ballWidth)*倍率 + (Canvas.Width/2) - (ballWidth /2)
-                    yza = bbs.CenterOfGravity.Y * 15 * 4 + 350 - 35;//*(Canvas.Height/ballHeight)*倍率 + (Canvas.Height/2) - (ballHeight /2)
+                    xza = bbs.CenterOfGravity.X * 1654/70 * 3 + 827 - 35;//*(Canvas.Width/ballWidth)*倍率 + (Canvas.Width/2) - (ballWidth /2)
+                    yza = bbs.CenterOfGravity.Y * 1700/70 * 3 + 350 - 35;//*(Canvas.Height/ballHeight)*倍率 + (Canvas.Height/2) - (ballHeight /2)
 
 
 
-                    if (xza > 1627) //枠内に収まるように
+                    if (xza > 1614) //枠内に収まるように
                     {
-                        xza = 1627;//  bdraw.Width - ballSize
+                        xza = 1614;//  bdraw.Width - ballSize
                     }
-                    else if (xza < 5)
+                    else if (xza < 35)
                     {
-                        xza = 5;
+                        xza = 35;
                     }
 
-                    if (yza > 630)
+                    if (yza > 665)
                     {
-                        yza = 630;//bdraw.Height - ballSize
+                        yza = 665;//bdraw.Height - ballSize
                     }
-                    else if (yza < 5)
+                    else if (yza < 35)
                     {
-                        yza = 5;
+                        yza = 35;
                     }
                 }
 

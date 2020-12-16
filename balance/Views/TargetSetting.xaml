@@ -8,13 +8,25 @@
       d:DesignHeight="1030" d:DesignWidth="1920"
       Title="ターゲットゲーム設定画面">
 
+    <Page.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.Light.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.Defaults.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MaterialDesignColors;component/Themes/Recommended/Primary/MaterialDesignColor.DeepPurple.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MaterialDesignColors;component/Themes/Recommended/Accent/MaterialDesignColor.Lime.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Page.Resources>
     <Grid Margin="10,10,0,0">
-        <Label Content="ターゲットの配置を選択してください。" FontSize="80" Margin="445,228,340,675"/>
+        <Label Content="ターゲットゲームの設定をしてください。" FontSize="80" Margin="385,228,300,675"/>
         <TextBlock x:Name="datetimeb"  Margin="930,46,53,837" FontSize="60"/>
         <Button Content="戻る" HorizontalAlignment="Left" Margin="62,46,0,0" VerticalAlignment="Top" Width="332" Height="117" Click="back" FontSize="60"/>
-        <Label Content="配置：" FontSize="80" Margin="445,525,1090,360"/>
-        <ComboBox x:Name="Placement" Margin="930,525,0,360" FontSize="80" HorizontalAlignment="Left" Width="430" />
-        <Button Content="決定" Click="decision" Margin="565,840,670,55" HorizontalAlignment="Center" FontSize="90"/>
+        <Label x:Name="Plecement_Label"  Content="配置：" FontSize="80" Margin="415,585,1120,300"/>
+        <ComboBox x:Name="Placement" Margin="930,598,0,270" FontSize="80" HorizontalAlignment="Left" Width="430" SelectionChanged="Placement_SelectionChanged" Height="152" />
+        <Button Content="決定" Click="decision" Margin="793,841,905,45" HorizontalAlignment="Center" FontSize="90" Height="Auto"/>
+        <Label Content="ゲームモード：" FontSize="80" Margin="240,395,1115,490"/>
+        <ComboBox x:Name="GameMode" Margin="935,380,0,494" FontSize="80" HorizontalAlignment="Left" Width="430" SelectionChanged="GameMode_SelectionChanged" Height="146" />
 
     </Grid>
 </Page>

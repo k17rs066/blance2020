@@ -582,9 +582,10 @@ namespace balance.Views
             {
                 gametype = 1;
                 Combo_GameMode.SelectedIndex = gametype;
-                ScoreFlag = false;
                 TimeFlag = true;
-                st = "クリアライン:" + lin + "%　" + set;
+                ScoreFlag = false;
+
+                st = "クリアライン:" + lin + "%　" + "計測回数:"+ se + "回";
                 settin.Text = st;
             }
             else //練習モード
@@ -724,20 +725,21 @@ namespace balance.Views
                     //Application.Current.Properties["line"] = int.Parse(DBConnect.Reader[7].ToString());
                     //Application.Current.Properties["sette"] = int.Parse(DBConnect.Reader[5].ToString());
 
-                    Application.Current.Properties["settei"] = "計測回数" + Application.Current.Properties["sette"] + "回";
+                    Application.Current.Properties["settei"] = "計測回数" + (int)Application.Current.Properties["sette"] + "回";
                     rf(1);
                 }
                 else
                 {
-                    Application.Current.Properties["line"] = 60;
-                    Application.Current.Properties["sette"] = 10;
+                    //Application.Current.Properties["line"] = 60;
+                    //Application.Current.Properties["sette"] = 10;
 
                     Application.Current.Properties["settei"] = "計測回数" + Application.Current.Properties["sette"] + "回";
                     rf(1);
                 }
                 DBConnect.Dispose();
 
-            } else if (gametype == 0) //スコアアタック
+            }
+            else if (gametype == 0) //スコアアタック
             {
 
 

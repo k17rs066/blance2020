@@ -14,10 +14,10 @@
             <Canvas.Background>
                 <SolidColorBrush Color="{DynamicResource {x:Static SystemColors.GradientInactiveCaptionColorKey}}"/>
             </Canvas.Background>
-            <!--<Thumb x:Name="target1" Width="100" Height="100"
+            <Thumb x:Name="target1" Width="100" Height="100"
                    
-               Canvas.Left="126"
-               Canvas.Top="92"
+               Canvas.Left="135"
+               Canvas.Top="330"
                DragDelta="Thumb1_DragDelta"  RenderTransformOrigin="0.5,0.5" Margin="0" Cursor="None" >
                 <Thumb.BorderBrush>
                     <ImageBrush Stretch="None" ImageSource="/balance;component/Image/1.png"/>
@@ -27,38 +27,38 @@
                 </Thumb.Background>
             </Thumb>
             <Thumb x:Name="target2" Width="100" Height="100"
-               Canvas.Left="342"
-               Canvas.Top="92"
+               Canvas.Left="555"
+               Canvas.Top="325"
                DragDelta="Thumb2_DragDelta" RenderTransformOrigin="0.5,0.5"  >
                 <Thumb.Background>
                     <ImageBrush ImageSource="/balance;component/image/2.png"/>
                 </Thumb.Background>
             </Thumb>
             <Thumb x:Name="target3" Width="100" Height="100"
-               Canvas.Left="582"
-               Canvas.Top="92"
+               Canvas.Left="555"
+               Canvas.Top="50"
                DragDelta="Thumb3_DragDelta"  RenderTransformOrigin="0.5,0.5"   >
                 <Thumb.Background>
                     <ImageBrush ImageSource="/balance;component/image/3.png"/>
                 </Thumb.Background>
             </Thumb>
             <Thumb x:Name="target4" Width="100" Height="100"
-               Canvas.Left="840"
-               Canvas.Top="92"
+               Canvas.Left="1020"
+               Canvas.Top="325"
                DragDelta="Thumb4_DragDelta"  RenderTransformOrigin="0.5,0.5"   >
                 <Thumb.Background>
                     <ImageBrush ImageSource="/balance;component/image/4.png"/>
                 </Thumb.Background>
             </Thumb>
             <Thumb x:Name="target5" Width="100" Height="100"
-               Canvas.Left="1071"
-               Canvas.Top="92"
-               DragDelta="Thumb5_DragDelta"  RenderTransformOrigin="0.5,0.5"   >
+               Canvas.Left="555"
+               Canvas.Top="545"
+               DragDelta="Thumb5_DragDelta"  RenderTransformOrigin="0.95,0.5"   >
                 <Thumb.Background>
                     <ImageBrush ImageSource="/balance;component/image/5.png"/>
                 </Thumb.Background>
-            </Thumb>-->
-            
+            </Thumb>
+
             <!-- Content="" Canvas.Left="342" Canvas.Top="245" Height="272" Width="545" FontWeight="Bold" FontSize="210"/-->
         </Canvas>
 

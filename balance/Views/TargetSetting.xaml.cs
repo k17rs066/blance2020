@@ -24,10 +24,11 @@ namespace balance.Views
         {
             InitializeComponent();
 
-            /*Mode.Items.Add("通常モード");
-            Mode.Items.Add("練習モード");
 
-            Mode.SelectedIndex = 0;*/
+            GameMode.Items.Add("通常モード");
+            GameMode.Items.Add("練習モード");
+
+            GameMode.SelectedIndex = 0;
 
             Placement.Items.Add("パターン1");
             Placement.Items.Add("パターン2");
@@ -42,8 +43,25 @@ namespace balance.Views
             NavigationService.Navigate(nextPage);
         }
 
+        private void Combo_GameMode(object sender,RoutedEventArgs e)
+        {
+            if (GameMode.Text =="通常モード") 
+            {
+                Plecement_Label.Visibility = Visibility.Visible;
+                Placement.Visibility = Visibility.Visible;
+
+            }
+            else if (GameMode.Text == "練習モード") 
+            {
+                Plecement_Label.Visibility = Visibility.Hidden;
+                Placement.Visibility = Visibility.Hidden;
+            }
+        }
+
         private void decision(object sender, RoutedEventArgs e)
         {
+            if (GameMode.Text == "通常モード")
+            {
                 if (Placement.Text == "パターン1")
                 {
                     var nextPage = new TargetGame();
@@ -59,12 +77,33 @@ namespace balance.Views
                     var nextPage = new TargetGame_p3();
                     NavigationService.Navigate(nextPage);
                 }
-                else
-                {
-                    var nextPage = new TargetGame();
-                    NavigationService.Navigate(nextPage);
-                }
+            }
+            else if (GameMode.Text == "練習モード")
+            {
+                var nextPage = new TargetGame_Prac();
+                NavigationService.Navigate(nextPage);
+            }
          }
 
+        private void Placement_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
+
+        private void GameMode_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if (GameMode.Text == "通常モード")
+            {
+                Plecement_Label.Visibility = Visibility.Hidden;
+                Placement.Visibility = Visibility.Hidden;
+
+
+            }
+            else if (GameMode.Text == "練習モード")
+            {
+                Plecement_Label.Visibility = Visibility.Visible;
+                Placement.Visibility = Visibility.Visible;
+            }
+        }
     }
 }

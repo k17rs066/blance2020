@@ -15,39 +15,7 @@
                 <SolidColorBrush Color="{DynamicResource {x:Static SystemColors.GradientInactiveCaptionColorKey}}"/>
             </Canvas.Background>
 
-            <Thumb x:Name="target2" Width="100" Height="100"
-               Canvas.Left="342"
-               Canvas.Top="92"
-               DragDelta="Thumb2_DragDelta" RenderTransformOrigin="0.5,0.5"  >
-                <Thumb.Background>
-                    <ImageBrush ImageSource="/balance;component/image/2.png"/>
-                </Thumb.Background>
-            </Thumb>
-            <Thumb x:Name="target3" Width="100" Height="100"
-               Canvas.Left="582"
-               Canvas.Top="92"
-               DragDelta="Thumb3_DragDelta"  RenderTransformOrigin="0.5,0.5"   >
-                <Thumb.Background>
-                    <ImageBrush ImageSource="/balance;component/image/3.png"/>
-                </Thumb.Background>
-            </Thumb>
-            <Thumb x:Name="target4" Width="100" Height="100"
-               Canvas.Left="840"
-               Canvas.Top="92"
-               DragDelta="Thumb4_DragDelta"  RenderTransformOrigin="0.5,0.5"   >
-                <Thumb.Background>
-                    <ImageBrush ImageSource="/balance;component/image/4.png"/>
-                </Thumb.Background>
-            </Thumb>
-            <Thumb x:Name="target5" Width="100" Height="100"
-               Canvas.Left="1071"
-               Canvas.Top="92"
-               DragDelta="Thumb5_DragDelta"  RenderTransformOrigin="0.5,0.5"   >
-                <Thumb.Background>
-                    <ImageBrush ImageSource="/balance;component/image/5.png"/>
-                </Thumb.Background>
-            </Thumb>
-            <!-- Content="" Canvas.Left="342" Canvas.Top="245" Height="272" Width="545" FontWeight="Bold" FontSize="210"/-->
+   
         </Canvas>
 
         <Label Content="ターゲットゲーム（練習モード）" HorizontalAlignment="Left" Margin="75,10,0,0" VerticalAlignment="Top" Height="125" Width="830" FontSize="72"/>
@@ -55,7 +23,7 @@
         <Button Content="戻る" HorizontalAlignment="Left" Margin="1510,12,0,0" VerticalAlignment="Top" Width="319" Height="121" Click="back" FontSize="60"/>
         <!--Button x:Name="fix" Content="固定配置" HorizontalAlignment="Left" Margin="75,175,0,0" VerticalAlignment="Top" Width="213" Height="107" FontSize="48" AutomationProperties.Name="1"/>
         <Button x:Name="free" Content="自由配置" HorizontalAlignment="Left" Margin="459,175,0,0" VerticalAlignment="Top" Width="213" Height="107" FontSize="48"/-->
-        <!--<Label x:Name="time" Content="計測時間    0秒" HorizontalAlignment="Left" Margin="1057,158,0,0" VerticalAlignment="Top" Height="86" Width="706" FontSize="60"/>-->
+        <Label x:Name="time" Content="計測時間    0秒" HorizontalAlignment="Left" Margin="1057,158,0,0" VerticalAlignment="Top" Height="86" Width="706" FontSize="60"/>
         <Label x:Name="count" Content="残り個数     5個" HorizontalAlignment="Left" Margin="1057,249,0,0" VerticalAlignment="Top" Height="86" Width="706" FontSize="60"/>
         <Label x:Name="zyuu" Content="" HorizontalAlignment="Left" Margin="905,73,0,0" VerticalAlignment="Top" Height="80" Width="347" FontSize="36"/>
         <Label x:Name="tar1" Content="" HorizontalAlignment="Left" Margin="905,169,0,0" VerticalAlignment="Top" Height="80" Width="347" FontSize="36"/>

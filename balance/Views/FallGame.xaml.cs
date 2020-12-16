@@ -387,9 +387,8 @@ namespace balance.Views
 
                         startbutton.Content = "スタート";
 
-#pragma warning disable IDE0017 // オブジェクトの初期化を簡略化します
                         FTGameResult s = new FTGameResult(this.start, this.back, 1);
-#pragma warning restore IDE0017 // オブジェクトの初期化を簡略化します
+
                         s.Title = "FTGameResult";
                         s.ShowDialog();
 
@@ -414,6 +413,14 @@ namespace balance.Views
             time.Content = "残り時間   " + time_t/60 +"分" + time_t%60+ "秒";
         }
 
+        private void rule_Click(object sender, RoutedEventArgs e)
+        {
+
+            FallGameRule s = new FallGameRule();
+
+            s.Title = "FallGameRule";
+            s.ShowDialog();
+        }
 
         void dispatcharTimer11_Tick(object sender, EventArgs e)
         {

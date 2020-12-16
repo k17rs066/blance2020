@@ -429,6 +429,14 @@ namespace balance.Views
 
         }
 
+        private void rule_Click(object sender, RoutedEventArgs e)
+        {
+            FallGameRule s = new FallGameRule();
+
+            s.Title = "FallGameRule";
+            s.ShowDialog();
+        }
+
         /// 音を出すプログラム
         private System.Media.SoundPlayer player = null;
 

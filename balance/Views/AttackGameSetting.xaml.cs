@@ -31,7 +31,7 @@ namespace balance.Views
         int setting_min = 0;
         int user_id;
 
-        int total_time=0;
+        int total=0;
 
 
         public AttackGameSetting()
@@ -130,21 +130,22 @@ namespace balance.Views
                 if (han.Text.Equals("計測時間:")) // スコアアタック
                 {
                     bnum = 0;
-                    total_time = int.Parse(score_min.Text)*60 + int.Parse(combokei.Text);
+                    total = int.Parse(score_min.Text)*60 + int.Parse(combokei.Text);
                 }
                 else if(han.Text.Equals("計測回数:")) //　タイムアタック
                 {
                     bnum = 1;
-                    total_time = int.Parse(combokei.Text);
+                    total = int.Parse(combokei.Text);
 
                 }else //練習モード
                 {
                     bnum = 2;
-                    total_time = 0;
+                    total = 0;
                 }
+
                 Application.Current.Properties["line"] = combo.Text;
                 Application.Current.Properties["settei"] = han.Text + combokei.Text + tan.Text;
-                Application.Current.Properties["sette"] =total_time;
+                Application.Current.Properties["sette"] =total;
                 rf(bnum);
             }
             this.Close();
@@ -224,9 +225,6 @@ namespace balance.Views
                 }
             }
 
-
-            han.Text = null;
-            tan.Text = null;
 
             han.Text = "計測回数:";
             tan.Text = "回";

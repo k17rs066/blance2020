@@ -21,44 +21,43 @@
         <TextBlock x:Name="datetimeb"  Margin="930,46,53,837" FontSize="60"/>
         <Label x:Name="select" Content="難易度を設定してください。" FontSize="60" Margin="463,230,455,0" VerticalAlignment="Top" Height="104"/>
         <Button Content="戻る" HorizontalAlignment="Left" Margin="62,46,0,0" VerticalAlignment="Top" Width="332" Height="117" Click="back" FontSize="60"/>
-        <Button Content="練習モード"  x:Name="Precmode" Margin="463,46,835,0" VerticalAlignment="Top" Width="332" Height="117" Click="Precmode_Click" FontSize="60"/>
-        
+
         <ComboBox 
-            
+            FontSize="60"
             x:Name="FallGameMode"
-            Margin="845,368,552,560" 
-            SelectionChanged="FallGameMode_SelectionChanged" SelectedIndex="0" 
+            Margin="840,375,495,535" 
+            SelectionChanged="FallGameMode_SelectionChanged" SelectedIndex="0" Height="90" 
             
             >
             <ComboBoxItem>通常モード</ComboBoxItem>
             <ComboBoxItem>練習モード</ComboBoxItem>
-            
+
 
 
         </ComboBox>
-        
-        <ComboBox x:Name="BallSpeed" Margin="845,524,552,406" SelectedIndex="1" SelectionChanged="BallSpeed_SelectionChanged">
+
+        <ComboBox x:Name="BallSpeed" Margin="845,480,552,430" SelectedIndex="1" SelectionChanged="BallSpeed_SelectionChanged" FontSize="60" Height="90">
             <ComboBoxItem>速い</ComboBoxItem>
             <ComboBoxItem>普通</ComboBoxItem>
             <ComboBoxItem>遅い</ComboBoxItem>
 
 
         </ComboBox>
-        
-        <ComboBox x:Name="BallSize" Margin="845,650,552,280" SelectionChanged="BallSize_SelectionChanged" SelectedIndex="1">
+
+        <ComboBox x:Name="BallSize" Margin="850,595,547,325" SelectionChanged="BallSize_SelectionChanged" SelectedIndex="1" FontSize="60" Height="80">
 
 
             <ComboBoxItem>大きい</ComboBoxItem>
             <ComboBoxItem>普通</ComboBoxItem>
-            <ComboBoxItem>小さい</ComboBoxItem> 
+            <ComboBoxItem>小さい</ComboBoxItem>
         </ComboBox>
 
-        <Label Content="モード選択" x:Name="FallGameMode_Label" Margin="374,368,838,560"/>
-        <Label Content="ボールの速さ" x:Name="BallSpeed_Label" Margin="374,506,838,406"/>
-        <Label Content="ボールの大きさ" x:Name ="BallSize_Label" Margin="374,668,838,280"/>
-        <Label Content="時間設定" x:Name="TimeSet_Label" Margin="374,778,838,170"/>
+        <Label Content="モード選択" x:Name="FallGameMode_Label" Margin="430,375,920,535" FontSize="60" RenderTransformOrigin="0.5,0.167"/>
+        <Label Content="ボールの速さ" x:Name="BallSpeed_Label" Margin="430,485,895,431" FontSize="60" RenderTransformOrigin="0.444,0.643"/>
+        <Label Content="ボールの大きさ" x:Name ="BallSize_Label" Margin="400,590,880,335" FontSize="60"/>
+        <Label Content="時間設定" x:Name="TimeSet_Label" Margin="490,730,850,178" FontSize="60"/>
 
-        <ComboBox x:Name="MinSet" Margin="797,780,704,150" SelectedIndex="0" SelectionChanged="MinSet_SelectionChanged" >
+        <ComboBox x:Name="MinSet" Margin="856,730,645,188" SelectedIndex="0" SelectionChanged="MinSet_SelectionChanged" FontSize="60" Height="82">
             <ComboBoxItem>0</ComboBoxItem>
             <ComboBoxItem>1</ComboBoxItem>
             <ComboBoxItem>2</ComboBoxItem>
@@ -67,11 +66,11 @@
             <ComboBoxItem>5</ComboBoxItem>
 
         </ComboBox>
-        
-        
-        <Label Content="分" x:Name="Min_Label" Margin="1010,778,500,121" />
 
-        <ComboBox x:Name="SecSet" Margin="1130,780,371,150" SelectedIndex="3" SelectionChanged="SecSet_SelectionChanged" >
+
+        <Label Content="分" x:Name="Min_Label" Margin="1010,728,500,190" FontSize="60"/>
+
+        <ComboBox x:Name="SecSet" Margin="1136,725,365,185" SelectedIndex="3" SelectionChanged="SecSet_SelectionChanged" FontSize="60" Height="90" >
             <ComboBoxItem>0</ComboBoxItem>
             <ComboBoxItem>10</ComboBoxItem>
             <ComboBoxItem>20</ComboBoxItem>
@@ -80,9 +79,9 @@
             <ComboBoxItem>50</ComboBoxItem>
 
         </ComboBox>
-        <Label Content="秒" x:Name="Sec_Label" Margin="1285,778,225,121" />
+        <Label Content="秒" x:Name="Sec_Label" Margin="1295,720,215,195" FontSize="60"/>
 
-        <Button Content="決定" x:Name="Deside" Margin="957,879,53,33" Click="Deside_Click"/>
+        <Button Content="決定" x:Name="Deside" Margin="585,880,595,30" Click="Deside_Click" Height="Auto" FontSize="60"/>
     </Grid>
 </Page>
 
