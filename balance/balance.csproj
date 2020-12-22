@@ -262,27 +262,14 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="Views\buttonresources.xaml.cs">
-      <DependentUpon>buttonresources.xaml</DependentUpon>
-    </Compile>
     <Compile Include="Views\Calibration.xaml.cs">
       <DependentUpon>Calibration.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\Class1.cs" />
-    <Compile Include="Views\FallGameModeSelect.xaml.cs">
-      <DependentUpon>FallGameModeSelect.xaml</DependentUpon>
+    <Compile Include="Views\FallGameSetting.xaml.cs">
+      <DependentUpon>FallGameSetting.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\FallGame.xaml.cs">
       <DependentUpon>FallGame.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Views\FallGame_Easy.xaml.cs">
-      <DependentUpon>FallGame_Easy.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Views\FallGame_Hard.xaml.cs">
-      <DependentUpon>FallGame_Hard.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Views\FallGame_Normal.xaml.cs">
-      <DependentUpon>FallGame_Normal.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\GameOfTag_Prac.xaml.cs">
       <DependentUpon>GameOfTag_Prac.xaml</DependentUpon>
@@ -383,33 +370,17 @@
     <Compile Include="Views\TagSetting.xaml.cs">
       <DependentUpon>TagSetting.xaml</DependentUpon>
     </Compile>
-    <Page Include="Views\buttonresources.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
     <Page Include="Views\Calibration.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\FallGameModeSelect.xaml">
+    <Page Include="Views\FallGameSetting.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\FallGame.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
-    </Page>
-    <Page Include="Views\FallGame_Easy.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="Views\FallGame_Hard.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="Views\FallGame_Normal.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\GameOfTag_Prac.xaml">
       <Generator>MSBuild:Compile</Generator>

@@ -10,7 +10,7 @@
             <ResourceDictionary.MergedDictionaries>
                 <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.Light.xaml" />
                 <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.Defaults.xaml" />
-                <ResourceDictionary Source="pack://application:,,,/MaterialDesignColors;component/Themes/Recommended/Primary/MaterialDesignColor.DeepPurple.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MaterialDesignColors;component/Themes/Recommended/Primary/MaterialDesignColor.Blue.xaml" />
                 <ResourceDictionary Source="pack://application:,,,/MaterialDesignColors;component/Themes/Recommended/Accent/MaterialDesignColor.Lime.xaml" />
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
@@ -56,7 +56,7 @@
 -->
         <TextBlock Name ="leftparcent" HorizontalAlignment="Left" FontSize="100" Height="126" Margin="110,878,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="240"/>
         <TextBlock Name ="rightparcent" HorizontalAlignment="Left" FontSize ="100" Height="126" Margin="445,878,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="240"/>
-        <TextBlock Name ="settin" FontSize ="50" HorizontalAlignment="Left" Height="100" Margin="764,310,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="1001" Grid.ColumnSpan="2"/>
+        <TextBlock Name ="settin" FontSize ="50" HorizontalAlignment="Right" Height="100" Margin="764,310,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="1001" Grid.ColumnSpan="2"/>
         <!--leftpar　左の％
         　　rightpar　右の％
         　　settin 設定したクリアライン、時間（回数）

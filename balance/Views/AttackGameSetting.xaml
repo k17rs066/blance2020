@@ -8,7 +8,7 @@
             <ResourceDictionary.MergedDictionaries>
                 <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.Light.xaml" />
                 <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.Defaults.xaml" />
-                <ResourceDictionary Source="pack://application:,,,/MaterialDesignColors;component/Themes/Recommended/Primary/MaterialDesignColor.DeepPurple.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MaterialDesignColors;component/Themes/Recommended/Primary/MaterialDesignColor.Blue.xaml" />
                 <ResourceDictionary Source="pack://application:,,,/MaterialDesignColors;component/Themes/Recommended/Accent/MaterialDesignColor.Lime.xaml" />
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
@@ -34,9 +34,9 @@
         <ComboBox x:Name ="score_min" FontSize ="50" HorizontalAlignment="Left" Height="65" Margin="120,331,0,0" VerticalAlignment="Top" Width="107" Grid.Column="1"/>
 
         <Button x:Name="ScoreButton" Content="スコアアタック" HorizontalAlignment="Left" Margin="55,101,0,0" VerticalAlignment="Top" Width="190" Height="59" FontSize="30" Click="ScoreButton_Click" Grid.ColumnSpan="2"/>
-        <Button x:Name="TimeButton" Content="タイムアタック" HorizontalAlignment="Left" Margin="80,101,0,0" VerticalAlignment="Top" Width="188" Height="59" FontSize="30" Click="TimeButton_Click" Grid.Column="1"/>
+        <Button x:Name="TimeButton" Content="タイムアタック" HorizontalAlignment="Left" Margin="102,100,0,0" VerticalAlignment="Top" Width="188" Height="59" FontSize="30" Click="TimeButton_Click" Grid.Column="1"/>
         <Label Content="ゲームモード・クリアライン・計測時間/回数を選択してください。" HorizontalAlignment="Left" Margin="99,27,0,0" VerticalAlignment="Top" Height="43" Width="581" FontSize="24" Grid.ColumnSpan="2"/>
-        <Button x:Name="PracticeButton" Content="練習モード" HorizontalAlignment="Left" Margin="297,101,0,0" VerticalAlignment="Top" Width="176" Height="59" FontSize="30" Click="PracticeButton_Click" Grid.Column="3"/>
+        <Button x:Name="PracticeButton" Content="練習モード" HorizontalAlignment="Left" Margin="329,100,0,0" VerticalAlignment="Top" Width="176" Height="59" FontSize="30" Click="PracticeButton_Click" Grid.Column="1" RenderTransformOrigin="0.699,0.492"/>
 
     </Grid>
 </Window>
