@@ -727,7 +727,7 @@ namespace balance.Views
 
                     Application.Current.Properties["settei"] = "計測回数" + (int)Application.Current.Properties["sette"] + "回";
                     rf(1);
-                    rule.Visibility = Visibility.Visible;
+                    //rule.Visibility = Visibility.Visible;
 
                 }
                 else
@@ -762,7 +762,7 @@ namespace balance.Views
 
                     Application.Current.Properties["settei"] = "計測時間" + (int)Application.Current.Properties["sette"] / 60 +"分"+ (int)Application.Current.Properties["sette"]%60 + "秒";
                     rf(0);
-                    rule.Visibility = Visibility.Visible;
+                    //rule.Visibility = Visibility.Visible;
                 }
                 else
                 {
@@ -782,7 +782,7 @@ namespace balance.Views
 
                 Application.Current.Properties["gamemodename"] = Combo_GameMode.SelectedItem.ToString();
                 rf(2);
-                rule.Visibility = Visibility.Hidden;
+                //rule.Visibility = Visibility.Hidden;
 
             }
         }

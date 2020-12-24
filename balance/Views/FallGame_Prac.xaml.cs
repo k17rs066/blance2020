@@ -15,9 +15,10 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.Windows.Threading;
 
-
 using WiimoteLib;
 using balance.DataBase;
+
+
 
 
 namespace balance.Views
@@ -32,6 +33,7 @@ namespace balance.Views
 
         public delegate void Refresh_fPrac2(object sender, RoutedEventArgs e);
 
+
         Wiimote wiimote = new Wiimote();
 
         double xza = 0; //重心のX座標
@@ -43,9 +45,18 @@ namespace balance.Views
 
         private Ellipse drawingEllipse1 = null;
 
+        private Ellipse drawingEllipse2 = null;
+
+        private Ellipse drawingEllipse3 = null;
+
+
         private Label drawingLabel = null;
 
         private Label drawingLabel1 = null;
+
+        private Label drawingLabel2 = null;
+
+        private Label drawingLabel3 = null;
 
         double leftsize = 0;  //左足の加重量
         double rightsize = 0; //右足の加重量
@@ -64,14 +75,19 @@ namespace balance.Views
         int timese = 30;//選択タイム保持
 
         Random cRandom = new System.Random(); // 玉ランダム
-        Random cRandom1 = new System.Random(); // 玉1ランダム
-        int x, y, x1, y1;
+
+        double x, y, x1, y1, x2, y2, x3, y3;
 
         int target = 0; //得点
 
         DispatcherTimer dispatcharTimer11; //カウントダウンの秒数を保持する
         int cdtime;
 
+        int ballsize;
+        int ballspeed;
+
+        int min;
+        int sec;
         public FallGame_Prac()
         {
             InitializeComponent();
@@ -82,32 +98,29 @@ namespace balance.Views
 
             wiimote.WiimoteChanged += OnWiimoteChanged;
 
+
             dispatcharTimer = new DispatcherTimer(DispatcherPriority.Normal);
             dispatcharTimer.Interval = new TimeSpan(0, 0, 0, 1, 1);
-//             dispatcharTimer.Tick += new EventHandler(dispatcharTimer_Tick);
+            //dispatcharTimer.Tick += new EventHandler(dispatcharTimer_Tick);
 
             x = 300;
             y = 380;
-            x1 = 1000;
+            x1 = 100;
             y1 = 10;
+
+            ballsize = (int)Application.Current.Properties["ballsize2"];
+            ballspeed = (int)Application.Current.Properties["ballspeed2"];
+
+
+            //time.Content = "残り時間   " + min + "分" + sec + "秒";
+
 
             dispatcharTimer11 = new DispatcherTimer();
             dispatcharTimer11.Interval = new TimeSpan(0, 0, 1);
             dispatcharTimer11.Tick += dispatcharTimer11_Tick;
 
-//                 for (int i = 30; i <= 90; i += 30)
-//             {
-//                 if (i == timese)
-//                 {
-//                     timepercent.Items.Add(new ComboBoxItem() { IsSelected = true, Content = i});
-//                 }
-//                 else
-//                 {
-//                     timepercent.Items.Add(i);
-//                 }
-//             }
 
-            
+
 
         }
 
@@ -117,7 +130,7 @@ namespace balance.Views
         {
             if (game == true)
             {
-                
+
                 BalanceBoardState bbs = e.WiimoteState.BalanceBoardState;
                 if (bbs.WeightKg < 5)
                 {
@@ -151,8 +164,8 @@ namespace balance.Views
                 }
                 //                * (pictureBox1.Width / ballWidth)) + (pictureBox1.Width / 2) - (ballWidth / 2)
 
-                
-                
+
+
 
                 Dispatcher.Invoke(new Action(() =>
                 {
@@ -161,50 +174,64 @@ namespace balance.Views
                     {
                         this.beback.Children.Remove(this.drawingBalance);
                     }
-                    this.drawingBalance = new Rectangle() { Fill = System.Windows.Media.Brushes.LimeGreen, Width = 222, Height = 45, Margin = new Thickness(xza, 630, 0, 0),  };
+                    ImageBrush kago = new ImageBrush();
+                    string abskago = System.IO.Path.GetFullPath("Image/kago.png");    //絶対パスを取得
+                    kago.ImageSource = new BitmapImage(new Uri(abskago));  //イメージソースに代入
+
+                    this.drawingBalance = new Rectangle() { Fill = kago, Width = 222, Height = 45, Margin = new Thickness(xza, 630, 0, 0), };
                     this.beback.Children.Add(this.drawingBalance);
 
-                    /////////////玉
-                    int randtama = cRandom.Next(12);
+                    int randtama = cRandom.Next(11);
+
+
+                    /////////////玉(イチゴ)
+
+                    ImageBrush straw = new ImageBrush();
+                    string absstraw = System.IO.Path.GetFullPath("Image/strawberry.png");    //絶対パスを取得
+                    straw.ImageSource = new BitmapImage(new Uri(absstraw));  //イメージソースに代入
+
                     //int randtama1 = cRandom1.Next(10);
-                    y += 2;        //落下する玉の速さ
+                    y += ballspeed;        //落下する玉の速さ
                     if (this.drawingEllipse != null)
                     {
                         this.beback.Children.Remove(this.drawingEllipse);
                     }
-                  
+
                     if (y > 675)
                     {
                         x = randtama * 100;
                         y = 0;
                     }
 
-                    this.drawingEllipse = new Ellipse() { Fill = System.Windows.Media.Brushes.Red, Width = 70, Height = 70, Margin = new Thickness(x, y, 0, 0) };
+                    this.drawingEllipse = new Ellipse() { Fill = straw, Width = ballsize, Height = ballsize, Margin = new Thickness(x, y, 0, 0) };
                     this.beback.Children.Add(this.drawingEllipse);
 
                     if (this.drawingLabel != null)
                     {
                         this.beback.Children.Remove(this.drawingLabel);
                     }
-                    
-                    this.drawingLabel = new Label() { Content = "十", Width = 70, Height = 75, Margin = new Thickness(x, y-10, 0, 0) , FontSize = 60, Foreground = System.Windows.Media.Brushes.White ,FontWeight = FontWeights.Bold ,HorizontalContentAlignment = HorizontalAlignment.Center, VerticalContentAlignment = VerticalAlignment.Center };
+
+                    this.drawingLabel = new Label() { Width = ballsize, Height = ballsize, Margin = new Thickness(x, y, 0, 0), FontSize = 60, Foreground = System.Windows.Media.Brushes.White, FontWeight = FontWeights.Bold, HorizontalContentAlignment = HorizontalAlignment.Center, VerticalContentAlignment = VerticalAlignment.Center };
                     this.beback.Children.Add(this.drawingLabel);
 
 
-                    /////////////玉2
-                    y1 += 2;
+                    /////////////玉2(芋虫)
+                    ImageBrush caterpillar = new ImageBrush();
+                    string abscat = System.IO.Path.GetFullPath("Image/caterpillar.png");    //絶対パスを取得
+                    caterpillar.ImageSource = new BitmapImage(new Uri(abscat));  //イメージソースに代入
+                    y1 += ballspeed;
                     if (this.drawingEllipse1 != null)
                     {
                         this.beback.Children.Remove(this.drawingEllipse1);
                     }
-                    
+
                     if (y1 > 675)
                     {
                         x1 = randtama * 100;
                         y1 = 0;
                     }
 
-                    this.drawingEllipse1 = new Ellipse() { Fill = System.Windows.Media.Brushes.Blue, Width = 70, Height = 70, Margin = new Thickness(x1, y1, 0, 0) };
+                    this.drawingEllipse1 = new Ellipse() { Fill = caterpillar, Width = ballsize, Height = ballsize, Margin = new Thickness(x1, y1, 0, 0) };
                     this.beback.Children.Add(this.drawingEllipse1);
 
                     if (this.drawingLabel1 != null)
@@ -212,36 +239,73 @@ namespace balance.Views
                         this.beback.Children.Remove(this.drawingLabel1);
                     }
 
-                    this.drawingLabel1 = new Label() { Content = "一", Width = 70, Height = 70, Margin = new Thickness(x1, y1-10, 0, 0), FontSize = 60,Foreground = System.Windows.Media.Brushes.White , FontWeight = FontWeights.Bold, HorizontalContentAlignment = HorizontalAlignment.Center, VerticalContentAlignment = VerticalAlignment.Center };
+                    this.drawingLabel1 = new Label() { Width = ballsize, Height = ballsize, Margin = new Thickness(x1, y1, 0, 0), FontSize = 60, Foreground = System.Windows.Media.Brushes.White, FontWeight = FontWeights.Bold, HorizontalContentAlignment = HorizontalAlignment.Center, VerticalContentAlignment = VerticalAlignment.Center };
                     this.beback.Children.Add(this.drawingLabel1);
-                    
+
+
+                    /////////////玉3(ばなな)
+
+                    ImageBrush banana = new ImageBrush();
+                    string absbanana = System.IO.Path.GetFullPath("Image/banana.png");    //絶対パスを取得
+                    banana.ImageSource = new BitmapImage(new Uri(absbanana));
+                    y2 += ballspeed;
+                    if (this.drawingEllipse2 != null)
+                    {
+                        this.beback.Children.Remove(this.drawingEllipse2);
+                    }
+
+                    if (y2 > 675)
+                    {
+                        x2 = randtama * 100;
+                        y2 = 0;
+                    }
+
+                    this.drawingEllipse2 = new Ellipse() { Fill = banana, Width = ballsize, Height = ballsize, Margin = new Thickness(x2, y2, 0, 0) };
+                    this.beback.Children.Add(this.drawingEllipse2);
+
+                    if (this.drawingLabel2 != null)
+                    {
+                        this.beback.Children.Remove(this.drawingLabel2);
+                    }
+
+                    this.drawingLabel2 = new Label() { Width = ballsize, Height = ballsize, Margin = new Thickness(x2, y2, 0, 0), FontSize = 60, Foreground = Brushes.White, FontWeight = FontWeights.Bold, HorizontalContentAlignment = HorizontalAlignment.Center, VerticalContentAlignment = VerticalAlignment.Center };
+                    this.beback.Children.Add(this.drawingLabel2);
 
                     ///////////////Ellipse,Ellipse1当たり判定 y1は7の倍数の速さで動いているから585の数値にならないy1=588になる
                     ///585%y=0ならよい　585%y1=1なら-1する
-                    if (xza < x + 35 && xza + 222 > x + 35 && 585 == y -1)
+                    if (xza < x + ballsize / 2 && xza + 222 > x + ballsize / 2 && 585 + ballsize / 2 == y - 1)
                     {
                         target++;
                         PlaySound("fall_up.wav");
                     }
-                    else if(xza < x1 + 35 && xza + 222 > x1 + 35 && 585 == y1 - 1)
+                    else if (xza < x1 + ballsize / 2 && xza + 222 > x1 + ballsize / 2 && 585 + ballsize / 2 == y1 - 1)
                     {
                         target--;
                         PlaySound("fall_down.wav");
                     }
-                    else if(xza < x + 35 && xza + 222 > x + 35 && 585 <= y )
+                    else if (xza < x2 + ballsize / 2 && xza + 222 > x2 + ballsize / 2 && 585 + ballsize / 2 == y2 - 1)
                     {
-                        
-                       
-                        drawingEllipse.Fill = System.Windows.Media.Brushes.LimeGreen;
+                        target += 3;
+                        PlaySound("fall_up.wav");
+                    }
+                    else if (xza < x + ballsize / 2 && xza + 222 > x + ballsize / 2 && 585 + ballsize / 2 <= y + ballsize / 2)
+                    {
+
+                        //drawingEllipse.Fill = System.Windows.Media.Brushes.LimeGreen;
+                        this.beback.Children.Remove(this.drawingEllipse);
                         get.Foreground = System.Windows.Media.Brushes.Red;
                         get.Content = "+1";
                     }
-                    else if(xza < x1 + 35 && xza + 222 > x1 + 35 && 585 <= y1)
+                    else if (xza < x2 + ballsize / 2 && xza + 222 > x2 + ballsize / 2 && 585 + ballsize / 2 <= y2 + ballsize / 2)
                     {
-                        
-                        
-                      
-                        drawingEllipse1.Fill = System.Windows.Media.Brushes.LimeGreen;
+                        this.beback.Children.Remove(this.drawingEllipse2);
+                        get.Foreground = System.Windows.Media.Brushes.Yellow;
+                        get.Content = "+3";
+                    }
+                    else if (xza < x1 + ballsize / 2 && xza + 222 > x1 + ballsize / 2 && 585 + ballsize / 2 <= y1 + ballsize / 2)
+                    {
+
+                        this.beback.Children.Remove(this.drawingEllipse1);
                         get.Foreground = System.Windows.Media.Brushes.Blue;
                         get.Content = "-1";
                     }
@@ -250,7 +314,7 @@ namespace balance.Views
                         get.Content = "";
                     }
 
-                    
+
                     count.Content = "獲得点数    " + target + "点";
                     //con.Content = x1 +"\n"+ y1;
                     //count.Content = "獲得個数　7個";
@@ -274,8 +338,6 @@ namespace balance.Views
                     yza+45       > y+35
                     */
 
-                    if (time_t == 0)
-                    {
                         game = false;
                         PlaySound("clear.wav");
                         //countdown.Content = "クリア";
@@ -287,9 +349,9 @@ namespace balance.Views
                         drawingLabel1.Content = "";
 
 
-                       
 
-                       
+
+
 
 
                         if (!Application.Current.Properties["u_id"].ToString().Equals("guest"))
@@ -300,21 +362,21 @@ namespace balance.Views
                             SQL = "SELECT * FROM t_userrecord ORDER BY userrecord_id DESC";
                             DBConnect.ExecuteReader(SQL);
                             DBConnect.Reader.Read();
-                            SQL = "INSERT INTO t_fallgame (userrecord_id,set_time,result_score)VALUES('" + DBConnect.Reader[0] + "', '" + timese + "','" + target +"')";
+                            SQL = "INSERT INTO t_fallgame (userrecord_id,set_time,result_score)VALUES('" + DBConnect.Reader[0] + "', '" + timese + "','" + target + "')";
                             DBConnect.ExecuteReader(SQL);
                             DBConnect.Dispose();
 
 
-                            
+
 
                         }
 
                         dispatcharTimer = new DispatcherTimer(DispatcherPriority.Normal);
                         dispatcharTimer.Interval = new TimeSpan(0, 0, 1);
-//                         dispatcharTimer.Tick += new EventHandler(dispatcharTimer_Tick);
+                        //dispatcharTimer.Tick += new EventHandler(dispatcharTimer_Tick);
 
 
-                        Application.Current.Properties["ftgamemodename"] = "落下ゲーム(練習モード)";
+                        Application.Current.Properties["ftgamemodename"] = "落下ゲーム";
 
                         Application.Current.Properties["ftresult"] = target;
 
@@ -322,15 +384,11 @@ namespace balance.Views
 
                         startbutton.Content = "スタート";
 
-                        FTGameResult s = new FTGameResult(this.start,
-                                                          this.back,1.0
-                                                          )
-                        {
-                            Title = "FTGameResult"
-                        };
-                        s.ShowDialog();
+                        //FTGameResult s = new FTGameResult(this.start, this.back, 1);
 
-                    }
+                        //s.Title = "FTGameResult";
+                        //s.ShowDialog();
+
 
                 }));
 
@@ -341,39 +399,42 @@ namespace balance.Views
         }
 
 
-//練習モードでは不要
 
-//         void dispatcharTimer_Tick(object sender, EventArgs e)
-//         {
-// 
-//             time_t--;
-//            
-//             time.Content = "残り時間     " + time_t + "秒";
-//         }
 
-//         private void timeok_Click(object sender, RoutedEventArgs e)
-//         {
-//             timese = int.Parse(timepercent.Text);
-//             time.Content = "残り時間     " + timese + "秒";
-//         }
+       /* void dispatcharTimer_Tick(object sender, EventArgs e)
+        {
+
+            time_t--;
+
+            time.Content = "残り時間   " + time_t / 60 + "分" + time_t % 60 + "秒";
+        }*/
+
+        private void rule_Click(object sender, RoutedEventArgs e)
+        {
+
+            var s = new FallGameRule();
+
+            s.Title = "落下ゲームルール";
+            s.ShowDialog();
+        }
 
         void dispatcharTimer11_Tick(object sender, EventArgs e)
         {
-            
+
             cdtime++;
             countdown.Content = (3 - cdtime).ToString();
 
             if (cdtime == 3) //スタート押されてると
             {
-                
+
                 countdown.Content = "";
                 dispatcharTimer11.Stop();
-                
+
                 wiimote.Connect();
                 startbutton.Content = "ストップ";
                 game = true;
                 dispatcharTimer.Start();
-                
+
 
 
             }
@@ -402,7 +463,7 @@ namespace balance.Views
                 wiimote.Connect();
                 dispatcharTimer11.Start();
             }
-            else 
+            else
             {
                 //ストップの状態だと
                 wiimote.Disconnect();
@@ -411,30 +472,22 @@ namespace balance.Views
                 dispatcharTimer.Stop();
             }
 
-            
-        }
-
-        private void Rule_Click(object sender,EventArgs e)
-        {
 
         }
 
         private void back(object sender, RoutedEventArgs e)
         {
-            
-                wiimote.Disconnect();
-            
-            var nextPage = new FallGameSetting();
-            NavigationService.Navigate(nextPage);
 
+            wiimote.Disconnect();
+
+            var nextPage = new FallGameSetting();
+
+            NavigationService.Navigate(nextPage);
         }
 
-        private void rule_Click(object sender, RoutedEventArgs e)
+        private void Button_IsMouseCapturedChanged(object sender, DependencyPropertyChangedEventArgs e)
         {
-            TagGameRule s = new TagGameRule();
 
-            s.Title = "FallGameRule";
-            s.ShowDialog();
         }
 
         /// 音を出すプログラム

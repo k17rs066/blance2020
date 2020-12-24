@@ -256,6 +256,9 @@
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />
     <Reference Include="WindowsFormsIntegration" />
+    <Reference Include="WpfAnimatedGif, Version=2.0.0.0, Culture=neutral, PublicKeyToken=9e7cd3b544a090dc, processorArchitecture=MSIL">
+      <HintPath>..\packages\WpfAnimatedGif.2.0.0\lib\net40\WpfAnimatedGif.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <ApplicationDefinition Include="App.xaml">
@@ -612,9 +615,6 @@
     <Resource Include="Image\target image.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Image\noumen.png" />
-  </ItemGroup>
-  <ItemGroup>
     <Resource Include="Image\gameover.png" />
   </ItemGroup>
   <ItemGroup>
@@ -634,6 +634,31 @@
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image\scoregame.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image\timegame.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image\fallgame.png" />
+    <Resource Include="Image\scoregame.png" />
+    <Resource Include="Image\taggame.png" />
+    <Resource Include="Image\targetgame.png" />
+    <Resource Include="Image\timegame.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image\akaoni.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="akaoni.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="target image.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="tag_game.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

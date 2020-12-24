@@ -5,16 +5,28 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:balance.Views"
         mc:Ignorable="d"
-        Title="鬼ごっこのルール" Height="1000" Width="1200">
+        Title="鬼ごっこのルール" Height="800" Width="1000">
+    <Window.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.Light.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.Defaults.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MaterialDesignColors;component/Themes/Recommended/Primary/MaterialDesignColor.Blue.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MaterialDesignColors;component/Themes/Recommended/Accent/MaterialDesignColor.Lime.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Window.Resources>
+
     <Grid>
-        <TextBox Height="130" FontSize="32" Margin="120,35,92,0" TextWrapping="Wrap" Text="重心を表すマーク           を動かして、ターゲットを番号順に獲得しよう！！" VerticalAlignment="Top" BorderBrush="White"/>
-        <Image Source="/Image/target image.png" Margin="338,35,352,334"/>
-        <Image Source="/balance;component/Image/target image.png" Margin="135,315,547,39" RenderTransformOrigin="0.265,2.5"/>
-        <Image Source="/Image/1.png" Margin="150,190,567,154"/>
-        <TextBox HorizontalAlignment="Left" FontSize="42"  Height="65" Margin="245,190,0,0" TextWrapping="Wrap" Text="：ターゲット" VerticalAlignment="Top" Width="220" BorderBrush="White"/>
-
-        <TextBox HorizontalAlignment="Left" FontSize="42" Height="50" Margin="245,315,0,0" TextWrapping="Wrap" Text="：重心で操作するマーク" VerticalAlignment="Top" Width="415" BorderBrush="White"/>
-
-
+        <Label Content="鬼ごっこは,制限時間の間&#xa;鬼に当たらないように&#xa;水色の枠内を逃げ回る&#xa;ゲームです。" Margin="525,85,32,414" FontSize="40"/>
+        <Label Content="→重心を表すマーク(体重を移動させると操作できます)" Margin="215,425,10,259" FontSize="35"/>
+        <Label Content="→鬼（　を一定のスピードで追いかけます）" Margin="280,560,0,124" FontSize="40"/>
+        <Button Content="戻る" x:Name="back" HorizontalAlignment="Right" Width="125" Height="85" VerticalAlignment="Bottom" Margin="0,0,392,34" FontSize="50" Click="Back_Click"/>
+        <Image Source="/balance;component/Image/tag.png" Margin="35,5,472,369"/>
+        <Image Margin="110,535,762,124" Source="/balance;component/akaoni.png" Stretch="Fill"/>
+        <Image Margin="85,400,812,259" Source="/balance;component/target image.png" Stretch="Fill"/>
+        <Image Margin="400,560,552,144" Source="/balance;component/target image.png" Stretch="Fill" RenderTransformOrigin="1,0.538"/>
+        <!-- <Button Content="戻る" Click="Return_Click" Height="58" VerticalAlignment="Bottom" Grid.Column="1" Margin="245,0,372,10" FontSize="45"/>  -->
     </Grid>
+
 </Window>

@@ -72,7 +72,7 @@ namespace balance.Views
         int time_t; //計測タイム ()
         DispatcherTimer dispatcharTimer11; //カウントダウンの秒数を保持する
         int cdtime;
-
+        String speed_state = "";
 
 
         public GameOfTag_Prac()
@@ -104,7 +104,9 @@ namespace balance.Views
         {
             if (game == true)
             {
+                speed_state = Application.Current.Properties["TagSpeed"].ToString();
                 BalanceBoardState bbs = e.WiimoteState.BalanceBoardState;
+
                 if (bbs.WeightKg < 5)
                 {
                     xza = 1654 / 2 - 35;  //(Canvas.Width/2) - (ballWidth /2)
@@ -113,29 +115,29 @@ namespace balance.Views
                 }
                 else
                 {
-                    xza = bbs.CenterOfGravity.X * 1654 / 70 * 3 + 827 - 35;//*(Canvas.Width/ballWidth)*倍率 + (Canvas.Width/2) - (ballWidth /2)
-                    yza = bbs.CenterOfGravity.Y * 1700 / 70 * 3 + 350 - 35;//*(Canvas.Height/ballHeight)*倍率 + (Canvas.Height/2) - (ballHeight /2)
+                    xza = bbs.CenterOfGravity.X * 1654 / 70 * 2.0 + (1654 / 2) - 35;//*(Canvas.Width/ballWidth)*倍率 + (Canvas.Width/2) - (ballWidth /2)
+                    yza = bbs.CenterOfGravity.Y * 700 / 70 * 2.5 + 350 - 35;//*(Canvas.Height/ballHeight)*倍率 + (Canvas.Height/2) - (ballHeight /2)
 
 
-
-                    if (xza > 1614) //枠内に収まるように
+                    if (xza > 1644) //枠内に収まるように
                     {
-                        xza = 1614;//  bdraw.Width - ballSize
+                        xza = 1644;//  bdraw.Width - ballSize
                     }
-                    else if (xza < 35)
+                    else if (xza < 10)
                     {
-                        xza = 35;
+                        xza = 10;
                     }
 
-                    if (yza > 665)
+                    if (yza > 690)
                     {
-                        yza = 665;//bdraw.Height - ballSize
+                        yza = 690;//bdraw.Height - ballSize
                     }
-                    else if (yza < 35)
+                    else if (yza < 10)
                     {
-                        yza = 35;
+                        yza = 10;
                     }
                 }
+
 
                 Dispatcher.Invoke(new Action(() =>
                 {
@@ -144,38 +146,14 @@ namespace balance.Views
                     {
                         this.field.Children.Remove(this.drawingBalance);
                     }
+
+
                     this.drawingBalance = new Ellipse() { Fill = System.Windows.Media.Brushes.LimeGreen, Width = 70, Height = 70, Margin = new Thickness(xza, yza, 0, 0) }; //重心のマーク
                     this.field.Children.Add(this.drawingBalance);
 
 
-                    Task.Run(async () =>
-                    {
-                        //敵
-                        //分岐：敵が自分を追尾
-                        if (xza > xe)
-                        {
 
-                            xe += spe;
-
-                        }
-
-                        if (xza <= xe)
-                        {
-                            xe -= spe;
-
-                        }
-                        if (yza > ye)
-                        {
-                            ye += spe;
-                        }
-                        if (yza <= ye)
-                        {
-                            ye -= spe;
-                        }
-                    });
-
-
-                    if(this.Enemy!=null)
+                    if (this.Enemy != null)
                     {
                         this.field.Children.Remove(this.Enemy);
                     }
@@ -185,44 +163,76 @@ namespace balance.Views
                     string abspath = System.IO.Path.GetFullPath("Image/akaoni.png");    //絶対パスを取得
                     enemy.ImageSource = new BitmapImage(new Uri(abspath));  //イメージソースに代入
 
-                    this.Enemy = new Ellipse() { Fill = enemy, Width =200, Height=200 , Margin = new Thickness(xe,ye,0,0)};
+                    this.Enemy = new Ellipse() { Fill = enemy, Width = 200, Height = 200, Margin = new Thickness(xe, ye, 0, 0) };
                     this.field.Children.Add(this.Enemy);
 
-                    double r = 35 + 100; //半径の和
-                    double x = xza - xe;    //2つの円の中心のx座標の差
-                    double y = yza - ye;    //2つの円の中心のy座標の差
+                    //敵
+                    //分岐：敵が自分を追尾
+                    if (xza > xe)
+                    {
 
-                    if ((r * r)> ((x*x) + (y*y)) ) {//当たり判定、　 ---三平方の定理を利用---
+                        xe += spe;
+
+                    }
+
+                    if (xza <= xe)
+                    {
+                        xe -= spe;
+
+                    }
+                    if (yza > ye)
+                    {
+                        ye += spe;
+                    }
+                    if (yza <= ye)
+                    {
+                        ye -= spe;
+                    }
+
+                    double r = 35 + 80; //半径の和
+                    double x = xza - (xe);    //2つの円の中心のx座標の差
+                    double y = yza - (ye);    //2つの円の中心のy座標の差
+
+                    if ((r * r) > ((x * x) + (y * y)))
+                    {//当たり判定、　 ---三平方の定理を利用---
+
                         GameOver_flg = true;
+
 
                     }
 
                     //枠内に収まるようにする 
-                    if (xe > 1349)   //(枠からはみ出さないように5px余分にとる)
+                    if (xe > 1349)
                     {
                         xe = 1349;
 
-                    }else if(xe < 5){
+                    }
+                    else if (xe < 5)
+                    {
 
                         xe = 5;
-                    }else if(ye > 695) //枠からはみ出さないように5px余分にとる
+                    }
+                    else if (ye > 695)
                     {
                         ye = 695;
 
-                    }else if(ye < 5)
+                    }
+                    else if (ye < 5)
                     {
                         ye = 5;
                     }
 
-                    if (GameOver_flg == true )
+                    if (GameOver_flg == true)
                     {
                         game = false;
                         dispatcharTimer.Stop();
 
+
+
                         Application.Current.Properties["GameResult"] = "ゲームオーバー!";
                         Application.Current.Properties["GameResultTime"] = cnttime;
 
-                        result = new TagResult(this.start,this.back);
+                        result = new TagResult(this.start, this.back);
                         result.ShowDialog();
 
                         startbutton.Content = "スタート";
@@ -235,15 +245,14 @@ namespace balance.Views
                         dispatcharTimer.Stop();
 
 
-
                         dispatcharTimer = new DispatcherTimer(DispatcherPriority.Normal);
                         dispatcharTimer.Interval = new TimeSpan(0, 0, 1);
-                        //dispatcharTimer.Tick += new EventHandler(dispatcharTimer_Tick);
+                        dispatcharTimer.Tick += new EventHandler(dispatcharTimer_Tick);
 
                         Application.Current.Properties["GameResult"] = "クリア！";
-                        Application.Current.Properties["GameResultTime"] = timekeeper;
+                        Application.Current.Properties["GameResultTime"] = cnttime;
 
-                        result = new TagResult(this.start,this.back);
+                        result = new TagResult(this.start, this.back);
                         result.ShowDialog();
 
                         startbutton.Content = "スタート";
@@ -253,9 +262,8 @@ namespace balance.Views
 
                 }));
             }
-                
-        }
 
+        }
         void dispatcharTimer_Tick(object sender, EventArgs e)
         {
 
@@ -370,7 +378,8 @@ namespace balance.Views
             set = new TagSetting();
             game = false; dispatcharTimer.Stop();
             set.ShowDialog();
-
+            speed_state = Application.Current.Properties["TagSpeed"].ToString();
+            tag_speed.Content = "鬼の速さ：    " + speed_state;
 
             spe = set.ReciveSpeed;
             timekeeper = set.ReciveTime;
@@ -378,6 +387,12 @@ namespace balance.Views
             cnttime = 0;
             //time.Content = "残り時間     " + timekeeper + "秒";
             startbutton.Content = "スタート";
+        }
+
+        private void rule_Click(object sender, RoutedEventArgs e)
+        {
+            TagGameRule s = new TagGameRule();
+            s.ShowDialog();
         }
 
         private void NormalMode(object sender, RoutedEventArgs e)

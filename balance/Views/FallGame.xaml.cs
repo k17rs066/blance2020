@@ -113,6 +113,7 @@ namespace balance.Views
             timese = (int)Application.Current.Properties["timeset"];
             min = time_t / 60;
             sec = time_t % 60;
+
             time.Content = "残り時間   " + min + "分" + sec + "秒";
 
 

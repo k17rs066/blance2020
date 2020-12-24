@@ -118,7 +118,7 @@ namespace balance.Views
                     ballsize = 100;
                 }else if (BallSize.Text == "大きい")
                 {
-                    ballsize = 125;
+                    ballsize = 150;
                 }else if(BallSize.Text == "小さい")
                 {
                     ballsize = 70;
@@ -150,7 +150,7 @@ namespace balance.Views
                 var nextPage = new FallGame();
                 NavigationService.Navigate(nextPage);
             }
-            else
+            else if(FallGameMode.Text.Equals("練習モード"))
             {
 
                 if (BallSize.Text == "普通")
@@ -159,7 +159,7 @@ namespace balance.Views
                 }
                 else if (BallSize.Text == "大きい")
                 {
-                    ballsize = 125;
+                    ballsize = 150;
                 }
                 else if (BallSize.Text == "小さい")
                 {
@@ -181,11 +181,11 @@ namespace balance.Views
                 }
                 else
                 {
-
+                    ballspeed = 2;
                 }
 
-                Application.Current.Properties["ballsize"] = ballsize;
-                Application.Current.Properties["ballspeed"] = ballspeed;
+                Application.Current.Properties["ballsize2"] = ballsize;
+                Application.Current.Properties["ballspeed2"] = ballspeed;
                 Application.Current.Properties["timeset"] = 0;
 
                 var nextPage = new FallGame_Prac();

@@ -6,5 +6,5 @@
         xmlns:local="clr-namespace:balance.Views"
         mc:Ignorable="d"
         Title="ターゲットゲームのルール" Height="1000" Width="1200">
-    <Grid/>
+
 </Window>

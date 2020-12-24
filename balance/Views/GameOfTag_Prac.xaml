@@ -25,12 +25,14 @@
                 </SolidColorBrush>
             </Canvas.Background>
         </Canvas>
-        <!--ComboBox x:Name="timepercent" HorizontalAlignment="Left" Margin="278,211,0,0" VerticalAlignment="Top" Width="109" Height="78" FontSize="48" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/ -->
+        <Button x:Name="rule" Content="ルール" HorizontalAlignment="Left" Margin="750,22,0,0" VerticalAlignment="Top" Width="322" Height="113" Click="rule_Click" FontSize="60"/>
 
+        <!--ComboBox x:Name="timepercent" HorizontalAlignment="Left" Margin="278,211,0,0" VerticalAlignment="Top" Width="109" Height="78" FontSize="48" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/ -->
+        <Label x:Name="tag_speed" Content="鬼の速さ：     普通" HorizontalAlignment="Left" Margin="154,135,0,0" VerticalAlignment="Top" Height="86" Width="706" FontSize="60"/>
         <Label Content="鬼ごっこ(練習モード)" HorizontalAlignment="Left" Margin="75,10,0,0" VerticalAlignment="Top" Height="125" Width="785" FontSize="72"/>
         <Button x:Name="startbutton" Content="スタート" HorizontalAlignment="Left" Margin="1118,22,0,0" VerticalAlignment="Top" Width="322" Height="113" Click="start" FontSize="60"/>
         <Button Content="戻る" HorizontalAlignment="Left" Margin="1489,22,0,0" VerticalAlignment="Top" Width="319" Height="113" Click="back" FontSize="60"/>
-        <Label x:Name="time" Content="経過時間    " HorizontalAlignment="Left" Margin="154,192,0,0" VerticalAlignment="Top" Height="86" Width="706" FontSize="60"/>
+        <Label x:Name="time" Content="経過時間    " HorizontalAlignment="Left" Margin="154,221,0,0" VerticalAlignment="Top" Height="86" Width="706" FontSize="60"/>
         <Label x:Name="get" Content="" HorizontalAlignment="Left" Margin="600,441,0,287" VerticalAlignment="Center" Height="352" Width="686" FontSize="300" FontWeight="Bold" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" />
         <Label x:Name="countdown" Content="" HorizontalAlignment="Left" Margin="600,441,0,194" VerticalAlignment="Center" Height="445" Width="713" FontSize="350" FontWeight="Bold" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Foreground="#FFF70505" />
         <!--Button x:Name="timeok" Content="決定" FontSize="40" HorizontalAlignment="Left" Height="78" Margin="486,211,0,0" VerticalAlignment="Top" Width="192" Click="timeok_Click"/>

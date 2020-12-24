@@ -2503,6 +2503,7 @@ C:\Users\smkwlab02\Documents\GitHub\blanceNewGame\balance\bin\Debug\System.React
 C:\Users\smkwlab02\Documents\GitHub\blanceNewGame\balance\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
 C:\Users\smkwlab02\Documents\GitHub\blanceNewGame\balance\bin\Debug\System.Threading.Tasks.Extensions.dll
 C:\Users\smkwlab02\Documents\GitHub\blanceNewGame\balance\bin\Debug\System.ValueTuple.dll
+C:\Users\smkwlab02\Documents\GitHub\blanceNewGame\balance\bin\Debug\WpfAnimatedGif.dll
 C:\Users\smkwlab02\Documents\GitHub\blanceNewGame\balance\bin\Debug\Avalonia.xml
 C:\Users\smkwlab02\Documents\GitHub\blanceNewGame\balance\bin\Debug\Avalonia.Animation.pdb
 C:\Users\smkwlab02\Documents\GitHub\blanceNewGame\balance\bin\Debug\Avalonia.Animation.xml
@@ -2573,7 +2574,8 @@ C:\Users\smkwlab02\Documents\GitHub\blanceNewGame\balance\bin\Debug\System.React
 C:\Users\smkwlab02\Documents\GitHub\blanceNewGame\balance\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
 C:\Users\smkwlab02\Documents\GitHub\blanceNewGame\balance\bin\Debug\System.Threading.Tasks.Extensions.xml
 C:\Users\smkwlab02\Documents\GitHub\blanceNewGame\balance\bin\Debug\System.ValueTuple.xml
-C:\Users\smkwlab02\Documents\GitHub\blanceNewGame\balance\obj\Debug\balance.csprojAssemblyReference.cache
+C:\Users\smkwlab02\Documents\GitHub\blanceNewGame\balance\bin\Debug\WpfAnimatedGif.pdb
+C:\Users\smkwlab02\Documents\GitHub\blanceNewGame\balance\bin\Debug\WpfAnimatedGif.xml
 C:\Users\smkwlab02\Documents\GitHub\blanceNewGame\balance\obj\Debug\Views\Calibration.baml
 C:\Users\smkwlab02\Documents\GitHub\blanceNewGame\balance\obj\Debug\Views\MainTitle.baml
 C:\Users\smkwlab02\Documents\GitHub\blanceNewGame\balance\obj\Debug\Views\AttackGame.baml
@@ -2664,3 +2666,4 @@ C:\Users\smkwlab02\Documents\GitHub\blanceNewGame\balance\obj\Debug\balance.cspr
 C:\Users\smkwlab02\Documents\GitHub\blanceNewGame\balance\obj\Debug\balance.csproj.CopyComplete
 C:\Users\smkwlab02\Documents\GitHub\blanceNewGame\balance\obj\Debug\balance.exe
 C:\Users\smkwlab02\Documents\GitHub\blanceNewGame\balance\obj\Debug\balance.pdb
+C:\Users\smkwlab02\Documents\GitHub\blanceNewGame\balance\obj\Debug\balance.csprojAssemblyReference.cache
