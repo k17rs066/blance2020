@@ -2573,6 +2573,7 @@ C:\Users\smkwlab02\Documents\GitHub\blanceNewGame\balance\bin\Debug\System.React
 C:\Users\smkwlab02\Documents\GitHub\blanceNewGame\balance\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
 C:\Users\smkwlab02\Documents\GitHub\blanceNewGame\balance\bin\Debug\System.Threading.Tasks.Extensions.xml
 C:\Users\smkwlab02\Documents\GitHub\blanceNewGame\balance\bin\Debug\System.ValueTuple.xml
+C:\Users\smkwlab02\Documents\GitHub\blanceNewGame\balance\obj\Debug\balance.csprojAssemblyReference.cache
 C:\Users\smkwlab02\Documents\GitHub\blanceNewGame\balance\obj\Debug\Views\Calibration.baml
 C:\Users\smkwlab02\Documents\GitHub\blanceNewGame\balance\obj\Debug\Views\MainTitle.baml
 C:\Users\smkwlab02\Documents\GitHub\blanceNewGame\balance\obj\Debug\Views\AttackGame.baml
@@ -2590,6 +2591,8 @@ C:\Users\smkwlab02\Documents\GitHub\blanceNewGame\balance\obj\Debug\Views\UserEd
 C:\Users\smkwlab02\Documents\GitHub\blanceNewGame\balance\obj\Debug\Views\UserManagiment.baml
 C:\Users\smkwlab02\Documents\GitHub\blanceNewGame\balance\obj\Debug\Views\UserRecordCheck.baml
 C:\Users\smkwlab02\Documents\GitHub\blanceNewGame\balance\obj\Debug\Views\Calibration.g.cs
+C:\Users\smkwlab02\Documents\GitHub\blanceNewGame\balance\obj\Debug\Views\TimeGameRule.g.cs
+C:\Users\smkwlab02\Documents\GitHub\blanceNewGame\balance\obj\Debug\Views\ScoreGameRule.g.cs
 C:\Users\smkwlab02\Documents\GitHub\blanceNewGame\balance\obj\Debug\Views\FallGameSetting.g.cs
 C:\Users\smkwlab02\Documents\GitHub\blanceNewGame\balance\obj\Debug\Views\FallGame.g.cs
 C:\Users\smkwlab02\Documents\GitHub\blanceNewGame\balance\obj\Debug\Views\GameOfTag_Prac.g.cs
@@ -2612,6 +2615,7 @@ C:\Users\smkwlab02\Documents\GitHub\blanceNewGame\balance\obj\Debug\Views\New_k_
 C:\Users\smkwlab02\Documents\GitHub\blanceNewGame\balance\obj\Debug\Views\GameOfTag.g.cs
 C:\Users\smkwlab02\Documents\GitHub\blanceNewGame\balance\obj\Debug\Views\PasswordEdit.g.cs
 C:\Users\smkwlab02\Documents\GitHub\blanceNewGame\balance\obj\Debug\Views\TagResult.g.cs
+C:\Users\smkwlab02\Documents\GitHub\blanceNewGame\balance\obj\Debug\Views\TagGameRule.g.cs
 C:\Users\smkwlab02\Documents\GitHub\blanceNewGame\balance\obj\Debug\Views\TargetGame_p3.g.cs
 C:\Users\smkwlab02\Documents\GitHub\blanceNewGame\balance\obj\Debug\Views\TargetGame_p2.g.cs
 C:\Users\smkwlab02\Documents\GitHub\blanceNewGame\balance\obj\Debug\Views\TargetGame _Prac.g.cs
@@ -2624,11 +2628,13 @@ C:\Users\smkwlab02\Documents\GitHub\blanceNewGame\balance\obj\Debug\Views\UserRe
 C:\Users\smkwlab02\Documents\GitHub\blanceNewGame\balance\obj\Debug\Views\User_Delete.g.cs
 C:\Users\smkwlab02\Documents\GitHub\blanceNewGame\balance\obj\Debug\Views\Window1.g.cs
 C:\Users\smkwlab02\Documents\GitHub\blanceNewGame\balance\obj\Debug\Views\FallGameRule.g.cs
-C:\Users\smkwlab02\Documents\GitHub\blanceNewGame\balance\obj\Debug\Views\Window2.g.cs
+C:\Users\smkwlab02\Documents\GitHub\blanceNewGame\balance\obj\Debug\Views\TargetGameRule.g.cs
 C:\Users\smkwlab02\Documents\GitHub\blanceNewGame\balance\obj\Debug\Views\TagSetting.g.cs
 C:\Users\smkwlab02\Documents\GitHub\blanceNewGame\balance\obj\Debug\App.g.cs
 C:\Users\smkwlab02\Documents\GitHub\blanceNewGame\balance\obj\Debug\balance_MarkupCompile.cache
 C:\Users\smkwlab02\Documents\GitHub\blanceNewGame\balance\obj\Debug\balance_MarkupCompile.lref
+C:\Users\smkwlab02\Documents\GitHub\blanceNewGame\balance\obj\Debug\Views\TimeGameRule.baml
+C:\Users\smkwlab02\Documents\GitHub\blanceNewGame\balance\obj\Debug\Views\ScoreGameRule.baml
 C:\Users\smkwlab02\Documents\GitHub\blanceNewGame\balance\obj\Debug\Views\FallGameSetting.baml
 C:\Users\smkwlab02\Documents\GitHub\blanceNewGame\balance\obj\Debug\Views\FallGame.baml
 C:\Users\smkwlab02\Documents\GitHub\blanceNewGame\balance\obj\Debug\Views\GameOfTag_Prac.baml
@@ -2640,6 +2646,7 @@ C:\Users\smkwlab02\Documents\GitHub\blanceNewGame\balance\obj\Debug\Views\MazeGa
 C:\Users\smkwlab02\Documents\GitHub\blanceNewGame\balance\obj\Debug\Views\New_k_record.baml
 C:\Users\smkwlab02\Documents\GitHub\blanceNewGame\balance\obj\Debug\Views\GameOfTag.baml
 C:\Users\smkwlab02\Documents\GitHub\blanceNewGame\balance\obj\Debug\Views\TagResult.baml
+C:\Users\smkwlab02\Documents\GitHub\blanceNewGame\balance\obj\Debug\Views\TagGameRule.baml
 C:\Users\smkwlab02\Documents\GitHub\blanceNewGame\balance\obj\Debug\Views\TargetGame_p3.baml
 C:\Users\smkwlab02\Documents\GitHub\blanceNewGame\balance\obj\Debug\Views\TargetGame_p2.baml
 C:\Users\smkwlab02\Documents\GitHub\blanceNewGame\balance\obj\Debug\Views\TargetGame _Prac.baml
@@ -2648,7 +2655,7 @@ C:\Users\smkwlab02\Documents\GitHub\blanceNewGame\balance\obj\Debug\Views\Target
 C:\Users\smkwlab02\Documents\GitHub\blanceNewGame\balance\obj\Debug\Views\User_Delete.baml
 C:\Users\smkwlab02\Documents\GitHub\blanceNewGame\balance\obj\Debug\Views\Window1.baml
 C:\Users\smkwlab02\Documents\GitHub\blanceNewGame\balance\obj\Debug\Views\FallGameRule.baml
-C:\Users\smkwlab02\Documents\GitHub\blanceNewGame\balance\obj\Debug\Views\Window2.baml
+C:\Users\smkwlab02\Documents\GitHub\blanceNewGame\balance\obj\Debug\Views\TargetGameRule.baml
 C:\Users\smkwlab02\Documents\GitHub\blanceNewGame\balance\obj\Debug\Views\TagSetting.baml
 C:\Users\smkwlab02\Documents\GitHub\blanceNewGame\balance\obj\Debug\balance.g.resources
 C:\Users\smkwlab02\Documents\GitHub\blanceNewGame\balance\obj\Debug\balance.Properties.Resources.resources
@@ -2657,4 +2664,3 @@ C:\Users\smkwlab02\Documents\GitHub\blanceNewGame\balance\obj\Debug\balance.cspr
 C:\Users\smkwlab02\Documents\GitHub\blanceNewGame\balance\obj\Debug\balance.csproj.CopyComplete
 C:\Users\smkwlab02\Documents\GitHub\blanceNewGame\balance\obj\Debug\balance.exe
 C:\Users\smkwlab02\Documents\GitHub\blanceNewGame\balance\obj\Debug\balance.pdb
-C:\Users\smkwlab02\Documents\GitHub\blanceNewGame\balance\obj\Debug\balance.csprojAssemblyReference.cache

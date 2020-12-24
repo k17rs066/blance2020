@@ -265,6 +265,12 @@
     <Compile Include="Views\Calibration.xaml.cs">
       <DependentUpon>Calibration.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\TimeGameRule.xaml.cs">
+      <DependentUpon>TimeGameRule.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ScoreGameRule.xaml.cs">
+      <DependentUpon>ScoreGameRule.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\FallGameSetting.xaml.cs">
       <DependentUpon>FallGameSetting.xaml</DependentUpon>
     </Compile>
@@ -328,6 +334,9 @@
     <Compile Include="Views\TagResult.xaml.cs">
       <DependentUpon>TagResult.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\TagGameRule.xaml.cs">
+      <DependentUpon>TagGameRule.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\TargetGame_p3.xaml.cs">
       <DependentUpon>TargetGame_p3.xaml</DependentUpon>
     </Compile>
@@ -364,8 +373,8 @@
     <Compile Include="Views\FallGameRule.xaml.cs">
       <DependentUpon>FallGameRule.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\Window2.xaml.cs">
-      <DependentUpon>Window2.xaml</DependentUpon>
+    <Compile Include="Views\TargetGameRule.xaml.cs">
+      <DependentUpon>TargetGameRule.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\TagSetting.xaml.cs">
       <DependentUpon>TagSetting.xaml</DependentUpon>
@@ -373,6 +382,14 @@
     <Page Include="Views\Calibration.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\TimeGameRule.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\ScoreGameRule.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
     <Page Include="Views\FallGameSetting.xaml">
       <SubType>Designer</SubType>
@@ -471,6 +488,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Views\TagGameRule.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="Views\TargetGame_p3.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -519,7 +540,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\Window2.xaml">
+    <Page Include="Views\TargetGameRule.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

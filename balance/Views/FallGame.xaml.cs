@@ -416,9 +416,9 @@ namespace balance.Views
         private void rule_Click(object sender, RoutedEventArgs e)
         {
 
-            FallGameRule s = new FallGameRule();
+            var s = new FallGameRule();
 
-            s.Title = "FallGameRule";
+            s.Title = "落下ゲームルール";
             s.ShowDialog();
         }
 

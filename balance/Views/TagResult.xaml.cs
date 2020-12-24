@@ -24,9 +24,12 @@ namespace balance.Views
     {
         public GameOfTag.TagRestart RePlay_Tag = null;
         public GameOfTag.TagEnd End_Tag = null;
+
+        int result_time = 0;
         public TagResult(GameOfTag.TagRestart tagRestart,GameOfTag.TagEnd tagEnd)
         {
             InitializeComponent();
+            result_time = int.Parse(Application.Current.Properties["GameResultTime"].ToString());
 
             RePlay_Tag = tagRestart;
             End_Tag = tagEnd;
@@ -34,7 +37,16 @@ namespace balance.Views
             Result.Content = Application.Current.Properties["GameResult"].ToString();
 
             TagSpeed2.Content = Application.Current.Properties["TagSpeed"].ToString();
-            TimeResult2.Content = Application.Current.Properties["GameResultTime"].ToString()+"秒"; 
+
+            if (result_time > 60)
+            {
+                TimeResult2.Content = result_time / 60 + " 分 " + result_time % 60 + " 秒 ";
+            }
+            else
+            {
+                TimeResult2.Content = result_time + "秒";
+            }
+
         }
 
         private void RePlayGame_Click(object sender, RoutedEventArgs e)

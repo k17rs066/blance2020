@@ -195,6 +195,10 @@ namespace balance.Views
             hyouadvice.Content = "回数が多いほど\r\n好記録ですよ！";
             chartadvice.Content = "値が高い所が\r\n好記録ですよ！";
             scorebutton.Background = Brushes.Coral;
+            timebutton.Background = Brushes.Gainsboro;
+            targetbutton.Background = Brushes.Gainsboro;
+            fallbutton.Background = Brushes.Gainsboro;
+            tagbutton.Background = Brushes.Gainsboro;
 
             titlechart.Content = "スコアアタック";
 
@@ -221,7 +225,7 @@ namespace balance.Views
             timebutton.Background = Brushes.Gainsboro;
             targetbutton.Background = Brushes.Gainsboro;
             fallbutton.Background = Brushes.Gainsboro;
-
+            tagbutton.Background = Brushes.Gainsboro;
 
             titlechart.Content = "スコアアタック";
         }
@@ -247,6 +251,8 @@ namespace balance.Views
             scorebutton.Background = Brushes.Gainsboro;
             targetbutton.Background = Brushes.Gainsboro;
             fallbutton.Background = Brushes.Gainsboro;
+            tagbutton.Background = Brushes.Gainsboro;
+
 
             titlechart.Content = "タイムアタック";
 
@@ -274,7 +280,7 @@ namespace balance.Views
             timebutton.Background = Brushes.Gainsboro;
             scorebutton.Background = Brushes.Gainsboro;
             fallbutton.Background = Brushes.Gainsboro;
-
+            tagbutton.Background = Brushes.Gainsboro;
 
             titlechart.Content = "ターゲットゲーム";
         }
@@ -300,10 +306,27 @@ namespace balance.Views
             timebutton.Background = Brushes.Gainsboro;
             scorebutton.Background = Brushes.Gainsboro;
             targetbutton.Background = Brushes.Gainsboro;
+            tagbutton.Background= Brushes.Gainsboro;
 
             titlechart.Content = "落下ゲーム";
 
 
+        }
+
+
+        private void taggame_Click(object sender, RoutedEventArgs e)
+        {
+            gamejudge = 5;
+
+            fallbutton.Background = Brushes.Gainsboro;
+            timebutton.Background = Brushes.Gainsboro;
+            scorebutton.Background = Brushes.Gainsboro;
+            targetbutton.Background = Brushes.Gainsboro;
+            tagbutton.Background = Brushes.Coral;
+
+            hyou(gamejudge);
+
+            titlechart.Content = "鬼ごっこ";
         }
 
 
@@ -1065,9 +1088,5 @@ namespace balance.Views
             }
         }
 
-        private void taggame_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
     }
 }

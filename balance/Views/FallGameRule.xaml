@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:balance.Views"
         mc:Ignorable="d"
-        Title="落下ゲームのルール" Height="650" Width="800">
+        Title="落下ゲームのルール" Height="650" Width="850">
     <Window.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
@@ -19,28 +19,31 @@
 
     <Grid>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="25*"/>
-            <ColumnDefinition Width="239*"/>
+            <ColumnDefinition Width="0*"/>
+            <ColumnDefinition/>
         </Grid.ColumnDefinitions>
 
+        <TextBlock Text="かご (体重移動で動かすことができます)" Foreground="RosyBrown" FontSize="40" Grid.Column="1" Margin="190,125,12,414"/>
 
 
-        <TextBlock Text="イチゴ　＋１点" Foreground="Red" Height="80" Width="530" FontSize="50" Grid.Column="1" Margin="180,200,7,339"/>
+        <TextBlock Text="イチゴ　＋１点" Foreground="Red" FontSize="50" Grid.Column="1" Margin="225,226,-13,313"/>
 
 
-        <TextBlock Text="バナナ　＋3点" Foreground="SandyBrown" Height="80" Width="530" Margin="185,290,2,249" FontSize="50" Grid.Column="1"/>
-
-
-
-        <TextBlock Text="毛虫　-1点" Foreground="Black" Height="80" Width="530" Margin="185,380,2,159" FontSize="50" Grid.Column="1"/>
+        <TextBlock Text="バナナ　＋3点" Foreground="SandyBrown" Margin="225,321,-13,218" FontSize="50" Grid.Column="1"/>
 
 
 
-        <TextBlock HorizontalAlignment="Left" Height="80" Margin="13,110,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="697" FontSize="40" Text="フルーツをゲットして高得点を目指そう！！" Grid.Column="1" Foreground="Black"/>
-        <Image Source="/balance;component/Image/banana.png" Height="80" Width="100" Grid.Column="1" Margin="65,290,552,249"/>
-        <Image Source="/balance;component/Image/strawberry.png" Height="80" Width="100" Grid.Column="1" Margin="55,200,562,339"/>
-        <Image Source="/balance;component/Image/caterpillar.png" Height="80" Width="100" Grid.Column="1" Margin="70,380,547,159"/>
-        <Button Content="戻る" x:Name="back" HorizontalAlignment="Right" Width="125" Height="85" VerticalAlignment="Bottom" Grid.Column="1" Margin="0,0,332,34" FontSize="50" Click="Back_Click"/>
+        <TextBlock Text="毛虫　-1点" Foreground="Black" Margin="225,406,-13,133" FontSize="50" Grid.Column="1"/>
+
+
+
+        <TextBlock HorizontalAlignment="Left" Height="80" Margin="94,35,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="725" FontSize="40" Grid.Column="1" Foreground="Black"><Run Text="フルーツを"/><Run Text="かご"/><Run Text="に入れて"/><Run Text=""/><Run Text="高得点を目指そう！！"/></TextBlock>
+        <Image Source="/balance;component/Image/kago.png" Margin="40,115,682,414" RenderTransformOrigin="0.256,0.556" Grid.ColumnSpan="2"/>
+
+        <Image Source="/balance;component/Image/banana.png" Margin="94,321,638,218" RenderTransformOrigin="0.45,0.75" Grid.ColumnSpan="2"/>
+        <Image Source="/balance;component/Image/strawberry.png" Margin="94,226,638,313" Grid.ColumnSpan="2"/>
+        <Image Source="/balance;component/Image/caterpillar.png" Margin="94,406,638,133" Grid.ColumnSpan="2"/>
+        <Button Content="戻る" x:Name="back" HorizontalAlignment="Right" Width="125" Height="85" VerticalAlignment="Bottom" Grid.Column="1" Margin="0,0,332,39" FontSize="50" Click="Back_Click"/>
 
         <!-- <Button Content="戻る" Click="Return_Click" Height="58" VerticalAlignment="Bottom" Grid.Column="1" Margin="245,0,372,10" FontSize="45"/>  -->
     </Grid>

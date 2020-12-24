@@ -431,7 +431,7 @@ namespace balance.Views
 
         private void rule_Click(object sender, RoutedEventArgs e)
         {
-            FallGameRule s = new FallGameRule();
+            TagGameRule s = new TagGameRule();
 
             s.Title = "FallGameRule";
             s.ShowDialog();

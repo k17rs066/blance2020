@@ -48,7 +48,7 @@ namespace balance.Views
 
             try
             {
-                sortname2 = int.Parse(Application.Current.Properties["sortnamee2"].ToString());
+                sortname2 = int.Parse(Application.Current.Properties["sortname2"].ToString());
             }
             catch
             {

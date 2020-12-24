@@ -17,9 +17,9 @@ namespace balance.Views
     /// <summary>
     /// Window2.xaml の相互作用ロジック
     /// </summary>
-    public partial class Window2 : Window
+    public partial class TagGameRule : Window
     {
-        public Window2()
+        public TagGameRule()
         {
             InitializeComponent();
         }

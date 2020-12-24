@@ -191,11 +191,11 @@ namespace balance.Views
                         ye -= spe;
                     }
 
-                    double r = 35 + 100; //半径の和
+                    double r = 35 + 80; //半径の和
                     double x = xza - (xe);    //2つの円の中心のx座標の差
                     double y = yza - (ye);    //2つの円の中心のy座標の差
 
-                    if ((r * r)> ((x*x) + (y*y)) ) {//当たり判定、　 ---三平方の定理を利用---
+                    if ((r * r)> ((x*x) + (y*y))){//当たり判定、　 ---三平方の定理を利用---
                             
                             GameOver_flg = true;
 
@@ -403,11 +403,6 @@ namespace balance.Views
             }
         }
 
-        private void Pracmode_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
         private void TagSetting_Click(object sender,RoutedEventArgs e)  //設定ボタンを押す
         {
             startbutton.Content = "ストップ";
@@ -431,6 +426,15 @@ namespace balance.Views
                 time.Content = "残り時間：     " + (time_t) + "秒";
             }
             startbutton.Content = "スタート";
+        }
+
+        private void rule_Click(object sender, RoutedEventArgs e)
+        {
+
+            TagGameRule s = new TagGameRule();
+            s.ShowDialog();
+
+
         }
 
         private void PracMode(object sender,RoutedEventArgs e)

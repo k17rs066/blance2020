@@ -781,6 +781,9 @@ namespace balance.Views
             }
         }
 
+        private void rule_Click(object sender, RoutedEventArgs e)
+        {
 
+        }
     }
 }
