@@ -14,11 +14,13 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.Windows.Threading;
 using System.IO;
+using System.Threading;
 using WiimoteLib;
 using balance.DataBase;
 
 namespace balance.Views
 {
+    
     /// <summary>
     /// Page1.xaml の相互作用ロジック
     /// </summary>
@@ -79,6 +81,7 @@ namespace balance.Views
 
         public GameOfTag()
         {
+            
             InitializeComponent();
             if (!Application.Current.Properties["u_id"].ToString().Equals("guest")) //user,guest確認
             {
@@ -117,8 +120,8 @@ namespace balance.Views
                 }
                 else
                 {
-                    xza = bbs.CenterOfGravity.X * 1654/70*2.0 + (1654 / 2) - 35;//*(Canvas.Width/ballWidth)*倍率 + (Canvas.Width/2) - (ballWidth /2)
-                    yza = bbs.CenterOfGravity.Y * 700/70*2.5 + 350 - 35;//*(Canvas.Height/ballHeight)*倍率 + (Canvas.Height/2) - (ballHeight /2)
+                    xza = bbs.CenterOfGravity.X * 1654/70*3.0 + (1654 / 2) - 35;//*(Canvas.Width/ballWidth)*倍率 + (Canvas.Width/2) - (ballWidth /2)
+                    yza = bbs.CenterOfGravity.Y * 700/70*3.5 + 350 - 35;//*(Canvas.Height/ballHeight)*倍率 + (Canvas.Height/2) - (ballHeight /2)
 
 
                     if (xza > 1644) //枠内に収まるように
@@ -191,15 +194,25 @@ namespace balance.Views
                         ye -= spe;
                     }
 
-                    double r = 35 + 80; //半径の和
+                    double r = 35 + 85; //半径の和
                     double x = xza - (xe);    //2つの円の中心のx座標の差
                     double y = yza - (ye);    //2つの円の中心のy座標の差
 
                     if ((r * r)> ((x*x) + (y*y))){//当たり判定、　 ---三平方の定理を利用---
-                            
-                            GameOver_flg = true;
+                        Task.Run(async () =>
+                        {
+                            await Task.Delay(500);
+                            if ((r * r) > ((x * x) + (y * y)))
+                            {
+                                GameOver_flg = true;
 
+                            }
+                            else
+                            {
+                                GameOver_flg = false;
+                            }
 
+                        });
                     }
 
                     //枠内に収まるようにする 
@@ -288,6 +301,8 @@ namespace balance.Views
             }
                 
         }
+
+
 
         void dispatcharTimer_Tick(object sender, EventArgs e)
         {

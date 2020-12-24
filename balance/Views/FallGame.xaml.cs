@@ -273,41 +273,64 @@ namespace balance.Views
                     this.drawingLabel2 = new Label() { Width = ballsize, Height = ballsize, Margin = new Thickness(x2, y2, 0, 0), FontSize = 60, Foreground = Brushes.White, FontWeight = FontWeights.Bold, HorizontalContentAlignment = HorizontalAlignment.Center, VerticalContentAlignment = VerticalAlignment.Center };
                     this.beback.Children.Add(this.drawingLabel2);
 
-                    ///////////////Ellipse,Ellipse1当たり判定 y1は7の倍数の速さで動いているから585の数値にならないy1=588になる
-                    ///585%y=0ならよい　585%y1=1なら-1する
-                    if (xza < x + ballsize/2 && xza + 222 > x + ballsize / 2 && 585 + ballsize / 2 == y - 1)
+                    if (ballspeed == 3)
                     {
-                        target++;
-                        PlaySound("fall_up.wav");
+                        if (xza < x + ballsize / 2 && xza + 222 > x + ballsize / 2 && (630 - ballsize / 2) == y + ballsize / 2 - 1)
+                        {
+                            target++;
+                            PlaySound("fall_up.wav");
+
+                        }
+                        else if (xza < x1 + ballsize / 2 && xza + 222 > x1 + ballsize / 2 && (630 - ballsize / 2) == y1 + ballsize / 2 - 1)
+                        {
+                            target--;
+                            PlaySound("fall_down.wav");
+                        }
+                        else if (xza < x2 + ballsize / 2 && xza + 222 > x2 + ballsize / 2 && (630 - ballsize / 2) == y2 + ballsize / 2 - 1)
+                        {
+                            target += 3;
+                            PlaySound("fall_up.wav");
+                        }
                     }
-                    else if (xza < x1 + ballsize/2 && xza + 222 > x1 + ballsize / 2 && 585 + ballsize / 2 == y1 - 1)
+
+                    else
                     {
-                        target--;
-                        PlaySound("fall_down.wav");
+                        if (xza < x + ballsize / 2 && xza + 222 > x + ballsize / 2 && (630 - ballsize / 2) == y + ballsize / 2 - ballspeed)
+                        {
+                            target++;
+                            PlaySound("fall_up.wav");
+
+                        }
+                        else if (xza < x1 + ballsize / 2 && xza + 222 > x1 + ballsize / 2 && (630 - ballsize / 2) == y1 + ballsize / 2 - ballspeed)
+                        {
+                            target--;
+                            PlaySound("fall_down.wav");
+                        }
+                        else if (xza < x2 + ballsize / 2 && xza + 222 > x2 + ballsize / 2 && (630 - ballsize / 2) == y2 + ballsize / 2 - ballspeed)
+                        {
+                            target += 3;
+                            PlaySound("fall_up.wav");
+                        }
                     }
-                    else if (xza < x2 + ballsize/2 && xza + 222 > x2 + ballsize / 2 && 585 + ballsize / 2 == y2 - 1)
-                    {
-                        target += 3;
-                        PlaySound("fall_up.wav");
-                    }
-                    else if (xza < x + ballsize / 2 && xza + 222 > x + ballsize / 2 && 585+ ballsize / 2 <= y + ballsize / 2)
+
+                    if (xza < x + ballsize / 2 && xza + 222 > x + ballsize / 2 && (630 - ballsize / 2) <= y + ballsize / 2 - 25)
                     {
 
-                        //drawingEllipse.Fill = System.Windows.Media.Brushes.LimeGreen;
-                        this.beback.Children.Remove(this.drawingEllipse);
+
+                        drawingEllipse.Fill = System.Windows.Media.Brushes.Transparent;
                         get.Foreground = System.Windows.Media.Brushes.Red;
                         get.Content = "+1";
                     }
-                    else if (xza < x2 + ballsize / 2 && xza + 222 > x2 + ballsize / 2 && 585 + ballsize / 2 <= y2 + ballsize / 2)
+                    else if (xza < x2 + ballsize / 2 && xza + 222 > x2 + ballsize / 2 && (630 - ballsize / 2) <= y2 + ballsize / 2 - 25)
                     {
-                        this.beback.Children.Remove(this.drawingEllipse2);
+                        drawingEllipse2.Fill = System.Windows.Media.Brushes.Transparent;
                         get.Foreground = System.Windows.Media.Brushes.Yellow;
                         get.Content = "+3";
                     }
-                    else if (xza < x1 + ballsize / 2 && xza + 222 > x1 + ballsize / 2 && 585 + ballsize / 2 <= y1 + ballsize / 2)
+                    else if (xza < x1 + ballsize / 2 && xza + 222 > x1 + ballsize / 2 && (630 - ballsize / 2) <= y1 + ballsize / 2 - 25)
                     {
 
-                        this.beback.Children.Remove(this.drawingEllipse1);
+                        drawingEllipse1.Fill = System.Windows.Media.Brushes.Transparent;
                         get.Foreground = System.Windows.Media.Brushes.Blue;
                         get.Content = "-1";
                     }
@@ -315,6 +338,8 @@ namespace balance.Views
                     {
                         get.Content = "";
                     }
+
+
 
 
                     count.Content = "獲得点数    " + target + "点";
