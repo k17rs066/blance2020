@@ -9,6 +9,16 @@
       Title="New_k_record"
      Height="1080" Width="1920"
       >
+    <Page.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.Light.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.Defaults.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MaterialDesignColors;component/Themes/Recommended/Primary/MaterialDesignColor.Blue.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MaterialDesignColors;component/Themes/Recommended/Accent/MaterialDesignColor.Lime.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Page.Resources>
 
     <ScrollViewer x:Name="scroll2" PanningMode="Both">
         <Grid x:Name ="grid33" Height="1571" >
@@ -17,10 +27,10 @@
             <!--TextBlock x:Name ="datetimedb" FontSize="80" HorizontalAlignment="Left" Margin="1140,26,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="114" Width="733"/>
             <Label x:Name ="las" Content="最終ログイン：" FontSize ="80" HorizontalAlignment="Left" Height="114" Margin="670.984,26,0,0" VerticalAlignment="Top" Width="464"/-->
 
-            <Button x:Name="timebutton" Content="タイムアタック" HorizontalAlignment="Left" VerticalAlignment="Top" Width="337" Margin="609,228,0,0" Height="100" FontSize="48" FontWeight="Bold" Click="timebutton_Click"/>
-            <Button x:Name="scorebutton" Content="スコアアタック" HorizontalAlignment="Left" VerticalAlignment="Top" Width="337" Margin="173,228,0,0" Height="100" FontSize="48" FontWeight="Bold" Click="scorebutton_Click"/>
-            <Button x:Name="targetbutton" Content="ターゲットゲーム" HorizontalAlignment="Left" VerticalAlignment="Top" Width="337" Margin="1044,228,0,0" Height="100" FontSize="48" FontWeight="Bold" Click="targetbutton_Click"/>
-            <Button x:Name="fallbutton" Content="落下ゲーム" HorizontalAlignment="Left" VerticalAlignment="Top" Width="337" Margin="1451,228,0,0" Height="100" FontSize="48" FontWeight="Bold" Click="fallbutton_Click"/>
+            <Button x:Name="timebutton" Content="タイムアタック" HorizontalAlignment="Left" VerticalAlignment="Top" Width="337" Margin="431,228,0,0" Height="100" FontSize="48" FontWeight="Bold" Click="timebutton_Click"/>
+            <Button x:Name="scorebutton" Content="スコアアタック" HorizontalAlignment="Left" VerticalAlignment="Top" Width="337" Margin="48,228,0,0" Height="100" FontSize="48" FontWeight="Bold" Click="scorebutton_Click"/>
+            <Button x:Name="targetbutton" Content="ターゲットゲーム" HorizontalAlignment="Left" VerticalAlignment="Top" Width="337" Margin="825,228,0,0" Height="100" FontSize="48" FontWeight="Bold" Click="targetbutton_Click"/>
+            <Button x:Name="fallbutton" Content="落下ゲーム" HorizontalAlignment="Left" VerticalAlignment="Top" Width="337" Margin="1198,228,0,0" Height="100" FontSize="48" FontWeight="Bold" Click="fallbutton_Click" RenderTransformOrigin="0.228,0.42"/>
 
 
             <!-- Label x:Name="hyouname" Content="" HorizontalAlignment="Left" Margin="33,449,0,0" VerticalAlignment="Top" Width="370" Height="76" FontSize="48"/>
@@ -182,6 +192,7 @@
                 </Label.RenderTransform>
 
             </Label>
+            <Button x:Name="taggame" Content="鬼ごっこゲーム" HorizontalAlignment="Left" VerticalAlignment="Top" Width="337" Margin="1548,228,0,0" Height="100" FontSize="48" FontWeight="Bold" Click="taggame_Click" RenderTransformOrigin="0.386,0.42"/>
 
             <!-- Label Content="スコアアタック" HorizontalAlignment="Right" Margin="0,754,558,0" VerticalAlignment="Top" Width="370" Height="76" FontSize="48"/>
             <visualizationToolkit:Title Content="回&#xa;数" HorizontalAlignment="Left" Margin="985,941,0,0" VerticalAlignment="Top" FontSize="18" RenderTransformOrigin="0.417,-1.25"/-->

@@ -6,20 +6,30 @@
         xmlns:local="clr-namespace:balance.Views"
         mc:Ignorable="d"
         Title="鬼ごっこ結果表示" Height="450" Width="800" WindowStartupLocation="CenterScreen">
+    <Window.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.Light.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.Defaults.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MaterialDesignColors;component/Themes/Recommended/Primary/MaterialDesignColor.Blue.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MaterialDesignColors;component/Themes/Recommended/Accent/MaterialDesignColor.Lime.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Window.Resources>
     <Grid>
         <Label x:Name="Result"  Margin="113,65,102,269" FontSize="60" VerticalAlignment="Center" HorizontalAlignment="Center" FontWeight="Bold"/>
 
-        <Label Content="経過時間："  x:Name="TimeResult" Margin="190,175,367,180"  FontSize="30"/>
+        <Label Content="経過時間："  x:Name="TimeResult" Margin="172,168,386,187"  FontSize="30"/>
 
-        <Label Content=""  x:Name="TimeResult2" Margin="430,182,162,187"  FontSize="30" VerticalAlignment="Center" HorizontalAlignment="Center" Width="200"/>
-        <Label Content="鬼の速さ：" x:Name="TagSpeed" Margin="190,244,367,125" FontSize="30"/>
-        <Label Content="" x:Name="TagSpeed2" Margin="430,244,162,125" FontSize="30" VerticalAlignment="Center" HorizontalAlignment="Center" Width="200"/>
+        <Label Content=""  x:Name="TimeResult2" Margin="430,168,162,187"  FontSize="30" VerticalAlignment="Center" HorizontalAlignment="Center" Width="200" Height="64"/>
+        <Label Content="鬼の速さ：" x:Name="TagSpeed" Margin="190,237,367,125" FontSize="30"/>
+        <Label Content="" x:Name="TagSpeed2" Margin="430,237,162,125" FontSize="30" VerticalAlignment="Center" HorizontalAlignment="Center" Width="200" Height="57"/>
 
 
 
-        <Button x:Name="Back" Click="Back_Click" Content="終了する" Margin="113,325,467,34"  FontSize="40"/>
+        <Button x:Name="Back" Click="Back_Click" Content="終了する" Margin="155,325,425,24"  FontSize="40" Height="Auto"/>
 
-        <Button x:Name="RePlayGame" Click="RePlayGame_Click" Content="もう一度" Margin="418,325,162,34"  FontSize="40"/>
+        <Button x:Name="RePlayGame" Click="RePlayGame_Click" Content="もう一度" Margin="455,325,125,24"  FontSize="40" Height="Auto"/>
 
     </Grid>
 </Window>

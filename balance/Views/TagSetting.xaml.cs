@@ -24,7 +24,10 @@ namespace balance.Views
         public double ReciveSpeed { get; set; }
         public int ReciveTime { get; set; }
 
-        int timeset = 15; 
+        int timeset_min = 0;
+        int timeset_sec = 0;
+
+
         public TagSetting()
         {
             InitializeComponent();
@@ -34,24 +37,33 @@ namespace balance.Views
             OrgSpeed.Items.Add("遅い");
 
 
-
-
             OrgSpeed.SelectedIndex = 1;
 
-
-
-
-            for (int i = 0; i < 4; i++)
+            for (int i = 0; i < 6; i++)
             {
-                TimeSet.Items.Add(timeset);
+                TimeSet_min.Items.Add(timeset_min);
 
-                if(timeset!= 90)
+                if (timeset_min != 5)
                 {
-                    timeset += 15;
+                    timeset_min += 1;
                 }
             }
 
-            TimeSet.SelectedIndex = 1;
+            TimeSet_min.SelectedIndex = 0;
+
+
+
+            for (int i = 0; i < 6; i++)
+            {
+                TimeSet_sec.Items.Add(timeset_sec);
+
+                if(timeset_sec!= 50)
+                {
+                    timeset_sec += 10;
+                }
+            }
+
+            TimeSet_sec.SelectedIndex = 3;
 
 
         }
@@ -79,8 +91,7 @@ namespace balance.Views
                 ReciveSpeed = 0.75;
                 Application.Current.Properties["TagSpeed"] = "普通";
             }
-
-            ReciveTime = int.Parse(TimeSet.Text);
+            ReciveTime = int.Parse(TimeSet_min.Text) * 60 + int.Parse(TimeSet_sec.Text);
             // MessageBox.Show("設定の変更が完了しました。");
 
             this.Close();

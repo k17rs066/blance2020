@@ -57,7 +57,6 @@ namespace balance.Views
         private Label EnemyLabel = null;
 
 
-
         double xe, ye;
         public double spe=0.75;
 
@@ -71,9 +70,12 @@ namespace balance.Views
         public int timekeeper = 30;    //選択タイムの保持
         int time_t; //計測タイム ()
         DispatcherTimer dispatcharTimer11; //カウントダウンの秒数を保持する
+
         int cdtime;
+        int cnttime=0;
+        String speed_state = "";
 
-
+        double tw =0;
 
         public GameOfTag()
         {
@@ -104,7 +106,7 @@ namespace balance.Views
         {
             if (game == true)
             {
-
+                speed_state = Application.Current.Properties["TagSpeed"].ToString();
                 BalanceBoardState bbs = e.WiimoteState.BalanceBoardState;
 
                 if (bbs.WeightKg < 5)
@@ -115,29 +117,29 @@ namespace balance.Views
                 }
                 else
                 {
-                    xza = bbs.CenterOfGravity.X * 1654/70 * 3 + 827 - 35;//*(Canvas.Width/ballWidth)*倍率 + (Canvas.Width/2) - (ballWidth /2)
-                    yza = bbs.CenterOfGravity.Y * 1700/70 * 3 + 350 - 35;//*(Canvas.Height/ballHeight)*倍率 + (Canvas.Height/2) - (ballHeight /2)
+                    xza = bbs.CenterOfGravity.X * 1654/70*2.0 + (1654 / 2) - 35;//*(Canvas.Width/ballWidth)*倍率 + (Canvas.Width/2) - (ballWidth /2)
+                    yza = bbs.CenterOfGravity.Y * 700/70*2.5 + 350 - 35;//*(Canvas.Height/ballHeight)*倍率 + (Canvas.Height/2) - (ballHeight /2)
 
 
-
-                    if (xza > 1614) //枠内に収まるように
+                    if (xza > 1644) //枠内に収まるように
                     {
-                        xza = 1614;//  bdraw.Width - ballSize
+                        xza = 1644;//  bdraw.Width - ballSize
                     }
-                    else if (xza < 35)
+                    else if (xza < 10)
                     {
-                        xza = 35;
+                        xza = 10;
                     }
 
-                    if (yza > 665)
+                    if (yza > 690)
                     {
-                        yza = 665;//bdraw.Height - ballSize
+                        yza = 690;//bdraw.Height - ballSize
                     }
-                    else if (yza < 35)
+                    else if (yza < 10)
                     {
-                        yza = 35;
+                        yza = 10;
                     }
                 }
+
 
                 Dispatcher.Invoke(new Action(() =>
                 {
@@ -146,35 +148,11 @@ namespace balance.Views
                     {
                         this.field.Children.Remove(this.drawingBalance);
                     }
+
+
                     this.drawingBalance = new Ellipse() { Fill = System.Windows.Media.Brushes.LimeGreen, Width = 70, Height = 70, Margin = new Thickness(xza, yza, 0, 0) }; //重心のマーク
                     this.field.Children.Add(this.drawingBalance);
 
-
-                    Task.Run(async () =>
-                    {
-                        //敵
-                        //分岐：敵が自分を追尾
-                        if (xza > xe)
-                        {
-
-                            xe += spe;
-
-                        }
-
-                        if (xza <= xe)
-                        {
-                            xe -= spe;
-
-                        }
-                        if (yza > ye)
-                        {
-                            ye += spe;
-                        }
-                        if (yza <= ye)
-                        {
-                            ye -= spe;
-                        }
-                    });
 
 
                     if(this.Enemy!=null)
@@ -190,24 +168,49 @@ namespace balance.Views
                     this.Enemy = new Ellipse() { Fill = enemy, Width =200, Height=200 , Margin = new Thickness(xe,ye,0,0)};
                     this.field.Children.Add(this.Enemy);
 
+                    //敵
+                    //分岐：敵が自分を追尾
+                    if (xza > xe)
+                    {
+
+                        xe += spe;
+
+                    }
+
+                    if (xza <= xe)
+                    {
+                        xe -= spe;
+
+                    }
+                    if (yza > ye)
+                    {
+                        ye += spe;
+                    }
+                    if (yza <= ye)
+                    {
+                        ye -= spe;
+                    }
+
                     double r = 35 + 100; //半径の和
-                    double x = xza - xe;    //2つの円の中心のx座標の差
-                    double y = yza - ye;    //2つの円の中心のy座標の差
+                    double x = xza - (xe);    //2つの円の中心のx座標の差
+                    double y = yza - (ye);    //2つの円の中心のy座標の差
 
                     if ((r * r)> ((x*x) + (y*y)) ) {//当たり判定、　 ---三平方の定理を利用---
-                        GameOver_flg = true;
+                            
+                            GameOver_flg = true;
+
 
                     }
 
                     //枠内に収まるようにする 
-                    if (xe > 1349)   //(枠からはみ出さないように5px余分にとる)
+                    if (xe > 1349)   
                     {
                         xe = 1349;
 
                     }else if(xe < 5){
 
                         xe = 5;
-                    }else if(ye > 695) //枠からはみ出さないように5px余分にとる
+                    }else if(ye > 695) 
                     {
                         ye = 695;
 
@@ -221,8 +224,23 @@ namespace balance.Views
                         game = false;
                         dispatcharTimer.Stop();
 
+                        if (!Application.Current.Properties["u_id"].ToString().Equals("guest"))
+                        {
+                            DBConnect.Connect("kasiihara.db");
+                            SQL = "INSERT INTO t_userrecord (user_id,traintype,trainclear_date)VALUES('" + user_id + "','鬼ごっこゲーム','" + DateTime.Now.ToString() + "')";
+                            DBConnect.ExecuteReader(SQL);
+                            SQL = "SELECT * FROM t_userrecord ORDER BY userrecord_id DESC";
+                            DBConnect.ExecuteReader(SQL);
+                            DBConnect.Reader.Read();
+                            SQL = "INSERT INTO t_taggame (user_record_id,time,tag_speed)VALUES('" + DBConnect.Reader[0] + "', '" + cnttime + "','" + speed_state + "')";
+                            DBConnect.ExecuteReader(SQL);
+                            DBConnect.Dispose();
+
+
+                        }
+
                         Application.Current.Properties["GameResult"] = "ゲームオーバー!";
-                        Application.Current.Properties["GameResultTime"] = timekeeper;
+                        Application.Current.Properties["GameResultTime"] = cnttime;
 
                         result = new TagResult(this.start,this.back);
                         result.ShowDialog();
@@ -236,14 +254,27 @@ namespace balance.Views
                         PlaySound("clear.wav");
                         dispatcharTimer.Stop();
 
+                        if (!Application.Current.Properties["u_id"].ToString().Equals("guest"))
+                        {
+                            DBConnect.Connect("kasiihara.db");
+                            SQL = "INSERT INTO t_userrecord (user_id,traintype,trainclear_date)VALUES('" + user_id + "','鬼ごっこゲーム','" + DateTime.Now.ToString() + "')";
+                            DBConnect.ExecuteReader(SQL);
+                            SQL = "SELECT * FROM t_userrecord ORDER BY userrecord_id DESC";
+                            DBConnect.ExecuteReader(SQL);
+                            DBConnect.Reader.Read();
+                            SQL = "INSERT INTO t_taggame (user_record_id,time,tag_speed)VALUES('" + DBConnect.Reader[0] + "', '" + cnttime + "','" + speed_state + "')";
+                            DBConnect.ExecuteReader(SQL);
+                            DBConnect.Dispose();
 
+
+                        }
 
                         dispatcharTimer = new DispatcherTimer(DispatcherPriority.Normal);
                         dispatcharTimer.Interval = new TimeSpan(0, 0, 1);
                         dispatcharTimer.Tick += new EventHandler(dispatcharTimer_Tick);
 
                         Application.Current.Properties["GameResult"] = "クリア！";
-                        Application.Current.Properties["GameResultTime"] = timekeeper;
+                        Application.Current.Properties["GameResultTime"] = cnttime;
 
                         result = new TagResult(this.start,this.back);
                         result.ShowDialog();
@@ -262,8 +293,15 @@ namespace balance.Views
         {
 
             time_t--;
-
-            time.Content = "残り時間     " + time_t + "秒";
+            cnttime++;
+            if (time_t > 60)
+            {
+                time.Content = "残り時間：     " + (time_t / 60) + "分" + (time_t % 60) + "秒";
+            }
+            else
+            {
+                time.Content = "残り時間：     " + (time_t) + "秒";
+            }
         }
 
         void dispatcharTimer11_Tick(object sender, EventArgs e)
@@ -274,6 +312,7 @@ namespace balance.Views
 
             if (cdtime == 3) //スタートが押されてると
             {
+                cnttime = 0;
                 time_t = timekeeper;
                 countdown.Content = "";
                 dispatcharTimer11.Stop();
@@ -308,6 +347,7 @@ namespace balance.Views
                 xza = 0;yza = 0;
                 this.field.Children.Remove(this.drawingBalance);
 
+                cnttime = 0;
                 wiimote.Connect();
                 dispatcharTimer11.Start();
             }
@@ -379,7 +419,17 @@ namespace balance.Views
             spe = set.ReciveSpeed;
             timekeeper = set.ReciveTime;
             time_t = timekeeper;
-            time.Content = "残り時間     " + timekeeper + "秒";
+            speed_state = Application.Current.Properties["TagSpeed"].ToString();
+            tag_speed.Content = "鬼の速さ：    "+ speed_state ;
+
+            if (time_t > 60)
+            {
+                time.Content = "残り時間：     " + (time_t / 60) + "分" + time_t % 60 + "秒";
+            }
+            else
+            {
+                time.Content = "残り時間：     " + (time_t) + "秒";
+            }
             startbutton.Content = "スタート";
         }
 
