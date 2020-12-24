@@ -612,7 +612,7 @@
     <Resource Include="Image\kago.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Image\target image.png" />
+    <Resource Include="Image\target_image.png" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Image\gameover.png" />
@@ -652,13 +652,10 @@
     <Resource Include="Image\akaoni.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="akaoni.png" />
-  </ItemGroup>
-  <ItemGroup>
     <Resource Include="target image.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="tag_game.png" />
+    <Resource Include="Image\tag_game.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

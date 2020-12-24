@@ -19,7 +19,7 @@
     </Window.Resources>
 
     <Grid>
-        <Button Content="戻る" x:Name="back" HorizontalAlignment="Right" Width="125" Height="85" VerticalAlignment="Bottom" Margin="0,0,557,49" FontSize="50" Click="Back_Click"/>
+        <Button Content="戻る" x:Name="back" HorizontalAlignment="Right" Width="250" Height="85" VerticalAlignment="Bottom" Margin="0,0,467,49" FontSize="50" Click="Back_Click"/>
         <!-- <Button Content="戻る" Click="Return_Click" Height="58" VerticalAlignment="Bottom" Grid.Column="1" Margin="245,0,372,10" FontSize="45"/>  -->
     </Grid>
 </Window>

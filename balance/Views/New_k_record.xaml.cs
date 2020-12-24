@@ -486,6 +486,15 @@ namespace balance.Views
 
                     break;
 
+
+                case 5:
+                    DBConnect.Connect("kasiihara.db");
+
+                    string SQL5;
+                    SQL5 = "SELECT * FROM t_taggame NATURAL JOIN t_userrecord NATURAL JOIN t_user WHERE user_id =  " + u_id + "  and set_time = " + fallse + "  ";
+
+
+                    break;
             }
             
  

@@ -117,7 +117,7 @@ namespace balance.Views
                 else
                 {
                     xza = bbs.CenterOfGravity.X * 1654 / 70 * 3.0 + (1654 / 2) - 35;//*(Canvas.Width/ballWidth)*倍率 + (Canvas.Width/2) - (ballWidth /2)
-                    yza = bbs.CenterOfGravity.Y * 700 / 70 * 3.5 + 350 - 35;//*(Canvas.Height/ballHeight)*倍率 + (Canvas.Height/2) - (ballHeight /2)
+                    yza = bbs.CenterOfGravity.Y * 700 / 70 * 2.5 + 350 - 35;//*(Canvas.Height/ballHeight)*倍率 + (Canvas.Height/2) - (ballHeight /2)
 
 
                     if (xza > 1644) //枠内に収まるように

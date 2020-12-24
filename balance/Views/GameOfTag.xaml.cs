@@ -121,7 +121,7 @@ namespace balance.Views
                 else
                 {
                     xza = bbs.CenterOfGravity.X * 1654/70*3.0 + (1654 / 2) - 35;//*(Canvas.Width/ballWidth)*倍率 + (Canvas.Width/2) - (ballWidth /2)
-                    yza = bbs.CenterOfGravity.Y * 700/70*3.5 + 350 - 35;//*(Canvas.Height/ballHeight)*倍率 + (Canvas.Height/2) - (ballHeight /2)
+                    yza = bbs.CenterOfGravity.Y * 700/70*2.5 + 350 - 35;//*(Canvas.Height/ballHeight)*倍率 + (Canvas.Height/2) - (ballHeight /2)
 
 
                     if (xza > 1644) //枠内に収まるように
@@ -245,7 +245,7 @@ namespace balance.Views
                             SQL = "SELECT * FROM t_userrecord ORDER BY userrecord_id DESC";
                             DBConnect.ExecuteReader(SQL);
                             DBConnect.Reader.Read();
-                            SQL = "INSERT INTO t_taggame (user_record_id,time,tag_speed)VALUES('" + DBConnect.Reader[0] + "', '" + cnttime + "','" + speed_state + "')";
+                            SQL = "INSERT INTO t_taggame (user_record_id,time,tag_speed)VALUES('" + DBConnect.Reader[0] + "', '" + cnttime + "','" + speed_state + "ゲームオーバー"+"')";
                             DBConnect.ExecuteReader(SQL);
                             DBConnect.Dispose();
 
@@ -275,7 +275,7 @@ namespace balance.Views
                             SQL = "SELECT * FROM t_userrecord ORDER BY userrecord_id DESC";
                             DBConnect.ExecuteReader(SQL);
                             DBConnect.Reader.Read();
-                            SQL = "INSERT INTO t_taggame (user_record_id,time,tag_speed)VALUES('" + DBConnect.Reader[0] + "', '" + cnttime + "','" + speed_state + "')";
+                            SQL = "INSERT INTO t_taggame (user_record_id,time,tag_speed)VALUES('" + DBConnect.Reader[0] + "', '" + cnttime + "','" + speed_state + "クリア" + "')";
                             DBConnect.ExecuteReader(SQL);
                             DBConnect.Dispose();
 
