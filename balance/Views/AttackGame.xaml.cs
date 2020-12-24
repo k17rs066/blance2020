@@ -727,6 +727,8 @@ namespace balance.Views
 
                     Application.Current.Properties["settei"] = "計測回数" + (int)Application.Current.Properties["sette"] + "回";
                     rf(1);
+                    rule.Visibility = Visibility.Visible;
+
                 }
                 else
                 {
@@ -760,6 +762,7 @@ namespace balance.Views
 
                     Application.Current.Properties["settei"] = "計測時間" + (int)Application.Current.Properties["sette"] / 60 +"分"+ (int)Application.Current.Properties["sette"]%60 + "秒";
                     rf(0);
+                    rule.Visibility = Visibility.Visible;
                 }
                 else
                 {
@@ -768,6 +771,7 @@ namespace balance.Views
 
                     Application.Current.Properties["settei"] = "計測時間" + (int)Application.Current.Properties["sette"] / 60 + "分" + (int)Application.Current.Properties["sette"]%60 + "秒";
                     rf(0);
+
                 }
                 DBConnect.Dispose();
             }
@@ -778,12 +782,25 @@ namespace balance.Views
 
                 Application.Current.Properties["gamemodename"] = Combo_GameMode.SelectedItem.ToString();
                 rf(2);
+                rule.Visibility = Visibility.Hidden;
+
             }
         }
 
         private void rule_Click(object sender, RoutedEventArgs e)
         {
-
+            if (Combo_GameMode.Text=="スコアアタック")
+            {
+                ScoreGameRule rule = new ScoreGameRule();
+                rule.Title = "スコアアタックゲームのルール";
+                rule.ShowDialog();
+            }
+            else
+            {
+                TimeGameRule rule = new TimeGameRule();
+                rule.Title = "タイムアタックゲームのルール";
+                rule.ShowDialog();
+            }
         }
     }
 }

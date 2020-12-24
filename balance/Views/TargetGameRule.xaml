@@ -6,15 +6,5 @@
         xmlns:local="clr-namespace:balance.Views"
         mc:Ignorable="d"
         Title="ターゲットゲームのルール" Height="1000" Width="1200">
-    <Grid>
-        <TextBox Height="130" FontSize="32" Margin="120,35,92,0" TextWrapping="Wrap" Text="重心を表すマーク           を動かして、ターゲットを番号順に獲得しよう！！" VerticalAlignment="Top" BorderBrush="White"/>
-        <Image Source="/Image/target image.png" Margin="338,35,352,334"/>
-        <Image Source="/balance;component/Image/target image.png" Margin="135,315,547,39" RenderTransformOrigin="0.265,2.5"/>
-        <Image Source="/Image/1.png" Margin="150,190,567,154"/>
-        <TextBox HorizontalAlignment="Left" FontSize="42"  Height="65" Margin="245,190,0,0" TextWrapping="Wrap" Text="：ターゲット" VerticalAlignment="Top" Width="220" BorderBrush="White"/>
-
-        <TextBox HorizontalAlignment="Left" FontSize="42" Height="50" Margin="245,315,0,0" TextWrapping="Wrap" Text="：重心で操作するマーク" VerticalAlignment="Top" Width="415" BorderBrush="White"/>
-
-
-    </Grid>
+    <Grid/>
 </Window>
