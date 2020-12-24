@@ -37,7 +37,7 @@
             <Button.Content>
                 <Grid Height="330">
                     <Image Source="/balance;component/Image/tag.PNG" Margin="10,10,26,87" RenderTransformOrigin="0.518,0.442" />
-                    <TextBlock Text="バランス鬼ごっこ" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="37,254,26,-12" Height="88" Width="428" />
+                    <TextBlock VerticalAlignment="Center" HorizontalAlignment="Center" Margin="37,254,26,-12" Height="88" Width="428" ><Run Text="鬼ごっこ"/><Run Text="ゲーム"/></TextBlock>
                 </Grid>
             </Button.Content>
         </Button>

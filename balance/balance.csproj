@@ -319,9 +319,6 @@
     <Compile Include="Views\Certification.xaml.cs">
       <DependentUpon>Certification.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\MazeGame.xaml.cs">
-      <DependentUpon>MazeGame.xaml</DependentUpon>
-    </Compile>
     <Compile Include="Views\newUser.xaml.cs">
       <DependentUpon>newUser.xaml</DependentUpon>
     </Compile>
@@ -464,10 +461,6 @@
       <SubType>Code</SubType>
     </Compile>
     <Page Include="Views\Certification.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Views\MazeGame.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

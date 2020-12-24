@@ -6,6 +6,16 @@
         xmlns:local="clr-namespace:balance.Views"
         mc:Ignorable="d"
         Title="GameResult" Height="670.5" Width="964" WindowStartupLocation="CenterScreen">
+    <Window.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.Light.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.Defaults.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MaterialDesignColors;component/Themes/Recommended/Primary/MaterialDesignColor.Blue.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MaterialDesignColors;component/Themes/Recommended/Accent/MaterialDesignColor.Lime.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Window.Resources>
     <Grid>
         <Button x:Name="end" Content="終了" HorizontalAlignment="Left" Margin="216,503,0,0" VerticalAlignment="Top" Width="186" Height="70" FontSize="30" FontWeight="Bold" Click="end_Click"/>
         <Button x:Name="restart" Content="もう一度" HorizontalAlignment="Left" Margin="576,497,0,0" VerticalAlignment="Top" Width="184" Height="70" FontSize="30" FontWeight="Bold" Click="restart_Click"/>

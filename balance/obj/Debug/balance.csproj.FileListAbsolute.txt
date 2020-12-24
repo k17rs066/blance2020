@@ -2620,7 +2620,6 @@ C:\Users\balance\Documents\GitHub\blanceNewGame\balance\obj\Debug\Views\LoadTrai
 C:\Users\balance\Documents\GitHub\blanceNewGame\balance\obj\Debug\Views\LoginForm.g.cs
 C:\Users\balance\Documents\GitHub\blanceNewGame\balance\obj\Debug\Views\MainWindow.g.cs
 C:\Users\balance\Documents\GitHub\blanceNewGame\balance\obj\Debug\Views\Certification.g.cs
-C:\Users\balance\Documents\GitHub\blanceNewGame\balance\obj\Debug\Views\MazeGame.g.cs
 C:\Users\balance\Documents\GitHub\blanceNewGame\balance\obj\Debug\Views\newUser.g.cs
 C:\Users\balance\Documents\GitHub\blanceNewGame\balance\obj\Debug\Views\New_k_record.g.cs
 C:\Users\balance\Documents\GitHub\blanceNewGame\balance\obj\Debug\Views\GameOfTag.g.cs
@@ -2653,7 +2652,6 @@ C:\Users\balance\Documents\GitHub\blanceNewGame\balance\obj\Debug\Views\FallGame
 C:\Users\balance\Documents\GitHub\blanceNewGame\balance\obj\Debug\Views\FTGameResult.baml
 C:\Users\balance\Documents\GitHub\blanceNewGame\balance\obj\Debug\Views\GameResult.baml
 C:\Users\balance\Documents\GitHub\blanceNewGame\balance\obj\Debug\Views\GameSelect.baml
-C:\Users\balance\Documents\GitHub\blanceNewGame\balance\obj\Debug\Views\MazeGame.baml
 C:\Users\balance\Documents\GitHub\blanceNewGame\balance\obj\Debug\Views\New_k_record.baml
 C:\Users\balance\Documents\GitHub\blanceNewGame\balance\obj\Debug\Views\GameOfTag.baml
 C:\Users\balance\Documents\GitHub\blanceNewGame\balance\obj\Debug\Views\TagResult.baml

@@ -143,7 +143,7 @@ namespace balance.Views
             DBConnect.Dispose();
             
             ////ゲストのボタンの作成
-            button[ButtonNu] = new Button() { Content = "Guest", FontSize = 50,Margin = margin, Width = 320, Height = 210, HorizontalAlignment = HorizontalAlignment.Left, VerticalAlignment = VerticalAlignment.Top, ClickMode = ClickMode.Press, Background = Brushes.Violet };
+            button[ButtonNu] = new Button() { Content = "Guest", FontSize = 50,Margin = margin, Width = 320, Height = 210, HorizontalAlignment = HorizontalAlignment.Left, VerticalAlignment = VerticalAlignment.Top, ClickMode = ClickMode.Press, Background = Brushes.DeepPink };
             button[ButtonNu].Click += patientTop;
             button[ButtonNu].Tag = "guest";
 
@@ -154,7 +154,7 @@ namespace balance.Views
             ////
 
             ////担当者のボタンの作成
-            Button Charge = new Button() { Content = "担当者", FontSize = 50,Margin = tantou, Width = 320, Height = 150, HorizontalAlignment = HorizontalAlignment.Left, VerticalAlignment = VerticalAlignment.Top , ClickMode = ClickMode.Press, Background = Brushes.Aquamarine };
+            Button Charge = new Button() { Content = "担当者", FontSize = 50,Margin = tantou, Width = 320, Height = 150, HorizontalAlignment = HorizontalAlignment.Left, VerticalAlignment = VerticalAlignment.Top , ClickMode = ClickMode.Press, Background = Brushes.Brown };
             Charge.Click += ShowDialogClicked;
 
             ChargeButton.Children.Add(Charge);
@@ -162,7 +162,7 @@ namespace balance.Views
             ////
 
             ////ホームのボタンの作成
-            Button Home = new Button() { Content = "ホーム", FontSize = 50, Margin = home, Width = 320, Height = 150, HorizontalAlignment = HorizontalAlignment.Left, VerticalAlignment = VerticalAlignment.Top, ClickMode = ClickMode.Press, Background = Brushes.Beige};
+            Button Home = new Button() { Content = "ホーム", FontSize = 50, Margin = home, Width = 320, Height = 150, HorizontalAlignment = HorizontalAlignment.Left, VerticalAlignment = VerticalAlignment.Top, ClickMode = ClickMode.Press, Background = Brushes.Brown};
             Home.Click += HomeClicked;
 
             HomeButton.Children.Add(Home);
@@ -176,7 +176,7 @@ namespace balance.Views
                 {
                     if (UnderButtonCount == PageNum - 1 || UnderButtonCount == PageNum || UnderButtonCount == PageNum + 1)
                     {
-                        UnderButton[UnderButtonCount] = new Button() { Content = UnderButtonCount + 1, FontSize = 50, Margin = new Thickness(750 + (UnderButtonLeft * buttonlin), 900, 0, 0), Width = 100, Height = 100, HorizontalAlignment = HorizontalAlignment.Left, VerticalAlignment = VerticalAlignment.Top, ClickMode = ClickMode.Press, Background = Brushes.Azure };
+                        UnderButton[UnderButtonCount] = new Button() { Content = UnderButtonCount + 1, FontSize = 50, Margin = new Thickness(750 + (UnderButtonLeft * buttonlin), 900, 0, 0), Width = 100, Height = 100, HorizontalAlignment = HorizontalAlignment.Left, VerticalAlignment = VerticalAlignment.Top, ClickMode = ClickMode.Press, Background = Brushes.CadetBlue };
                         UnderButton[UnderButtonCount].Click += CurrentPage;
                         UnderButton[UnderButtonCount].Tag = UnderButtonCount + 1;
 
@@ -187,7 +187,7 @@ namespace balance.Views
                 }
                 else if (UnderButtonCount == PageNum-2 || UnderButtonCount == PageNum-1 || UnderButtonCount == PageNum)
                 {
-                    UnderButton[UnderButtonCount] = new Button() { Content = UnderButtonCount + 1, FontSize = 50, Margin = new Thickness(750 + (UnderButtonLeft * buttonlin), 900, 0, 0), Width = 100, Height = 100, HorizontalAlignment = HorizontalAlignment.Left, VerticalAlignment = VerticalAlignment.Top, ClickMode = ClickMode.Press, Background = Brushes.Azure };
+                    UnderButton[UnderButtonCount] = new Button() { Content = UnderButtonCount + 1, FontSize = 50, Margin = new Thickness(750 + (UnderButtonLeft * buttonlin), 900, 0, 0), Width = 100, Height = 100, HorizontalAlignment = HorizontalAlignment.Left, VerticalAlignment = VerticalAlignment.Top, ClickMode = ClickMode.Press, Background = Brushes.CadetBlue};
                     UnderButton[UnderButtonCount].Click += CurrentPage;
                     UnderButton[UnderButtonCount].Tag = UnderButtonCount + 1;
 
