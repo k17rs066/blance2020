@@ -36,6 +36,7 @@ namespace balance.Views
 
             Result.Content = Application.Current.Properties["GameResult"].ToString();
 
+            TagSizeState.Content = Application.Current.Properties["TagSize"].ToString();
             TagSpeed2.Content = Application.Current.Properties["TagSpeed"].ToString();
 
             if (result_time > 60)

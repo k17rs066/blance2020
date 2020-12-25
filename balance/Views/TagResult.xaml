@@ -16,20 +16,26 @@
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
     </Window.Resources>
-    <Grid>
-        <Label x:Name="Result"  Margin="113,65,102,269" FontSize="60" VerticalAlignment="Center" HorizontalAlignment="Center" FontWeight="Bold"/>
+    <Grid Height="422" VerticalAlignment="Bottom" Margin="0,0,0,-3">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="25*"/>
+            <RowDefinition Height="186*"/>
+        </Grid.RowDefinitions>
+        <Label x:Name="Result"  HorizontalAlignment="Center" Margin="5,10,2,337" FontSize="60" FontWeight="Bold" Grid.RowSpan="2"/>
 
-        <Label Content="経過時間："  x:Name="TimeResult" Margin="172,168,386,187"  FontSize="30"/>
+        <Label Content="経過時間："  x:Name="TimeResult" Margin="200,70,358,250"  FontSize="30" Grid.Row="1"/>
+        <Label Content="鬼の大きさ："  x:Name="TagSize" Margin="196,128,362,177"  FontSize="30" Grid.Row="1"/>
 
-        <Label Content=""  x:Name="TimeResult2" Margin="430,168,162,187"  FontSize="30" VerticalAlignment="Center" HorizontalAlignment="Center" Width="200" Height="64"/>
-        <Label Content="鬼の速さ：" x:Name="TagSpeed" Margin="190,237,367,125" FontSize="30"/>
-        <Label Content="" x:Name="TagSpeed2" Margin="430,237,162,125" FontSize="30" VerticalAlignment="Center" HorizontalAlignment="Center" Width="200" Height="57"/>
+        <Label Content=""  x:Name="TimeResult2" Margin="435,71,147,237"  FontSize="30" VerticalAlignment="Center" Height="64" Grid.Row="1"/>
+        <Label Content="鬼の速さ：" x:Name="TagSpeed" Margin="215,190,342,122" FontSize="30" Grid.Row="1"/>
+        <Label Content="" x:Name="TagSpeed2" Margin="440,188,152,127" FontSize="30" VerticalAlignment="Center" HorizontalAlignment="Center" Width="200" Height="57" Grid.Row="1"/>
 
 
 
-        <Button x:Name="Back" Click="Back_Click" Content="終了する" Margin="155,325,425,24"  FontSize="40" Height="Auto"/>
+        <Button x:Name="Back" Click="Back_Click" Content="終了する" Margin="155,275,425,24"  FontSize="40" Height="Auto" Grid.Row="1"/>
 
-        <Button x:Name="RePlayGame" Click="RePlayGame_Click" Content="もう一度" Margin="455,325,125,24"  FontSize="40" Height="Auto"/>
+        <Button x:Name="RePlayGame" Click="RePlayGame_Click" Content="もう一度" Margin="455,275,125,24"  FontSize="40" Height="Auto" Grid.Row="1"/>
+        <Label Content=""  x:Name="TagSizeState" Margin="440,125,152,183"  FontSize="30" VerticalAlignment="Center" HorizontalAlignment="Center" Width="200" Height="64" Grid.Row="1"/>
 
     </Grid>
 </Window>

@@ -22,6 +22,7 @@ namespace balance.Views
         //public GameOfTag.Refresh GetRefresh = null;
 
         public double ReciveSpeed { get; set; }
+        public int ReciveSize { get; set; }
         public int ReciveTime { get; set; }
 
         int timeset_min = 0;
@@ -36,8 +37,13 @@ namespace balance.Views
             OrgSpeed.Items.Add("普通");
             OrgSpeed.Items.Add("遅い");
 
+            OrgSize.Items.Add("大きい");
+            OrgSize.Items.Add("普通");
+            OrgSize.Items.Add("小さい");
+ 
 
             OrgSpeed.SelectedIndex = 1;
+            OrgSize.SelectedIndex = 1;
 
             for (int i = 0; i < 6; i++)
             {
@@ -91,7 +97,29 @@ namespace balance.Views
                 ReciveSpeed = 0.75;
                 Application.Current.Properties["TagSpeed"] = "普通";
             }
+
+            if (OrgSize.Text == "大きい")
+            {
+                ReciveSize = 250;
+                Application.Current.Properties["TagSize"] = "大きい";
+            }
+            else if (OrgSize.Text == "普通")
+            {
+                ReciveSize = 200;
+                Application.Current.Properties["TagSize"] = "普通";
+            }
+            else if (OrgSize.Text == "小さい")
+            {
+                ReciveSize = 150;
+                Application.Current.Properties["TagSize"] = "小さい";
+            }
+            else
+            {
+                ReciveSpeed = 200;
+                Application.Current.Properties["TagSize"] = "普通";
+            }
             ReciveTime = int.Parse(TimeSet_min.Text) * 60 + int.Parse(TimeSet_sec.Text);
+
             // MessageBox.Show("設定の変更が完了しました。");
 
             this.Close();

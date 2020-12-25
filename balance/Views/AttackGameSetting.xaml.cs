@@ -115,6 +115,7 @@ namespace balance.Views
 
         void Back_Click(object sender, EventArgs e)
         {
+
             this.Close();
 
         }

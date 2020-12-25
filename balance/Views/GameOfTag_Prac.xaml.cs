@@ -75,7 +75,9 @@ namespace balance.Views
         int cdtime;
         String speed_state = "";
 
+        String size_state = "";
 
+        int size = 200;
         public GameOfTag_Prac()
         {
             InitializeComponent();
@@ -85,6 +87,7 @@ namespace balance.Views
             }
 
             Application.Current.Properties["TagSpeed"] = "普通";
+            Application.Current.Properties["TagSize"] = "普通";
             Application.Current.Properties["GameResultTime"] = timekeeper;
             wiimote.WiimoteChanged += OnWiimoteChanged;
 
@@ -106,6 +109,8 @@ namespace balance.Views
             if (game == true)
             {
                 speed_state = Application.Current.Properties["TagSpeed"].ToString();
+                size_state = Application.Current.Properties["TagSize"].ToString();
+
                 BalanceBoardState bbs = e.WiimoteState.BalanceBoardState;
 
                 if (bbs.WeightKg < 5)
@@ -164,7 +169,7 @@ namespace balance.Views
                     string abspath = System.IO.Path.GetFullPath("Image/akaoni.png");    //絶対パスを取得
                     enemy.ImageSource = new BitmapImage(new Uri(abspath));  //イメージソースに代入
 
-                    this.Enemy = new Ellipse() { Fill = enemy, Width = 200, Height = 200, Margin = new Thickness(xe, ye, 0, 0) };
+                    this.Enemy = new Ellipse() { Fill = enemy, Width = size, Height = size, Margin = new Thickness(xe, ye, 0, 0) };
                     this.field.Children.Add(this.Enemy);
 
                     //敵
@@ -190,7 +195,7 @@ namespace balance.Views
                         ye -= spe;
                     }
 
-                    double r = 35 + 80; //半径の和
+                    double r = 35 + size -30; //半径の和
                     double x = xza - (xe);    //2つの円の中心のx座標の差
                     double y = yza - (ye);    //2つの円の中心のy座標の差
 
@@ -280,7 +285,7 @@ namespace balance.Views
 
             //time_t--;
             cnttime++;
-            time.Content = "経過時間     " + cnttime + "秒";
+            time.Content = "経過時間：     " + cnttime + "秒";
         }
 
         void dispatcharTimer11_Tick(object sender, EventArgs e)
@@ -389,9 +394,13 @@ namespace balance.Views
             set = new TagSetting();
             game = false; dispatcharTimer.Stop();
             set.ShowDialog();
-            speed_state = Application.Current.Properties["TagSpeed"].ToString();
-            tag_speed.Content = "鬼の速さ：    " + speed_state;
 
+            spe = set.ReciveSpeed;
+            size = set.ReciveSize;
+            speed_state = Application.Current.Properties["TagSpeed"].ToString();
+            size_state = Application.Current.Properties["TagSize"].ToString();
+            tag_speed.Content = "鬼の速さ：    " + speed_state;
+            tag_size.Content = "鬼の大きさ：    " + size_state;
             spe = set.ReciveSpeed;
             timekeeper = set.ReciveTime;
             time_t = timekeeper;
@@ -408,6 +417,7 @@ namespace balance.Views
 
         private void NormalMode(object sender, RoutedEventArgs e)
         {
+            wiimote.Disconnect();
             var nextPage = new GameOfTag();
             NavigationService.Navigate(nextPage);
         }
