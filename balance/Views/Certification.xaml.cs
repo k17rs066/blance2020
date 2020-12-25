@@ -154,7 +154,7 @@ namespace balance.Views
             ////
 
             ////担当者のボタンの作成
-            Button Charge = new Button() { Content = "担当者", FontSize = 50,Margin = tantou, Width = 320, Height = 150, HorizontalAlignment = HorizontalAlignment.Left, VerticalAlignment = VerticalAlignment.Top , ClickMode = ClickMode.Press, Background = Brushes.Brown };
+            Button Charge = new Button() { Content = "担当者", FontSize = 50,Margin = tantou, Width = 320, Height = 150, HorizontalAlignment = HorizontalAlignment.Left, VerticalAlignment = VerticalAlignment.Top , ClickMode = ClickMode.Press, Background = Brushes.Orange };
             Charge.Click += ShowDialogClicked;
 
             ChargeButton.Children.Add(Charge);
@@ -162,7 +162,7 @@ namespace balance.Views
             ////
 
             ////ホームのボタンの作成
-            Button Home = new Button() { Content = "ホーム", FontSize = 50, Margin = home, Width = 320, Height = 150, HorizontalAlignment = HorizontalAlignment.Left, VerticalAlignment = VerticalAlignment.Top, ClickMode = ClickMode.Press, Background = Brushes.Brown};
+            Button Home = new Button() { Content = "ホーム", FontSize = 50, Margin = home, Width = 320, Height = 150, HorizontalAlignment = HorizontalAlignment.Left, VerticalAlignment = VerticalAlignment.Top, ClickMode = ClickMode.Press, Background = Brushes.Orchid};
             Home.Click += HomeClicked;
 
             HomeButton.Children.Add(Home);

@@ -650,6 +650,15 @@
   <ItemGroup>
     <Resource Include="Image\tag_game.png" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="scoregame.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="timegame.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="targetgame.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>

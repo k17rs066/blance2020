@@ -68,6 +68,6 @@
         <TextBlock Name ="cc" FontSize="80" HorizontalAlignment="Left" Height="96" Margin="710,437,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="585" Grid.ColumnSpan="2"/>
         <Label x:Name="countdown" Content="" HorizontalAlignment="Left" Margin="687,356,0,0" Height="374" Width="512"   FontSize="250" FontWeight="Bold" VerticalAlignment="Top" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Background="{x:Null}" Foreground="#FFF72218" Grid.ColumnSpan="2" />
         <Button x:Name="SetDialog" Content="設定" FontSize ="50" HorizontalAlignment="Left" Height="101" Margin="0,30,0,0" VerticalAlignment="Top" Width="261" Click="SetDialog_Click" Grid.Column="1"/>
-
+        <Button x:Name="rule" Content="ルール" FontSize ="50" HorizontalAlignment="Left" Height="101" Margin="734,30,0,0" VerticalAlignment="Top" Width="261" Click="rule_Click" />
     </Grid>
 </Page>

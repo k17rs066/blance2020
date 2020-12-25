@@ -6,7 +6,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:balance.Views"
         mc:Ignorable="d"
-        Title="スコアアタックゲームのルール" Height="900" Width="1200">
+        Title="スコアアタックゲームのルール" Height="700" Width="1200">
     <Window.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
@@ -20,6 +20,10 @@
 
     <Grid>
         <Button Content="戻る" x:Name="back" HorizontalAlignment="Right" Width="250" Height="85" VerticalAlignment="Bottom" Margin="0,0,467,49" FontSize="50" Click="Back_Click"/>
-        <!-- <Button Content="戻る" Click="Return_Click" Height="58" VerticalAlignment="Bottom" Grid.Column="1" Margin="245,0,372,10" FontSize="45"/>  -->
+        <Label Content="設定した計測時間内に重心移動を行った&#xa;回数を競うゲームです。&#xa;左右交互に体を動かして、黄緑色のゲージ&#xa;がクリアラインを超えると重心移動成功です" Margin="660,110,0,363" FontSize="30" FontWeight="ExtraBlack" FontStretch="UltraExpanded"/>
+
+        <Label Content="クリアラインとは、全体重を 100%とした&#xa;ときに、負荷をかけるべき重さを 「%」 と&#xa;赤線で示したものです。" Margin="660,335,0,165" FontSize="30" FontWeight="ExtraBlack" FontStretch="UltraExpanded" Foreground="#DDFF0000" SnapsToDevicePixels="True" BorderBrush="#FFA61A1A"/>
+
+        <Image Margin="0,10,547,0" Source="/balance;component/scoregame.png" Stretch="Fill" Height="420" VerticalAlignment="Top"/>
     </Grid>
 </Window>

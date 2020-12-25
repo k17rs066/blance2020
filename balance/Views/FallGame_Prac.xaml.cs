@@ -77,6 +77,8 @@ namespace balance.Views
 
         Random cRandom = new System.Random(); // 玉ランダム
 
+
+
         double x, y, x1, y1, x2, y2, x3, y3;
 
         int target = 0; //得点
@@ -104,10 +106,7 @@ namespace balance.Views
             dispatcharTimer.Interval = new TimeSpan(0, 0, 0, 1, 1);
             //dispatcharTimer.Tick += new EventHandler(dispatcharTimer_Tick);
 
-            x = 300;
-            y = 380;
-            x1 = 100;
-            y1 = 10;
+
 
             ballsize = (int)Application.Current.Properties["ballsize"];
             ballspeed = (int)Application.Current.Properties["ballspeed"];
@@ -187,6 +186,7 @@ namespace balance.Views
                     int randtama = cRandom.Next(11);
 
 
+
                     /////////////玉(イチゴ)
 
                     ImageBrush straw = new ImageBrush();
@@ -229,9 +229,10 @@ namespace balance.Views
 
                     if (y1 > 675)
                     {
-
                         x1 = randtama * 100;
                         y1 = 0;
+
+
                     }
 
                     this.drawingEllipse1 = new Ellipse() { Fill = caterpillar, Width = ballsize, Height = ballsize, Margin = new Thickness(x1, y1, 0, 0) };
@@ -259,6 +260,8 @@ namespace balance.Views
 
                     if (y2 > 675 )
                     {
+
+
 
                         x2 = randtama * 100;
                         y2 = 0;

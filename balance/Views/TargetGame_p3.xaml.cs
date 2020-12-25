@@ -119,7 +119,7 @@ namespace balance.Views
                 }
                 else
                 {
-                    xza = bbs.CenterOfGravity.X * 18 * 2 + 621 - 35;//*(Canvas.Width/ballWidth)*倍率 + (Canvas.Width/2) - (ballWidth /2)
+                    xza = bbs.CenterOfGravity.X * 18 * 2.5 + 621 - 35;//*(Canvas.Width/ballWidth)*倍率 + (Canvas.Width/2) - (ballWidth /2)
                     yza = bbs.CenterOfGravity.Y * 9.6 * 3 + 337 - 35;//*(Canvas.Height/ballHeight)*倍率 + (Canvas.Height/2) - (ballHeight /2)
                     //                  leftsize = 700 - (350 + 14 * (bbs.CenterOfGravity.X));
                     leftsize = (1 - (xza / 790)) * 700;
@@ -603,6 +603,10 @@ namespace balance.Views
             }
         }
 
-
+        private void rule_Click(object sender, RoutedEventArgs e)
+        {
+            var w = new TargetGameRule();
+            w.ShowDialog();
+        }
     }
 }

@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:balance.Views"
         mc:Ignorable="d"
-        Title="ターゲットゲームのルール" Height="1000" Width="1200">
+        Title="ターゲットゲームのルール" Height="700" Width="1200">
 
     <Window.Resources>
         <ResourceDictionary>
@@ -17,8 +17,16 @@
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
     </Window.Resources>
+    <Grid>
+        <Button Content="戻る" x:Name="back" Height="85" VerticalAlignment="Bottom" Margin="400,0,512,39" FontSize="50" Click="Back_Click"/>
+        <Label Content="前後左右に重心移動を行い 1 から 5 の&#xA;番号が書かれた 5 つのターゲットを順番通り&#xA;に獲得するゲームです。&#xD;&#xA;重心を表すマークを重心移動で操作して、&#xA;ターゲットに当たると獲得することができます" Margin="650,74,10,374" FontSize="30" FontWeight="ExtraBlack" FontStretch="UltraExpanded"/>
+        <Image Margin="15,0,547,208" Source="/balance;component/Image/targetgame.png" Stretch="Fill" Height="351" VerticalAlignment="Bottom" RenderTransformOrigin="0.535,0.11"/>
+        <Label Content="→重心を表すマーク&#xa;(体重を移動させると操作できます)" Margin="760,331,-38,228" FontSize="30"/>
+        <Image Margin="660,331,437,228" Source="/balance;component/Image/target_image.png" Stretch="Fill"/>
+        <Image Margin="665,446,437,148" Source="/balance;component/Image/1.png" Stretch="Fill"/>
+        <Label Content="→ターゲット" Margin="785,475,-38,138" FontSize="30"/>
 
-    <Button Content="戻る" x:Name="back" Height="108" VerticalAlignment="Bottom" Margin="453,0,500,34" FontSize="50" Click="Back_Click"/>
+    </Grid>
 
 </Window>
     

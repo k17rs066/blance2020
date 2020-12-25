@@ -102,10 +102,12 @@ namespace balance.Views
             dispatcharTimer.Interval = new TimeSpan(0, 0, 0, 1, 1);
             dispatcharTimer.Tick += new EventHandler(dispatcharTimer_Tick);
 
-            x = 300;
-            y = 380;
+            x = 600;
+            y = 10;
             x1 = 100;
-            y1 = 10;
+            y1 = 100;
+            y1 = 500;
+            y2 = 300;
 
             ballsize = (int)Application.Current.Properties["ballsize"];
             ballspeed = (int)Application.Current.Properties["ballspeed"];

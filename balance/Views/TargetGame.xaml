@@ -83,7 +83,7 @@
         <Label x:Name="count" Content="残り個数     5個" HorizontalAlignment="Left" Margin="1057,249,0,0" VerticalAlignment="Top" Height="86" Width="706" FontSize="60"/>
         <Label x:Name="zyuu" Content="" HorizontalAlignment="Left" Margin="705,59,0,0" VerticalAlignment="Top" Height="80" Width="347" FontSize="36"/>
         <Label x:Name="tar1" Content="" HorizontalAlignment="Left" Margin="705,158,0,0" VerticalAlignment="Top" Height="80" Width="347" FontSize="36"/>
-
+        <Button x:Name="rule" Content="ルール" HorizontalAlignment="Left" Margin="705,20,0,0" VerticalAlignment="Top" Width="322" Height="113"  FontSize="60" Click="rule_Click"/>
 
     </Grid>
 </Page>

@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:balance.Views"
         xmlns:gif="http://wpfanimatedgif.codeplex.com"
         mc:Ignorable="d"
-        Title="タイムアタックゲームのルール" Height="900" Width="1200">
+        Title="タイムアタックゲームのルール" Height="700" Width="1200">
     <Window.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
@@ -20,8 +20,10 @@
 
     <Grid>
         <Button Content="戻る" x:Name="back" Height="85" VerticalAlignment="Bottom" Margin="400,0,512,39" FontSize="50" Click="Back_Click"/>
+        <Label Content="設定した重心移動の回数にかかった時間&#xa;を競うゲームです。&#xa;左右交互に体を動かして、黄緑色のゲージ&#xa;がクリアラインを超えると重心移動成功です" Margin="660,110,0,363" FontSize="30" FontWeight="ExtraBlack" FontStretch="UltraExpanded"/>
 
-
+        <Label Content="クリアラインとは、全体重を 100%とした&#xa;ときに、負荷をかけるべき重さを 「%」 と&#xa;赤線で示したものです。" Margin="660,335,0,165" FontSize="30" FontWeight="ExtraBlack" FontStretch="UltraExpanded" Foreground="#DDFF0000" SnapsToDevicePixels="True" BorderBrush="#FFA61A1A"/>
+        <Image Margin="0,0,547,208" Source="/balance;component/Image/timegame.png" Stretch="Fill" Height="351" VerticalAlignment="Bottom" RenderTransformOrigin="0.535,0.11"/>
         <!-- <Button Content="戻る" Click="Return_Click" Height="58" VerticalAlignment="Bottom" Grid.Column="1" Margin="245,0,372,10" FontSize="45"/>  -->
     </Grid>
 </Window>

@@ -116,7 +116,7 @@ namespace balance.Views
                 }
                 else
                 {
-                    xza = bbs.CenterOfGravity.X * 1654 / 70 * 3.0 + (1654 / 2) - 35;//*(Canvas.Width/ballWidth)*倍率 + (Canvas.Width/2) - (ballWidth /2)
+                    xza = bbs.CenterOfGravity.X * 1654 / 70 * 2.5 + (1654 / 2) - 35;//*(Canvas.Width/ballWidth)*倍率 + (Canvas.Width/2) - (ballWidth /2)
                     yza = bbs.CenterOfGravity.Y * 700 / 70 * 2.5 + 350 - 35;//*(Canvas.Height/ballHeight)*倍率 + (Canvas.Height/2) - (ballHeight /2)
 
 
@@ -190,7 +190,7 @@ namespace balance.Views
                         ye -= spe;
                     }
 
-                    double r = 35 + 85; //半径の和
+                    double r = 35 + 80; //半径の和
                     double x = xza - (xe);    //2つの円の中心のx座標の差
                     double y = yza - (ye);    //2つの円の中心のy座標の差
 
