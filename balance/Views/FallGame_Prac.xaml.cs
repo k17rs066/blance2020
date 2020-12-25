@@ -101,7 +101,12 @@ namespace balance.Views
 
             wiimote.WiimoteChanged += OnWiimoteChanged;
 
-
+            x = 600;
+            y = 10;
+            x1 = 100;
+            y1 = 100;
+            y1 = 500;
+            y2 = 300;
             dispatcharTimer = new DispatcherTimer(DispatcherPriority.Normal);
             dispatcharTimer.Interval = new TimeSpan(0, 0, 0, 1, 1);
             //dispatcharTimer.Tick += new EventHandler(dispatcharTimer_Tick);
