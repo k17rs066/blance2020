@@ -250,7 +250,7 @@ namespace balance.Views
                             SQL = "SELECT * FROM t_userrecord ORDER BY userrecord_id DESC";
                             DBConnect.ExecuteReader(SQL);
                             DBConnect.Reader.Read();
-                            SQL = "INSERT INTO t_taggame (user_record_id,time,tag_speed)VALUES('" + DBConnect.Reader[0] + "', '" + cnttime + "','" + speed_state + "ゲームオーバー"+"')";
+                            SQL = "INSERT INTO t_taggame (user_record_id,time,tag_speed,judge,tag_size)VALUES('" + DBConnect.Reader[0] + "', '" + cnttime + "','" + speed_state + "','ゲームオーバー','" + size_state+"')";
                             DBConnect.ExecuteReader(SQL);
                             DBConnect.Dispose();
 
@@ -280,7 +280,7 @@ namespace balance.Views
                             SQL = "SELECT * FROM t_userrecord ORDER BY userrecord_id DESC";
                             DBConnect.ExecuteReader(SQL);
                             DBConnect.Reader.Read();
-                            SQL = "INSERT INTO t_taggame (user_record_id,time,tag_speed)VALUES('" + DBConnect.Reader[0] + "', '" + cnttime + "','" + speed_state + "クリア" + "')";
+                            SQL = "INSERT INTO t_taggame (user_record_id,time,tag_speed,judge,tag_size)VALUES('" + DBConnect.Reader[0] + "', '" + cnttime + "','" + speed_state + "','クリア','" + size_state +"')";
                             DBConnect.ExecuteReader(SQL);
                             DBConnect.Dispose();
 

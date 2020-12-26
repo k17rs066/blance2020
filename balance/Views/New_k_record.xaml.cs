@@ -212,11 +212,12 @@ namespace balance.Views
             chartname.Content = "スコアアタック";
             */
             //表メソッド呼び出し
+            combo(gamejudge);
             hyou(gamejudge);
             //グラフメソッド呼び出し
             showColumnChart(gamejudge);
             //設定の有無
-            combo(gamejudge);
+
             //advice
             hyouadvice.Content = "回数が多いほど\r\n好記録ですよ！";
             chartadvice.Content = "値が高い所が\r\n好記録ですよ！";
@@ -238,11 +239,12 @@ namespace balance.Views
             chartname.Content = "タイムアタック";
             */
             //表メソッド呼び出し
+            combo(gamejudge);
             hyou(gamejudge);
             //グラフメソッド呼び出し
             showColumnChart(gamejudge);
             //設定の有無
-            combo(gamejudge);
+
             //advice
             hyouadvice.Content = "秒数が早いほど\r\n好記録ですよ！";
             chartadvice.Content = "値が低い所が\r\n好記録ですよ！";
@@ -266,11 +268,11 @@ namespace balance.Views
             hyouname.Content = "ターゲットゲーム";
             chartname.Content = "ターゲットゲーム";
             */
+            combo(gamejudge);
             //表メソッド呼び出し
             hyou(gamejudge);
             //グラフメソッド呼び出し
             showColumnChart(gamejudge);
-            //設定の有無
             combo(gamejudge);
             //advice
             hyouadvice.Content = "秒数が早いほど\r\n好記録ですよ！";
@@ -292,12 +294,12 @@ namespace balance.Views
             hyouname.Content = "落下ゲーム";
             chartname.Content = "落下ゲーム";
             */
+            combo(gamejudge);
             //表メソッド呼び出し
             hyou(gamejudge);
             //グラフメソッド呼び出し
             showColumnChart(gamejudge);
-            //設定の有無
-            combo(gamejudge);
+
             //advice
             hyouadvice.Content = "得点が高いほど\r\n好記録ですよ！";
             chartadvice.Content = "値が高い所が\r\n好記録ですよ！";
@@ -318,15 +320,22 @@ namespace balance.Views
         {
             gamejudge = 5;
 
+            combo(gamejudge);
+            hyou(gamejudge);
             fallbutton.Background = Brushes.Gainsboro;
             timebutton.Background = Brushes.Gainsboro;
             scorebutton.Background = Brushes.Gainsboro;
             targetbutton.Background = Brushes.Gainsboro;
             tagbutton.Background = Brushes.Coral;
 
-            hyou(gamejudge);
+            hyouadvice.Content = "";
+            chartadvice.Content = "";
+
+
 
             titlechart.Content = "鬼ごっこ";
+
+
         }
 
 
@@ -555,6 +564,7 @@ namespace balance.Views
          
         void timeok_Click(object sender, RoutedEventArgs e)
         {
+
             //表メソッド呼び出し
             hyou(gamejudge);
             //グラフメソッド呼び出し
@@ -923,7 +933,7 @@ namespace balance.Views
                     String SQL4;
 
 
-                    ///////////////////////1位スコアアタック表出力
+                    ///////////////////////1位落下ゲーム表出力
                     SQL4 = "SELECT * FROM t_fallgame NATURAL JOIN t_userrecord NATURAL JOIN t_user WHERE user_id =  " + u_id + "  and set_time = " + fallse + "  ORDER BY result_score DESC limit 1 offset 0 ";
                     DBConnect.ExecuteReader(SQL4);
                     if (DBConnect.Reader.Read())
@@ -957,7 +967,7 @@ namespace balance.Views
 
 
 
-                    ///////////////////////2位スコアアタック表出力
+                    ///////////////////////2位落下ゲーム表出力
                     DBConnect.Connect("kasiihara.db");
                     SQL4 = "SELECT * FROM t_fallgame NATURAL JOIN t_userrecord NATURAL JOIN t_user WHERE user_id = " + u_id + "  and set_time = " + fallse + "  ORDER BY result_score DESC limit 1 offset 1 ";
                     DBConnect.ExecuteReader(SQL4);
@@ -991,7 +1001,7 @@ namespace balance.Views
 
 
 
-                    ///////////////////////3位スコアアタック表出力
+                    ///////////////////////3位落下ゲーム表出力
                     DBConnect.Connect("kasiihara.db");
                     SQL4 = "SELECT * FROM t_fallgame NATURAL JOIN t_userrecord NATURAL JOIN t_user WHERE user_id =  " + u_id + "  and set_time = " + fallse + "  ORDER BY result_score DESC limit 1 offset 2 ";
 
@@ -1026,6 +1036,115 @@ namespace balance.Views
                     }
                     break;
 
+                case 5:
+                    //鬼ごっこ一位
+                    judge1.Content = "";
+                    DBConnect.Connect("kasiihara.db");
+
+                    string SQL5;
+                    SQL5 = "SELECT * FROM t_taggame NATURAL JOIN t_userrecord NATURAL JOIN t_user WHERE user_id =  " + u_id + "  and tag_speed = " + "'"+setting.Text + "'"+"  and tag_size = " + "'"+percent.Text+ "'" + " and traintype= "+ "'鬼ごっこゲーム'"+"  ORDER BY time DESC limit 1 offset 0 ";
+                    DBConnect.ExecuteReader(SQL5);
+                    if (DBConnect.Reader.Read())
+                    {
+                        if (DBConnect.Reader[8].ToString().Substring(15, 1).Equals(":"))
+                        {
+                            date1.Content = DBConnect.Reader[8].ToString().Substring(0, 15);
+                        }
+                        else
+                        {
+                            ////////日付
+                            date1.Content = DBConnect.Reader[8].ToString().Substring(0, 16);
+                        }
+                        ///////計測時間
+                        line1.Content = DBConnect.Reader[1].ToString() + "秒";
+                        judge1.Content = DBConnect.Reader[3].ToString();
+                        //Console.WriteLine(SQL);
+                        DBConnect.Dispose();
+
+                    }
+                    else
+                    if (DBConnect.Reader.Read() == false)
+                    {
+                        ////////日付
+                        date1.Content = "データなし";
+                        ///////クリア記録
+                        line1.Content = "データなし";
+
+                        DBConnect.Dispose();
+                    }
+
+                    //鬼ごっこ2位
+                    judge2.Content = "";
+                    DBConnect.Connect("kasiihara.db");
+
+                    
+                    SQL5 = "SELECT * FROM t_taggame NATURAL JOIN t_userrecord NATURAL JOIN t_user WHERE user_id =  " + u_id + "  and tag_speed = " + "'" + setting.Text + "'" + "  and tag_size = " + "'" + percent.Text + "'" + " and traintype= " + "'鬼ごっこゲーム'" + "  ORDER BY time DESC limit 1 offset 1 ";
+                    DBConnect.ExecuteReader(SQL5);
+                    if (DBConnect.Reader.Read())
+                    {
+                        if (DBConnect.Reader[8].ToString().Substring(15, 1).Equals(":"))
+                        {
+                            date2.Content = DBConnect.Reader[8].ToString().Substring(0, 15);
+                        }
+                        else
+                        {
+                            ////////日付
+                            date2.Content = DBConnect.Reader[8].ToString().Substring(0, 16);
+                        }
+                        ///////計測時間
+                        line2.Content = DBConnect.Reader[1].ToString() + "秒";
+                        judge2.Content = DBConnect.Reader[3].ToString();
+                        //Console.WriteLine(SQL);
+                        DBConnect.Dispose();
+
+                    }
+                    else
+                    if (DBConnect.Reader.Read() == false)
+                    {
+                        ////////日付
+                        date2.Content = "データなし";
+                        ///////クリア記録
+                        line2.Content = "データなし";
+
+                        DBConnect.Dispose();
+                    }
+                    //鬼ごっこ3位
+                    judge2.Content = "";
+                    DBConnect.Connect("kasiihara.db");
+
+
+                    SQL5 = "SELECT * FROM t_taggame NATURAL JOIN t_userrecord NATURAL JOIN t_user WHERE user_id =  " + u_id + "  and tag_speed = " + "'" + setting.Text + "'" + "  and tag_size = " + "'" + percent.Text + "'" + " and traintype= " + "'鬼ごっこゲーム'" + "  ORDER BY time DESC limit 1 offset 2 ";
+                    DBConnect.ExecuteReader(SQL5);
+                    if (DBConnect.Reader.Read())
+                    {
+                        if (DBConnect.Reader[8].ToString().Substring(15, 1).Equals(":"))
+                        {
+                            date3.Content = DBConnect.Reader[8].ToString().Substring(0, 15);
+                        }
+                        else
+                        {
+                            ////////日付
+                            date3.Content = DBConnect.Reader[8].ToString().Substring(0, 16);
+                        }
+                        ///////計測時間
+                        line3.Content = DBConnect.Reader[1].ToString() + "秒";
+                        judge3.Content = DBConnect.Reader[3].ToString();
+                        //Console.WriteLine(SQL);
+                        DBConnect.Dispose();
+
+                    }
+                    else
+                    if (DBConnect.Reader.Read() == false)
+                    {
+                        ////////日付
+                        date3.Content = "データなし";
+                        ///////クリア記録
+                        line3.Content = "データなし";
+
+                        DBConnect.Dispose();
+                    }
+                    break;
+
             }
 
 
@@ -1040,12 +1159,46 @@ namespace balance.Views
                     //スコア設定の表示
                     kuriarain.Content = "クリアライン";
                     percent.Visibility = Visibility.Visible;
+                    percent.Items.Clear();
+
+                    percent.Text = "50";
+
+                    for (int i = 50; i <= 100; i += 10)
+                    {
+                        if (i == line)
+                        {
+                            percent.Items.Add(new ComboBoxItem() { IsSelected = true, Content = i });
+                        }
+                        else
+                        {
+                            percent.Items.Add(i);
+                        }
+                    }
+                    setting.Items.Clear();
+                    for (int i = 10; i <= 100; i += 10)
+                    {
+                        if (i == settei)
+                        {
+                            setting.Items.Add(new ComboBoxItem() { IsSelected = true, Content = i });
+                        }
+                        else
+                        {
+                            setting.Items.Add(i);
+                        }
+                    }
                     paasento.Content = "%";
                     setting_fall.Visibility = Visibility.Collapsed;
                     setting.Visibility = Visibility.Visible;
                     okcombo.Visibility = Visibility.Visible;
                     byou_kai.Content = "秒数";
                     kazu.Content = "秒";
+                    clear_record.Content = "クリア記録";
+                    judge.Visibility = Visibility.Collapsed;
+                    judge1.Visibility = Visibility.Collapsed;
+                    judge2.Visibility = Visibility.Collapsed;
+                    judge3.Visibility = Visibility.Collapsed;
+                    arrow1.Visibility = Visibility.Visible;
+                    hyouadvice.Visibility = Visibility.Visible;
                     //setteiname.Content = "設定";
 
                     break;
@@ -1054,12 +1207,46 @@ namespace balance.Views
                     //タイム設定の表示
                     kuriarain.Content = "クリアライン";
                     percent.Visibility = Visibility.Visible;
+                    percent.Items.Clear();
+
+                    percent.Text = "50";
+
+                    for (int i = 50; i <= 100; i += 10)
+                    {
+                        if (i == line)
+                        {
+                            percent.Items.Add(new ComboBoxItem() { IsSelected = true, Content = i });
+                        }
+                        else
+                        {
+                            percent.Items.Add(i);
+                        }
+                    }
+                    setting.Items.Clear();
+                    for (int i = 10; i <= 100; i += 10)
+                    {
+                        if (i == settei)
+                        {
+                            setting.Items.Add(new ComboBoxItem() { IsSelected = true, Content = i });
+                        }
+                        else
+                        {
+                            setting.Items.Add(i);
+                        }
+                    }
                     paasento.Content = "%";
                     setting_fall.Visibility = Visibility.Collapsed;
                     setting.Visibility = Visibility.Visible;
                     okcombo.Visibility = Visibility.Visible;
                     byou_kai.Content = "回数";
                     kazu.Content = "回";
+                    clear_record.Content = "クリア記録";
+                    judge.Visibility = Visibility.Collapsed;
+                    judge1.Visibility = Visibility.Collapsed;
+                    judge2.Visibility = Visibility.Collapsed;
+                    judge3.Visibility = Visibility.Collapsed;
+                    arrow1.Visibility = Visibility.Visible;
+                    hyouadvice.Visibility = Visibility.Visible;
                     //setteiname.Content = "設定";
 
 
@@ -1075,6 +1262,13 @@ namespace balance.Views
                     setting.Visibility = Visibility.Collapsed;
                     okcombo.Visibility = Visibility.Collapsed;
                     kazu.Content = "";
+                    clear_record.Content = "クリア記録";
+                    judge.Visibility = Visibility.Collapsed;
+                    judge1.Visibility = Visibility.Collapsed;
+                    judge2.Visibility = Visibility.Collapsed;
+                    judge3.Visibility = Visibility.Collapsed;
+                    arrow1.Visibility = Visibility.Visible;
+                    hyouadvice.Visibility = Visibility.Visible;
                     //setteiname.Content = " ";
                     break;
 
@@ -1089,13 +1283,52 @@ namespace balance.Views
                     byou_kai.Content = "秒数";
                     kazu.Content = "秒";
                     //setteiname.Content = "設定";
-
+                    clear_record.Content = "クリア記録";
+                    setting_fall.Visibility = Visibility.Collapsed;
+                    okcombo.Visibility = Visibility.Visible;
+                    judge.Visibility = Visibility.Collapsed;
+                    judge1.Visibility = Visibility.Collapsed;
+                    judge2.Visibility = Visibility.Collapsed;
+                    judge3.Visibility = Visibility.Collapsed;
+                    arrow1.Visibility = Visibility.Visible;
+                    hyouadvice.Visibility = Visibility.Visible;
                     break;
-                
-                
 
+
+                case 5:
+                    //鬼ごっこゲームの設定表示
+                    kuriarain.Content = "鬼の大きさ";
+                    percent.Visibility = Visibility.Visible;
+                    percent.Items.Clear();
+                    percent.Items.Add("普通");
+                    percent.Items.Add("大きい");
+                    percent.Items.Add("小さい");
+                    percent.SelectedIndex = 0;
+                    setting.Visibility = Visibility.Visible;
+                    paasento.Content = "";
+                    byou_kai.Content = "鬼の速さ";
+                    setting.Items.Clear();
+                    setting.Items.Add("普通");
+                    setting.Items.Add("速い");
+                    setting.Items.Add("遅い");
+                    setting.SelectedIndex = 0;
+                    kazu.Content = "";
+                    setting_fall.Visibility = Visibility.Collapsed;
+                    okcombo.Visibility = Visibility.Visible;
+                    judge.Visibility = Visibility.Visible;
+                    judge1.Visibility = Visibility.Visible;
+                    judge2.Visibility = Visibility.Visible;
+                    judge3.Visibility = Visibility.Visible;
+                    arrow1.Visibility = Visibility.Collapsed;
+                    hyouadvice.Visibility = Visibility.Collapsed;
+                    clear_record.Content = "計測時間";
+                    break;
             }
         }
 
+        private void Percent_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
     }
 }

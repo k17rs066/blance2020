@@ -30,7 +30,8 @@
         <ComboBox x:Name="TimeSet_sec" Margin="540,350,124,168" FontSize="30"/>
         <ComboBox x:Name="TimeSet_min" Margin="355,355,309,163" FontSize="30" RenderTransformOrigin="0.455,1.036"/>
 
-        <Button Content="決定" FontSize="30" Margin="291,495,309,18" Click="Button_Click" Height="Auto"/>
+        <Button Content="決定" FontSize="30" Margin="165,490,435,23" Click="Button_Click" Height="Auto"/>
         <Label Margin="135,180,465,338" Content="・鬼の大きさ：" FontSize="30" RenderTransformOrigin="0.5,0.5"/>
+        <Button Content="戻る" FontSize="30" Margin="425,490,175,23" Click="Back_Click" Height="Auto"/>
     </Grid>
 </Window>

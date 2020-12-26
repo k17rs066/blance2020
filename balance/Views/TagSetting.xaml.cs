@@ -124,5 +124,11 @@ namespace balance.Views
 
             this.Close();
         }
+
+        private void Back_Click(object sender, RoutedEventArgs e)
+        {
+            ReciveTime = 30;
+            this.Close();
+        }
     }
 }
