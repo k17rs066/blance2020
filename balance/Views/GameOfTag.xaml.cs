@@ -81,6 +81,7 @@ namespace balance.Views
         int size = 200;
         Random random = new Random();
 
+        int judge;
         public GameOfTag()
         {
             
@@ -237,10 +238,11 @@ namespace balance.Views
                         ye = 5;
                     }
 
-                    if (GameOver_flg == true )
+                    if (GameOver_flg==true)
                     {
                         game = false;
                         dispatcharTimer.Stop();
+                        judge = 0;
 
                         if (!Application.Current.Properties["u_id"].ToString().Equals("guest"))
                         {
@@ -250,7 +252,7 @@ namespace balance.Views
                             SQL = "SELECT * FROM t_userrecord ORDER BY userrecord_id DESC";
                             DBConnect.ExecuteReader(SQL);
                             DBConnect.Reader.Read();
-                            SQL = "INSERT INTO t_taggame (user_record_id,time,tag_speed,judge,tag_size)VALUES('" + DBConnect.Reader[0] + "', '" + cnttime + "','" + speed_state + "','ゲームオーバー','" + size_state+"')";
+                            SQL = "INSERT INTO t_taggame (userrecord_id,time,tag_speed,judge,tag_size)VALUES('" + DBConnect.Reader[0] + "', '" + cnttime + "','" + spe + "','"+judge+"','" + size+"')";
                             DBConnect.ExecuteReader(SQL);
                             DBConnect.Dispose();
 
@@ -266,11 +268,14 @@ namespace balance.Views
                         startbutton.Content = "スタート";
                     }
 
-                    if (time_t == 0)    //制限時間まで逃げきれたら
+                    if (!GameOver_flg && time_t == 0)    //制限時間まで逃げきれたら
                     {
                         game = false;
                         PlaySound("clear.wav");
                         dispatcharTimer.Stop();
+
+                        judge = 1;
+
 
                         if (!Application.Current.Properties["u_id"].ToString().Equals("guest"))
                         {
@@ -280,7 +285,7 @@ namespace balance.Views
                             SQL = "SELECT * FROM t_userrecord ORDER BY userrecord_id DESC";
                             DBConnect.ExecuteReader(SQL);
                             DBConnect.Reader.Read();
-                            SQL = "INSERT INTO t_taggame (user_record_id,time,tag_speed,judge,tag_size)VALUES('" + DBConnect.Reader[0] + "', '" + cnttime + "','" + speed_state + "','クリア','" + size_state +"')";
+                            SQL = "INSERT INTO t_taggame (userrecord_id,time,tag_speed,judge,tag_size)VALUES('" + DBConnect.Reader[0] + "', '" + cnttime + "','" + spe + "',"+judge+",'" + size +"')";
                             DBConnect.ExecuteReader(SQL);
                             DBConnect.Dispose();
 
@@ -332,7 +337,6 @@ namespace balance.Views
 
             if (cdtime == 3) //スタートが押されてると
             {
-                cnttime = 0;
                 time_t = timekeeper;
                 countdown.Content = "";
                 dispatcharTimer11.Stop();

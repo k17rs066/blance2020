@@ -36,6 +36,7 @@
         <Label x:Name="get" Content="" HorizontalAlignment="Left" Margin="600,441,0,287" VerticalAlignment="Center" Height="352" Width="686" FontSize="300" FontWeight="Bold" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" />
         <Label x:Name="countdown" Content="" HorizontalAlignment="Left" Margin="600,441,0,194" VerticalAlignment="Center" Height="445" Width="713" FontSize="350" FontWeight="Bold" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Foreground="#FFF70505" />
         <Button x:Name="rule" Content="ルール" HorizontalAlignment="Left" Margin="795,20,0,0" VerticalAlignment="Top" Width="322" Height="113"  FontSize="60" Click="rule_Click"/>
-
+        <Label x:Name="sizestate" Content="ボールの大きさ：" HorizontalAlignment="Left" Margin="90,155,0,0" VerticalAlignment="Top" Height="86" Width="706" FontSize="60"/>
+        <Label x:Name="speedstate" Content="ボールの速さ：" HorizontalAlignment="Left" Margin="94,250,0,0" VerticalAlignment="Top" Height="86" Width="706" FontSize="60"/>
     </Grid>
 </Page>

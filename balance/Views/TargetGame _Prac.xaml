@@ -7,13 +7,13 @@
       mc:Ignorable="d" 
       
       Title="ターゲットゲーム(練習モード)" Height="1080" Width="1920">
-    
+
     <Page.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
                 <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.Light.xaml" />
                 <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.Defaults.xaml" />
-                <ResourceDictionary Source="pack://application:,,,/MaterialDesignColors;component/Themes/Recommended/Primary/MaterialDesignColor.Blue.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MaterialDesignColors;component/Themes/Recommended/Primary/MaterialDesignColor.Purple.xaml" />
                 <ResourceDictionary Source="pack://application:,,,/MaterialDesignColors;component/Themes/Recommended/Accent/MaterialDesignColor.Lime.xaml" />
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
@@ -25,18 +25,19 @@
                 <SolidColorBrush Color="{DynamicResource {x:Static SystemColors.GradientInactiveCaptionColorKey}}"/>
             </Canvas.Background>
 
-   
+
         </Canvas>
 
-        <Label Content="ターゲットゲーム（練習モード）" HorizontalAlignment="Left" Margin="75,10,0,0" VerticalAlignment="Top" Height="125" Width="830" FontSize="72"/>
-        <Button x:Name="startbutton" Content="スタート" HorizontalAlignment="Left" Margin="1057,20,0,0" VerticalAlignment="Top" Width="322" Height="113" Click="start" FontSize="60"/>
-        <Button Content="戻る" HorizontalAlignment="Left" Margin="1510,12,0,0" VerticalAlignment="Top" Width="319" Height="121" Click="back" FontSize="60"/>
+        <Label Content="ターゲットゲーム（練習モード）" HorizontalAlignment="Left" Margin="30,40,0,0" VerticalAlignment="Top" Height="125" Width="830" FontSize="72"/>
+        <Button x:Name="startbutton" Content="スタート" Margin="1210,35,388,0" VerticalAlignment="Top" Height="113" Click="start" FontSize="60"/>
+        <Button Content="戻る" HorizontalAlignment="Left" Margin="1550,29,0,0" VerticalAlignment="Top" Width="319" Height="121" Click="back" FontSize="60"/>
         <!--Button x:Name="fix" Content="固定配置" HorizontalAlignment="Left" Margin="75,175,0,0" VerticalAlignment="Top" Width="213" Height="107" FontSize="48" AutomationProperties.Name="1"/>
         <Button x:Name="free" Content="自由配置" HorizontalAlignment="Left" Margin="459,175,0,0" VerticalAlignment="Top" Width="213" Height="107" FontSize="48"/-->
-        <Label x:Name="time" Content="計測時間    0秒" HorizontalAlignment="Left" Margin="1057,158,0,0" VerticalAlignment="Top" Height="86" Width="706" FontSize="60"/>
-        <Label x:Name="count" Content="残り個数     5個" HorizontalAlignment="Left" Margin="1057,249,0,0" VerticalAlignment="Top" Height="86" Width="706" FontSize="60"/>
-        <Label x:Name="zyuu" Content="" HorizontalAlignment="Left" Margin="905,73,0,0" VerticalAlignment="Top" Height="80" Width="347" FontSize="36"/>
+        <Label x:Name="time" Content="経過時間    0秒" HorizontalAlignment="Left" Margin="1057,158,0,0" VerticalAlignment="Top" Height="86" Width="706" FontSize="60"/>
+        <Label x:Name="count" Content="獲得個数     0個" HorizontalAlignment="Left" Margin="1057,249,0,0" VerticalAlignment="Top" Height="86" Width="706" FontSize="60"/>
         <Label x:Name="tar1" Content="" HorizontalAlignment="Left" Margin="905,169,0,0" VerticalAlignment="Top" Height="80" Width="347" FontSize="36"/>
+        <Button x:Name="rule" Content="ルール" Margin="863,37,735,0" VerticalAlignment="Top" Height="113"  FontSize="60" Click="rule_Click"/>
+
         <!--Click="NomalMode_Click"-->
         <!-- Click="Rule_Click"-->
 

@@ -35,7 +35,7 @@
 
         <Button x:Name="ScoreButton" Content="スコアアタック" HorizontalAlignment="Left" Margin="55,101,0,0" VerticalAlignment="Top" Width="190" Height="59" FontSize="30" Click="ScoreButton_Click" Grid.ColumnSpan="2"/>
         <Button x:Name="TimeButton" Content="タイムアタック" HorizontalAlignment="Left" Margin="102,100,0,0" VerticalAlignment="Top" Width="188" Height="59" FontSize="30" Click="TimeButton_Click" Grid.Column="1"/>
-        <Label Content="ゲームモード・クリアライン・計測時間/回数を選択してください。" HorizontalAlignment="Left" Margin="99,27,0,0" VerticalAlignment="Top" Height="43" Width="581" FontSize="24" Grid.ColumnSpan="2"/>
+        <Label Content="ゲームモード・クリアライン・制限時間/回数を選択してください。" HorizontalAlignment="Left" Margin="99,27,0,0" VerticalAlignment="Top" Height="43" Width="581" FontSize="24" Grid.ColumnSpan="2"/>
         <Button x:Name="PracticeButton" Content="練習モード" HorizontalAlignment="Left" Margin="329,100,0,0" VerticalAlignment="Top" Width="176" Height="59" FontSize="30" Click="PracticeButton_Click" Grid.Column="1" RenderTransformOrigin="0.699,0.492"/>
 
     </Grid>

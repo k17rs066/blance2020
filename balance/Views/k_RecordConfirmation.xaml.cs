@@ -505,6 +505,10 @@ namespace balance.Views
 
                 DBConnect.Dispose();
             }
+            else if(gamejudge == 5)
+            {
+
+            }
         }
 
 
@@ -653,6 +657,12 @@ namespace balance.Views
             NavigationService.Navigate(nextPage);
         }
 
-        
+        private void Tagbutton_Click(object sender, RoutedEventArgs e)
+        {
+            Application.Current.Properties["judge"] = 5;
+
+            var nextPage = new k_RecordConfirmation();
+            NavigationService.Navigate(nextPage);
+        }
     }
 }

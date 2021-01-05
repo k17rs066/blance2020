@@ -6,6 +6,9 @@ using System.Windows.Media;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.Windows.Threading;
+using MaterialDesignColors;
+using MaterialDesignThemes;
+using MahApps;
 using WiimoteLib;
 
 
@@ -18,7 +21,7 @@ namespace balance.Views
     public partial class AttackGame : Page
     {
         public delegate void Refresh(int a);
-
+        
         public delegate void Refresh1(object sender, EventArgs e);
 
         public delegate void Refresh2(object sender, EventArgs e);
@@ -92,7 +95,7 @@ namespace balance.Views
         int user_id = -1; //ログインのu_id
 
 
-
+        
         DispatcherTimer dispatcharTimer11; //カウントダウンの秒数を保持する
         int cdtime;
 
@@ -126,7 +129,7 @@ namespace balance.Views
 
                 Application.Current.Properties["gamemodename"] = "スコアアタック";
 
-                Application.Current.Properties["hantei"] = "計測時間";
+                Application.Current.Properties["hantei"] = "制限時間";
                 Application.Current.Properties["tani"] = "秒";
 
 
@@ -280,7 +283,7 @@ namespace balance.Views
                                 tCount--;
                                 if (gametype == 0)　//回数表示、スコアアタック
                                 {
-                                    tim.Text = count + "回";
+                                    tim.Text = "回数:" + count + "回";
                                 }
                                 else if (gametype ==1)// タイムアタック
                                 {
@@ -288,7 +291,7 @@ namespace balance.Views
                                 }
                                 else //練習モード
                                 {
-                                    cc.Text = count + "回";
+                                    cc.Text = "回数:" + count + "回";
 
                                 }
                             }
@@ -323,11 +326,11 @@ namespace balance.Views
                                 }
                                 else if (gametype == 0) //スコアアタック
                                 {
-                                    tim.Text = count + "回";
+                                    tim.Text ="回数:"+ count + "回";
                                 }
                                 else //練習モード
                                 {
-                                    cc.Text = count + "回";
+                                    cc.Text ="回数:"+ count + "回";
                                 }
                             }
                         }
@@ -485,21 +488,21 @@ namespace balance.Views
                 if (gametype == 1) //タイムアタック
                 {
                     StopWatch.Start();
-                    cc.Text = "残り" + tCount + "回";
-                    tim.Text = "0" + "秒";
+                    cc.Text = "残り回数:" + tCount + "回";
+                    tim.Text = "経過時間:"+"0" + "秒";
 
                 }
                 else if(gametype == 0) //スコアアタック
                 {
 
-                    cc.Text = "残り" + time_s / 60 + "分" +  time_s % 60 + "秒";
-                    tim.Text = count + "回";
+                    cc.Text = "制限時間:" + time_s / 60 + "分" +  time_s % 60 + "秒";
+                    tim.Text = "回数:" + count + "回";
                 }
                 else
                 {
                     StopWatch.Start();
-                    cc.Text = count + "回";
-                    tim.Text = time_t / 60 + "分" + time_t % 60 + "秒";
+                    cc.Text ="回数:"+ count + "回";
+                    tim.Text = "経過時間:"+time_t / 60 + "分" + time_t % 60 + "秒";
 
                 }
              }
@@ -549,7 +552,7 @@ namespace balance.Views
 
             Application.Current.Properties["gamemodename"] = "スコアアタック";
 
-            Application.Current.Properties["hantei"] = "計測時間";
+            Application.Current.Properties["hantei"] = "制限時間";
             Application.Current.Properties["tani"] = "秒";
 
 
@@ -569,14 +572,17 @@ namespace balance.Views
             se = (int)Application.Current.Properties["sette"]; //設定画面での秒数、回数
             if (t == 0) //スコアアタックモード
             {
+                
                 gametype = 0;
                 Combo_GameMode.SelectedIndex=gametype;
                 time_s = se;
                 htimes_s = time_s;
                 ScoreFlag = true;
                 TimeFlag = false;
-                st = "クリアライン:" + lin + "%　" + "計測時間:" + se/60 +"分" + se%60 + "秒" ;
+                st = "クリアライン:" + lin + "%　" + "制限時間:" + se/60 +"分" + se%60 + "秒" ;
                 settin.Text = st;
+                cc.Foreground = Brushes.Red;
+
             }
             else if(t == 1) //タイムアタックモード
             {
@@ -587,6 +593,8 @@ namespace balance.Views
 
                 st = "クリアライン:" + lin + "%　" + "計測回数:"+ se + "回";
                 settin.Text = st;
+                cc.Foreground = Brushes.Red;
+
             }
             else //練習モード
             {
@@ -597,7 +605,7 @@ namespace balance.Views
                 TimeFlag = false;
                 st = "クリアライン:" + lin + "%　";
                 settin.Text = st;
-
+                cc.Foreground=Brushes.Black;
             }
 
 
@@ -655,7 +663,7 @@ namespace balance.Views
             else
             {
                 time_t++;
-                tim.Text = time_t/60+"分"+time_t%60 + "秒";
+                tim.Text = "経過時間:"+time_t/60+"分"+time_t%60 + "秒";
             }
         }
 
@@ -710,7 +718,7 @@ namespace balance.Views
             gametype = Combo_GameMode.SelectedIndex;
             if (gametype == 1) //タイムアタック
             {
-
+                
                 Refresh rf = new Refresh(this.Combo_Select);
 
                 Application.Current.Properties["setuser_id"] = user_id;
@@ -762,7 +770,7 @@ namespace balance.Views
                     //Application.Current.Properties["line"] = int.Parse(DBConnect.Reader[7].ToString());
                     //Application.Current.Properties["sette"] = int.Parse(DBConnect.Reader[5].ToString());
 
-                    Application.Current.Properties["settei"] = "計測時間" + (int)Application.Current.Properties["sette"] / 60 +"分"+ (int)Application.Current.Properties["sette"]%60 + "秒";
+                    Application.Current.Properties["settei"] = "制限時間" + (int)Application.Current.Properties["sette"] / 60 +"分"+ (int)Application.Current.Properties["sette"]%60 + "秒";
                     rf(0);
                     rule.Visibility = Visibility.Visible;
                 }
@@ -771,7 +779,7 @@ namespace balance.Views
                     Application.Current.Properties["line"] = 60;
                     Application.Current.Properties["sette"] = 10;
 
-                    Application.Current.Properties["settei"] = "計測時間" + (int)Application.Current.Properties["sette"] / 60 + "分" + (int)Application.Current.Properties["sette"]%60 + "秒";
+                    Application.Current.Properties["settei"] = "制限時間" + (int)Application.Current.Properties["sette"] / 60 + "分" + (int)Application.Current.Properties["sette"]%60 + "秒";
                     rf(0);
                     rule.Visibility = Visibility.Visible;
                 }
@@ -784,7 +792,7 @@ namespace balance.Views
 
                 Application.Current.Properties["gamemodename"] = Combo_GameMode.SelectedItem.ToString();
                 rf(2);
-                rule.Visibility = Visibility.Hidden;
+                rule.Visibility = Visibility.Visible;
 
             }
         }

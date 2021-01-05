@@ -18,14 +18,16 @@
     </Window.Resources>
 
     <Grid>
-        <Label Content="鬼ごっこは,制限時間の間&#xa;鬼に当たらないように&#xa;水色の枠内を逃げ回る&#xa;ゲームです。" Margin="525,130,32,369" FontSize="40"/>
-        <Label Content="→重心を表すマーク(体重を移動させると操作できます)" Margin="215,425,10,259" FontSize="35"/>
-        <Label Content="→鬼（　を一定のスピードで追いかけます）" Margin="275,560,0,124" FontSize="40"/>
-        <Button Content="戻る" x:Name="back" HorizontalAlignment="Right" Width="125" Height="85" VerticalAlignment="Bottom" Margin="0,0,392,34" FontSize="50" Click="Back_Click"/>
-        <Image Source="/balance;component/Image/tag.png" Margin="35,5,472,369" ForceCursor="True"/>
+        <Label Content="：重心を表すマーク(重心を移動させると操作できます)" Margin="215,425,10,259" FontSize="35" FontWeight="Bold"/>
+        <Label Content="：鬼（　を一定のスピードで追いかけます）" Margin="275,560,0,124" FontSize="40" FontWeight="Bold"/>
+        <Button Content="戻る" x:Name="back" HorizontalAlignment="Right" Width="125" Height="85" VerticalAlignment="Bottom" Margin="0,0,457,24" FontSize="50" Click="Back_Click"/>
         <Image Margin="110,535,762,124" Source="/balance;component/Image/akaoni.png" Stretch="Fill"/>
-        <Image Margin="85,400,812,259" Source="/balance;component/Image/target_image.png" Stretch="Fill"/>
+        <Image Margin="0,70,432,409" Source="/balance;component/Image/tag_game_demo.png" Stretch="Fill" HorizontalAlignment="Right" Width="540"/>
+
+        <Image Margin="110,400,787,259" Source="/balance;component/Image/target_image.png" Stretch="Fill"/>
         <Image Margin="395,560,542,144" Source="/balance;component/Image/target_image.png" Stretch="Fill" RenderTransformOrigin="1,0.538"/>
+        <Label Content="鬼ごっこは,制限時間の間&#xA;鬼に当たらないように&#xA;水色の枠内を逃げ回る&#xA;ゲームです。" Margin="540,140,17,359" FontSize="40" FontWeight="Bold"/>
+        <Label Content="～ルール～" Margin="355,10,313,659" HorizontalAlignment="Center"  FontSize="72" FontWeight="Bold" Width="324" Foreground="Red"/>
         <!-- <Button Content="戻る" Click="Return_Click" Height="58" VerticalAlignment="Bottom" Grid.Column="1" Margin="245,0,372,10" FontSize="45"/>  -->
     </Grid>
 

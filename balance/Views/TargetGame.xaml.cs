@@ -455,7 +455,7 @@ namespace balance.Views
         {
 
             time_t++;
-            time.Content = "計測時間    " + time_t + "秒";
+            time.Content = "経過時間    " + time_t + "秒";
 
         }
 
@@ -496,7 +496,7 @@ namespace balance.Views
                 drawingLabel.Content = "3";
                 cdtime = 0;
                 dispatcharTimer11.Start();
-                time.Content = "計測時間    " + time_t + "秒";
+                time.Content = "経過時間    " + time_t + "秒";
                 count.Content = "残り個数     " + ctarget + "個";
 
                 wiimote.Connect();

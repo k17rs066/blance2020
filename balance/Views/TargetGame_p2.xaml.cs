@@ -114,14 +114,14 @@ namespace balance.Views
                 BalanceBoardState bbs = e.WiimoteState.BalanceBoardState;
                 if (bbs.WeightKg < 5)
                 {
-                    xza = 621 - 35;  //(Canvas.Width/2) - (ballWidth /2)
-                    yza = 337 - 35;  //(Canvas.Height/2) - (ballHeight /2)
+                    xza = 1302/2 - 35;  //(Canvas.Width/2) - (ballWidth /2)
+                    yza = 740/2 - 35;  //(Canvas.Height/2) - (ballHeight /2)
                     leftsize = 0;
                 }
                 else
                 {
-                    xza = bbs.CenterOfGravity.X * 18 * 2 + 621 - 35;//*(Canvas.Width/ballWidth)*倍率 + (Canvas.Width/2) - (ballWidth /2)
-                    yza = bbs.CenterOfGravity.Y * 9.6 * 3 + 337 - 35;//*(Canvas.Height/ballHeight)*倍率 + (Canvas.Height/2) - (ballHeight /2)
+                    xza = bbs.CenterOfGravity.X * (651/35) * 2 + 1302/2 - 35;//*(Canvas.Width/ballWidth)*倍率 + (Canvas.Width/2) - (ballWidth /2)
+                    yza = bbs.CenterOfGravity.Y * (370/35) * 3 + 740/2 - 35;//*(Canvas.Height/ballHeight)*倍率 + (Canvas.Height/2) - (ballHeight /2)
                     //                  leftsize = 700 - (350 + 14 * (bbs.CenterOfGravity.X));
                     leftsize = (1 - (xza / 790)) * 700;
                     if (xza > 1173) //枠内に収まるように
@@ -471,7 +471,7 @@ namespace balance.Views
         {
 
             time_t++;
-            time.Content = "計測時間    " + time_t + "秒";
+            time.Content = "経過時間    " + time_t + "秒";
 
         }
 
@@ -513,7 +513,7 @@ namespace balance.Views
                 drawingLabel.Content = "3";
                 cdtime = 0;
                 dispatcharTimer11.Start();
-                time.Content = "計測時間    " + time_t + "秒";
+                time.Content = "経過時間    " + time_t + "秒";
                 count.Content = "残り個数     " + ctarget + "個";
 
                 wiimote.Connect();

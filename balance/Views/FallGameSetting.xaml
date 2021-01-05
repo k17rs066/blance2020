@@ -19,7 +19,7 @@
 
     <Grid>
         <TextBlock x:Name="datetimeb"  Margin="930,46,53,837" FontSize="60"/>
-        <Label x:Name="select" Content="難易度を設定してください。" FontSize="60" Margin="463,230,455,0" VerticalAlignment="Top" Height="104"/>
+        <Label x:Name="select" Content="落下ゲームの難易度を設定してください。" FontSize="60" Margin="365,241,288,0" VerticalAlignment="Top" Height="104" FontWeight="Bold"/>
         <Button Content="戻る" HorizontalAlignment="Left" Margin="62,46,0,0" VerticalAlignment="Top" Width="332" Height="117" Click="back" FontSize="60"/>
 
         <ComboBox 
@@ -55,7 +55,7 @@
         <Label Content="モード選択" x:Name="FallGameMode_Label" Margin="445,375,905,535" FontSize="60" RenderTransformOrigin="0.5,0.167"/>
         <Label Content="ボールの速さ" x:Name="BallSpeed_Label" Margin="430,485,895,431" FontSize="60" RenderTransformOrigin="0.444,0.643"/>
         <Label Content="ボールの大きさ" x:Name ="BallSize_Label" Margin="400,590,880,335" FontSize="60"/>
-        <Label Content="時間設定" x:Name="TimeSet_Label" Margin="445,723,895,185" FontSize="60"/>
+        <Label Content="制限時間：" x:Name="TimeSet_Label" Margin="430,723,895,185" FontSize="60"/>
 
         <ComboBox x:Name="MinSet" Margin="856,730,645,188" SelectedIndex="0" SelectionChanged="MinSet_SelectionChanged" FontSize="60" Height="82">
             <ComboBoxItem>0</ComboBoxItem>

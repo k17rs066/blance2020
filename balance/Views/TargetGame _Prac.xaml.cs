@@ -67,7 +67,7 @@ namespace balance.Views
         Boolean game = false;
 
         int ctarget = 5; //ターゲット個数カウントダウン
-
+        int cnt = 0;
         DispatcherTimer dispatcharTimer11; //カウントダウンの秒数を保持する
         int cdtime;
 
@@ -210,7 +210,7 @@ namespace balance.Views
 
                 Dispatcher.Invoke(new Action(() =>
                 {
-                    count.Content = "残り個数     " + ctarget + "個";
+                    count.Content = "獲得個数     " + cnt + "個";
                     startbutton.Content = "ストップ";
                     gameflg = true;
                     //////////////重心の表示
@@ -401,7 +401,7 @@ namespace balance.Views
                             target1.IsEnabled = false;
                             target1.Background = Brushes.LimeGreen;
                             ctarget--;
-
+                            cnt++;
                         }
 
                         break;
@@ -413,6 +413,7 @@ namespace balance.Views
                             target2.IsEnabled = false;
                             target2.Background = Brushes.LimeGreen;
                             ctarget--;
+                            cnt++;
                         }
                         break;
 
@@ -423,6 +424,7 @@ namespace balance.Views
                             target3.IsEnabled = false;
                             target3.Background = Brushes.LimeGreen;
                             ctarget--;
+                            cnt++;
                         }
                         break;
 
@@ -433,6 +435,7 @@ namespace balance.Views
                             target4.IsEnabled = false;
                             target4.Background = Brushes.LimeGreen;
                             ctarget--;
+                            cnt++;
                         }
                         break;
 
@@ -443,6 +446,7 @@ namespace balance.Views
                             target5.IsEnabled = false;
                             target5.Background = Brushes.LimeGreen;
                             ctarget--;
+                            cnt++;
                         }
                         break;
                 }
@@ -450,7 +454,7 @@ namespace balance.Views
 
             }
 
-            count.Content = "残り個数     " + ctarget + "個";
+            count.Content = "獲得個数     " + cnt + "個";
         }
 
 
@@ -591,7 +595,7 @@ namespace balance.Views
         {
 
             time_t++;
-            time.Content = "計測時間    " + time_t + "秒";
+            time.Content = "経過時間    " + time_t + "秒";
 
         }
 
@@ -633,8 +637,8 @@ namespace balance.Views
                 drawingLabel.Content = "3";
                 cdtime = 0;
                 dispatcharTimer11.Start();
-                time.Content = "計測時間    " + time_t + "秒";
-                count.Content = "残り個数     " + ctarget + "個";
+                time.Content = "経過時間    " + time_t + "秒";
+                count.Content = "獲得個数     " + cnt + "個";
 
                 wiimote.Connect();
 
@@ -725,6 +729,10 @@ namespace balance.Views
             }
         }
 
-
+        private void rule_Click(object sender, RoutedEventArgs e)
+        {
+            var w = new TargetGameRule();
+            w.ShowDialog();
+        }
     }
 }

@@ -40,7 +40,9 @@ namespace balance.Views
             OrgSize.Items.Add("大きい");
             OrgSize.Items.Add("普通");
             OrgSize.Items.Add("小さい");
- 
+
+            GameMode.Items.Add("通常モード");
+            GameMode.Items.Add("練習モード");
 
             OrgSpeed.SelectedIndex = 1;
             OrgSize.SelectedIndex = 1;

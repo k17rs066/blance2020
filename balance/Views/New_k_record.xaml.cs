@@ -44,9 +44,10 @@ namespace balance.Views
         int settei = 10; //ゲームモードの秒数。回数
         int fallse = 30;　//落下ゲームの秒数
 
-
+        double speed = 0;
+        int size = 0;
         int u_id;
-
+        int time = 0;
         int gamejudge;
 
         public New_k_record()
@@ -333,7 +334,7 @@ namespace balance.Views
 
 
 
-            titlechart.Content = "鬼ごっこ";
+            titlechart.Content = "";
 
 
         }
@@ -812,7 +813,7 @@ namespace balance.Views
                 case 3:
 
 
-                    line = int.Parse(percent.Text);
+                    //line = int.Parse(percent.Text);
 
                     DBConnect.Connect("kasiihara.db");
 
@@ -1041,23 +1042,70 @@ namespace balance.Views
                     judge1.Content = "";
                     DBConnect.Connect("kasiihara.db");
 
+                    if (percent.Text.Equals("普通"))
+                    {
+                        size = 200;
+
+                    }else if (percent.Text.Equals("大きい"))
+                    {
+                        size = 250;
+
+                    }else if (percent.Text.Equals("小さい"))
+                    {
+                        size = 150;
+
+                    }
+                    else
+                    {
+
+                    }
+
+                    if (setting.Text.Equals("普通"))
+                    {
+                        speed = 0.75;
+
+                    }
+                    else if (setting.Text.Equals("速い"))
+                    {
+                        speed = 1;
+                    }
+                    else if (setting.Text.Equals("遅い"))
+                    {
+                        speed = 0.5;
+                    }
+                    else
+                    {
+
+                    }
+                    
                     string SQL5;
-                    SQL5 = "SELECT * FROM t_taggame NATURAL JOIN t_userrecord NATURAL JOIN t_user WHERE user_id =  " + u_id + "  and tag_speed = " + "'"+setting.Text + "'"+"  and tag_size = " + "'"+percent.Text+ "'" + " and traintype= "+ "'鬼ごっこゲーム'"+"  ORDER BY time DESC limit 1 offset 0 ";
+                    SQL5 = "SELECT * FROM t_taggame NATURAL JOIN t_userrecord NATURAL JOIN t_user WHERE user_id =  " + u_id + "  and tag_speed = " + speed  + " and tag_size = "+size+ " and traintype= "+ "'鬼ごっこゲーム'"+" and judge = "+"1" +" ORDER BY time DESC limit 1 offset 0 ";
                     DBConnect.ExecuteReader(SQL5);
                     if (DBConnect.Reader.Read())
                     {
-                        if (DBConnect.Reader[8].ToString().Substring(15, 1).Equals(":"))
+                        if (DBConnect.Reader[7].ToString().Substring(15, 1).Equals(":"))
                         {
-                            date1.Content = DBConnect.Reader[8].ToString().Substring(0, 15);
+                            date1.Content = DBConnect.Reader[7].ToString().Substring(0, 15);
                         }
                         else
                         {
                             ////////日付
-                            date1.Content = DBConnect.Reader[8].ToString().Substring(0, 16);
+                            date1.Content = DBConnect.Reader[7].ToString().Substring(0, 16);
                         }
                         ///////計測時間
-                        line1.Content = DBConnect.Reader[1].ToString() + "秒";
-                        judge1.Content = DBConnect.Reader[3].ToString();
+
+                        time = int.Parse(DBConnect.Reader[1].ToString());
+
+                        if (time > 60)
+                        {
+                            line1.Content = (time / 60) + "分" + (time % 60) + "秒";
+                        }
+                        else
+                        {
+                            line1.Content = DBConnect.Reader[1].ToString() + "秒";
+
+                        }
+
                         //Console.WriteLine(SQL);
                         DBConnect.Dispose();
 
@@ -1076,24 +1124,35 @@ namespace balance.Views
                     //鬼ごっこ2位
                     judge2.Content = "";
                     DBConnect.Connect("kasiihara.db");
-
                     
-                    SQL5 = "SELECT * FROM t_taggame NATURAL JOIN t_userrecord NATURAL JOIN t_user WHERE user_id =  " + u_id + "  and tag_speed = " + "'" + setting.Text + "'" + "  and tag_size = " + "'" + percent.Text + "'" + " and traintype= " + "'鬼ごっこゲーム'" + "  ORDER BY time DESC limit 1 offset 1 ";
+                    SQL5 = "SELECT * FROM t_taggame NATURAL JOIN t_userrecord NATURAL JOIN t_user WHERE user_id =  " + u_id + "  and tag_speed = " + speed + " and tag_size = " + size + " and traintype= " + "'鬼ごっこゲーム'" + " and judge = " + "1" + " ORDER BY time DESC limit 1 offset 1 ";
                     DBConnect.ExecuteReader(SQL5);
                     if (DBConnect.Reader.Read())
                     {
-                        if (DBConnect.Reader[8].ToString().Substring(15, 1).Equals(":"))
+                        if (DBConnect.Reader[7].ToString().Substring(15, 1).Equals(":"))
                         {
-                            date2.Content = DBConnect.Reader[8].ToString().Substring(0, 15);
+                            date2.Content = DBConnect.Reader[7].ToString().Substring(0, 15);
                         }
                         else
                         {
                             ////////日付
-                            date2.Content = DBConnect.Reader[8].ToString().Substring(0, 16);
+                            date2.Content = DBConnect.Reader[7].ToString().Substring(0, 16);
                         }
+
+
                         ///////計測時間
-                        line2.Content = DBConnect.Reader[1].ToString() + "秒";
-                        judge2.Content = DBConnect.Reader[3].ToString();
+                        time = int.Parse(DBConnect.Reader[1].ToString());
+
+
+                        if (time > 60)
+                        {
+                            line2.Content = (time / 60) + "分" + (time % 60) + "秒";
+                        }
+                        else
+                        {
+                            line2.Content = DBConnect.Reader[1].ToString() + "秒";
+
+                        }
                         //Console.WriteLine(SQL);
                         DBConnect.Dispose();
 
@@ -1113,22 +1172,31 @@ namespace balance.Views
                     DBConnect.Connect("kasiihara.db");
 
 
-                    SQL5 = "SELECT * FROM t_taggame NATURAL JOIN t_userrecord NATURAL JOIN t_user WHERE user_id =  " + u_id + "  and tag_speed = " + "'" + setting.Text + "'" + "  and tag_size = " + "'" + percent.Text + "'" + " and traintype= " + "'鬼ごっこゲーム'" + "  ORDER BY time DESC limit 1 offset 2 ";
+                    SQL5 = "SELECT * FROM t_taggame NATURAL JOIN t_userrecord NATURAL JOIN t_user WHERE user_id =  " + u_id + "  and tag_speed = " + speed + " and tag_size = " + size + " and traintype= " + "'鬼ごっこゲーム'" + " and judge = " + "1" + " ORDER BY time DESC limit 1 offset 2 ";
                     DBConnect.ExecuteReader(SQL5);
                     if (DBConnect.Reader.Read())
                     {
-                        if (DBConnect.Reader[8].ToString().Substring(15, 1).Equals(":"))
+                        if (DBConnect.Reader[7].ToString().Substring(15, 1).Equals(":"))
                         {
-                            date3.Content = DBConnect.Reader[8].ToString().Substring(0, 15);
+                            date3.Content = DBConnect.Reader[7].ToString().Substring(0, 15);
                         }
                         else
                         {
                             ////////日付
-                            date3.Content = DBConnect.Reader[8].ToString().Substring(0, 16);
+                            date3.Content = DBConnect.Reader[7].ToString().Substring(0, 16);
                         }
                         ///////計測時間
-                        line3.Content = DBConnect.Reader[1].ToString() + "秒";
-                        judge3.Content = DBConnect.Reader[3].ToString();
+                        time = int.Parse(DBConnect.Reader[1].ToString());
+
+                        if (time > 60)
+                        {
+                            line3.Content = (time / 60) + "分" + (time % 60) + "秒";
+                        }
+                        else
+                        {
+                            line3.Content = DBConnect.Reader[1].ToString() + "秒";
+
+                        }
                         //Console.WriteLine(SQL);
                         DBConnect.Dispose();
 
@@ -1199,6 +1267,10 @@ namespace balance.Views
                     judge3.Visibility = Visibility.Collapsed;
                     arrow1.Visibility = Visibility.Visible;
                     hyouadvice.Visibility = Visibility.Visible;
+                    chartadvice.Visibility = Visibility.Visible;
+                    chartarrow.Visibility = Visibility.Visible;
+                    lineChart.Visibility = Visibility.Visible;
+
                     //setteiname.Content = "設定";
 
                     break;
@@ -1247,6 +1319,10 @@ namespace balance.Views
                     judge3.Visibility = Visibility.Collapsed;
                     arrow1.Visibility = Visibility.Visible;
                     hyouadvice.Visibility = Visibility.Visible;
+                    chartadvice.Visibility = Visibility.Visible;
+                    chartarrow.Visibility = Visibility.Visible;
+                    lineChart.Visibility = Visibility.Visible;
+
                     //setteiname.Content = "設定";
 
 
@@ -1269,6 +1345,10 @@ namespace balance.Views
                     judge3.Visibility = Visibility.Collapsed;
                     arrow1.Visibility = Visibility.Visible;
                     hyouadvice.Visibility = Visibility.Visible;
+                    chartadvice.Visibility = Visibility.Visible;
+                    chartarrow.Visibility = Visibility.Visible;
+                    lineChart.Visibility = Visibility.Visible;
+
                     //setteiname.Content = " ";
                     break;
 
@@ -1292,6 +1372,10 @@ namespace balance.Views
                     judge3.Visibility = Visibility.Collapsed;
                     arrow1.Visibility = Visibility.Visible;
                     hyouadvice.Visibility = Visibility.Visible;
+                    chartadvice.Visibility = Visibility.Visible;
+                    chartarrow.Visibility = Visibility.Visible;
+                    lineChart.Visibility = Visibility.Visible;
+
                     break;
 
 
@@ -1315,20 +1399,21 @@ namespace balance.Views
                     kazu.Content = "";
                     setting_fall.Visibility = Visibility.Collapsed;
                     okcombo.Visibility = Visibility.Visible;
-                    judge.Visibility = Visibility.Visible;
-                    judge1.Visibility = Visibility.Visible;
-                    judge2.Visibility = Visibility.Visible;
-                    judge3.Visibility = Visibility.Visible;
+                    judge.Visibility = Visibility.Collapsed;
+                    judge1.Visibility = Visibility.Collapsed;
+                    judge2.Visibility = Visibility.Collapsed;
+                    judge3.Visibility = Visibility.Collapsed;
                     arrow1.Visibility = Visibility.Collapsed;
                     hyouadvice.Visibility = Visibility.Collapsed;
-                    clear_record.Content = "計測時間";
+                    clear_record.Content = "クリア時間";
+                    chartadvice.Visibility = Visibility.Collapsed;
+                    chartarrow.Visibility = Visibility.Collapsed;
+                    lineChart.Visibility = Visibility.Collapsed;
+
                     break;
             }
         }
 
-        private void Percent_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
 
-        }
     }
 }

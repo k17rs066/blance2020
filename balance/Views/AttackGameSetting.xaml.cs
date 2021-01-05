@@ -128,12 +128,12 @@ namespace balance.Views
             if (!combo.Text
                 .ToString().Equals("") && !combokei.Text.ToString().Equals(""))
             {
-                if (han.Text.Equals("計測時間:")) // スコアアタック
+                if (han.Text.Equals("制限時間：")) // スコアアタック
                 {
                     bnum = 0;
                     total = int.Parse(score_min.Text)*60 + int.Parse(combokei.Text);
                 }
-                else if(han.Text.Equals("計測回数:")) //　タイムアタック
+                else if(han.Text.Equals("計測回数：")) //　タイムアタック
                 {
                     bnum = 1;
                     total = int.Parse(combokei.Text);
@@ -177,7 +177,7 @@ namespace balance.Views
                 }
             }
 
-            han.Text = "計測時間:";
+            han.Text = "制限時間：";
             min.Text = "分";
             tan.Text = "秒";
             Application.Current.Properties["gamemodename"] = "スコアアタック";
@@ -227,7 +227,7 @@ namespace balance.Views
             }
 
 
-            han.Text = "計測回数:";
+            han.Text = "計測回数：";
             tan.Text = "回";
             Application.Current.Properties["gamemodename"] = "タイムアタック";
         }

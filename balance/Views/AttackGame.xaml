@@ -9,7 +9,9 @@
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
                 <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.Light.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Controls.xaml" />
                 <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.Defaults.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Fonts.xaml" />
                 <ResourceDictionary Source="pack://application:,,,/MaterialDesignColors;component/Themes/Recommended/Primary/MaterialDesignColor.Blue.xaml" />
                 <ResourceDictionary Source="pack://application:,,,/MaterialDesignColors;component/Themes/Recommended/Accent/MaterialDesignColor.Lime.xaml" />
             </ResourceDictionary.MergedDictionaries>
@@ -17,8 +19,8 @@
     </Page.Resources>
     <Grid>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="205*"/>
-            <ColumnDefinition Width="179*"/>
+            <ColumnDefinition Width="25*"/>
+            <ColumnDefinition Width="23*"/>
         </Grid.ColumnDefinitions>
         <Canvas HorizontalAlignment="Left" Name="leftleg" Background="AliceBlue" Height="703" Margin="110,170,0,0" VerticalAlignment="Top" Width="200"/>
         <Canvas HorizontalAlignment="Left" Name="RightLeg" Background="AliceBlue" Height="703" Margin="482,175,0,0" VerticalAlignment="Top" Width="200"/>
@@ -39,8 +41,8 @@
 
         </Canvas>
         <Button Name ="back" Content="戻る" FontSize="50" HorizontalAlignment="Left" Height="101" Margin="595,30,0,0" VerticalAlignment="Top" Width="261" Click="BackButton_Click" Grid.Column="1"/>
-        <Label Name="modeselect" Content="ゲームモード：" FontSize="60" Margin="980,190,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Grid.ColumnSpan="2"/>
-        <ComboBox Name="Combo_GameMode"  Margin="341,180,230,0" FontSize ="50" HorizontalAlignment="Center" Height="90"  VerticalAlignment="Top" Width="324" SelectedIndex="0" SelectionChanged="Combo_GameMode_SelectionChanged" Grid.Column="1" RenderTransformOrigin="0.306,0.711" />
+        <Label Name="modeselect" Content="ゲームモード：" FontSize="60" Margin="20,190,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Height="88" Width="327" Grid.Column="1"/>
+        <ComboBox Name="Combo_GameMode"  Margin="376,190,220,0" FontSize ="50" HorizontalAlignment="Center" Height="90"  VerticalAlignment="Top" Width="324" SelectedIndex="0" SelectionChanged="Combo_GameMode_SelectionChanged" Grid.Column="1" RenderTransformOrigin="0.306,0.711" />
         <Button Name ="StartButton" Content="スタート" FontSize ="50" HorizontalAlignment="Left" Height="101" Margin="299,30,0,0" VerticalAlignment="Top" Width="261" Click="StartButton_Click" Grid.Column="1"/>
         <!--        <Rectangle Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="25" Margin="1333.2,702,0,0" VerticalAlignment="Top" Width="150"/>
         <Rectangle Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="25" Margin="1334.391,705.673,0,0" VerticalAlignment="Top" Width="150" RenderTransformOrigin="0.5,0.5">
@@ -56,7 +58,7 @@
 -->
         <TextBlock Name ="leftparcent" HorizontalAlignment="Left" FontSize="100" Height="126" Margin="110,878,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="240"/>
         <TextBlock Name ="rightparcent" HorizontalAlignment="Left" FontSize ="100" Height="126" Margin="445,878,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="240"/>
-        <TextBlock Name ="settin" FontSize ="50" HorizontalAlignment="Right" Height="100" Margin="0,310,14,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="1001" Grid.ColumnSpan="2"/>
+        <TextBlock Name ="settin" FontSize ="50" Height="100" Margin="20,305,125,0" TextWrapping="Wrap"  VerticalAlignment="Top" Grid.Column="1"/>
         <!--leftpar　左の％
         　　rightpar　右の％
         　　settin 設定したクリアライン、時間（回数）
@@ -64,10 +66,11 @@
             cc　回数
         　　next 青い■-->
         <Canvas Name="next" HorizontalAlignment="Left" Height="50" Margin="188,51,0,0" VerticalAlignment="Top" Width="400" RenderTransformOrigin="0.5,0.5"/>
-        <TextBlock Name ="tim" FontSize="80" Height="96" Margin="358,425,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Grid.Column="1"/>
-        <TextBlock Name ="cc" FontSize="80" Margin="755,430,580,554" TextWrapping="Wrap" Grid.ColumnSpan="2"/>
+        <TextBlock Name ="tim" FontSize="50" Height="96" Margin="455,429,55,0" TextWrapping="Wrap" VerticalAlignment="Top" Grid.Column="1" RenderTransformOrigin="0.5,0.5"/>
+        <TextBlock Name ="cc" FontSize="50" Margin="10,430,490,554" TextWrapping="Wrap" Grid.Column="1" RenderTransformOrigin="0.5,0.5" Foreground="#FFF50F0F"/>
+
         <Label x:Name="countdown" Content="" HorizontalAlignment="Left" Margin="687,356,0,0" Height="374" Width="512"   FontSize="250" FontWeight="Bold" VerticalAlignment="Top" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Background="{x:Null}" Foreground="#FFF72218" Grid.ColumnSpan="2" />
-        <Button x:Name="SetDialog" Content="設定" FontSize ="50" HorizontalAlignment="Left" Height="101" Margin="0,30,0,0" VerticalAlignment="Top" Width="261" Click="SetDialog_Click" Grid.Column="1"/>
+        <Button x:Name="SetDialog" Content="設定" FontSize ="50" HorizontalAlignment="Left" Height="101" Margin="19,29,0,0" VerticalAlignment="Top" Width="261" Click="SetDialog_Click" Grid.Column="1"/>
         <Button x:Name="rule" Content="ルール" FontSize ="50" HorizontalAlignment="Left" Height="101" Margin="734,30,0,0" VerticalAlignment="Top" Width="261" Click="rule_Click" />
     </Grid>
 </Page>

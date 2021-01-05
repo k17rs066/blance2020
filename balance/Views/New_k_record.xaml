@@ -37,7 +37,7 @@
             <!-- Label x:Name="hyouname" Content="" HorizontalAlignment="Left" Margin="33,449,0,0" VerticalAlignment="Top" Width="370" Height="76" FontSize="48"/>
             <Label x:Name="setteiname" Content="設定" HorizontalAlignment="Left" Margin="87,553,0,0" VerticalAlignment="Top" Width="94" Height="58" FontSize="36" RenderTransformOrigin="0.628,-0.207"/-->
             <Label x:Name="kuriarain" Content="クリアライン" HorizontalAlignment="Right" Margin="0,380,1422,0" VerticalAlignment="Top" Width="181" Height="61" FontSize="38"/>
-            <ComboBox x:Name="percent" HorizontalAlignment="Center" Margin="495,380,1183,0" VerticalAlignment="Top" Width="225" Height="65" FontSize="48" SelectionChanged="Percent_SelectionChanged"/>
+            <ComboBox x:Name="percent" HorizontalAlignment="Center" Margin="495,380,1203,0" VerticalAlignment="Top" Width="205" Height="65" FontSize="48"/>
             <Label x:Name="paasento" Content="" HorizontalAlignment="Right" Margin="0,380,1103,0" VerticalAlignment="Top" Width="69" Height="61" FontSize="38"/>
             <Label x:Name="byou_kai" Content="秒数" HorizontalAlignment="Right" Margin="0,382,913,0" VerticalAlignment="Top" Width="165" Height="61" FontSize="38"/>
             <ComboBox x:Name="setting" HorizontalAlignment="Left" Margin="995,370,0,0" VerticalAlignment="Top" Width="185" Height="75" FontSize="48"/>
@@ -120,7 +120,7 @@
                 </Label.RenderTransform>
             </Label>
             <Label x:Name="chartadvice" Content="" HorizontalAlignment="Left" Margin="87,676,0,0" VerticalAlignment="Top" Height="118" Width="260" FontSize="37" FontWeight="Bold"  BorderBrush="Black" BorderThickness="2" />
-            <Label Content="➡" HorizontalAlignment="Left" Margin="182,796,0,0" VerticalAlignment="Top" Height="92" Width="76" FontWeight="Bold" FontSize="68" RenderTransformOrigin="0.5,0.5">
+            <Label x:Name="chartarrow" Content="➡" HorizontalAlignment="Left" Margin="182,796,0,0" VerticalAlignment="Top" Height="92" Width="76" FontWeight="Bold" FontSize="68" RenderTransformOrigin="0.5,0.5">
                 <Label.RenderTransform>
                     <TransformGroup>
                         <ScaleTransform/>

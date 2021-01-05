@@ -19,19 +19,21 @@
     </Window.Resources>
     <Grid Margin="10,10,0,0">
 
-        <Label Content="鬼の大きさ・速さ・制限時間を設定してください。" Margin="15,62,0,0" FontSize="40" VerticalAlignment="Top" HorizontalAlignment="Left"/>
+        <Label Content="鬼ごっこゲームの設定をしてください。" Margin="105,35,0,0" FontSize="40" VerticalAlignment="Top" HorizontalAlignment="Left" FontWeight="Bold"/>
         <Label Margin="135,353,465,153" RenderTransformOrigin="0.5,0.5" Content="・制限時間：" FontSize="30"/>
 
         <Label Margin="135,275,465,243" Content="・鬼の速さ：" FontSize="30" RenderTransformOrigin="0.5,0.5"/>
         <Label Content="秒"  FontSize="30" Margin="650,350,69,0" Height="55" VerticalAlignment="Top"></Label>
         <Label Content="分"  FontSize="30" Margin="480,350,239,0" Height="55" VerticalAlignment="Top" RenderTransformOrigin="-2,0.491"></Label>
         <ComboBox x:Name="OrgSpeed" Margin="360,265,230,246" FontSize="30"/>
-        <ComboBox x:Name="OrgSize" Margin="361,173,229,338" FontSize="30"/>
+        <ComboBox x:Name="OrgSize" Margin="360,200,230,321" FontSize="30"/>
         <ComboBox x:Name="TimeSet_sec" Margin="540,350,124,168" FontSize="30"/>
         <ComboBox x:Name="TimeSet_min" Margin="355,355,309,163" FontSize="30" RenderTransformOrigin="0.455,1.036"/>
 
         <Button Content="決定" FontSize="30" Margin="165,490,435,23" Click="Button_Click" Height="Auto"/>
-        <Label Margin="135,180,465,338" Content="・鬼の大きさ：" FontSize="30" RenderTransformOrigin="0.5,0.5"/>
+        <Label Margin="136,205,464,313" Content="・鬼の大きさ：" FontSize="30" RenderTransformOrigin="0.5,0.5"/>
         <Button Content="戻る" FontSize="30" Margin="425,490,175,23" Click="Back_Click" Height="Auto"/>
+        <Label Margin="136,120,464,398" Content="・ゲームモード：" FontSize="30" RenderTransformOrigin="0.5,0.5"/>
+        <ComboBox x:Name="GameMode" Margin="360,120,230,401" FontSize="30"/>
     </Grid>
 </Window>

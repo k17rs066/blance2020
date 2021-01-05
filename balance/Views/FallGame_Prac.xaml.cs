@@ -89,6 +89,7 @@ namespace balance.Views
         int ballsize;
         int ballspeed;
 
+        int cnttime;
         int min;
         int sec;
         public FallGame_Prac()
@@ -109,14 +110,40 @@ namespace balance.Views
             y2 = 300;
             dispatcharTimer = new DispatcherTimer(DispatcherPriority.Normal);
             dispatcharTimer.Interval = new TimeSpan(0, 0, 0, 1, 1);
-            //dispatcharTimer.Tick += new EventHandler(dispatcharTimer_Tick);
+            dispatcharTimer.Tick += new EventHandler(dispatcharTimer_Tick);
 
 
 
             ballsize = (int)Application.Current.Properties["ballsize"];
             ballspeed = (int)Application.Current.Properties["ballspeed"];
+            if (ballsize == 100)
+            {
+                sizestate.Content = "ボールの大きさ：" + "普通";
+            }
+            else if (ballsize == 125)
+            {
 
 
+                sizestate.Content = "ボールの大きさ：" + "大きい";
+
+            }
+            else if (ballsize == 70)
+            {
+                sizestate.Content = "ボールの大きさ：" + "小さい";
+            }
+
+            if (ballspeed == 2)
+            {
+                speedstate.Content = "ボールの速さ：" + "普通";
+            }
+            else if (ballspeed == 3)
+            {
+                speedstate.Content = "ボールの速さ：" + "速い";
+            }
+            else if (ballspeed == 1)
+            {
+                speedstate.Content = "ボールの速さ：" + "遅い";
+            }
             //time.Content = "残り時間   " + min + "分" + sec + "秒";
 
 
@@ -378,9 +405,6 @@ namespace balance.Views
 
 
 
-                        dispatcharTimer = new DispatcherTimer(DispatcherPriority.Normal);
-                        dispatcharTimer.Interval = new TimeSpan(0, 0, 1);
-                        //dispatcharTimer.Tick += new EventHandler(dispatcharTimer_Tick);
 
 
                         /*Application.Current.Properties["ftgamemodename"] = "落下ゲーム";
@@ -407,13 +431,22 @@ namespace balance.Views
 
 
 
-        /* void dispatcharTimer_Tick(object sender, EventArgs e)
+        void dispatcharTimer_Tick(object sender, EventArgs e)
          {
 
-             time_t--;
+            //time_t--;
+            cnttime++;
+            if (cnttime>=60)
+            {
+                time.Content = "経過時間    " + cnttime / 60 + "分" + cnttime % 60 + "秒";
 
-             time.Content = "残り時間   " + time_t / 60 + "分" + time_t % 60 + "秒";
-         }*/
+            }
+            else
+            {
+                time.Content = "経過時間    " +  cnttime % 60 + "秒";
+
+            }
+        }
 
 
         private void rule_Click(object sender, RoutedEventArgs e)
@@ -457,7 +490,7 @@ namespace balance.Views
                 countdown.Foreground = System.Windows.Media.Brushes.Red;
                 countdown.Content = "3";
                 cdtime = 0;
-
+                cnttime = 0;
                 count.Content = "獲得点数    0点";
                 wiimote.Connect();
                 dispatcharTimer11.Start();

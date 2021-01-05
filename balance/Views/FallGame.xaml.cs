@@ -111,7 +111,33 @@ namespace balance.Views
 
             ballsize = (int)Application.Current.Properties["ballsize"];
             ballspeed = (int)Application.Current.Properties["ballspeed"];
-            time_t= (int)Application.Current.Properties["timeset"];
+            if (ballsize == 100)
+            {
+                sizestate.Content = "ボールの大きさ：" + "普通";
+            }else if (ballsize == 125)
+            {
+                
+
+                sizestate.Content = "ボールの大きさ：" + "大きい";
+
+            }else if (ballsize == 70)
+            {
+               sizestate.Content = "ボールの大きさ：" + "小さい";
+            }
+
+            if (ballspeed == 2)
+            {
+                speedstate.Content = "ボールの速さ：" +"普通";
+            }
+            else if (ballspeed == 3)
+            {
+                speedstate.Content = "ボールの速さ：" + "速い";
+            }
+            else if (ballspeed == 1)
+            {
+                speedstate.Content = "ボールの速さ：" + "遅い";
+            }
+            time_t = (int)Application.Current.Properties["timeset"];
             timese = (int)Application.Current.Properties["timeset"];
             min = time_t / 60;
             sec = time_t % 60;
@@ -134,6 +160,7 @@ namespace balance.Views
         {
             if (game == true)
             {
+
 
                 BalanceBoardState bbs = e.WiimoteState.BalanceBoardState;
                 if (bbs.WeightKg < 5)
